@@ -1,7 +1,8 @@
+//use clasp clone + scriptID //for first time pull request
 //use clasp push to update
 //use clasp push -w to autoupdate
 //use clasp pull to retreive current file
-
+//https://www.youtube.com/watch?v=4Qlt3p6N0es
 
 var ss=SpreadsheetApp.openByUrl("https://docs.google.com/spreadsheets/d/1bk2Jqs0owKd-4DzXyPucnu-TVZc7y-n2o0xv4C20vDQ/edit?usp=sharing");
 var sheet = ss.getSheetByName("LogBook");
@@ -14,7 +15,6 @@ var sheet5 = ss.getSheetByName("Countries");
 var sheet6 = ss.getSheetByName("Statistics");
 var sheet7 = ss.getSheetByName("AddInfo");
 var lock = LockService.getScriptLock();
-
 //edited from vscode
 //detects which action to take based on the URL PASSED
 

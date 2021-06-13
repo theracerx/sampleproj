@@ -673,6 +673,8 @@
 		} else if(sv_resp["state"] == "sv_busy"){
 			newModal("Error","Server is busy...","Please try again")
 			disableFormBtns(false);
+		} else if (sv_resp["state"] == "sv_full"){
+			newModal("Error","Server is full...","Please try again later")
 		} else if (sv_resp["state"] == "verified"){ //returns all necessary data
 			newModal("Done","LogIn was successful","Verified")
 

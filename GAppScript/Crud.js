@@ -594,69 +594,93 @@ function retrieve_prog(request){ //returns episodeVal, episodeTime, episodeLink
   var sessionid = request.parameter.sessionID;
   var rank = request.parameter.rank;
   var status = sheet.getRange(rank,12).getValue()
+  var limit = sheet6.getRange(3,2).getValue();
 
   var trgt = sheet.getRange(rank,11).getValue();
   var trgt2 = sheet.getRange(rank, 3).getValue();
   var trgt3 = sheet.getRange(rank,6).getValue();
+
+  //
   if( sessionid == trgt && trgt2 == username && trgt3 == progpos && status != "offline"){
     
+     //Update last Active
+     var d = new Date();
+     var currentTime = d.toLocaleString();
+     sheet.getRange(rank,2).setValue(currentTime)
 
-    if(progchap == "1"){
-      var c_ep = parseFloat(progep) + 3; //locates current episode
-      var c_epVal = sheet1.getRange(rank,c_ep).getValue(); // current episode value
-
-      if (c_epVal != 0){ //has recorded data 
-
-        //update Attempt
-        var c_epAtmpt = sheet1.getRange(rank,3).getValue(); //currentAttempt
-        var c_epAtmptN = parseFloat(c_epAtmpt) + 1;
-        sheet1.getRange(rank,3).setValue(c_epAtmptN) //adds 1 to Attempt
-        var c_epT = sheet1.getRange(rank,2).getValue(); //gets currentTime
-
-        var msg = c_epVal + " but on its " + c_epAtmptN + " attmept! Plus time at " + c_epT;
-
-        data = JSON.stringify({
-          "c_epT": epT, "c_epVal": c_epVal, "c_progpos": progpos
-        });
-
-        return ContentService.createTextOutput("receiveProg(" + data + ");clearTimeout(sv_stat)").setMimeType(ContentService.MimeType.JAVASCRIPT);
-
-      } else { // no recorded data yet
-        
-        sheet1.getRange(rank,3).setValue(1)// resets Attempt to 1
-        sheet1.getRange(rank,2).setValue(0); //resets currentTime to 0
-
-        data = JSON.stringify({
-          "c_epT": 0, "c_epVal": 0, "c_progpos": progpos
-        });
-
-        return ContentService.createTextOutput("receiveProg(" + data + ");clearTimeout(sv_stat)").setMimeType(ContentService.MimeType.JAVASCRIPT);
-      }
-    } else if (progchap == "2"){
-      var msg = "Success retrieve2"
-
-      msg = JSON.stringify({
-        "msg": msg
+    if (status == "standby" && limit == 150){//filter queued players from online players
+      
+      var user_state = "sv_full"
+  
+      user_state = JSON.stringify({
+        "state": user_state
       });
 
-      return ContentService.createTextOutput("consoleme(" + msg + ");clearTimeout(sv_stat)").setMimeType(ContentService.MimeType.JAVASCRIPT);
-    } else if (progchap == "3"){
-      var msg = "Success retrieve3"
-
-      msg = JSON.stringify({
-        "msg": msg
-      });
-
-      return ContentService.createTextOutput("consoleme(" + msg + ");clearTimeout(sv_stat)").setMimeType(ContentService.MimeType.JAVASCRIPT);
+      return ContentService.createTextOutput("userState(" + user_state + ");clearTimeout(sv_stat)").setMimeType(ContentService.MimeType.JAVASCRIPT);
     } else {
-      var msg = "Success retrieveX"
+      
+      
+      sheet.getRange(rank,12).setValue("online")
 
-      msg = JSON.stringify({
-        "msg": msg
-      });
-
-      return ContentService.createTextOutput("consoleme(" + msg + ");clearTimeout(sv_stat)").setMimeType(ContentService.MimeType.JAVASCRIPT);
+      if(progchap == "1"){
+        var c_ep = parseFloat(progep) + 3; //locates current episode
+        var c_epVal = sheet1.getRange(rank,c_ep).getValue(); // current episode value
+  
+        if (c_epVal != 0){ //has recorded data 
+  
+          //update Attempt
+          var c_epAtmpt = sheet1.getRange(rank,3).getValue(); //currentAttempt
+          var c_epAtmptN = parseFloat(c_epAtmpt) + 1;
+          sheet1.getRange(rank,3).setValue(c_epAtmptN) //adds 1 to Attempt
+          var c_epT = sheet1.getRange(rank,2).getValue(); //gets currentTime
+  
+          var msg = c_epVal + " but on its " + c_epAtmptN + " attmept! Plus time at " + c_epT;
+  
+          data = JSON.stringify({
+            "c_epT": epT, "c_epVal": c_epVal, "c_progpos": progpos
+          });
+  
+          return ContentService.createTextOutput("receiveProg(" + data + ");clearTimeout(sv_stat)").setMimeType(ContentService.MimeType.JAVASCRIPT);
+  
+        } else { // no recorded data yet
+          
+          sheet1.getRange(rank,3).setValue(1)// resets Attempt to 1
+          sheet1.getRange(rank,2).setValue(0); //resets currentTime to 0
+  
+          data = JSON.stringify({
+            "c_epT": 0, "c_epVal": 0, "c_progpos": progpos
+          });
+  
+          return ContentService.createTextOutput("receiveProg(" + data + ");clearTimeout(sv_stat)").setMimeType(ContentService.MimeType.JAVASCRIPT);
+        }
+      } else if (progchap == "2"){
+        var msg = "Success retrieve2"
+  
+        msg = JSON.stringify({
+          "msg": msg
+        });
+  
+        return ContentService.createTextOutput("consoleme(" + msg + ");clearTimeout(sv_stat)").setMimeType(ContentService.MimeType.JAVASCRIPT);
+      } else if (progchap == "3"){
+        var msg = "Success retrieve3"
+  
+        msg = JSON.stringify({
+          "msg": msg
+        });
+  
+        return ContentService.createTextOutput("consoleme(" + msg + ");clearTimeout(sv_stat)").setMimeType(ContentService.MimeType.JAVASCRIPT);
+      } else {
+        var msg = "Success retrieveX"
+  
+        msg = JSON.stringify({
+          "msg": msg
+        });
+  
+        return ContentService.createTextOutput("consoleme(" + msg + ");clearTimeout(sv_stat)").setMimeType(ContentService.MimeType.JAVASCRIPT);
+      }
     }
+
+    
   } else if( sessionid != trgt || status == "offline"){ //invalid session
     var user_state = "invalid_session"
   
@@ -1743,6 +1767,7 @@ function clearGeoLocLimit(){
   sheet6.getRange(4,2).setValue(0)
   console.log("New val " + sheet6.getRange(4,2).getValue())
 }
+//removes idle players going past 5 mins of their last active time
 function antiIdle(){
    
 }

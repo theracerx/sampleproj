@@ -1,0 +1,2537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="LogIn Page for Heartily Sorry">
+	<!-- <meta name="google-signin-scope" content="profile email"> -->
+	<meta name="google-signin-client_id" content="749312594134-pitilbajjpv6g4v1a0prp5151juucfcv.apps.googleusercontent.com">
+	<!-- 749312594134-pitilbajjpv6g4v1a0prp5151juucfcv.apps.googleusercontent.com -->
+	<!-- rkyO0wqmR07DQWdK6Lk4ga1P -->
+
+	<title>Beta LogIn Page</title>
+	<link rel="stylesheet" href="css/styles.css" defer>
+	<link rel="stylesheet" href="css/vivify.min.css" defer>
+
+	<script src="https://apis.google.com/js/platform.js" async defer></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" defer></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous" defer></script>
+
+
+	<script>
+	// Heavily edited code from https://gist.github.com/Tito0269/2014c7001c89ed596171baea229d3363
+
+	console.log("Try adding Aascii ART https://www.text-image.com/convert/ascii.html");
+	var c_user, c_progpos, c_prog, temp_user, temp_pass, user_ip , cookies , v_prog1, v_prog2, v_stat;
+	var user_progress;
+	//copied from https://www.cs.cmu.edu/~biglou/resources/
+	var bad_filter = ["abbo","abo","abortion","abuse","addict","addicts","adult","africa","african","alla","allah","alligatorbait","amateur","american","anal","analannie","analsex","angie","angry","anus","arab","arabs","areola","argie","aroused","arse","arsehole","asian","ass","assassin","assassinate","assassination","assault","assbagger","assblaster","assclown","asscowboy","asses","assfuck","assfucker","asshat","asshole","assholes","asshore","assjockey","asskiss","asskisser","assklown","asslick","asslicker","asslover","assman","assmonkey","assmunch","assmuncher","asspacker","asspirate","asspuppies","assranger","asswhore","asswipe","athletesfoot","attack","australian","babe","babies","backdoor","backdoorman","backseat","badfuck","balllicker","balls","ballsack","banging","baptist","barelylegal","barf","barface","barfface","bast","bastard ","bazongas","bazooms","beaner","beast","beastality","beastial","beastiality","beatoff","beat-off","beatyourmeat","beaver","bestial","bestiality","bi","biatch","bible","bicurious","bigass","bigbastard","bigbutt","bigger","bisexual","bi-sexual","bitch","bitcher","bitches","bitchez","bitchin","bitching","bitchslap","bitchy","biteme","black","blackman","blackout","blacks","blind","blow","blowjob","boang","bogan","bohunk","bollick","bollock","bomb","bombers","bombing","bombs","bomd","bondage","boner","bong","boob","boobies","boobs","booby","boody","boom","boong","boonga","boonie","booty","bootycall","bountybar","bra","brea5t","breast","breastjob","breastlover","breastman","brothel","bugger","buggered","buggery","bullcrap","bulldike","bulldyke","bullshit","bumblefuck","bumfuck","bunga","bunghole","buried","burn","butchbabes","butchdike","butchdyke","butt","buttbang","butt-bang","buttface","buttfuck","butt-fuck","buttfucker","butt-fucker","buttfuckers","butt-fuckers","butthead","buttman","buttmunch","buttmuncher","buttpirate","buttplug","buttstain","byatch","cacker","cameljockey","cameltoe","canadian","cancer","carpetmuncher","carruth","catholic","catholics","cemetery","chav","cherrypopper","chickslick","children's","chin","chinaman","chinamen","chinese","chink","chinky","choad","chode","christ","christian","church","cigarette","cigs","clamdigger","clamdiver","clit","clitoris","clogwog","cocaine","cock","cockblock","cockblocker","cockcowboy","cockfight","cockhead","cockknob","cocklicker","cocklover","cocknob","cockqueen","cockrider","cocksman","cocksmith","cocksmoker","cocksucer","cocksuck ","cocksucked ","cocksucker","cocksucking","cocktail","cocktease","cocky","cohee","coitus","color","colored","coloured","commie","communist","condom","conservative","conspiracy","coolie","cooly","coon","coondog","copulate","cornhole","corruption","cra5h","crabs","crack","crackpipe","crackwhore","crack-whore","crap","crapola","crapper","crappy","crash","creamy","crime","crimes","criminal","criminals","crotch","crotchjockey","crotchmonkey","crotchrot","cum","cumbubble","cumfest","cumjockey","cumm","cummer","cumming","cumquat","cumqueen","cumshot","cunilingus","cunillingus","cunn","cunnilingus","cunntt","cunt","cunteyed","cuntfuck","cuntfucker","cuntlick ","cuntlicker ","cuntlicking ","cuntsucker","cybersex","cyberslimer","dago","dahmer","dammit","damn","damnation","damnit","darkie","darky","datnigga","dead","deapthroat","death","deepthroat","defecate","dego","demon","deposit","desire","destroy","deth","devil","devilworshipper","dick","dickbrain","dickforbrains","dickhead","dickless","dicklick","dicklicker","dickman","dickwad","dickweed","diddle","die","died","dies","dike","dildo","dingleberry","dink","dipshit","dipstick","dirty","disease","diseases","disturbed","dive","dix","dixiedike","dixiedyke","doggiestyle","doggystyle","dong","doodoo","doo-doo","doom","dope","dragqueen","dragqween","dripdick","drug","drunk","drunken","dumb","dumbass","dumbbitch","dumbfuck","dyefly","dyke","easyslut","eatballs","eatme","eatpussy","ecstacy","ejaculate","ejaculated","ejaculating ","ejaculation","enema","enemy","erect","erection","ero","escort","ethiopian","ethnic","european","evl","excrement","execute","executed","execution","executioner","explosion","facefucker","faeces","fag","fagging","faggot","fagot","failed","failure","fairies","fairy","faith","fannyfucker","fart","farted ","farting ","farty ","fastfuck","fat","fatah","fatass","fatfuck","fatfucker","fatso","fckcum","fear","feces","felatio ","felch","felcher","felching","fellatio","feltch","feltcher","feltching","fetish","fight","filipina","filipino","fingerfood","fingerfuck ","fingerfucked ","fingerfucker ","fingerfuckers","fingerfucking ","fire","firing","fister","fistfuck","fistfucked ","fistfucker ","fistfucking ","fisting","flange","flasher","flatulence","floo","flydie","flydye","fok","fondle","footaction","footfuck","footfucker","footlicker","footstar","fore","foreskin","forni","fornicate","foursome","fourtwenty","fraud","freakfuck","freakyfucker","freefuck","fu","fubar","fuc","fucck","fuck","fucka","fuckable","fuckbag","fuckbuddy","fucked","fuckedup","fucker","fuckers","fuckface","fuckfest","fuckfreak","fuckfriend","fuckhead","fuckher","fuckin","fuckina","fucking","fuckingbitch","fuckinnuts","fuckinright","fuckit","fuckknob","fuckme ","fuckmehard","fuckmonkey","fuckoff","fuckpig","fucks","fucktard","fuckwhore","fuckyou","fudgepacker","fugly","fuk","fuks","funeral","funfuck","fungus","fuuck","gangbang","gangbanged ","gangbanger","gangsta","gatorbait","gay","gaymuthafuckinwhore","gaysex ","geez","geezer","geni","genital","german","getiton","gin","ginzo","gipp","girls","givehead","glazeddonut","gob","god","godammit","goddamit","goddammit","goddamn","goddamned","goddamnes","goddamnit","goddamnmuthafucker","goldenshower","gonorrehea","gonzagas","gook","gotohell","goy","goyim","greaseball","gringo","groe","gross","grostulation","gubba","gummer","gun","gyp","gypo","gypp","gyppie","gyppo","gyppy","hamas","handjob","hapa","harder","hardon","harem","headfuck","headlights","hebe","heeb","hell","henhouse","heroin","herpes","heterosexual","hijack","hijacker","hijacking","hillbillies","hindoo","hiscock","hitler","hitlerism","hitlerist","hiv","ho","hobo","hodgie","hoes","hole","holestuffer","homicide","homo","homobangers","homosexual","honger","honk","honkers","honkey","honky","hook","hooker","hookers","hooters","hore","hork","horn","horney","horniest","horny","horseshit","hosejob","hoser","hostage","hotdamn","hotpussy","hottotrot","hummer","husky","hussy","hustler","hymen","hymie","iblowu","idiot","ikey","illegal","incest","insest","intercourse","interracial","intheass","inthebuff","israel","israeli","israel's","italiano","itch","jackass","jackoff","jackshit","jacktheripper","jade","jap","japanese","japcrap","jebus","jeez","jerkoff","jesus","jesuschrist","jew","jewish","jiga","jigaboo","jigg","jigga","jiggabo","jigger ","jiggy","jihad","jijjiboo","jimfish","jism","jiz ","jizim","jizjuice","jizm ","jizz","jizzim","jizzum","joint","juggalo","jugs","junglebunny","kaffer","kaffir","kaffre","kafir","kanake","kid","kigger","kike","kill","killed","killer","killing","kills","kink","kinky","kissass","kkk","knife","knockers","kock","kondum","koon","kotex","krap","krappy","kraut","kum","kumbubble","kumbullbe","kummer","kumming","kumquat","kums","kunilingus","kunnilingus","kunt","ky","kyke","lactate","laid","lapdance","latin","lesbain","lesbayn","lesbian","lesbin","lesbo","lez","lezbe","lezbefriends","lezbo","lezz","lezzo","liberal","libido","licker","lickme","lies","limey","limpdick","limy","lingerie","liquor","livesex","loadedgun","lolita","looser","loser","lotion","lovebone","lovegoo","lovegun","lovejuice","lovemuscle","lovepistol","loverocket","lowlife","lsd","lubejob","lucifer","luckycammeltoe","lugan","lynch","macaca","mad","mafia","magicwand","mams","manhater","manpaste","marijuana","mastabate","mastabater","masterbate","masterblaster","mastrabator","masturbate","masturbating","mattressprincess","meatbeatter","meatrack","meth","mexican","mgger","mggor","mickeyfinn","mideast","milf","minority","mockey","mockie","mocky","mofo","moky","moles","molest","molestation","molester","molestor","moneyshot","mooncricket","mormon","moron","moslem","mosshead","mothafuck","mothafucka","mothafuckaz","mothafucked ","mothafucker","mothafuckin","mothafucking ","mothafuckings","motherfuck","motherfucked","motherfucker","motherfuckin","motherfucking","motherfuckings","motherlovebone","muff","muffdive","muffdiver","muffindiver","mufflikcer","mulatto","muncher","munt","murder","murderer","muslim","naked","narcotic","nasty","nastybitch","nastyho","nastyslut","nastywhore","nazi","necro","negro","negroes","negroid","negro's","nig","niger","nigerian","nigerians","nigg","nigga","niggah","niggaracci","niggard","niggarded","niggarding","niggardliness","niggardliness's","niggardly","niggards","niggard's","niggaz","nigger","niggerhead","niggerhole","niggers","nigger's","niggle","niggled","niggles","niggling","nigglings","niggor","niggur","niglet","nignog","nigr","nigra","nigre","nip","nipple","nipplering","nittit","nlgger","nlggor","nofuckingway","nook","nookey","nookie","noonan","nooner","nude","nudger","nuke","nutfucker","nymph","ontherag","oral","orga","orgasim ","orgasm","orgies","orgy","osama","paki","palesimian","palestinian","pansies","pansy","panti","panties","payo","pearlnecklace","peck","pecker","peckerwood","pee","peehole","pee-pee","peepshow","peepshpw","pendy","penetration","peni5","penile","penis","penises","penthouse","period","perv","phonesex","phuk","phuked","phuking","phukked","phukking","phungky","phuq","pi55","picaninny","piccaninny","pickaninny","piker","pikey","piky","pimp","pimped","pimper","pimpjuic","pimpjuice","pimpsimp","pindick","piss","pissed","pisser","pisses ","pisshead","pissin ","pissing","pissoff ","pistol","pixie","pixy","playboy","playgirl","pocha","pocho","pocketpool","pohm","polack","pom","pommie","pommy","poo","poon","poontang","poop","pooper","pooperscooper","pooping","poorwhitetrash","popimp","porchmonkey","porn","pornflick","pornking","porno","pornography","pornprincess","pot","poverty","premature","pric","prick","prickhead","primetime","propaganda","pros","prostitute","protestant","pu55i","pu55y","pube","pubic","pubiclice","pud","pudboy","pudd","puddboy","puke","puntang","purinapricness","puss","pussie","pussies","pussy","pussycat","pussyeater","pussyfucker","pussylicker","pussylips","pussylover","pussypounder","pusy","quashie","queef","queer","quickie","quim","ra8s","rabbi","racial","racist","radical","radicals","raghead","randy","rape","raped","raper","rapist","rearend","rearentry","rectum","redlight","redneck","reefer","reestie","refugee","reject","remains","rentafuck","republican","rere","retard","retarded","ribbed","rigger","rimjob","rimming","roach","robber","roundeye","rump","russki","russkie","sadis","sadom","samckdaddy","sandm","sandnigger","satan","scag","scallywag","scat","schlong","screw","screwyou","scrotum","scum","semen","seppo","servant","sex","sexed","sexfarm","sexhound","sexhouse","sexing","sexkitten","sexpot","sexslave","sextogo","sextoy","sextoys","sexual","sexually","sexwhore","sexy","sexymoma","sexy-slim","shag","shaggin","shagging","shat","shav","shawtypimp","sheeney","shhit","shinola","shit","shitcan","shitdick","shite","shiteater","shited","shitface","shitfaced","shitfit","shitforbrains","shitfuck","shitfucker","shitfull","shithapens","shithappens","shithead","shithouse","shiting","shitlist","shitola","shitoutofluck","shits","shitstain","shitted","shitter","shitting","shitty ","shoot","shooting","shortfuck","showtime","sick","sissy","sixsixsix","sixtynine","sixtyniner","skank","skankbitch","skankfuck","skankwhore","skanky","skankybitch","skankywhore","skinflute","skum","skumbag","slant","slanteye","slapper","slaughter","slav","slave","slavedriver","sleezebag","sleezeball","slideitin","slime","slimeball","slimebucket","slopehead","slopey","slopy","slut","sluts","slutt","slutting","slutty","slutwear","slutwhore","smack","smackthemonkey","smut","snatch","snatchpatch","snigger","sniggered","sniggering","sniggers","snigger's","sniper","snot","snowback","snownigger","sob","sodom","sodomise","sodomite","sodomize","sodomy","sonofabitch","sonofbitch","sooty","sos","soviet","spaghettibender","spaghettinigger","spank","spankthemonkey","sperm","spermacide","spermbag","spermhearder","spermherder","spic","spick","spig","spigotty","spik","spit","spitter","splittail","spooge","spreadeagle","spunk","spunky","squaw","stagg","stiffy","strapon","stringer","stripclub","stroke","stroking","stupid","stupidfuck","stupidfucker","suck","suckdick","sucker","suckme","suckmyass","suckmydick","suckmytit","suckoff","suicide","swallow","swallower","swalow","swastika","sweetness","syphilis","taboo","taff","tampon","tang","tantra","tarbaby","tard","teat","terror","terrorist","teste","testicle","testicles","thicklips","thirdeye","thirdleg","threesome","threeway","timbernigger","tinkle","tit","titbitnipply","titfuck","titfucker","titfuckin","titjob","titlicker","titlover","tits","tittie","titties","titty","tnt","toilet","tongethruster","tongue","tonguethrust","tonguetramp","tortur","torture","tosser","towelhead","trailertrash","tramp","trannie","tranny","transexual","transsexual","transvestite","triplex","trisexual","trojan","trots","tuckahoe","tunneloflove","turd","turnon","twat","twink","twinkie","twobitwhore","uck","uk","unfuckable","upskirt","uptheass","upthebutt","urinary","urinate","urine","usama","uterus","vagina","vaginal","vatican","vibr","vibrater","vibrator","vietcong","violence","virgin","virginbreaker","vomit","vulva","wab","wank","wanker","wanking","waysted","weapon","weenie","weewee","welcher","welfare","wetb","wetback","wetspot","whacker","whash","whigger","whiskey","whiskeydick","whiskydick","whit","whitenigger","whites","whitetrash","whitey","whiz","whop","whore","whorefucker","whorehouse","wigger","willie","williewanker","willy","wn","wog","women's","wop","wtf","wuss","wuzzie","xtc","xxx","yankee","yellowman","zigabo","zipperhead"];
+	var script_url = "https://script.google.com/macros/s/AKfycbyJ21nFcwUuHpbQ6jB_ud9VRKwwQ3FPLU1dlmsh/exec";
+
+	//ONLY USE PROMISE ON ASYNC FUNCTIONS
+	//AWAIT returns undefined on promises but value on ()=>return
+
+
+	//Form Commands
+	async function Register(){
+			disableBtn("RegisterBtn",true);
+			formstat("checking Captcha...");
+			geoloc = await requestAstronomy(); //string
+			r_captcha = verifyRecaptcha(); //boolean
+			console.log(r_captcha);
+			console.log(typeof(r_captcha));
+			console.log(geoloc);
+			console.log(typeof(geoloc));
+			if (r_captcha == true){
+				alert("TO DO: Add modal saying Registering")
+				// formstat("Registering...",0,"blue");
+				if (geoloc == "true"){
+					delay = 0;
+				} else {
+					delay = 5000;
+				}
+				setTimeout(async function(){
+					//extracts value from input
+					var username =	temp_user = $("#Username").val();
+					var userid = $("#UserID").val(); 
+					var password = $("#Password").val();
+					var user_clear = true;
+					if (!username == false || !password == false){ //checks for bad words
+						tempname = username.split(" ");
+						for (i in tempname){
+							if ( bad_filter.includes(tempname[i])){
+								bdword = bad_filter[bad_filter.indexOf(tempname[i])];
+								if(confirm("Really? ... You want to be called " + bdword.toUpperCase() + "?")){
+									if(confirm("Last chance mate... You'll be called " + bdword.toUpperCase() +" in our Research. Continue?")){
+										user_clear = true;
+									} else {
+										user_clear = false;
+									}
+								} else {
+									user_clear = false;
+								}
+							}
+						}
+					} else {
+						user_clear = false;
+						alert("Oh c'mon you can do better than a blank name or password");
+						console.log("TO DO: add modal that says this alert message");
+						// formstat("Please try again!",0,"red")
+					}
+					if (!getCookie("c_loc")){
+						console.log("TO DO: add modal that says this warning message");
+						formstat("Server is not responding.Please try again later...", 0 ,"red")
+						user_clear == false;
+					}	
+					if (user_clear == true){ //checks if user is clear for registration			
+						var url = script_url+"?username=" + username + "&password=" + await convertSHA256(password + username) + "&country=" + getCookie("c_loc") + "&flag=" + getCookie("c_flag") + "&sunrise=" + getCookie("c_sunrise") + "&sunset=" + getCookie("c_sunset") + "&solar_noon=" + getCookie("c_solar_noon") + "&moonrise=" + getCookie("c_moonrise") + "&moonset=" + getCookie("c_moonset") + "&action=verify_user&action2=register_user";
+						var request = jQuery.ajax({
+						crossDomain: true,
+						url: url ,
+						method: "GET",
+						dataType: "jsonp"
+						});
+					} else {
+						disableBtn("RegisterBtn",true);
+						console.log("Registration aborted by system");
+					}				
+				},delay)
+			} else {
+				disableBtn("RegisterBtn",false);
+				console.log("Registration aborted by system");
+			}
+	} 
+	async function updateName(sv_resp){
+		var user_clear = true;
+		if(sv_resp){
+			updateCookie("c_user",sv_resp["name"]);
+			console.log("Username successfully by server")
+		} else if (getCookie("c_user") && !sv_resp){
+			var username = prompt("Enter your new username",getCookie("c_user"));
+			
+			if (!username == false){ //checks for bad words
+				tempname = username.split(" ");
+				for (i in tempname){
+					if ( bad_filter.includes(tempname[i])){
+						bdword = bad_filter[bad_filter.indexOf(tempname[i])];
+						if(confirm("Really? ... You want to be called " + bdword.toUpperCase() + "?")){
+							if(confirm("Last chance mate... You'll be called " + bdword.toUpperCase() +" in our Research. Continue?")){
+								user_clear = true;
+								break;
+							} else {
+								user_clear = false;
+								break;
+							}
+						} else {
+							user_clear = false;
+							break;
+						}
+					}
+				}
+			} else {
+				user_clear = false;
+			}	
+					
+			if (!username == false){
+				var pass = prompt("Please input your password to verify it's really you","password");
+				if (pass == null || pass == ""){
+					user_clear = false;
+				}
+			}
+				
+			if (user_clear == true){
+				oldname = getCookie("c_user");
+				var n_pass = await convertSHA256(pass + username);
+				//console.log(n_pass);
+				var v_pass = await convertSHA256(pass + oldname);
+				//console.log(v_pass);
+				var url = script_url+"?newname=" + username + "&username=" + oldname + "&password=" + v_pass + "&newpassword=" + n_pass + "&action=verify_pass&action2=update_username";
+				var request = jQuery.ajax({
+				crossDomain: true,
+				url: url ,
+				method: "GET",
+				dataType: "jsonp"
+				});
+			} else {
+				console.log("Update username aborted by user");
+			}
+		
+		} else {
+			console.log("No user has Logged In yet");
+			console.log("Update username aborted by system");
+		}	
+	}
+	async function LogIn() { //verify_user > verify_pass
+		disableBtn("LogInBtn",true);
+		formstat("checking Captcha...")
+		r_captcha = await validateCaptcha();	
+		if (r_captcha == "true"){
+			formstat("Logging In...")
+			console.log("Logging In...");
+			//extracts value from input
+			var username =	$("#Username").val(); 
+			var password = $("#Password").val();
+			
+			if(!username == false || !password == false){
+				var npass = await convertSHA256(password + username);
+				//console.log(npass);
+				var url = script_url+"?username=" + username + "&password="+ npass + "&action=verify_user&action2=verify_pass";
+				var request = jQuery.ajax({
+				crossDomain: true,
+				url: url ,
+				method: "GET",
+				dataType: "jsonp"
+				});
+			} else {
+				disableBtn("LogInBtn",false);
+				formstat("Username isn't registered yet",0,"red")
+				console.log("LogIn aborted by system")
+			}	
+		} else {
+			disableBtn("LogInBtn",false);
+			console.log("LogIn aborted by system...")
+		}
+	}
+	function LogOut(){
+		unlockUserSettings(false);
+		updateCookie("c_user","",-1);
+		updateCookie("c_progpos","",-1);
+		updateCookie("c_prog","",-1);
+		updateCookie("c_loc","",-1);
+		updateCookie("c_flag","",-1);
+		console.log("TO DO: Redirect to MAIN PAGE");
+	}
+	async function passwordRecoveryquestion(){
+		formstat("Registration successful!",0,"green");
+		var user_clear = true;
+		var security_question = prompt("Please add a security question incase you lost your password:","Example: My hometown is?");
+		if (security_question == null || security_question == ""){
+			user_clear = false;
+		} else {
+			var security_answer = prompt(security_question.replace("?","") + "?","");
+			if (security_answer == null || security_answer == ""){
+				user_clear = false;
+			}
+		}
+		
+		if (user_clear == true){
+			if (confirm(security_question.replace("?","") + "? Answer: " + security_answer + " || Continue? " )){
+				var sec_ques = security_question.replace("?","");
+				var sec_ans = await convertSHA256(security_answer + sec_ques);
+				var url = script_url+"?username=" + temp_user + "&sec_ques=" + sec_ques + "&sec_ans=" + sec_ans + "&action=secure_pass";
+				var request = jQuery.ajax({
+				crossDomain: true,
+				url: url ,
+				method: "GET",
+				dataType: "jsonp"
+				});
+				temp_user = null;
+			} else {
+				passwordRecoveryquestion();
+			}
+		} else {
+			passwordRecoveryquestion();
+		}
+	}
+	function forgotPassword(sv_resp){
+		if(!sv_resp){
+			disableBtn("forgotPasswordBtn",true);
+			var user_clear = true;
+			var username = prompt("Enter username to be recovered","Example: Benjamin");
+			if (username == null || username == ""){
+				user_clear = false;
+			}	
+			if (user_clear == true){
+				var temp_user = username
+				var url = script_url+"?username=" + username + "&action=recover_pass";
+				var request = jQuery.ajax({
+				crossDomain: true,
+				url: url ,
+				method: "GET",
+				dataType: "jsonp"
+				});
+			} else {
+				console.log("Forgot password aborted by user")
+			}
+		} else {
+			alert("Sorry, username: " + sv_resp + "doesn't exist yet");
+		}
+		
+
+	}
+	async function recoverPassword(username,sec_ques,sec_ans){
+		var user_clear = true;
+		var isDone = false;
+		var attempt = 0;
+		while(!isDone){
+			var recover_ans = prompt("SECURITY QUESTION: " + sec_ques["ques"] + "?","Answer here");
+			if (recover_ans == null || recover_ans == ""){
+				user_clear = false;
+			}
+			if (user_clear == true){
+				recover_ans = await convertSHA256(recover_ans + sec_ques["ques"]);
+				if (sec_ans["ans"] == recover_ans){
+					temp_user = username["name"];
+					isDone = true;
+					updatePassword(true);
+				} else {
+					attempt++;
+					if (attempt != 3){
+						alert("Security answer didn't match, Attempt " + attempt + " of 3");
+					} else {
+						alert("Security answer didn't match, Attempt " + attempt + " of 3");
+						console.log("Password recovery aborted by system...");
+						break;
+					}
+				}
+			} else {
+				console.log("Password recovery aborted by user...")
+				break;
+			}
+		}
+	}
+	async function updatePassword(stat){ //can be called directly or by recoverPassword	
+		if(getCookie("c_user") || stat == true){
+			var user_clear = true;
+			
+			if(getCookie("c_user")){ // check if getCookie("c_user") || temp_user
+				var new_pass = prompt("Enter new password for " + getCookie("c_user"),"new password");
+			} else if (stat == true){
+				var new_pass = prompt("Enter new password for " + temp_user,"new password");
+			}
+			
+			if (new_pass == null || new_pass == ""){
+				user_clear = false;
+			} else {
+				var confirm_pass = prompt("Confirm new password", "retype your new password");
+				if (confirm_pass == null || confirm_pass == ""){
+					user_clear = false;
+				}
+			}
+			
+			if (user_clear == true && new_pass == confirm_pass){
+				
+				if (getCookie("c_user")){ // check if getCookie("c_user") || temp_user
+					var npass = await convertSHA256(new_pass + getCookie("c_user"));
+					var url = script_url+"?username=" + getCookie("c_user") + "&password=" + npass + "&action=update_pass";
+					
+				} else if (stat == true){
+					var npass = await convertSHA256(new_pass + temp_user);
+					var url = script_url+"?username=" + temp_user + "&password=" + npass + "&action=update_pass";
+				}
+				
+				var request = jQuery.ajax({
+				crossDomain: true,
+				url: url ,
+				method: "GET",
+				dataType: "jsonp"
+				});
+				//console.log("cookie has name " + getCookie("c_user"));
+				//console.log("temp user has name " + temp_user);
+			} else if (user_clear == true){
+				if(confirm("Retyped password didn't match. Retry?")){
+					updatePassword(true);
+				} else {
+					console.log("Password update cancelled by user");
+				}
+			} else {
+				console.log("Password update cancelled by user");
+			}
+			
+		} else {
+			console.log("No user has Logged In yet")
+		}
+	}
+	async function updateRecoveryquestion(){
+		if(confirm("Would you like to update your security question?")){
+			var user_clear = true;
+			var security_question = prompt("Please add your new security question incase you lost your password again:","Example: My mother's maiden name is?");
+			if (security_question == null || security_question == ""){
+				user_clear = false;
+			} else {
+				var security_answer = prompt(security_question.replace("?","") + "?","");
+				if (security_answer == null || security_answer == ""){
+					user_clear = false;
+				}
+			}
+			
+			if (user_clear == true){
+				if (confirm(security_question.replace("?","") + "? Answer: " + security_answer + " || Continue? " )){
+					var sec_ques = security_question.replace("?","");
+					var sec_ans = await convertSHA256(security_answer + sec_ques);
+					
+					if (getCookie("c_user")){
+						var url = script_url+"?username=" + getCookie("c_user") + "&sec_ques=" + sec_ques + "&sec_ans=" + sec_ans + "&action=update_secure_pass";
+					} else if (temp_user){
+						var url = script_url+"?username=" + temp_user + "&sec_ques=" + sec_ques + "&sec_ans=" + sec_ans + "&action=update_secure_pass";
+					}
+					
+					var request = jQuery.ajax({
+						crossDomain: true,
+						url: url ,
+						method: "GET",
+						dataType: "jsonp"
+						});
+						temp_user = null;
+				} else {
+					updateRecoveryquestion();
+				}
+			}		
+		} else {
+			console.log("User aborted updating Recovery question")
+			temp_user = null;
+		}
+	}
+	async function convertSHA256(message) {
+	var msgUint8 = new TextEncoder().encode(message);                           // encode as (utf-8) Uint8Array
+	var hashBuffer = await crypto.subtle.digest('SHA-256', msgUint8);           // hash the message
+	var hashArray = Array.from(new Uint8Array(hashBuffer));                     // convert buffer to byte array
+	var hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join(''); // convert bytes to hex string
+	return hashHex;
+	}
+
+	function retrieveUserdata(data){
+		alert("RETRIEVED USER DATA FIRED")
+		var url = script_url+"?username=" + username + "&action=retrieve_userdata";
+		var request = jQuery.ajax({
+		crossDomain: true,
+		url: url ,
+		method: "GET",
+		dataType: "jsonp"
+		});
+	}
+
+	function unlockUserSettings(status){
+		if (status == false || status == true){
+			if (status == false){
+				document.getElementById("LogOutBtn").setAttribute("disabled",true);
+				document.getElementById("updateUsernameBtn").setAttribute("disabled",true);
+				document.getElementById("updatePasswordBtn").setAttribute("disabled",true);
+				document.getElementById("forgotPasswordBtn").removeAttribute("disabled");
+				document.getElementById("LogInBtn").removeAttribute("disabled");
+				document.getElementById("RegisterBtn").removeAttribute("disabled");
+				console.log("Usersettings are now locked!")
+			} else {
+				document.getElementById("LogOutBtn").removeAttribute("disabled");
+				document.getElementById("updateUsernameBtn").removeAttribute("disabled");
+				document.getElementById("updatePasswordBtn").removeAttribute("disabled");
+				document.getElementById("forgotPasswordBtn").setAttribute("disabled",true);
+				document.getElementById("LogInBtn").setAttribute("disabled",true);
+				document.getElementById("RegisterBtn").setAttribute("disabled",true);
+				console.log("Usersettings are now unlocked!")
+			}	
+		} else {
+			console.log("ERROR on parameter 1 on unlockUserSettings");
+		}
+	}
+	function disableBtn(Btn,status){
+		user_clear = true;
+		if(!document.getElementById(Btn)){
+			console.log("ID " + Btn + " seems to be missing");
+			user_clear = false;
+		}
+		if(user_clear == true){
+			if(status == false || status == true){
+				if (status == false){
+					document.getElementById(Btn).removeAttribute("disabled");
+				} else {
+					document.getElementById(Btn).setAttribute("disabled","true")
+				}	
+			} else {
+				console.log("Error on parameter 2 on disableBtn(" + Btn + ", " + status + ")");
+			}
+		} else {
+			console.log("Error on parameter 1 on disableBtn(" + Btn + ", " + status + ")");
+		}	
+	}
+	function formstat(msg,dur,color){
+		document.getElementById("form_stat").innerHTML = msg; 
+		if(dur){
+			setTimeout(function(){
+				document.getElementById("form_stat").innerHTML = "";
+			},dur)
+		}
+		if(color && color != 0){
+			document.getElementById("form_stat").style.color = color;
+		} else {
+			document.getElementById("form_stat").style.color = "black";
+		}
+	}
+
+
+	//User detection
+	function userState(sv_resp,sv_data){
+		if (sv_resp["state"] == "exist"){
+			formstat("Username already taken",0,"red");
+			disableBtn("RegisterBtn",false);
+		} else if (sv_resp["state"] == "registered"){
+			formstat("Account successfully registered!",0,"green");
+			passwordRecoveryquestion();
+			disableBtn("RegisterBtn",false);
+		} else if (sv_resp["state"] == "unregistered"){
+			formstat("Username isn't registered yet!",0,"red");
+			disableBtn("LogInBtn",false);
+		} else if (sv_resp["state"] == "incorrectpass"){
+			formstat("Incorrect password!",0,"red");
+			disableBtn("LogInBtn",false);
+		} else if (sv_resp["state"] == "verified"){ //returns all necessary data
+			formstat("LogIn successful...",0,"green")
+			console.log("LOGIN SUCCESSFUL!")
+			unlockUserSettings(true);
+			//datame = sv_data;
+			updateCookie("c_user", sv_data["c_user"]);
+			updateCookie("c_progpos", sv_data["c_progpos"]);
+			updateCookie("c_loc", sv_data["c_loc"]);
+			updateCookie("c_sunrise", sv_data["c_sunrise"].replace("::",":"));
+			updateCookie("c_sunset", sv_data["c_sunset"].replace("::",":"));
+			updateCookie("c_solar_noon", sv_data["c_solar_noon"].replace("::",":"));
+			updateCookie("c_moonrise", sv_data["c_moonrise"].replace("::",":"));
+			updateCookie("c_moonset", sv_data["c_moonset"].replace("::",":"));
+			updateCookie("c_flag", sv_data["c_flag"]);
+		} else {
+			alert("Error on userStat(" + sv_resp["state"] + ") returned undefined");
+		}
+	}
+
+	//User progress commands
+	function requestProgress(){ //request row of Progress Attempt#
+		// get propos from cookies?
+		c_user = getCookie("c_user");
+		c_progpos = String(getCookie("c_progpos")).charAt(0);
+		
+		var url = script_url+"?username=" + c_user + "&progpos=" + c_progpos + "&action=retrieve_prog";
+		var request = jQuery.ajax({
+			crossDomain: true,
+			url: url ,
+			method: "GET",
+			dataType: "jsonp"
+		});	
+	}
+	function recieveProgress(progress){ //returns row of Progress Attempt#
+		c_prog = progress["row"][0];
+		//console.log(progress["row"]);
+		console.log(progress["row"][0]);
+		
+		var prog_string;
+		
+		for (i in c_prog){
+			if (i == 0){
+				prog_string = c_prog[i] + "||"
+			} else {
+				prog_string = prog_string + c_prog[i] + "||"
+			}
+		}
+		
+		updateCookie("c_prog",prog_string)/// name||103242||1234||1231	
+	}
+	function updateProgress(){ //update only by Chapter
+		
+		//how to wait for the variable
+		
+		c_user = getCookie("c_user");
+		
+		//only send the chapter position and chapter value
+		c_progpos = String(getCookie("c_progpos")).charAt(0);
+		c_progpos2 = String(getCookie("c_progpos")).slice(-1); 
+		n_prog = getCookie("c_prog").split("||").pop();
+		
+		var url = script_url+"?username=" + c_user + "&progpos=" + c_progpos + "&progpos2=" + c_progpos2 + "&prog=" + n_prog[c_progpos2] + "&action=update_prog";
+		var request = jQuery.ajax({
+			crossDomain: true,
+			url: url ,
+			method: "GET",
+			dataType: "jsonp"
+		});	
+	}
+	function verifyProgress(data){ //fired only by antiSkip
+		var user_clear = true;
+		if(!data == true){
+			console.log("Retrieving database info");
+			c_user = getCookie("c_user");
+			c_progpos = getCookie("c_progpos");
+			var url = script_url+"?username=" + c_user + "&progpos=" + c_progpos + "&action=verify_prog";
+			var request = jQuery.ajax({
+				crossDomain: true,
+				url: url ,
+				method: "GET",
+				dataType: "jsonp"
+			});	
+		} else {
+			v_prog1 = getCookie("c_prog").split("||").pop();
+			v_prog2 = data["row"][0];
+			
+			for (i in v_prog1){
+				if (v_prog1[i] != v_prog2[i]){
+					user_clear = false;
+					break;
+				}
+			}
+			
+			if (user_clear == true){
+				console.log("Progress were the same")
+			} else {
+				console.log("Progress weren't the same")
+			}
+
+		}
+	}
+	function verifyProgressPos(data){	
+		if (!data == true){
+			console.log("Retrieving database info");
+			c_user = getCookie("c_user");
+			var url = script_url+"?username=" + c_user + "&action=verify_progpos";
+			var request = jQuery.ajax({
+				crossDomain: true,
+				url: url ,
+				method: "GET",
+				dataType: "jsonp"
+			});
+		} else {
+			console.log(data);
+			v_prog1 = getCookie("c_progpos");
+			v_prog2 = data["progpos"]
+			
+			if (v_prog1 == v_prog2){
+				v_stat = true;
+				console.log("Progpos were the same")
+			} else {
+				v_stat = false;
+				console.log("Progpos weren't the same")
+			}
+		}
+	}
+
+	//Cookie commands
+	function grabCookies(){ //refresh cookies
+		//retrieved from https://gist.github.com/codebubb/ab5cfaf8b70d198e55a5642e9a63ab37
+		//cookies = document.cookie.split(';').map(cookie => cookie.split('=')).reduce((accumulator, [key, value]) => ({ ...accumulator, [key.trim()]: decodeURIComponent(value) }), {});
+		alert("yessssssss")
+
+	}	
+	function getCookie(name){ 
+		//console.log(cookies);
+		cookies = document.cookie.split(';').map(cookie => cookie.split('=')).reduce((accumulator, [key, value]) => ({ ...accumulator, [key.trim()]: decodeURIComponent(value) }), {});
+		
+		if(cookies[name]){
+			return cookies[name];
+		} else {
+			console.log("cookies[" + name + "] returned null");
+		}
+	}	
+	function updateCookie(name, value, dur){
+		if(dur){
+			if (dur >= 14){
+				dur = 14;
+			}
+		} else {
+			dur = 14;
+		}
+		
+		var d = new Date();
+		var d = new Date(d.getTime() + 1000 * 60 * 60 * 24 * dur); //7days = 1week
+		document.cookie =  name + "=" + value + "; expires=" + d.toGMTString() + ";";
+	}
+
+	/*
+	function downloadPass(){
+		var user_agree = true;
+		if (confirm("Would you like to backup your password on your device? You can only do this once...")){
+			user_agree = true;
+		} else {
+			if (confirm("There's no 'Forgot my Password' function here...Continue backup?")){
+				user_agree = true;
+			} else {
+				user_agree = false;
+			}
+		}
+		if (user_agree == true){
+			var filename = temp_user + "'s Password";
+			var text = temp_pass;
+			var element = document.createElement('a');
+			element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+			element.setAttribute('download', filename);
+
+			element.style.display = 'none';
+			document.body.appendChild(element);
+
+			element.click();
+
+			document.body.removeChild(element);
+			
+			temp_pass = temp_pass = null;
+		} else {
+			temp_pass = temp_pass = null;
+			console.log("user denied backup");
+		}
+		
+	}
+	*/
+
+
+	//Progress detection
+	function Retrieve_prog2() { //retrieve_prog
+		console.log("Retrieving Progress...");
+		if (!c_user == false){
+			var username =	c_user;
+			var progress_pos = c_progressPos;
+			var url = script_url+"?callback=ctrlq&username=" + username + "&progress_pos=" + progress_pos + "&action=retrieve_prog";
+			var request = jQuery.ajax({
+			crossDomain: true,
+			url: url ,
+			method: "GET",
+			dataType: "jsonp"
+			});
+		} else {
+			alert("Failed to retrieve user data! No User is currently logged in!");
+		}
+	}
+	function userProgress(progress){ //collects user's current progress
+		console.log("user progress received");
+		user_Progress = progress["progress"][0];
+		getUserLoc(user_Progress);
+	}
+	function getUserLoc(progress){
+		console.log("getUserLoc FIRED!");
+		for (i in progress){
+			if (String(progress[i]).indexOf("0") == true){
+				console.log("Location detected");
+				nLoc = parseFloat(String(progress[i]).lastIndexOf("0"));
+				if (nLoc == String(progress[i]).length){
+					jumptoLoc(c_progressPos, i , 0); // returns (1stAttempt,Chapter1,1)
+					break;
+				} else {
+					nLoc = (String(progress[i]).length) - (nLoc + 1);
+					jumptoLoc(c_progressPos, i , nLoc);
+					break;
+				}
+			}
+		}
+	}
+	function jumptoLoc(progressPos, chapter, Loc){
+		console.log("JumpToLoc FIRED!");
+		console.log(progressPos + ", " + chapter + ", " + Loc);
+		console.log("TO DO: Add function to jump to a certain location");
+		console.log("REMEMBER: Every 5secs collect what time the player is in the video");
+	}
+
+	/*
+
+	function antiSkip(c_user, c_progpos, c_prog, c_time){
+		console.log("antiSkip FIRED");
+		
+		if (!c_user){ //check if user is logged in
+			console.log("No user logged in");
+		} else if (c_progpos != p_progpos){ //check if in the right progress pos
+			console.log("Incorrect progress position!");
+			console.log("TO DO redirect to right prog_pos");
+			//Redirect(c_prog) which gets the user's progress & prog_pos from the database and use it to redirect the player
+		} else if (c_prog != d_progpos){ // check if database progress match with cookie progress
+			//Redirect(c_prog) which gets the user's progress from the database and use it to redirect the player
+		} else if (c_time){
+			console.log("Teleport player to correct time");
+			//BEWARE of in-game scores, some scores maybe skipped due to time skipping
+			//Redirect(c_time, c_score) which gets the user's progress from the database and use it to redirect the player
+		}
+		
+		
+		
+		if (!c_progressPos == true || !user_progress == true){
+			alert("Pls LogIn || redirect || cookies for c_progressPos and user_Progress missing!");
+		}
+	}	
+
+
+	// to add cookies do document.cookie = "name=dog"
+	function checkCookie(){
+		var c_user = getCookie("c_user");
+		var c_progpos = getCookie("c_progressPos");
+		var c_prog = getCookie("user_progress");
+		var c_time = getCookie("current_time");
+		var c_score = getCookie("current_score"); //store game scores
+		antiSkip(c_user, c_progpos, c_prog, c_time);
+	}
+	function getCookie(required_data){
+		//retrieved from https://gist.github.com/codebubb/ab5cfaf8b70d198e55a5642e9a63ab37
+		var cookies = document.cookie.split(';').map(cookie => cookie.split('=')).reduce((accumulator, [key, value]) => ({ ...accumulator, [key.trim()]: decodeURIComponent(value) }), {});
+		if(cookies(required_data)){
+			return cookies(required_data);
+		} else {
+			return null;
+		}
+	}
+
+	*/
+
+	//TO DO
+	function collectStat(data){
+		console.log("TO DO ADD DATA REPRESENTATION");
+	}
+
+	function testme(animal){
+		return new Promise((resolve, reject) =>{
+			//console.log("I received a " + animal)
+			if (animal == "dog"){//value returned
+				resolve("you get dog food");
+			} else if (animal == "pig"){
+				resolve(animal + " is not a dog")
+			} else {
+				reject(animal + " wtf")
+			}
+			
+		}).then(
+		result=>console.log(result + " DONE!"),
+		error=>console.log(error + " done!")
+		)
+	}
+
+		
+	function promiseMe(n){
+		//n = 10;
+		var promise = Promise.resolve(n*10);
+		promise.then(a=>undefined);//a is n*10, this resolves to undefined
+		promise.then(b=>console.log(b));
+		promise.catch(error=>"yeeet");
+	}
+	function promiseMe2(animal){
+		//n = 10;
+		var dog = new Promise((resolve, reject) => {
+			//console.log("I received a " + animal)
+			if (animal == "dog"){//value returned
+				resolve("you get dog food");
+			} else {//no value returned
+				reject(animal + " is not a dog")
+			}
+		})
+		
+		dog.then(a=>undefined)
+		dog.then(b=>console.log(b))
+		dog.catch(error=>"yeeet");
+	}
+
+
+	async function dog(){
+		var aaa = await testme("dog")
+		console.log(aaa)
+	}
+
+	//Google App Script Debug commands
+	function copyme(trgt){
+		if (!trgt == false){
+			console.log(trgt["data"]);
+		}
+	}
+	function consoleme(trgt){ // remember to use obj["msg"]
+		if (!trgt == false){
+			console.log(trgt["msg"]);
+		}
+	}
+	function alertme(trgt){ // remember to use obj["msg"]
+		if (!trgt == false && typeof(trgt) == "object"){
+			alert(trgt["msg"]);
+		}
+	}
+	var datame;
+	function checkme(data){
+		datame = data;
+		//console.log(data["data"]);
+	}
+
+	function test(){
+		var url = script_url+"?&action=test";
+		var request = jQuery.ajax({
+		crossDomain: true,
+		url: url ,
+		method: "GET",
+		dataType: "jsonp"
+		});
+	}
+
+
+	//SAMPLE AWAIT USE
+	function sec5(){	
+		zzzzzzz = 0;
+		for (i in bad_filter){
+			zzzzzzz++;
+			if (zzzzzzz/7) {
+				zzzzzzz = zzzzzzz + 7;
+			}
+		}
+		return zzzzzzz
+	}
+
+	</script> 
+ 
+	<script>  //astronomy
+	//geolocation from https://stackoverflow.com/questions/391979/how-to-get-clients-ip-address-usin g-javascript
+	function requestAstronomy(request){ //called by register
+		if(getCookie("c_loc")){
+			status = false;
+			console.log("geolocation already exists!")
+		} else if (!request){
+			status = false;
+			var url = script_url+"?action=request_astronomy";
+			var request = jQuery.ajax({
+				crossDomain: true,
+				url: url ,
+				method: "GET",
+				dataType: "jsonp"
+			});
+			console.log("retrieiving geolocation...");
+		} else {
+			status = true
+			$.getJSON('https://api.ipgeolocation.io/astronomy?apiKey=' + request["key"], function(data) {
+				user_ip = data
+				//console.log(data);
+				updateCookie("c_loc",data["location"]["country_code2"]);
+				updateCookie("c_flag","https://ipgeolocation.io/static/flags/" + data["location"]["country_code2"].toLowerCase() + "_64.png");
+				updateCookie("c_sunrise",data["sunrise"].replace(":","::"));
+				updateCookie("c_sunset",data["sunset"].replace(":","::"));
+				updateCookie("c_solar_noon",data["solar_noon"].replace(":","::"));
+				updateCookie("c_moonrise",data["moonrise"].replace(":","::"));
+				updateCookie("c_moonset",data["moonset"].replace(":","::"));
+			});
+			console.log("geolocation retrieved");
+		}
+		return status;
+	}	
+
+	//moon phase from https://gist.github.com/endel/dfe6bb2fbe679781948c
+	console.log("TO DO: ADD requestMoonPhase to AntiSkip");
+	requestMoonPhase();
+	function requestMoonPhase(){ 
+
+		var c = e = jd = b = 0;
+		var today = new Date();
+		var year = today.getFullYear();
+		var month = today.getMonth();
+		var day = today.getDate();
+		if (month < 3) {
+			year--;
+			month += 12;
+		}
+
+		++month;
+
+		c = 365.25 * year;
+
+		e = 30.6 * month;
+
+		jd = c + e + day - 694039.09; //jd is total days elapsed
+
+		jd /= 29.5305882; //divide by the moon cycle
+
+		b = parseInt(jd); //int(jd) -> b, take integer part of jd
+
+		jd -= b; //subtract integer part to leave fractional part of original jd
+
+		b = Math.round(jd * 8); //scale fraction from 0-8 and round
+
+		if (b >= 8 ) {
+		b = 0; //0 and 8 are the same so turn 8 into 0
+
+		}
+		
+		 // 0 => New Moon
+		// 1 => Waxing Crescent Moon
+		// 2 => Quarter Moon
+		// 3 => Waxing Gibbous Moon
+		// 4 => Full Moon
+		// 5 => Waning Gibbous Moon
+		// 6 => Last Quarter Moon
+		// 7 => Waning Crescent Moon
+
+		var phases = ["New Moon", "Waxing Crescent Moon","Quarter Moon","Waxing Gibbous Moon","Full Moon","Waning Gibbous Moon","Last Quarter Moon","Waning Crescent Moon"];
+		updateCookie("c_phase", phases[b],1);
+		console.log("TO DO: replace background with a " + phases[b]);
+		
+	}
+	</script>
+
+	<!-- captcha edited from https://codepen.io/manishjanky/pen/eRNKLL DEPRECEATED DUE TO SECURITY BREACH-->
+
+	<script> //Form Interactivity
+		form_trans = false;
+		form_clicked = false;
+		function FormActive(form){
+			RespForm = document.getElementsByClassName("resp_form")[0];
+			FormPlcHldr = document.getElementsByClassName("FormPlaceholder")[0];
+			LogInForm = document.getElementsByClassName("SelectForm1")[0];
+			RegisterForm = document.getElementsByClassName("SelectForm2")[0];
+			MainForm = document.getElementsByClassName("MainForm")[0];
+			MainForm.style.height = getComputedStyle(MainForm).height;
+			MainForm_nheight = 0
+			UserPlcHldr = document.getElementsByClassName("UsernamePlaceholder")[0];
+			UserAddInfo = document.getElementsByClassName("UsernamePlaceholder")[0].children[2];
+			PassPlcHldr = document.getElementsByClassName("PasswordPlaceholder")[0];
+			PassAddInfo = document.getElementsByClassName("PasswordPlaceholder")[0].children[4];
+			// PassAddInfo = document.getElementsByClassName("PasswordPlaceholder")[0].children[5];
+			ShowPass = document.getElementsByClassName("showpass")[0];
+			HidePass = document.getElementsByClassName("hidepass")[0];
+			CPassPlcHldr = document.getElementsByClassName("ConfirmPasswordPlaceholder")[0];
+			RQPlcHldr = document.getElementsByClassName("RecoveryQuestionPlaceholder")[0];
+			RAPlcHldr = document.getElementsByClassName("RecoveryAnswerPlaceholder")[0];
+			CaptchaPlcHldr = document.getElementsByClassName("CaptchaPlaceholder")[0];
+			LogInBtn = document.getElementsByClassName("LogInBtn")[0];
+			RegisterBtn = document.getElementsByClassName("RegisterBtn")[0];
+			AltSignInPlcHldr = document.getElementsByClassName("AltSignInOpts")[0];
+			ForgetPassPlcHldr = document.getElementsByClassName("ForgotPasswordPlaceholder")[0];
+			
+			c_LogFormClr = getComputedStyle(LogInForm).color;
+			c_LogFormBgClr = getComputedStyle(LogInForm).backgroundColor;
+			c_RegFormClr = getComputedStyle(RegisterForm).color;
+			c_RegFormBgClr = getComputedStyle(RegisterForm).backgroundColor;
+
+
+			if(form_clicked == false){
+				LogInForm.onpointerdown = null;
+				RegisterForm.onpointerdown = null;
+				form_clicked = true;
+				setTimeout(function(){
+					document.getElementsByClassName("SelectForm1")[0].onpointerdown = function(){FormActive(this)};
+					document.getElementsByClassName("SelectForm2")[0].onpointerdown = function(){FormActive(this)};
+					form_clicked = false;
+				},1100);
+			} else {
+				console.log("User reclicked the same form!!!!")
+			}
+
+			if(form == LogInForm && form_trans == false && form_clicked == true){
+				form_trans = true;
+				setTimeout(function(){form_trans = false}, 1100);
+				if(!RegisterBtn.classList.contains("hidden")){
+					console.log("LogInForm detected")
+					form.style.zIndex = 2;
+					form.style.backgroundColor = c_RegFormBgClr;
+					form.style.color = c_RegFormClr;
+					//form.style.fontSize = "1.1em"
+					RegisterForm.style.zIndex = 1;
+					RegisterForm.style.backgroundColor = c_LogFormBgClr;
+					RegisterForm.style.color = c_LogFormClr;
+					inactive_fontsize = getComputedStyle(LogInForm).fontSize;
+					active_fontsize = getComputedStyle(RegisterForm).fontSize;
+					RegisterForm.style.fontSize = inactive_fontsize; 
+					RegisterForm.classList.remove("activeform");
+					RegisterForm.classList.add("inactiveform");
+					LogInForm.classList.remove("inactiveform");
+					LogInForm.classList.add("activeform");
+					RegisterForm.children[0].style.textDecoration = "auto";
+					LogInForm.style.fontSize = active_fontsize;
+					LogInForm.children[0].style.textDecoration = "underline";
+					
+					//new height
+					for  (i = 0; i <= MainForm.children.length; i++){ // try for loop might be smaller
+						//console.log("CHECKING DIV " + i + "!!!!!!")	
+						
+						if ( i < MainForm.children.length){
+							//console.log("passed")
+							// console.log(MainForm.children[i])
+							// console.log(getComputedStyle(MainForm.children[i]).visibility)
+							if (getComputedStyle(MainForm.children[i]).visibility == "hidden"){
+								// console.log(MainForm.children[i].getBoundingClientRect().height);
+								MainForm_nheight = MainForm_nheight + MainForm.children[i].getBoundingClientRect().height;
+							}
+						} else {
+							//console.log("limit")
+							MainForm_nheight = MainForm_nheight + MainForm.children[0].getBoundingClientRect().height + MainForm.children[1].getBoundingClientRect().height + MainForm.children[8].getBoundingClientRect().height + MainForm.children[9].getBoundingClientRect().height;
+							// MainForm_nheight = MainForm_nheight + MainForm.children[0].getBoundingClientRect().height + MainForm.children[1].getBoundingClientRect().height + MainForm.children[8].getBoundingClientRect().height + MainForm.children[9].getBoundingClientRect().height;
+					
+							// console.log(getComputedStyle(MainForm).height);
+							// console.log(getComputedStyle(MainForm).marginBottom);
+							break
+						}
+					}
+					MainForm.style.overflow = "hidden";
+					MainForm.style.height = MainForm_nheight + "px";
+					MainForm.ontransitionend = function(event){event.target.style.overflow = "hidden";};
+					console.log("new height is " + MainForm_nheight)
+					
+					
+					//set current height for MainForm
+					MainForm.style.overflow = "hidden";
+					//MainForm.style.height = MainForm.getBoundingClientRect().height;
+					
+					//reveal
+					UserAddInfo.style.display = "none";
+					PassAddInfo.style.display = "none";
+					HidePass.setAttribute("class", "hidepass");
+					ShowPass.setAttribute("class", "showpass");
+					
+					// AltSignInPlcHldr.onanimationend = (event)=> event.target.className("AltSignInOpts vivify fadeIn delay-1000");
+					AltSignInPlcHldr.onanimationend = function(event){
+						event.target.classList.remove("fadeOut");
+						// event.target.classList.remove("dur-100");
+						event.target.classList.add("fadeInBottom");
+						// event.target.classList.add("delay-400");
+					};
+					AltSignInPlcHldr.className = "AltSignInOpts vivify fadeOut";
+					ForgetPassPlcHldr.onanimationend = (event)=> console.log("boy");
+					ForgetPassPlcHldr.className = "ForgotPasswordPlaceholder vivify fadeIn delay-1500";
+					
+					LogInBtn.className = "LogInBtn vivify fadeIn delay-800";
+					LogInBtn.onanimationend = (event)=> event.target.classList.remove("hidden");
+					
+					//hide
+					// UserPlcHldr.childNodes[7].setAttribute("class","vivify fadeOut");
+					// UserPlcHldr.childNodes[7].style.pointerEvents = "none";
+					UserPlcHldr.childNodes[7].style.display = "none";
+					RegisterBtn.className = "RegisterBtn hidden";
+					CPassPlcHldr.className = "ConfirmPasswordPlaceholder vivify fadeOut";
+					CPassPlcHldr.onanimationend = (event)=> event.target.classList.add("hidden");
+					RQPlcHldr.className = "RecoveryQuestionPlaceholder vivify fadeOut";
+					RQPlcHldr.onanimationend = (event)=> event.target.classList.add("hidden");
+					RAPlcHldr.className = "RecoveryAnswerPlaceholder vivify fadeOut";
+					RAPlcHldr.onanimationend = (event)=> event.target.classList.add("hidden");
+					CaptchaPlcHldr.className = "CaptchaPlaceholder vivify fadeOut";
+					CaptchaPlcHldr.onanimationend = (event)=> event.target.classList.add("hidden");
+					
+					//modify
+
+					// n_borderRadius = getComputedStyle(FormPlcHldr).borderRadius;
+					// n_borderRadius = (n_borderRadius.replaceAll(" ","")).replace("0px","") + " 0px";
+					// FormPlcHldr.style.borderRadius = n_borderRadius;
+
+					FormPlcHldr.style.borderRadius = "12% 0";
+					
+					
+					
+				}
+			} else if (form == RegisterForm && form_trans == false){
+				form_trans = true;
+				setTimeout(function(){form_trans = false}, 1100);
+
+				if(!LogInBtn.classList.contains("hidden")){
+					console.log("RegisterForm detected")
+					form.style.zIndex = 2;
+					form.style.backgroundColor = c_LogFormBgClr; 
+					form.style.color = c_LogFormClr;
+					//form.style.fontSize= "1.1em";
+					
+					LogInForm.style.zIndex = 1;
+					LogInForm.style.backgroundColor = c_RegFormBgClr;
+					LogInForm.style.color = c_RegFormClr;
+					inactive_fontsize = getComputedStyle(RegisterForm).fontSize;
+					active_fontsize = getComputedStyle(LogInForm).fontSize;
+					LogInForm.style.fontSize = inactive_fontsize;
+					LogInForm.classList.remove("activeform");
+					LogInForm.classList.add("inactiveform");
+					RegisterForm.classList.remove("inactiveform");
+					RegisterForm.classList.add("activeform");
+					LogInForm.children[0].style.textDecoration = "auto";
+					RegisterForm.style.fontSize = active_fontsize;
+					RegisterForm.children[0].style.textDecoration = "underline";
+					
+					//new height
+					for  (i = 0; i <= MainForm.children.length; i++){ // try for loop might be smaller
+						//console.log("CHECKING DIV " + i + "!!!!!!")	
+						
+						if ( i < MainForm.children.length){
+							//console.log("passed")
+							// console.log(MainForm.children[i]);
+							// console.log(getComputedStyle(MainForm.children[i]).visibility);
+							
+							if (getComputedStyle(MainForm.children[i]).visibility == "hidden"){
+								// console.log(MainForm.children[i].getBoundingClientRect().height);
+								MainForm_nheight = MainForm_nheight + MainForm.children[i].getBoundingClientRect().height;
+							}
+						} else {
+							//console.log("limit")
+							// console.log(MainForm.children[0]);
+							// console.log(MainForm.children[0].getBoundingClientRect().height);
+							// console.log(MainForm.children[1]);
+							// console.log(MainForm.children[1].getBoundingClientRect().height);
+							// console.log(MainForm.children[9]);
+							// console.log(MainForm.children[9].getBoundingClientRect().height);
+							MainForm_nheight = MainForm_nheight + MainForm.children[0].getBoundingClientRect().height + MainForm.children[1].getBoundingClientRect().height + MainForm.children[8].getBoundingClientRect().height + MainForm.children[9].getBoundingClientRect().height;
+							// console.log(getComputedStyle(MainForm).height);
+							// console.log(getComputedStyle(MainForm).marginBottom);
+							break
+						}
+					}
+					MainForm.style.overflow = "hidden";
+					MainForm.style.height = MainForm_nheight + "px";
+					MainForm.ontransitionend = function(event){event.target.style.overflow = "visible";};
+					console.log("new height is " + MainForm_nheight)
+					
+					//hide
+					HidePass.setAttribute("class", "hidepass hidden");
+					ShowPass.setAttribute("class", "showpass hidden");
+					AltSignInPlcHldr.onanimationend = function(event){
+						event.target.classList.remove("fadeInTop");
+						event.target.classList.remove("dur-10");
+						// event.target.classList.remove("dur-100");
+						// event.target.classList.add("fadeInBottom");
+						// event.target.classList.add("delay-400");
+					};
+					AltSignInPlcHldr.className = "AltSignInOpts vivify fadeInTop dur-100";
+
+
+					ForgetPassPlcHldr.className = "ForgotPasswordPlaceholder vivify fadeOut duration-100";
+					ForgetPassPlcHldr.onanimationend = (event)=> event.target.classList.add("hidden");
+					console.log("hidden was added!")
+					LogInBtn.className = "LogInBtn vivify fadeOut duration-100";
+					LogInBtn.onanimationend = (event)=> event.target.classList.add("hidden");
+					
+					//reveal
+					UserAddInfo.style.display = "inline";
+					PassAddInfo.style.display = "inline";
+					UserPlcHldr.childNodes[3].style.display = "block";
+					UserPlcHldr.childNodes[7].style.display = "block";
+					PassPlcHldr.childNodes[3].style.display = "block";
+					//RegisterBtn.style.display = "block";
+					RegisterBtn.className = "RegisterBtn vivify fadeIn delay-1000";
+					RegisterBtn.onanimationend = (event)=> event.target.classList.remove("hidden");
+					CPassPlcHldr.className = "ConfirmPasswordPlaceholder vivify fadeIn delay-200";
+					CPassPlcHldr.onanimationend = (event)=> event.target.classList.remove("hidden");
+					RQPlcHldr.className = "RecoveryQuestionPlaceholder vivify fadeIn delay-300";
+					RQPlcHldr.onanimationend = (event)=> event.target.classList.remove("hidden");
+					RAPlcHldr.className = "RecoveryAnswerPlaceholder vivify fadeIn delay-400";
+					RAPlcHldr.onanimationend = (event)=> event.target.classList.remove("hidden");
+					CaptchaPlcHldr.className = "CaptchaPlaceholder vivify fadeIn delay-500";
+					CaptchaPlcHldr.onanimationend = (event)=> event.target.classList.remove("hidden");
+					
+					//modify
+					FormPlcHldr.style.borderRadius = "0 12%/6%";
+					// constellation = document.getElementsByTagName("canvas")[0];
+					// constellation.width = window.innerWidth;
+					// constellation.height = window.innerHeight + (window.innerHeight * .25);
+					
+				}
+			} else {
+				console.log("Wait for transition to finish || Can't animate the same form")
+			}
+		}
+		var executed = false;
+		var c_input;
+		var c_key;
+		var valid_char = [];
+		var invalid_char = [" ","!",'"',"#","$","%","&","'","(",")","*","+",",","-",".","/",":",";","<","=",">","?","@","[","]","^","_","`","{","|","}","~"]	
+		function DelEnterBack(e){
+			c_input = e.target;
+			if(e.keyCode == 8 || e.keyCode == 46){ //del Backspace
+				// console.log(c_input.value);
+				if (!c_input == false && c_input.value.length <= 1 ){
+					// console.log("dflt BACKGROUND")
+					c_input.style.cssText = "background-color:";
+				} else { //for selection delete
+					setTimeout(function(){
+						if(c_input.value == ""){
+							// console.log("dflt BACKGROUND");
+							c_input.style.cssText = "background-color:";
+						}
+					},0);
+				}
+			}else if(e.keyCode == 13){ //Enter
+				isDisabled = document.getElementById("LogInBtn").disabled
+				if (executed == false && isDisabled != true){
+					executed = true;
+					LogIn();
+					setTimeout(function(){executed = false},1000)
+				}
+			} else {
+				if (!c_input == false){
+					// console.log("modded BACKGROUND");
+					c_input.style.cssText = "background-color:#FFFFFF !important";
+				}
+			}
+		}
+		function removeSpChar(e){
+			// console.log(e.srcElement.value);
+			trgtArray = e.srcElement.value.split("");
+			var filtered = trgtArray.filter(function(value, index, arr){ 
+        		return invalid_char.indexOf(value) <= -1;
+			});
+			e.srcElement.value = filtered.join().replaceAll(",","").replace(/[^A-Z0-9]+/i, '');
+		}
+		function manualSpCharDel(text){ //used in AltSignIn where it copies its Username; returns new String
+			trgtArray = text.split("");
+			var filtered = trgtArray.filter(function(value, index, arr){ 
+        		return invalid_char.indexOf(value) <= -1;
+			});
+			return filtered.join().replaceAll(",","").replace(/[^A-Z0-9]+/i, '').substring(0,10);
+		}
+		
+		function hasBadword(text){ //returns boolean
+			limit = bad_filter.length;
+			flag = 1;
+			for  (i = 0; i <= (limit-1); i++){
+				if (text.search(bad_filter[i]) >= 0){
+					flag = 0;
+					return bad_filter[i];
+					break;
+				}
+			}
+		}
+		function manualWordFilter(text){ //returns new string
+			limit = bad_filter.length;
+			for  (i = 0; i <= (limit-1); i++){
+				if (text.search(bad_filter[i]) >= 0){
+					if(confirm("Really? ... You want to be called " + bad_filter[i].toUpperCase() + "?")){
+						if(confirm("Last chance mate... You'll be called " + bad_filter[i].toUpperCase()  +" in our Research. Continue?")){
+							return text;
+							break;
+						} else {
+							return text.replace(bad_filter[i],"");
+						}
+					} else {
+						return text.replace(bad_filter[i],"");
+					}
+				}
+				if (i == (limit-1)){
+					console.log("word is clear")
+					return text;
+				}
+			}
+
+		}
+		//Curved Interface Icons from SVG REPO
+
+		function sampleLoop(){
+			trgt = "dog";
+			limit = trgt.length;
+			console.log("LIMIT IS: " + limit);
+			for(i=0;i<=(limit-1);i++){
+				console.log(i);
+				console.log(trgt.charAt(i));
+				if(i == (limit-1)){
+					console.log("ENDDD")
+				}
+			}
+		}
+
+
+		function showpass(){
+			console.log("Pass shown");
+			document.getElementById("Password").type = "text";
+			document.getElementById("cPassword").type = "text";
+			document.getElementsByClassName("hidepass")[0].style.cssText = "display:none;";
+			document.getElementsByClassName("hidepass")[1].style.cssText = "display:none;";
+			document.getElementsByClassName("showpass")[0].style.cssText = "display:inline;";
+			document.getElementsByClassName("showpass")[1].style.cssText = "display:inline;";
+		}
+		function hidepass(){
+			console.log("Pass hidden");
+			document.getElementById("Password").type = "password";
+			document.getElementById("cPassword").type = "password";
+			document.getElementsByClassName("showpass")[0].style.cssText = "display:none;";
+			document.getElementsByClassName("showpass")[1].style.cssText = "display:none;";
+			document.getElementsByClassName("hidepass")[0].style.cssText = "display:inline;";
+			document.getElementsByClassName("hidepass")[1].style.cssText = "display:inline;";
+		}
+
+	
+	</script>
+
+	<script src='https://www.google.com/recaptcha/api.js' defer></script>		
+	<script> //Google Recaptcha Verifier
+		function verifyRecaptcha() {
+			var response = grecaptcha.getResponse();
+			if(response.length == 0) {
+				alert("Please finish the Captcha");
+				// document.getElementById('g-recaptcha-error').innerHTML = '<span style="color:red;">This field is required.</span>';
+				return false; //if invalid
+			}
+			return true; //if correct
+		}
+		
+		function verifyCaptcha() {
+			document.getElementById('g-recaptcha-error').innerHTML = '';
+		}
+	</script>
+		
+	
+	<script> //Alt Options Verifier
+		function verifyAltSignIn(id,name){
+			alert("TO DO: Add modal to say Pls wait a moment...");
+			console.log("TO DO: Verify user using the give ID:" + id + " and Name:" + name);
+			var url = script_url + "?id=" + id + "&username=" + name + "&action=verify_altsignin";
+			var request = jQuery.ajax({
+				crossDomain: true,
+				url: url ,
+				method: "GET",
+				dataType: "jsonp"
+			});
+			window.addEventListener('beforeunload', function (e) {
+				gmailSignOut();
+				fbLogout();
+				console.log("all sign-ins cleared");
+				console.log("verifyAltSignIn was aborted by user!");
+			});
+			
+		}
+		var alt_id;
+		var alt_name;
+		function registerAltSignIn(id, name){
+			alt_id = id;
+			alt_name = name;
+			console.log(id);
+			console.log(name);
+			console.log("AltSignIn wasn't registered!")
+
+			//disable
+			// document.getElementsByClassName("ConfirmPasswordPlaceholder")[0].style.display = "none";
+			document.getElementsByClassName("RecoveryQuestionPlaceholder")[0].style.display = "none";
+			document.getElementsByClassName("RecoveryAnswerPlaceholder")[0].style.display = "none";
+			document.getElementsByClassName("CaptchaPlaceholder")[0].style.display = "none";
+			document.getElementsByClassName("AltSignInOpts")[0].style.display = "none";
+
+			//Insert Values
+			FormActive(document.getElementsByClassName("SelectForm2")[0]);
+			document.getElementById("Username").value = manualSpCharDel(name["name"]);
+			document.getElementById("UserID").value = id["id"];
+			document.getElementById("rQuestion").value = "You either SignIn with Google or Facebook. Please reload the page :)";
+			document.getElementById("rPassword").value = id["id"];
+			
+
+
+
+			
+
+
+
+			// document.getElementById("Password").value = name;
+			// document.getElementById("cPassword").value = name;
+			// document.getElementById("rQuestion").value = "";
+			// document.getElementById("rPassword").value = "";
+			//Username: <insert user name>
+			// Password: optional
+			// Confirm Password: optional
+			// Recovery Question: You used <insert Gmail||Facebook> to sign in>
+			// Recovery Answer: <insert email>
+		}
+	</script>
+	
+	<script> //Google SignIn
+		var g_id;
+		var g_name;
+		function gmailSignIn(googleUser) {
+			var profile = googleUser.getBasicProfile();
+			g_id = profile.getId();
+			g_name = profile.getName();
+			console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
+			console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+			console.log('Name: ' + profile.getName());
+			// console.log('Image URL: ' + profile.getImageUrl());
+			// console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+			// alert("GMAIL USER DETECTED...<verify if exist, else register>")
+			verifyAltSignIn(g_id,g_name);
+		}
+		function gmailError(error) {
+			console.log(error);
+		}
+		function gmailSignOut() {
+			var auth2 = gapi.auth2.getAuthInstance();
+			auth2.signOut().then(function () {
+			console.log('Google User signed out.');
+			console.log('TO DO: Redirect User back to Login Page');
+			});
+		}
+		function gmailRenderButton() {
+			gapi.signin2.render('my-signin2', {
+				'scope': 'profile email',
+				'longtitle': true,
+				'theme': 'dark',
+				'onsuccess': gmailSignIn,
+				'onfailure': gmailError
+			});
+		}
+	</script>
+
+	
+	<!-- <script> //FaceBook SignIn
+		
+		//Check LogIn status
+		
+
+		// FB.login(
+		// function(response) {
+		// 	console.log(response);
+		// },
+		// {
+		// 	scope: 'email',
+		// 	auth_type: 'rerequest'
+		// }
+		// );
+		
+		window.fbAsyncInit = function() {
+		FB.init({
+			appId      : '834608830480015',
+			cookie     : true,
+			xfbml      : true,
+			version    : 'v10.0'
+		});
+			
+		FB.AppEvents.logPageView();   
+			
+		};
+	
+		(function(d, s, id){
+		var js, fjs = d.getElementsByTagName(s)[0];
+		if (d.getElementById(id)) {return;}
+		js = d.createElement(s); js.id = id;
+		js.src = "https://connect.facebook.net/en_US/sdk.js";
+		fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+		
+		// FB.getLoginStatus(function(response) {
+		// 	console.log(response)
+		// 	statusChangeCallback(response);
+		// });
+		
+
+	</script> -->
+
+	<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v10.0&appId=241162521113082&autoLogAppEvents=1" nonce="2l8fyVTj"></script>
+	<script> //SAMPLE FB SIGNIN
+		var f_id;
+		var f_name;
+		function fbCurrentLogInStatus(response) {  		// Called with the results from FB.getLoginStatus().
+			console.log('fbCurrentLogInStatus');
+			console.log(response);                   		// The current login status of the person.
+			if (response.status === 'connected') {  		// Logged into your webpage and Facebook.
+				fbFetchUserData();  
+			} else {                                 		// Not logged into your webpage or we are unable to tell.
+				console.log("no Facebook user detected!")
+				// document.getElementById('status').innerHTML = 'Please log into this webpage.';
+			}
+		}
+	
+		function checkLoginState() {               // Called when a person is finished with the Login Button.
+			FB.getLoginStatus(function(response) {   // See the onlogin handler
+				fbCurrentLogInStatus(response);
+			});
+		}
+		
+		function fbLogout(){
+			FB.logout(function(response) {
+				console.log("USER LOGGED OUT!")
+			});
+		}
+	
+		window.fbAsyncInit = function() {
+		FB.init({
+			appId      : '834608830480015', 
+			cookie     : true,                     // Enable cookies to allow the server to access the session.
+			xfbml      : true,                     // Parse social plugins on this webpage.
+			version    : 'v10.0'           			// Use this Graph API version for this call.
+		});
+	
+	
+		FB.getLoginStatus(function(response) {   		// Called after the JS SDK has been initialized.
+			fbCurrentLogInStatus(response);        // Returns the login status.
+			});
+		};
+	
+		function fbFetchUserData() {                      		// Testing Graph API after login.  See fbCurrentLogInStatus() for when this call is made.
+			FB.api('/me', function(response) {
+				console.log('Successful login for: ' + response.name);
+				f_id = response.id;
+				f_name = response.name;
+				console.log(JSON.stringify(response));
+				verifyAltSignIn(f_id,f_name);
+			});
+		}
+  
+  	</script>
+
+	<script> //Internet Status || Speedtest from https://stackoverflow.com/a/63111121
+		var testConnectionSpeed = {
+		imageAddr : "https://upload.wikimedia.org/wikipedia/commons/a/a6/Brandenburger_Tor_abends.jpg", // this is just an example, you rather want an image hosted on your server
+		downloadSize : 2707459, // this must match with the image above
+		run:function(mbps_max,cb_gt,cb_lt){
+			testConnectionSpeed.mbps_max = parseFloat(mbps_max) ? parseFloat(mbps_max) : 0;
+			testConnectionSpeed.cb_gt = cb_gt;
+			testConnectionSpeed.cb_lt = cb_lt;
+			testConnectionSpeed.InitiateSpeedDetection();
+		},
+		InitiateSpeedDetection: function() {
+			window.setTimeout(testConnectionSpeed.MeasureConnectionSpeed, 1);
+		},
+		result:function(){
+			var duration = (endTime - startTime) / 1000;
+			var bitsLoaded = testConnectionSpeed.downloadSize * 8;
+			var speedBps = (bitsLoaded / duration).toFixed(2);
+			var speedKbps = (speedBps / 1024).toFixed(2);
+			var speedMbps = (speedKbps / 1024).toFixed(2);
+			if(speedMbps >= (testConnectionSpeed.max_mbps ? testConnectionSpeed.max_mbps : 1) ){
+			testConnectionSpeed.cb_gt ? testConnectionSpeed.cb_gt(speedMbps) : false;
+			}else {
+			testConnectionSpeed.cb_lt ? testConnectionSpeed.cb_lt(speedMbps) : false;
+			}
+		},
+		MeasureConnectionSpeed:function() {
+			var download = new Image();
+			download.onload = function () {
+				endTime = (new Date()).getTime();
+				testConnectionSpeed.result();
+			}
+			startTime = (new Date()).getTime();
+			var cacheBuster = "?nnn=" + startTime;
+			download.src = testConnectionSpeed.imageAddr + cacheBuster;
+		}
+		}
+
+		// start test immediatly, you could also call this on any event or whenever you want
+		testConnectionSpeed.run(1.5, function(mbps){console.log("greater than 1.5Mbps ("+mbps+"Mbps)")}, function(mbps){console.log("less than 1.5Mbps("+mbps+"Mbps)")} )
+		console.log("TO DO: Add internet status?? and speed below!");
+
+		window.addEventListener('online',  updateOnlineStatus);
+		window.addEventListener('offline', updateOnlineStatus);
+
+		function updateOnlineStatus(event) {
+			var condition = navigator.onLine ? "online" : "offline";
+			console.log("TO DO: Add modal to detect whether player is online || offline")
+			console.log("Your internet is currently" + condition);
+			alert("Your internet is currently" + condition);
+
+		}
+	</script>
+
+	<script>	//Modal creator
+
+	var modalcount = 0;
+	var modaldur = 10000;
+	var modalQueueTitle = ["Please wait...", "Almost there!", "Hang on...", "In Queue..."]
+	var modalDoneTitle = ["Finish!", "Success!", "Done!"];
+	var modalErrorTitle = ["Oops!", "Sorry...", "Error!"];
+
+	function newModal(type,msg){ // must have Done, Queued, Error, Warning,
+		modalcount++;
+		var xmlns = "http://www.w3.org/2000/svg";
+		var top_modals = document.getElementsByClassName("top_modals")[0];
+		var botright_modals = document.getElementsByClassName("botright_modals")[0];
+		
+
+		if (type == "Queue"){ //round time
+			
+			var newModalgrid = document.createElement("div");
+			newModalgrid.setAttribute("class","Queue vivify fadeInRight");
+
+			var modalIconCont = document.createElement("div");
+			var modalIcon = document.createElement("img");
+			modalIcon.src = "../imgs/Queue.svg"
+			
+			modalIconCont.appendChild(modalIcon);
+
+			var modalTextCont = document.createElement("div");
+			var modalTextHeader = document.createElement("span");
+
+			index = Math.floor(Math.random()*modalQueueTitle.length);
+			console.log(index);
+
+			modalTextHeader.innerText = modalQueueTitle[index];
+			var modalTextContent = document.createElement("p");
+			modalTextContent.innerHTML = msg;
+
+			modalTextCont.appendChild(modalTextHeader);
+			modalTextCont.appendChild(modalTextContent);
+			
+			var modalExitCont = document.createElement("div");
+			var modalExit = document.createElement("span");
+			modalExit.setAttribute("class","close" + modalcount);
+
+			modalExit.innerHTML = "&times;";
+			modalExit.onpointerup = function(event){
+				selfDel_modal(event);
+			};
+			setTimeout(function(c_num){
+				console.log(c_num);
+				trgt = document.getElementsByClassName("close" + c_num)[0];
+				if(trgt != null){
+					console.log(trgt);
+					newclassname = trgt.parentElement.parentElement.classList[0] + " " + trgt.parentElement.parentElement.classList[1] + " " + "fadeOut";
+					trgt.parentElement.parentElement.onanimationend = function(){trgt.parentElement.parentElement.remove();}
+					trgt.parentElement.parentElement.setAttribute("class", newclassname);
+				} else {
+					console.log("Modal was previously closed by user!")
+				}	
+			},modaldur,modalcount);
+			modalExitCont.appendChild(modalExit);
+
+			newModalgrid.appendChild(modalIconCont);
+
+			newModalgrid.appendChild(modalTextCont);
+			newModalgrid.appendChild(modalExitCont);
+
+			botright_modals.appendChild(newModalgrid);
+			// modalcount = modalcount + 1;
+			// console.log("new number is: " + modalcount)
+			// <svg  viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+			// 	<path id="Stroke 1" fill-rule="evenodd" clip-rule="evenodd" d="M21.2498 12C21.2498 17.108 17.1088 21.25 11.9998 21.25C6.89176 21.25 2.74976 17.108 2.74976 12C2.74976 6.891 6.89176 2.75 11.9998 2.75C17.1088 2.75 21.2498 6.891 21.2498 12Z" stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+			// 	<path id="Stroke 3" d="M16.1906 12.7672L11.6606 12.6932V7.84619" stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+			// </svg>
+		} else if (type == "Done"){ // box check
+			
+			var newModalgrid = document.createElement("div");
+			newModalgrid.setAttribute("class","Done vivify fadeInRight");
+			var modalIconCont = document.createElement("div");
+			var modalIcon = document.createElement("img");
+			modalIcon.src = "../imgs/Success.svg"
+			
+			modalIconCont.appendChild(modalIcon);
+
+			var modalTextCont = document.createElement("div");
+			var modalTextHeader = document.createElement("span");
+			
+			index = Math.floor(Math.random()*modalDoneTitle.length);
+			console.log(index);
+
+			modalTextHeader.innerText = modalDoneTitle[index];
+
+			var modalTextContent = document.createElement("p");
+			modalTextContent.innerHTML = msg;
+
+			modalTextCont.appendChild(modalTextHeader);
+			modalTextCont.appendChild(modalTextContent);
+			
+
+			var modalExitCont = document.createElement("div");
+			var modalExit = document.createElement("span");
+			modalExit.setAttribute("class","close" + modalcount);
+
+			modalExit.innerHTML = "&times;";
+			modalExit.onpointerup = function(event){
+				selfDel_modal(event);
+			};
+			setTimeout(function(c_num){
+				console.log(c_num);
+				trgt = document.getElementsByClassName("close" + c_num)[0];
+				if(trgt != null){
+					console.log(trgt);
+					newclassname = trgt.parentElement.parentElement.classList[0] + " " + trgt.parentElement.parentElement.classList[1] + " " + "fadeOut";
+					trgt.parentElement.parentElement.onanimationend = function(){trgt.parentElement.parentElement.remove();}
+					trgt.parentElement.parentElement.setAttribute("class", newclassname);
+				} else {
+					console.log("Modal was previously closed by user!")
+				}
+				
+			},modaldur,modalcount);
+			modalExitCont.appendChild(modalExit);
+
+			modalExitCont.appendChild(modalExit);
+
+			newModalgrid.appendChild(modalIconCont);
+
+			newModalgrid.appendChild(modalTextCont);
+			newModalgrid.appendChild(modalExitCont);
+
+			botright_modals.appendChild(newModalgrid);
+
+			// <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+			// 	<path id="Stroke 1" d="M8.44019 12L10.8142 14.373L15.5602 9.62695" stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+			// 	<path id="Stroke 2" fill-rule="evenodd" clip-rule="evenodd" d="M2.74976 12C2.74976 18.937 5.06276 21.25 11.9998 21.25C18.9368 21.25 21.2498 18.937 21.2498 12C21.2498 5.063 18.9368 2.75 11.9998 2.75C5.06276 2.75 2.74976 5.063 2.74976 12Z" stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+			// </svg>
+		} else if (type == "Error"){ // box X
+			
+			var newModalgrid = document.createElement("div");
+			newModalgrid.setAttribute("class","Error vivify fadeInRight");
+
+			var modalIconCont = document.createElement("div");
+			var modalIcon = document.createElement("img");
+			modalIcon.src = "../imgs/Error.svg"
+			
+			modalIconCont.appendChild(modalIcon);
+
+			var modalTextCont = document.createElement("div");
+			var modalTextHeader = document.createElement("span");
+			
+			index = Math.floor(Math.random()*modalErrorTitle.length);
+			console.log(index);
+
+			modalTextHeader.innerText = modalErrorTitle[index];
+
+			var modalTextContent = document.createElement("p");
+			modalTextContent.innerHTML = msg;
+
+			modalTextCont.appendChild(modalTextHeader);
+			modalTextCont.appendChild(modalTextContent);
+			
+
+			var modalExitCont = document.createElement("div");
+			var modalExit = document.createElement("span");
+			modalExit.setAttribute("class","close" + modalcount);
+
+			modalExit.innerHTML = "&times;";
+			modalExit.onpointerup = function(event){
+				selfDel_modal(event);
+			};
+			setTimeout(function(c_num){
+				console.log(c_num);
+				trgt = document.getElementsByClassName("close" + c_num)[0];
+				if(trgt != null){
+					console.log(trgt);
+					newclassname = trgt.parentElement.parentElement.classList[0] + " " + trgt.parentElement.parentElement.classList[1] + " " + "fadeOut";
+					trgt.parentElement.parentElement.onanimationend = function(){trgt.parentElement.parentElement.remove();}
+					trgt.parentElement.parentElement.setAttribute("class", newclassname);
+				} else {
+					console.log("Modal was previously closed by user!")
+				}	
+			},modaldur,modalcount);
+			modalExit.innerHTML = "&times;";
+			modalExitCont.appendChild(modalExit);
+
+			newModalgrid.appendChild(modalIconCont);
+
+			newModalgrid.appendChild(modalTextCont);
+			newModalgrid.appendChild(modalExitCont);
+
+			botright_modals.appendChild(newModalgrid);
+			// <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+			// 	<path id="Stroke 1" d="M14.3941 9.59473L9.60205 14.3867" stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+			// 	<path id="Stroke 2" d="M14.3999 14.393L9.59985 9.59302" stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+			// 	<path id="Stroke 3" fill-rule="evenodd" clip-rule="evenodd" d="M2.75 12C2.75 18.937 5.063 21.25 12 21.25C18.937 21.25 21.25 18.937 21.25 12C21.25 5.063 18.937 2.75 12 2.75C5.063 2.75 2.75 5.063 2.75 12Z" stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+			// </svg>
+		} else if (type == "Warning"){// triangle exclamation
+			
+			var newModalgrid = document.createElement("div");
+			newModalgrid.setAttribute("class","Warning");
+
+			var modalIconCont = document.createElement("div");
+			modalIconCont.setAttribute("class","icon");
+
+			var modalIcon = document.createElement("img");
+			modalIcon.src = "../imgs/Warning.svg"
+			
+			modalIconCont.appendChild(modalIcon);
+
+			var modalTextCont = document.createElement("div");
+			modalTextCont.setAttribute("class","content");
+
+			var modalTextHeader = document.createElement("span"); //header			
+			modalTextHeader.innerText = "Warning";
+
+			var modalTextContent = document.createElement("p");	//content
+			modalTextContent.innerHTML = msg;
+
+			var modalTrueBtn = document.createElement("span"); //True
+			modalTrueBtn.innerText = "Yes";
+			modalTrueBtn.setAttribute("class", "TrueBtn");
+
+			var modalFalseBtn = document.createElement("span"); //False
+			modalFalseBtn.innerText = "No";
+			modalFalseBtn.setAttribute("class", "FalseBtn");
+
+
+
+			modalTextCont.appendChild(modalTextHeader);
+			modalTextCont.appendChild(modalTextContent);
+
+			newModalgrid.appendChild(modalIconCont);
+			newModalgrid.appendChild(modalTextCont);
+			newModalgrid.appendChild(modalTrueBtn);
+			newModalgrid.appendChild(modalFalseBtn);
+
+			top_modals.appendChild(newModalgrid);
+			
+			// <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+			// 	<path id="Stroke 3" fill-rule="evenodd" clip-rule="evenodd" d="M12 21C5.50558 21 2.95666 20.5387 2.54353 18.2033C2.13039 15.8679 4.77383 11.4774 5.58842 10.0285C8.31257 5.18408 10.1637 3 12 3C13.8363 3 15.6874 5.18408 18.4116 10.0285C19.2262 11.4774 21.8696 15.8679 21.4565 18.2033C21.0444 20.5387 18.4944 21 12 21Z" stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+			// 	<path id="Stroke 3_2" d="M12 8.5V12.395" stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+			// 	<path id="Stroke 15" d="M11.9957 15.895H12.0047" stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+			// </svg>
+		} else {
+			alert("Invalid type on parameter1 of newModal()")
+		}
+	}
+	function selfDel_modal(event){
+		mm = event;
+		// console.log(event);
+		// console.log(event.srcElement);
+		console.log("Element.className " + event.srcElement.className + " was removed!");
+		c_class = event.srcElement.parentElement.parentElement.classList[0] + " " + event.srcElement.parentElement.parentElement.classList[1]; 
+		newclassname = c_class + " " + "fadeOut";
+		event.srcElement.parentElement.parentElement.onanimationend = function(event){event.target.remove()};
+		event.srcElement.parentElement.parentElement.setAttribute("class", newclassname);
+	}
+	</script>
+
+	<script>	//constellation generator
+	var pointer = {
+		x: undefined,
+		y: undefined
+	}
+	var ctx;
+	var starArray = [];
+	var moonArray = [];
+	// var colorArray = ["#ffffff","#ffff00","#ff00ff","#00ffff","#ff0000","#0000ff","#00ff00"]
+	var colorArray = [
+			"9, 82 , 189",
+			"165, 191, 240",
+			"17, 140, 214",
+			"26, 174, 232",
+			"242, 232, 201"
+	];
+
+	// var colorArray = [
+	// 		"216,153,170,",
+	// 		"38,12,29",
+	// 		"114,64,101",
+	// 		"43,24,63",
+	// ];
+	function constellation_setup(){
+		var constellation = document.getElementsByTagName("canvas")[0];
+		var const_cont = document.getElementsByClassName("const_cont")[0];
+		console.log(constellation);
+		// constellation.width = (getComputedStyle(const_cont).width).replaceAll("px","");
+		// constellation.height = (getComputedStyle(const_cont).height).replaceAll("px","");
+		
+		// constellation.height = innerHeight;
+		// constellation.width = innerWidth;
+		
+		constellation.height = window.innerHeight;
+		constellation.width = window.innerWidth;
+		// constellation.height = innerHeight;
+		// if (innerWidth < 768){
+		// 	constellation.height = window.innerHeight *1.25;
+		// } else {
+		// 	constellation.height = window.innerHeight;
+		// }
+		ctx =  constellation .getContext("2d");
+		// ctx.fillStyle = "red"
+		// ctx.fillRect(50, 50, 100, 100);
+
+		// animate();
+	}
+
+	function crt_star(x,y,radius,alpha,color,increment){
+		this.x = x;
+		this.y = y;
+		this.radius = radius
+		// this.hr = hr;	//horizontal radius
+		// this.vr = vr;	//vertical radius
+		// this.color = colorArray[Math.floor(Math.random() * colorArray.length)];
+		this.alpha = alpha;
+		this.increment = increment;
+		this.dx = this.increment;
+		this.dy = this.increment;
+		this.boost = 1;
+		this.color = color;
+		this.shadow = "rgb(" + this.color + ")"
+		// this.fill = "rgba("+ this.color + "," + this.alpha + ")";
+
+		this.draw = function(){
+
+			ctx.save();
+			ctx.beginPath();
+			ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);	
+			// ctx.shadowColor = this.shadow;
+			ctx.shadowColor = "rgb(" + this.color + ")";
+			ctx.shadowBlur = this.radius * this.alpha * 4;
+			ctx.shadowOffsetX = 0;
+			ctx.shadowOffsetY = 0;
+			ctx.fillStyle = "rgba("+ this.color + "," + this.alpha + ")";
+			ctx.fill();
+			ctx.closePath();
+			ctx.restore();
+
+
+			// //shadows
+			// ctx.shadowColor = "rgb(" + this.color + ")";
+			// ctx.shadowBlur = this.radius * this.alpha;
+			// ctx.shadowOffsetX = 0;
+			// ctx.shadowOffsetY = 0;
+
+
+			// //rectangle
+			// ctx.fillStyle= this.fill;
+			// ctx.fillRect(this.x, this.y, this.hr, this.vr)
+		}
+
+		this.update = function(){
+			this.draw();
+			// console.log(this.alpha);
+			// console.log(this.color);
+			if (this.alpha > 1 || this.alpha < 0 ){ //opacity manager
+				this.increment = -this.increment;
+				
+				if (this.alpha < 0){
+					chance = Math.random();
+					this.color = colorArray[Math.floor(Math.random() * colorArray.length)];
+
+					if (chance >= 0.75){
+						this.x = Math.random() * (innerWidth - (radius * 2)) + radius;
+						this.y = Math.random() * (innerHeight - (radius * 2)) + radius;
+					}
+				}
+			} else if (this.alpha == 1.2 || this.alpha == -0.2){
+				alert("SOMETHING WENT WRONG!")
+				stop_Anim();
+			}
+			
+			if (this.x + this.radius > innerWidth/2){ //horizontal speed
+				this.dx = Math.abs(this.dx);
+			} else {
+				this.dx = -(Math.abs(this.dx));
+			}
+			
+			if (this.y + this.radius > innerHeight/2){ //vertical speed
+				this.dy = Math.abs(this.dy);
+			} else {
+				this.dy = -(Math.abs(this.dy));
+			}
+
+			//interactivity
+			if (pointer.x - this.x < 20 && pointer.x - this.x > -20 && pointer.y - this.y < 20 && pointer.y - this.y > -20){
+				this.boost += 2;
+			} else {
+				if (this.boost != 1){
+					this.boost -= 2;
+				}
+			}
+
+			this.alpha = this.alpha + this.increment;
+			// this.fill = "rgba("+ this.color + "," + this.alpha + ")";
+			this.x += this.dx * 20 * this.boost;
+			this.y += this.dy * 20 * this.boost; 
+			// ctx.shadowColor = this.shadow;
+			// ctx.shadowBlur = this.radius * this.alpha * 4;
+			// ctx.fillStyle= this.fill;
+
+			this.draw();
+		}
+	}
+	
+	function crt_moon(mphase){
+		
+		this.radius = 50;
+		this.alpha = 1;
+		this.increment = 0.01;
+
+		// 0 => New Moon
+		// 1 => Waxing Crescent Moon
+		// 2 => Quarter Moon
+		// 3 => Waxing Gibbous Moon
+		// 4 => Full Moon
+		// 5 => Waning Gibbous Moon
+		// 6 => Last Quarter Moon
+		// 7 => Waning Crescent Moon
+		//NewMn 				mnPos 0 	mnRd 50 shdwPos 0 		shdwRad 0
+		//WxCrs 				mnPos 0	 	mnRd 50 shdwPos -25 	shdwRad 55 || 40
+		// 1stQtr 				mnPos 0 	mnRd 50 shdwPos -250 	shdwRad 250
+		//WxGb 					mnPos 25 	mnRd 50 shdwPos 0 		shdwRad 50
+		
+		//FullMoon 				mnPos 0 	mnRd 50 shdwPos 9999 	shdwRad 50
+		//WnGb 					mnPos -25 	mnRd 50 shdwPos 0 		shdwRad 50
+		//3rdQtr 				mnPos 0 	mnRd 50 shdwPos 250 	shdwRad 250
+		//WnCrs 				mnPos 0 	mnRd 50 shdwPos 25 		shdwRad 55 || 40
+		
+		if (mphase == "New Moon"){
+			this.mnPos = this.radius * 0;
+			this.mnRad = this.radius * 1;
+			this.shdwPos = this.radius * 0;
+			this.shdwRad = this.radius * 0;
+		} else if (mphase == "Waxing Crescent Moon"){
+			this.mnPos = this.radius * 0;
+			this.mnRad = this.radius * 1;
+			this.shdwPos = this.radius * -0.5;
+			this.shdwRad = this.radius * 1.1;
+		} else if (mphase == "Quarter Moon"){
+			this.mnPos = this.radius * 0;
+			this.mnRad = this.radius * 1;
+			this.shdwPos = this.radius * -5;
+			this.shdwRad = this.radius * 5;
+		} else if (mphase == "Waxing Gibbous Moon"){
+			this.mnPos = this.radius * 0.5;
+			this.mnRad = this.radius * 1;
+			this.shdwPos = this.radius * 0;
+			this.shdwRad = this.radius * 1;
+		} else if (mphase == "Full Moon"){
+			this.mnPos = this.radius * -0.5;
+			this.mnRad = this.radius * 1;
+			this.shdwPos = this.radius * 200;
+			this.shdwRad = this.radius * 1;
+		} else if (mphase == "Waning Gibbous Moon"){
+			this.mnPos = this.radius * 0;
+			this.mnRad = this.radius * 1;
+			this.shdwPos = this.radius * 0;
+			this.shdwRad = this.radius * 1;
+		} else if (mphase == "Last Quarter Moon"){
+			this.mnPos = this.radius * 0;
+			this.mnRad = this.radius * 1;
+			this.shdwPos = this.radius * 5;
+			this.shdwRad = this.radius * 5;
+		} else if (mphase == "Waning Crescent Moon"){
+			this.mnPos = this.radius * 0;
+			this.mnRad = this.radius * 1;
+			this.shdwPos = this.radius * .5;
+			this.shdwRad = this.radius * 1.1;
+		}
+
+
+		
+
+
+		this.draw = function(){	
+			//Moon patches
+			
+			ctx.beginPath();
+			ctx.arc((innerWidth/2)  - 5, (innerHeight * .8) - 10, 15, 0, Math.PI * 2, false);
+			ctx.fillStyle = "#A6A6A6";
+			ctx.fill();
+			ctx.closePath();
+			ctx.arc(innerWidth/2  - 5, (innerHeight * .8) - 10, 15, 0, Math.PI * 2, false);
+			ctx.fillStyle = "#595959";
+			ctx.fill();
+			ctx.closePath();
+
+			ctx.beginPath()
+			ctx.arc(innerWidth/2 - 45, (innerHeight * .8) - 15, 8, 0, Math.PI * 2, false);
+			ctx.fillStyle = "#A6A6A6";
+			ctx.fill();
+			ctx.closePath();
+			ctx.beginPath();
+			ctx.arc(innerWidth/2 - 45, (innerHeight * .8) - 15, 8, 0, Math.PI * 2, false);
+			ctx.fillStyle = "#595959";
+			ctx.fill();
+			ctx.closePath()
+
+			ctx.beginPath()
+			ctx.arc(innerWidth/2 - 15, (innerHeight * .8) - 40, 9, 0, Math.PI * 2, false);
+			ctx.fillStyle = "#A6A6A6";
+			ctx.fill();
+			ctx.closePath();
+			ctx.beginPath();
+			ctx.arc(innerWidth/2 - 15, (innerHeight * .8) - 40, 9, 0, Math.PI * 2, false);
+			ctx.fillStyle = "#595959";
+			ctx.fill();
+			ctx.closePath()
+
+			ctx.beginPath()
+			ctx.arc(innerWidth/2 + 15, (innerHeight * .8) - 30, 7, 0, Math.PI * 2, false);
+			ctx.fillStyle = "#A6A6A6";
+			ctx.fill();
+			ctx.closePath();
+			ctx.beginPath();
+			ctx.arc(innerWidth/2 + 15, (innerHeight * .8) - 30, 7, 0, Math.PI * 2, false);
+			ctx.fillStyle = "#595959";
+			ctx.fill();
+			ctx.closePath()
+
+			ctx.beginPath()
+			ctx.arc(innerWidth/2 + 25, (innerHeight * .8) + 35, 20, 0, Math.PI * 2, false);
+			ctx.fillStyle = "#A6A6A6";
+			ctx.fill();
+			ctx.closePath();
+			ctx.beginPath();
+			ctx.arc(innerWidth/2 + 25, (innerHeight * .8) + 35, 20, 0, Math.PI * 2, false);
+			ctx.fillStyle = "#595959";
+			ctx.fill();
+			ctx.closePath()
+
+			ctx.beginPath()
+			ctx.arc(innerWidth/2 - 10, (innerHeight * .8) + 35, 8, 0, Math.PI * 2, false);
+			ctx.fillStyle = "#A6A6A6";
+			ctx.fill();
+			ctx.closePath();
+			ctx.beginPath();
+			ctx.arc(innerWidth/2 - 10, (innerHeight * .8) + 35, 8, 0, Math.PI * 2, false);
+			ctx.fillStyle = "#595959";
+			ctx.fill();
+			ctx.closePath()
+
+			ctx.beginPath()
+			ctx.arc(innerWidth/2 + 35, (innerHeight * .8) + 1, 5, 0, Math.PI * 2, false);
+			ctx.fillStyle = "#A6A6A6";
+			ctx.fill();
+			ctx.closePath();
+			ctx.beginPath();
+			ctx.arc(innerWidth/2 + 35, (innerHeight * .8) + 1, 5, 0, Math.PI * 2, false);
+			ctx.fillStyle = "#595959";
+			ctx.fill();
+			ctx.closePath()
+			
+
+			//Main moon
+			
+			
+			
+
+			ctx.globalCompositeOperation = "destination-atop";
+
+			mnPos = 25 //to be used by Wanning & Waxing Gibbous only || else 0 
+			mnRad =  55
+
+
+			ctx.save();
+			ctx.beginPath();
+			ctx.arc((innerWidth/2) + mnPos, innerHeight * .8, mnRad, 0, Math.PI * 2, false);	
+			ctx.fillStyle =  "#D9D9D9";
+			// ctx.fillStyle =  "#0D0D0D";
+			ctx.fill();
+			ctx.closePath();
+			ctx.restore();
+
+			//shadow
+
+			// fullMn > WnGb > 3rdQtr > WnCrs > NewMn > WxCrs > 1stQtr > WxGb
+			//FullMoon mnPos 0 mnRd 50 shdwPos 9999 shdwRad 50
+			//WnGb mnPos -25 mnRd 50 shdwPos 0 shdwRad 50
+			//3rdQtr mnPos 0 mnRd 50 shdwPos 250 shdwRad 250
+			//WnCrs mnPos 0 mnRd 50 shdwPos 25 shdwRad 55 || 40
+			//NewMn mnPos 0 mnRd 50 shdwPos 0 shdwRad
+			//WxCrs mnPos 0 mnRd 50 shdwPos -25 shdwRad 55 || 40
+			// 1stQtr mnPos 0 mnRd 50 shdwPos -250 shdwRad 250
+			//WxGb mnPos 25 mnRd 50 shdwPos 0 shdwRad 50
+			// ctx.globalCompositeOperation = "destination-out" // cannot be used because stars shouldn't pass through the moon's shadow
+			// ctx.globalCompositeOperation = "source-atop"
+			ctx.globalCompositeOperation = "destination-atop" //for Wanning & Waxing Gibbous only!
+
+			shdwPos = 0;
+			shdwRad = 50;
+
+
+			ctx.beginPath();	
+			ctx.arc((innerWidth/2) + shdwPos, innerHeight * .8, shdwRad, 0, Math.PI * 2, false);
+			ctx.fillStyle = "#0D0D0D";
+			// ctx.fillStyle = "#D9D9D9";
+			ctx.fill();
+			ctx.closePath();
+			
+			// //Glow
+			ctx.globalCompositeOperation = "destination-over"; //back light
+
+			ctx.save();
+			ctx.beginPath();
+			ctx.arc((innerWidth/2), (innerHeight * .8) + 500, 50, 0, Math.PI * 2, false);	
+			ctx.shadowColor = "rgba(255,255,255, .75)";
+			ctx.shadowBlur = 25 * 4;
+			ctx.shadowOffsetX = 0;
+			ctx.shadowOffsetY = -500;
+			ctx.fillStyle =  "red";
+			ctx.fill();
+			ctx.closePath();
+			ctx.restore();
+
+			ctx.globalCompositeOperation = "source-over"; //front light
+
+			ctx.save();
+			ctx.beginPath();
+			ctx.arc((innerWidth/2), (innerHeight * .8) + 500, 50, 0, Math.PI * 2, false);	
+			ctx.shadowColor = "rgba(235,200,21,.125)";
+			ctx.shadowBlur = 25 * 2;
+			ctx.shadowOffsetX = 0;
+			ctx.shadowOffsetY = -500;
+			ctx.fillStyle =  "red";
+			ctx.fill();
+			ctx.closePath();
+			ctx.restore();
+			
+
+
+			ctx.globalCompositeOperation = "destination-over" //resets the position to the let the stars spawn
+			//colors of the moon
+			//main #D9D9D9
+			//patch #A6A6A6 #595959
+			//shade #262626 #0D0D0D
+		}
+
+		this.update = function(){
+			this.draw();
+
+			if (this.alpha > 1 || this.alpha < 0 ){ //opacity manager
+				this.increment = -this.increment;
+			}
+			this.alpha = this.alpha + this.increment;
+			
+			this.draw();
+		}
+	}
+
+	function test_star(){
+		starArray.push(new crt_star(100,100,50,0.5,"#FFFFFF",0.1))
+	}
+
+
+	for(i=0;i<1;i++){ //moon generator
+		moonArray.push( new crt_moon())
+	}
+
+	if (innerWidth <= 768){
+		starcnt = 50;
+	} else if (innerWidth <= 992){
+		starcnt = 100;
+	} else {
+		starcnt = 150;
+	}
+
+	for (i=0;i<starcnt;i++){ // star generator
+		var radius = Math.random() * 3 + 0.5;
+		var x = Math.random() * (innerWidth - (radius * 2)) + radius;
+		var y = Math.random() * (innerHeight - (radius * 2)) + radius;
+		
+		// var hr = radius;
+		// var vr = radius;
+		var alpha = Math.round(Math.random() * 100) / 100;
+		var color = colorArray[Math.floor(Math.random() * colorArray.length)];
+		var chance = Math.random();
+		if (chance > 0.75){
+			var increment = 0.01;
+		} else if (chance > 0.5){
+			var increment = 0.005;
+		} else {
+			var increment = 0.001;
+		}
+
+		// starArray.push(new crt_star(x,y,hr,vr,alpha,color))
+		starArray.push(new crt_star(x,y,radius,alpha,color,increment))
+	}
+
+	function init(){
+		console.log("init fired")
+		starArray.length = 0;
+		for (i=0;i<50;i++){
+			var radius = Math.random() * 3 + 0.5;
+			var x = Math.random() * (innerWidth - (radius * 2)) + radius;
+			var y = Math.random() * (innerHeight - (radius * 2)) + radius;
+
+			// var hr = radius;
+			// var vr = radius;
+			var alpha = Math.round(Math.random() * 100) / 100;
+			var color = colorArray[Math.floor(Math.random() * colorArray.length)];
+			var chance = Math.random();
+			if (chance > 0.75){
+				var increment = 0.01;
+			} else if (chance > 0.5){
+				var increment = 0.001;
+			} else {
+				var increment = 0.0005;
+			}
+
+			// starArray.push(new crt_star(x,y,hr,vr,alpha,color))
+			starArray.push(new crt_star(x,y,radius,alpha,color,increment))
+		}
+	}
+	
+	var stopAnim = false;
+	var globalID;
+
+	function animate(){
+		// console.log(stopAnim);
+		if (stopAnim == true || stopAnim == "true"){
+			// console.log("anim stopped")
+		} else {
+			globalID = requestAnimationFrame(animate);
+			ctx.clearRect(0,0,innerWidth,innerHeight);
+			for (i=0;i<moonArray.length;i++){
+				console.log("B")
+				moonArray[i].update();
+			}
+			for (i=0;i<starArray.length;i++){
+				console.log("A")
+				starArray[i].update();
+			}
+		}
+	}
+	
+	function stop_Anim(){
+		cancelAnimationFrame(globalID)
+		console.log("Prev val of anim was " + stopAnim);
+		stopAnim = true;
+		console.log("Anim force stopped")
+		console.log(stopAnim);
+	}
+	setTimeout(function(){constellation_setup();},1000);
+	setTimeout(function(){animate();},1100);
+
+	window.onresize = function(){
+			var constellation = document.getElementsByTagName("canvas")[0];
+			constellation.width = window.innerWidth;
+			constellation.height = window.innerHeight;
+			// if (innerWidth < 768){
+			// 	constellation.height = window.innerHeight *1.25;
+			// } else {
+			// 	constellation.height = window.innerHeight;
+			// }
+			
+			init();
+	}
+	window.onbeforeunload = function(){
+		stop_Anim();
+	}
+	window.addEventListener('pointerdown',function(event){
+		console.log(event.x);
+		console.log(event.y)
+		pointer.x = event.x;
+		pointer.y = event.y; 
+	})
+	window.addEventListener('pointermove',function(event){
+		console.log(event.x);
+		console.log(event.y)
+		pointer.x = event.x;
+		pointer.y = event.y; 
+	})
+	
+	
+	</script>
+
+</head>
+<body onload="gmailRenderButton()">
+
+
+<div id="fb-root"></div>
+<div class="const_cont">
+	<canvas class="constellation"></canvas>
+</div>
+<div class="top_modals">
+	<!-- insert cookie and yt modal chkpnt here -->
+</div>
+
+<div class="botright_modals">
+</div>
+
+<div class="resp_form">
+	<div class="FormPlaceholder">
+		<div class="SelectFormPlaceholder">
+			<div class="SelectForm1 activeform" onpointerdown="FormActive(this)"><p>LogIn</p></div>
+			<div class="SelectForm2" onpointerdown="FormActive(this)"><p>Register</p></div>
+		</div>		
+		<div class="MainForm" onresize="resize_Canvas()">
+			<div class="UsernamePlaceholder">
+				<label for="Username">Username:</label>
+				<input type="text" name="username" autocomplete="off" oninput="removeSpChar(event)" onkeydown="DelEnterBack(event)" id="Username" maxlength="10">
+				<input type="hidden" name="userid" id="UserID">
+				<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path fill-rule="evenodd" clip-rule="evenodd" d="M21.2502 12C21.2502 18.937 18.9372 21.25 12.0002 21.25C5.06324 21.25 2.75024 18.937 2.75024 12C2.75024 5.063 5.06324 2.75 12.0002 2.75C18.9372 2.75 21.2502 5.063 21.2502 12Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+					<path d="M12.0002 15.895V12" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+					<path d="M12.0045 8.5H11.9955" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+				</svg>
+				<span>At most 10 characters only and no special characters</span>
+			
+			</div>
+			<div class="PasswordPlaceholder">
+				<label for="Password">Password:</label>
+				<input type="password" name="password" autocomplete="off" onkeydown="DelEnterBack(event)" id="Password">
+				<svg class="showpass" onpointerdown="hidepass(event)" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path fill-rule="evenodd" clip-rule="evenodd" d="M2.75024 12.052C2.75024 15.332 6.89224 19.354 12.0022 19.354C17.1112 19.354 21.2542 15.335 21.2542 12.052C21.2542 8.769 17.1112 4.75 12.0022 4.75C6.89224 4.75 2.75024 8.772 2.75024 12.052Z" stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+					<path fill-rule="evenodd" clip-rule="evenodd" d="M15.1643 12.0519C15.1643 13.7979 13.7483 15.2139 12.0023 15.2139C10.2563 15.2139 8.84033 13.7979 8.84033 12.0519C8.84033 10.3049 10.2563 8.88989 12.0023 8.88989C13.7483 8.88989 15.1643 10.3049 15.1643 12.0519Z" stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+				</svg>
+				<svg class="hidepass" onpointerdown="showpass(event)" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M6.42 17.7298C4.19 16.2698 2.75 14.0698 2.75 12.1398C2.75 8.85984 6.89 4.83984 12 4.83984C14.09 4.83984 16.03 5.50984 17.59 6.54984" stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+					<path d="M19.8498 8.61035C20.7408 9.74035 21.2598 10.9904 21.2598 12.1404C21.2598 15.4204 17.1098 19.4404 11.9998 19.4404C11.0898 19.4404 10.2008 19.3104 9.36975 19.0804" stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+					<path d="M9.76572 14.3672C9.17072 13.7782 8.83772 12.9752 8.84072 12.1382C8.83672 10.3932 10.2487 8.97518 11.9947 8.97218C12.8347 8.97018 13.6407 9.30318 14.2347 9.89718" stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+					<path d="M15.1095 12.6992C14.8755 13.9912 13.8645 15.0042 12.5725 15.2412" stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+					<path d="M19.8917 4.25L4.11768 20.024" stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+				</svg>
+				<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path fill-rule="evenodd" clip-rule="evenodd" d="M21.2502 12C21.2502 18.937 18.9372 21.25 12.0002 21.25C5.06324 21.25 2.75024 18.937 2.75024 12C2.75024 5.063 5.06324 2.75 12.0002 2.75C18.9372 2.75 21.2502 5.063 21.2502 12Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+					<path d="M12.0002 15.895V12" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+					<path d="M12.0045 8.5H11.9955" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+				</svg>
+				<span> Try adding upper & lower case letters, numbers, and symbols </span>
+			</div>
+			<div class="ConfirmPasswordPlaceholder hidden">
+				<label for="cPassword">Confirm Password:</label>
+				<!-- <span>Retype your password</span> -->
+				<input type="password" name ="cpassword" autocomplete="off" onkeydown="DelEnterBack(event)" id="cPassword" >
+				<svg class="showpass" onpointerdown="hidepass(event)" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path fill-rule="evenodd" clip-rule="evenodd" d="M2.75024 12.052C2.75024 15.332 6.89224 19.354 12.0022 19.354C17.1112 19.354 21.2542 15.335 21.2542 12.052C21.2542 8.769 17.1112 4.75 12.0022 4.75C6.89224 4.75 2.75024 8.772 2.75024 12.052Z" stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+					<path fill-rule="evenodd" clip-rule="evenodd" d="M15.1643 12.0519C15.1643 13.7979 13.7483 15.2139 12.0023 15.2139C10.2563 15.2139 8.84033 13.7979 8.84033 12.0519C8.84033 10.3049 10.2563 8.88989 12.0023 8.88989C13.7483 8.88989 15.1643 10.3049 15.1643 12.0519Z" stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+				</svg>
+				<svg class="hidepass" onpointerdown="showpass(event)" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M6.42 17.7298C4.19 16.2698 2.75 14.0698 2.75 12.1398C2.75 8.85984 6.89 4.83984 12 4.83984C14.09 4.83984 16.03 5.50984 17.59 6.54984" stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+					<path d="M19.8498 8.61035C20.7408 9.74035 21.2598 10.9904 21.2598 12.1404C21.2598 15.4204 17.1098 19.4404 11.9998 19.4404C11.0898 19.4404 10.2008 19.3104 9.36975 19.0804" stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+					<path d="M9.76572 14.3672C9.17072 13.7782 8.83772 12.9752 8.84072 12.1382C8.83672 10.3932 10.2487 8.97518 11.9947 8.97218C12.8347 8.97018 13.6407 9.30318 14.2347 9.89718" stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+					<path d="M15.1095 12.6992C14.8755 13.9912 13.8645 15.0042 12.5725 15.2412" stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+					<path d="M19.8917 4.25L4.11768 20.024" stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+				</svg>
+			</div>
+			<div class="RecoveryQuestionPlaceholder hidden">
+				<label for="rQuestion">Recovery Question:</label>
+				<input type="text" name ="recques" autocomplete="off" onkeydown="DelEnterBack(event)" placeholder="e.g. My favorite place is?" id="rQuestion" >
+				<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path fill-rule="evenodd" clip-rule="evenodd" d="M21.2502 12C21.2502 18.937 18.9372 21.25 12.0002 21.25C5.06324 21.25 2.75024 18.937 2.75024 12C2.75024 5.063 5.06324 2.75 12.0002 2.75C18.9372 2.75 21.2502 5.063 21.2502 12Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+					<path d="M12.0002 15.895V12" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+					<path d="M12.0045 8.5H11.9955" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+				</svg>
+				<span>Add a Recovery Question just incase you forgot your password</span>
+			</div>
+			<div class="RecoveryAnswerPlaceholder hidden">
+				<label for="rPassword">Recovery Answer:</label>
+				<input type="text" name ="recans" autocomplete="off" onkeydown="DelEnterBack(event)" placeholder="e.g. Antartica"id="rPassword">
+				<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path fill-rule="evenodd" clip-rule="evenodd" d="M21.2502 12C21.2502 18.937 18.9372 21.25 12.0002 21.25C5.06324 21.25 2.75024 18.937 2.75024 12C2.75024 5.063 5.06324 2.75 12.0002 2.75C18.9372 2.75 21.2502 5.063 21.2502 12Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+					<path d="M12.0002 15.895V12" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+					<path d="M12.0045 8.5H11.9955" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+				</svg>
+				<span> Only you must know the answer and it cannot be found elsewhere</span>
+			</div>		
+			<div class="CaptchaPlaceholder hidden">
+				<label>Captcha:</label>
+				<div class="g-recaptcha" data-sitekey="6LdaHtQaAAAAAFRKQQ3qAt3rYhh1Cac_htaDzVMV" data-callback="verifyCaptcha"></div>
+				<div id="g-recaptcha-error"></div>
+			</div>
+			<input type="button" class="LogInBtn" onpointerdown="LogIn(); return verifyRecaptcha()" value="LogIn" />
+			<input type="button" class="RegisterBtn hidden" onpointerdown="Register()" value="Register" />
+			
+			<!-- <div id="GoogleSignIn" class="g-signin2" data-onsuccess="onSignIn"></div> -->
+			<div class="AltSignInOpts">
+				<p id="AltSignLineBreak">- - - OR - - -</p>
+				<div id="my-signin2"></div>
+				<div class="fb-login-button" on-login="checkLoginState()" data-scope="public_profile, email" data-width="" data-size="medium" data-button-type="login_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="false"></div>
+				<!-- <div id="status"></div> -->
+				<!-- <fb:login-button scope="public_profile" onlogin="checkLoginState();"></fb:login-button> -->
+			</div>
+			
+			<!-- <a href="#" onclick="signOut();">Sign out</a> -->
+			
+			<div class="ForgotPasswordPlaceholder">
+				<p> Forgot Password? </p>		
+			</div>			
+		</div>
+	</div>
+</div>
+
+
+
+<div align="center" style="display:none;">
+	
+	<div ><strong id="form_stat"></strong></div>
+	<div id="loader"></div>
+
+	<p id="re"></p>
+	<button id="RegisterBtn" onclick="Register()"> Register</button>
+	<button id="LogInBtn" onclick="LogIn()">LogIn</button>
+	<button id="LogOutBtn" onclick="LogOut()" disabled>LogOut</button>
+	<button id="updateUsernameBtn" onclick="updateName()" disabled>Update Username</button>
+	<button id="updatePasswordBtn" onclick="updatePassword()" disabled>Update Password</button>
+	<button id="forgotPasswordBtn" onclick="forgotPassword()" >Forgot my Password</button>
+	
+	<div id="showData"></div>
+	<div id="google_translate_element"></div>
+</div>
+
+
+
+<div align="center" style="display:none"><!--Statistics-->
+	<p>Currently Registered:<span id="total_Reg"></span></p>
+</div>
+
+<div align="center" style="display:none">
+	<p>ANDROID LABS 2017 | All Rights Reserved</p>
+</div>
+
+
+</body>
+
+
+<!-- <div style="display: none;">
+	<div>
+		<div>
+			<svg viewbox="0 0 24 24" fill="none">
+				<path d="M21.2498 12C21.2498 17.108 17.1088 21.25 11.9998 21.25C6.89176 21.25 2.74976 17.108 2.74976 12C2.74976 6.891 6.89176 2.75 11.9998 2.75C17.1088 2.75 21.2498 6.891 21.2498 12Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+				<path d="M16.1906 12.7672L11.6606 12.6932V7.84619" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+			</svg>
+		</div>
+		<div>
+			<p>Hi</p>
+			<span>Please Wait...</span>
+		</div>
+		<div>
+			<span>×</span>
+		</div>
+	</div>
+</div> -->
+
+
+
+
+<html>

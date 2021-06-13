@@ -1,0 +1,522 @@
+body{
+	color: black;
+	background-color: rebeccapurple;
+	margin:0;
+}
+@media (max-width){
+}
+@font-face {
+    font-family: Labelfont;
+    src: url("../fonts/Syntha Nova Black.ttf");
+}
+
+@font-face {
+    font-family: CustomFont2;
+    src: url('CustomFont2.ttf');
+}
+
+.resp_form{
+	width: 100%;
+    height: 40%;
+    /*background-color: black;*/
+    z-index: 100;
+    position: absolute;
+    top: 12.5%;
+	transition: height .8s;
+}
+/* 4:3	3:2	16:10 16:9K	17:10 */
+.FormPlaceholder{ /*for 16x9 */
+	position: absolute;
+	z-index: 10;
+	left: 32%;
+    width: 35%;
+	height: 100%;
+	/*min-width: 30vw;
+    max-width: 30vw;
+    min-width: 385px;
+    max-width: 385px;
+	height: 50%;
+	min-height: 270px;
+    max-height: 385px; 
+    margin: 0 auto;
+    margin-top: 5%;*/
+	
+	box-sizing: border-box;
+	border: solid white;
+	border-radius: 12% 0;
+	
+	transition: border-radius .8s, height .8s, min-height .8s, max-height .8s;
+	/*backdrop-filter: blur(15px);*/
+}
+
+
+@media (device-aspect-ratio: 2/1){
+	.FormPlaceholder{
+		border: solid orange;
+	}
+}
+@media (device-aspect-ratio: 1/2){
+	.FormPlaceholder{
+		border: solid orange;
+	}
+}
+@media (device-aspect-ratio: 3/2){
+	.FormPlaceholder{
+		border: solid orange;
+	}
+}
+@media (device-aspect-ratio: 2/3){
+	.FormPlaceholder{
+		border: solid orange;
+	}
+}
+@media (device-aspect-ratio: 4/3){
+	.FormPlaceholder{
+		border: solid blue;
+		top: 32%;
+		left: 30%;
+		width: 38%;
+	}
+}
+@media (device-aspect-ratio: 3/4){
+	.FormPlaceholder{
+		border: solid blue;
+	}
+}
+@media (device-aspect-ratio: 5/4){
+	.FormPlaceholder{
+		border: solid red;
+	}
+}
+@media (device-800aspect-ratio: 4/5){
+	.FormPlaceholder{
+		border: solid red;
+	}
+}
+@media (device-aspect-ratio: 7/3){
+	.FormPlaceholder{
+		border: solid pink;
+	}
+}
+@media (device-aspect-ratio: 3/7){
+	.FormPlaceholder{
+		border: solid pink;
+	}
+}
+@media (device-aspect-ratio: 8/5){
+	.FormPlaceholder{
+		border: solid yellow;
+	}
+}
+@media (device-aspect-ratio: 5/8){
+	.FormPlaceholder{
+		border: solid yellow;
+	}
+}
+@media (device-aspect-ratio: 16/9){
+	.FormPlaceholder{
+		border: .25vw solid white;
+	}
+}
+@media (device-aspect-ratio: 9/16){
+	.FormPlaceholder{
+		border: solid white;
+	}
+}
+
+/*
+@media (device-aspect-ratio: 9/16), (device-aspect-ratio: 10/16){
+	.FormPlaceholder{
+		border: solid green;
+		margin-top: 35vh;
+		transform: scale(1.75);
+	}
+	.UsernamePlaceholder{z-index:5}
+	.PasswordPlaceholder{z-index:4}
+	.ConfirmPasswordPlaceholder{z-index:3}
+	.RecoveryQuestionPlaceholder{z-index:2}
+	.RecoveryAnswerPlaceholder{z-index:1}
+	.CaptchaPlaceholder{z-index:0}
+	
+	.UsernamePlaceholder span, .ConfirmPasswordPlaceholder span {
+		width: 120% !important;
+		top: 110% !important;
+		left: -9.75% !important;
+	}
+	.UsernamePlaceholder span::after, .ConfirmPasswordPlaceholder span::after{
+		top: -80% !important;
+		left: 50% !important;
+		border-color: transparent transparent #000000 transparent !important;
+	}
+	
+	.PasswordPlaceholder span, .RecoveryQuestionPlaceholder span, .RecoveryAnswerPlaceholder span {
+		width: 132% !important;
+		top: 110% !important;
+		left: -16.25% !important;
+	}
+	.PasswordPlaceholder span::after, .RecoveryQuestionPlaceholder span::after{
+		top: -95% !important;
+		left: 50% !important;
+		border-color: transparent transparent #000000  transparent !important;
+	}
+	
+	.RecoveryAnswerPlaceholder span::after{
+		top: -56% !important;
+		left: 50% !important;
+		border-color: transparent transparent #000000  transparent !important;
+	}
+	
+	.CaptchaPlaceholder span {
+		top: 46% !important;
+		left: 68% !important;
+	}
+	.CaptchaPlaceholder span::after{
+		top: 95% !important;
+		left: 25% !important;
+		border-color: #000000 transparent transparent transparent !important;
+	}
+}
+*/
+
+
+ /* FOR MOBILE  vh is a bit more accurate*/
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ffae42, 0 0 40px #ffae42, 0 0 50px #ffae42, 0 0 60px #ffae42, 0 0 70px #ffae42;
+  }  
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #ffae42, 0 0 40px #ffae42, 0 0 50px #ffae42, 0 0 60px #ffae42, 0 0 70px #ffae42, 0 0 80px #ffae42;
+  }
+}
+@keyframes reshapeForm1 {
+	from {
+		border-radius: 12% 0;
+	}  
+	to {
+		border-radius: 0 12%;
+	}
+}
+@keyframes reshapeForm2 {
+	from {
+		border-radius: 0 12%;
+	}  
+	to {
+		border-radius: 12% 0;
+	}
+}
+
+
+.SelectFormPlaceholder{
+	/*background-color: white;*/
+	position: absolute;
+	width: 100%;
+	top: 1.5vw;
+	height:4vw;
+	/*top: 8%;
+	height: 20%;*/
+}
+.SelectFormPlaceholder div {
+	position: absolute;
+	width: 55%; 
+	text-align: center;
+	height: 100%;
+	
+}
+.SelectFormPlaceholder div:first-child {
+	left: 5%;
+	z-index: 2;
+    background-color: #4b0082;
+    border-radius: 70% 300% 0 0;
+	font-size: 1.4vw;
+	color: #fff;
+	animation: glow 1s ease-in-out infinite alternate;		
+}
+.SelectFormPlaceholder div:last-child {
+	left: 40%;
+	z-index:0;
+	background-color: #3c0069;
+	border-radius: 300% 70% 0 0;
+	font-size: 1.25vw;
+	color: #808080;	
+}
+.SelectFormPlaceholder div p{
+	position: absolute;
+	font-family: Labelfont;
+	top: 6%;
+}
+.SelectFormPlaceholder div:first-child  p{
+	left: 26%;
+}
+.SelectFormPlaceholder div:last-child  p{
+	right: 20%;
+}
+
+/*Absolute lets it inherit its parents Width and Height as guide
+	top: 5%; is 5% of its parents height
+	margin-top: 5%; is 5% of its parents width (WTF)
+	padding-bottom: 5%; is 5% of its parents width (WHAAAAAAT)
+	
+	any border & margin top/bot uses parent width... use grid instead
+	
+	IN SHORT USE top,left,right,down as positioning
+*/
+/*
+.resp_form {
+    width: 100%;
+    height: 40%; && height:75%
+    background-color: black;
+    z-index: 100;
+    position: absolute;
+    top: 12.5%;
+
+.SelectFormPlaceholder{
+    height: 4vw;
+    top: 1.72vw;
+}
+.MainForm{
+	top: 5.5vw;
+    height: 14.78vw;
+}
+*/
+
+
+
+.MainForm{
+	/*
+	display: grid;
+    grid-gap: 6%;
+    grid-template-rows: 28% 22% 14% 0px;
+	*/
+	
+	position: absolute;
+	top: 5.45vw;
+	bottom:	1.725vw;
+	left: 5%;
+	right: 5%;
+	background: rgb(75,0,130);
+    background: linear-gradient(180deg, rgba(75,0,130,1) 0%, rgba(31,0,54,1) 100%);
+    
+    /* 
+	width: 90%;
+	max-height: 14.78vw;
+	top: 26%;
+	height: 66%;
+	transition: height 0.8s, min-height .8s, max-height .8s;*/
+    border-radius: 0 0 10% 10%;
+	z-index: 1;
+	transition: right .8s, left .8s;
+	overflow: hidden;
+	font-size: 1.25vw;
+}
+.MainForm div{
+	position: relative;
+	width: 100%;
+	opacity: 1;
+	padding-top:.875vw;
+	/*padding-top:3%;*/
+}
+.MainForm div p{
+	font-family: Labelfont;
+	font-size:1.4vw;
+	color: yellow;
+	margin: 0;
+	text-align: center;
+}
+.MainForm div span{
+	visibility: hidden;
+	background-color: #000000;
+	color: #FFFFFF;
+	text-align: center;
+	border-radius: 3%/21% 21% 21% 21%;
+	padding: 1vw 0;
+	position: absolute;
+	z-index: 1;
+	opacity: 0;
+	transition: opacity 0.3s;
+}
+.MainForm div span::after{
+	content: "";
+	position: absolute;
+	margin-left: -1.25vw;
+	border-style: solid;
+	border-color: transparent #000000  transparent transparent; /*arrow position of tooltip*/
+}
+.MainForm div:hover span{
+	visibility: visible;
+	opacity: 1;
+}
+
+.MainForm div input{
+	position: relative;
+	background-color: #808080;
+	left: 15%;
+	right: 15%;
+    width: 70%;
+	text-align: center;
+	padding: 0;
+	font: normal 1.25vw Arial;
+}
+.MainForm div input:hover{
+	background-color: #fff;
+	outline: none !important;
+	border: 2px solid #ffae42;
+	box-shadow: 0 0 10px #ffae42;
+}.MainForm div input:active{
+	background-color: #fff;
+	outline: none !important;
+	border: 2px solid #ffae42;
+	box-shadow: 0 0 10px #ffae42;
+}
+.MainForm div input:focus{
+	background-color: #fff;
+	outline: none !important;
+	border: 2px solid #ffae42;
+	box-shadow: 0 0 10px #ffae42;
+	
+}
+.MainForm .Captcha{
+	padding-bottom: 0;
+	padding-top: 0;
+}
+.MainForm .Captcha #captcha{
+	display: block;
+	background-color: white;
+	margin-left: auto;
+	margin-right: auto;
+}
+.MainForm input[type="button"]{
+	margin-top: .875vw;
+	position: relative;
+	width: 40%;
+	height: 2vw;
+    left: 30%;
+	transition: opacity .3s;
+	font: bold 1.25vw Labelfont;
+	padding: .25vw;
+}
+.MainForm input[type="button"]:last-child{
+	display:none;
+}
+.MainForm .ForgotPass{
+	margin-top: .875vw;
+	text-align:center;
+	color: white;
+	transition: opacity .3s;
+}
+.MainForm .ForgotPass p{
+    margin: 0;
+	margin-top: .875vw;
+}
+
+/*Tooltips*/
+.UsernamePlaceholder span, .PasswordPlaceholder span{ /*disabled at start*/
+	display: none;
+}
+
+/* For width: 85% and two lines*/
+.UsernamePlaceholder span, .PasswordPlaceholder span, .RecoveryQuestionPlaceholder span, .RecoveryAnswerPlaceholder span{
+	width: 80%;
+	top: 20%;
+	left: 90%;
+}
+.UsernamePlaceholder span::after, .PasswordPlaceholder span::after, .RecoveryQuestionPlaceholder span::after, .RecoveryAnswerPlaceholder span::after{
+	top: 27%;
+	left: -4.25%;
+	border-width: 1.25vw;
+}
+
+.ConfirmPasswordPlaceholder span {
+	width: 50%;
+	top: 39%;
+	left: 90%;
+}
+.CaptchaPlaceholder span {
+	width: 50%;
+	top: 72%;
+	left: 90%;
+}
+
+.ConfirmPasswordPlaceholder span::after, .CaptchaPlaceholder span::after{
+	top: 14%;
+	left: -8.8%;
+	border-width: 1.25vw; 
+}
+
+.hidden{
+	display: none;
+}
+
+
+
+
+
+/*
+.UsernamePlaceholder{
+	padding-top: 2%;
+}
+.UsernamePlaceholder p{
+	margin: 0;
+	text-align: center;
+}
+.UsernamePlaceholder input{
+	position: relative;
+	left: 15%;
+    width: 70%;
+}
+.UsernamePlaceholder input:focus{
+	outline: none !important;
+	border: 1px solid yellow;
+	box-shadow: 0 0 10px red;
+}
+.PasswordPlaceholder{
+	padding-top: 2%;
+}
+.PasswordPlaceholder p{
+	margin: 0;
+	text-align: center;
+}
+.CaptchaPlaceholder{
+	padding-top: 2%;
+}
+.CaptchaPlaceholder p{
+	margin: 0;
+	text-align: center;
+}
+
+*/
+
+
+
+
+table, th, td 
+{
+	margin:10px 0;
+	border:solid 1px #333;
+	padding:2px 4px;
+	font:15px Verdana;
+}
+th {
+	font-weight:bold;
+}
+		
+#loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid blue;
+  border-bottom: 16px solid blue;
+  width: 60px;
+  height: 60px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+  visibility:hidden;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

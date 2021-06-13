@@ -1,0 +1,1010 @@
+$dfltdur: .8s;
+$active: #ffffff;
+$inactive: #b3b3b3;
+$glow: #ffae42;
+$mob_hdr: 2.8vw;
+$mob_fntsz: 2.5vw;
+$tab_hdr: 2.1vw;
+$tab_fntsz: 1.875vw;
+
+body{
+	color: black;
+	// background-color: rebeccapurple;
+    background-color: #0D0D0D;
+    margin: 0;
+}
+@font-face {
+    font-family: Labelfont;
+    src: url("../fonts/Syntha Nova Black.ttf");
+    font-display: swap;
+}
+
+.const_cont{
+    display: block;
+    position: fixed;
+    // background-color: red;
+    width: 100vw;
+    height: 100vh;
+    // border: solid red;
+    // box-sizing: border-box;
+    .constellation{
+        display: block;
+        position: static;
+        // box-sizing: border-box;
+        // border: 1px solid black;
+        // background-color: #121212;
+        // background-color: #0D0D0D;
+        // background-color: purple;
+    }
+}
+//Settings BAR: sign out, edit name & pass, link Account, Del Account
+
+.topright_gear{
+    // display: none;
+    display: block;
+    position: fixed;
+    // background-color: yellow;
+    // width: max-content;
+    width: 65%;
+    height: 100%;
+    right: 0%;
+    top: 0%;
+    z-index: 1000;
+    pointer-events: none;
+    .gradient_bg{
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to left, rgba(0,0,0,.85) 60%, rgba(0,0,0,0));
+        z-index: -1;
+        transform: translateX(100%);
+        transition: transform .65s ease-in-out;
+        will-change: transform;
+    }
+    
+    img{
+        display: flex;
+        margin-left: auto;
+        width: 18%;
+        height: auto;
+        transition: transform 1s ease-in-out;
+        pointer-events: auto;
+        user-select: none;
+        // border-radius: 9999px;
+        
+        // transition: background-color .3s;
+        // will-change: background-color;
+        // &:hover{
+        //     background-color: #808080;
+        // }
+    }
+   ul{
+       display: none;
+       flex-direction: column;
+       list-style: none;
+       font-size: 0;
+       padding: 0;
+       margin: 0;
+       border: 0;
+       text-align:right;
+       pointer-events: auto;
+       li{
+            display: flex;
+            align-self: flex-end;
+            font-family: "Labelfont";
+            font-size: 4vw;
+            color:white; 
+            transition: transform .3s;
+            will-change: transform;
+            
+            // padding-left: 2vw;
+            // padding-bottom: 2vw;
+
+            &:first-of-type{
+                span{
+                    border-top: solid white;
+                    border-image: linear-gradient(to right, rgba(0,0,0,0), rgb(255,255,255), rgb(255,255,255)) 1;
+                }
+            }
+            span{
+                // background-color: red;
+                border-bottom:solid white;
+                border-image: linear-gradient(to right, rgba(0,0,0,0), rgb(255,255,255), rgb(255,255,255)) 1;
+                padding: 1vw 4vw 1vw 12vw;
+                // transition: transform .8s;
+                will-change: transform;
+            }
+
+            &:hover{
+                transform: scale(1.1);
+                color: yellow;
+            }
+       }
+   }
+}
+.top_modals{
+    // display: none;
+    display: block;
+    position: fixed;
+    top: 4%;
+    left: 8%;
+    width: 84%;
+    z-index: 999;
+    user-select: none;
+
+    .icon{grid-area: icon;}
+    .content{grid-area: content;}
+    .TrueBtn{grid-area: trbtn;}
+    .FalseBtn{grid-area: flsbtn;}
+
+    & > div{
+        display: grid;
+        grid-template-columns: 20% 20% 20% 20% 20%;
+        grid-template-rows: auto auto;
+        grid-template-areas: 
+        "icon content content content content"
+        ". trbtn . flsbtn .";
+        padding: 3%;
+        padding-bottom: 0;
+        color: white;
+        border-radius:10% 10%/20%;
+        margin-top: 3%;
+        
+        // grid-template-areas: ; ADD CLASSES FIRST
+        // "modaltype modaltext clsbtn"
+        // "progress progress progress"
+        // background-color: green;
+        
+        white-space: nowrap;
+        & > div:first-of-type{
+            img{
+                width: 100%;
+                height: auto;
+            }
+        }
+        & > div:nth-of-type(2){
+            padding-left: 5%;
+            box-sizing: border-box;
+            font-family: sans-serif;
+            white-space: pre-line;
+            & > span{
+                font-size: 4vw;
+                font-weight: bold;
+            }
+            p{
+                font-size: calc(max(2vw, 12px));
+                margin: 3% 0 1% 0;
+                white-space: pre-line;
+                text-align: left;
+            }
+            // font-size: 10px;
+
+            .AltBtn{
+                width: 100%;
+                height: auto;
+                color: white;
+                & > div{
+                    &:first-of-type{
+                        margin-bottom: 3%;
+                        span{
+                            font-weight: bold;
+                        }
+                        // font: bold $mob_fntsz Arial;
+                        
+                        // background-color: yellow;
+                        
+                    }
+                    &:last-of-type{
+                        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 25%);
+                        // background-color: red;
+                        span{
+                            iframe{
+                                transition: box-shadow .281s;
+                                &:hover{
+                                    box-shadow: 0 0 5px #4285f4;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        & > div:nth-of-type(3){
+            display:none;
+            span{
+                position: relative;
+                top: -30%;
+                padding: 0 2vw;
+                color: white;
+                background-color: black;
+                border-radius: 999px;
+                font-size: 8vw;
+                font-weight: bolder;
+                transition: background-color .2s;
+                will-change: background-color;
+                cursor: pointer;
+                &:hover{
+                    background-color: red;
+                }
+            }
+        }
+        //add last-of-type for progress bar
+
+        & > span{
+            position: relative;
+            background-color: black;
+            box-shadow: 0 0 10px black;
+            font-family: sans-serif;
+            font-weight: bolder;
+            text-align: center;
+            padding: 6%;
+            border-radius: 20% 20%/20%;
+            top: 50%;
+            box-sizing: border-box;
+            cursor: pointer;
+            &:first-of-type{
+                // background-color: royalblue;
+                background-color: #1C42B5;
+                &:hover{
+                    text-decoration: underline;
+                    // background-color: #1C42B5;
+                    background-color: royalblue;
+                }
+            }
+
+            &:last-of-type{
+                // background-color: crimson;
+                background-color: #9D0B26;
+                &:hover{
+                    text-decoration: underline;
+                    // background-color: #9D0B26;
+                    background-color: crimson;
+                }
+            }
+        }
+    }
+    
+    
+
+    .Warning{
+        // background-color: goldenrod;
+        background-color: #808080;
+        // box-shadow: 0 0 10px gold;
+        box-shadow: 0 0 10px black;
+        box-shadow: inset 0 0 10px black;
+        & > div{
+            // background-color: goldenrod;
+            // background-color: #808080;
+            color: black;
+        }
+    }
+
+
+    
+    
+}
+.botright_modals{
+    // display: none;
+    display: block;
+    position: fixed;
+    width: 60%;
+    z-index: 999;
+    bottom: 0%;
+    right: 0%;
+    user-select: none;
+    // background-color: orange;
+    & > div{
+        display: grid;
+        grid-template-columns: 20% 70% 10%;
+        grid-template-rows: auto;
+        padding: 3%;
+        color: white;
+        border-radius: 10% 10%/20%;
+        white-space: nowrap;
+        margin-right: 5%;
+        margin-bottom: 5%;
+        transition: opacity $dfltdur;
+        will-change: opacity;
+
+        div:first-of-type{
+            img{
+                width: 100%;
+                height: auto;
+            }
+        }
+        div:nth-of-type(2){
+            padding-left: 5%;
+            padding-right: 5%;
+            box-sizing: border-box;
+            // color: white;
+            font-family: sans-serif;
+            span{
+                font-size: 4vw;
+                white-space: pre-line;
+                font-weight: bold;
+            }
+            p{
+                font-size: calc(max(2vw, 12px));
+                margin: 0;
+                white-space: pre-line;
+                text-align: left;
+            }
+            // font-size: 10px;
+        }
+        div:nth-of-type(3){
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+            border-radius: 0 30% 30% 0;
+            box-sizing: content-box;
+            transition: background-color .2s;
+            will-change: background-color;
+            cursor: pointer;
+            span{
+                color: white;
+                font-size: 6vw;
+                font-weight: bolder;
+                pointer-events: none;
+            }
+            &:hover{
+                background-color: red;
+            }
+        }
+    }
+
+    .Queue{
+        background-color: #4169e1;
+        box-shadow: 0 0 10px deepskyblue;
+    }
+    
+    .Error{
+        background-color: crimson;
+        box-shadow: 0 0 10px red;
+        div{
+            background-color: crimson;
+        }
+    }
+    
+    .Warning{
+        background-color: goldenrod;
+        box-shadow: 0 0 10px gold;
+        div{
+            background-color: goldenrod;
+            color: black;
+        }
+    }
+
+    .Done{
+        background-color: green;
+        box-shadow: 0 0 10px limegreen;
+        div{
+            background-color: green;
+        }
+    }
+}
+.AltSignInStorage{
+    display: none;
+    pointer-events: none;
+    position: absolute;
+    top:100%;
+}
+.resp_form{
+    // display: none;
+    opacity: 1;
+    display: block;
+	width: 100%;
+	height: auto;
+    z-index: 1;
+    position: absolute;
+    top: 12.5%;
+}
+.FormPlaceholder{
+    position: relative;
+    z-index: 10;
+    margin: 0 4% ;
+    margin-bottom: 12.5%;
+    font-size: calc(max(#{$mob_fntsz}, 12px));
+
+    box-sizing: border-box;
+    border-radius: 8%/4% 0;
+    transition: border-radius $dfltdur;
+    will-change: border-radius;
+}
+.SelectFormPlaceholder{
+	position: relative;
+	width: 100%;
+	height: 8vw;
+	margin-top: 5%;
+    div{
+        position: absolute;
+        width: 55%; 
+        text-align: center;
+        height: 100%;
+        cursor: pointer;
+        p{
+            position: absolute;
+            font-family: Labelfont;
+            user-select: none;
+            top: 6%;
+        }
+
+        &:hover p{
+            text-decoration: underline !important;
+        }
+    
+        &:first-child{
+            left: 5%;
+            z-index: 2;
+            background-color: #4b0082;
+            border-radius: 70% 300% 0 0;
+            // font-size: calc(max(#{$mob_hdr},13px));
+            font-size: 4vw;
+            color: #fff;
+            transition: font-size .25s, color .25s, text-shadow .5s;
+            will-change: font-size, color, text-shadow;
+            // animation: glow 1s ease-in-out infinite alternate;
+            // text-shadow: 0 0 10px black, 0 0 20px $active, 0 0 30px $glow, 0 0 40px $glow, 0 0 50px $glow;
+            // will-change: text-shadow;
+            
+            p{
+                text-decoration: underline;
+                left: 26%;
+            }
+        }
+
+        &:last-child{
+            left: 40%;
+            z-index:0;
+            background-color: #3c0069;
+            border-radius: 300% 70% 0 0;
+            font-size: 3vw;
+            color: $inactive;
+            transition: font-size .25s, color .25s, text-shadow .5s;
+            will-change: font-size, color, text-shadow;
+            // will-change: text-shadow;	
+            
+            p{
+                right: 20%;
+            }
+        }
+    }
+}
+.MainForm{
+	position: relative;
+	margin: 0 5% 5%;
+	padding-top: 2%;
+	padding-bottom: 5%;
+	background: rgb(75,0,130);
+    background: linear-gradient(180deg, rgba(75,0,130,1) 0%, rgba(31,0,54,1));
+    border-radius: 0 0 10% 10%;
+	z-index: 1;
+	transition: height $dfltdur;
+    will-change: height;
+	overflow: hidden;
+
+    & > .PrimaryInput div, & > .SecondaryInput div {
+        position: relative;
+        width: 100%;
+        opacity: 1;
+        padding-top: 3%;
+        p{
+            position: relative;
+            font-family: auto;
+            color: $inactive;
+            margin: 0;
+            text-align: center;
+        }
+        label{
+            position: relative;
+            display: block;
+            text-align:center;
+            font-family: Labelfont;
+            // font-size: calc(max(#{$mob_hdr},13px));
+            font-size: 3.75vw;
+            color: yellow;
+            margin: 0;
+            pointer-events: none;
+            user-select: none;
+            text-shadow: 0 0 10px black;
+        }
+
+
+        span{
+            visibility: hidden;
+            background-color: #000000;
+            color: #FFFFFF;
+            text-align: center;
+            border-radius: 3%/21% 21% 21% 21%;
+            padding: 2% 4%;
+            width: auto;
+            position: absolute;
+            opacity: 0;
+            transition: opacity 0.3s;
+            will-change: opacity;
+            pointer-events: none;
+        
+            &::after{
+                content: "";
+                position: absolute;
+                border-style: solid;
+                margin-left: -$mob_fntsz;
+                border-width: $mob_fntsz;
+            }
+        }
+
+        input{
+            position: relative;
+            background-color: $inactive;
+            left: 15%;
+            right: 15%;
+            width: 70%;
+            height: 6vw;
+            text-align: center;
+            padding: 0;
+            font-size: calc(max(#{$mob_fntsz},12px));
+            font-family: Arial;
+            font-weight: normal;
+            transition: background-color .25s, border .5s, box-shadow .5s;
+            will-change: background-color, border, box-shadow;
+            &:hover, &:active, &:focus{
+                background-color: #fff;
+                outline: none !important;
+                border: 2px solid $glow;
+                box-shadow: 0 0 10px $glow;
+            }
+        }
+
+        & > svg{
+            position: absolute;
+            right: 17%;
+            height: 50%;
+            width: auto;
+            bottom: 2%;
+            z-index: 1;
+            path{
+                pointer-events: none;
+                &:nth-child(1){
+                    stroke: #000000;
+                    fill: royalblue;
+                }
+                &:nth-child(2){
+                    stroke: #FFFFFF;
+                }
+                &:nth-child(3){
+                    stroke: #FFFFFF;
+                }
+            }
+            &:hover + span{
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+        img{
+            position: absolute;
+            right: 17%;
+            height: 50%;
+        }
+
+    }
+    input[type="button"]{
+        margin-top: 6%;
+        position: relative;
+        width: 40%;
+        left: 30%;
+        transition: opacity .3s;
+        will-change: opacity;
+        font-size: calc(max(#{$mob_fntsz},12px));
+        font-family: Labelfont;
+        font-weight: bold;
+    }
+    .PrimaryInput{
+        .UsernamePlaceholder{ 
+            z-index:5;
+            svg{
+                display: inline;
+            }
+            span {
+                // display: none;
+                top: 104%;
+                // left: 6.75%;
+                left: 30%;
+            }
+        }
+        .PasswordPlaceholder{
+            z-index:4;
+            svg{
+                display: inline;
+                &:first-of-type{
+                    path{
+                        &:first-child{
+                            stroke: #000000;
+                            fill: royalblue;
+                        }
+                        &:last-child{
+                            stroke: #FFFFFF;
+                            fill: #000000;
+                        }
+    
+                    }
+                }
+                &:nth-of-type(2){
+                    path{
+                        &:nth-child(1){
+                            stroke: #000000;
+                            fill: royalblue;
+                        }
+                        &:nth-child(2){
+                            stroke: #000000;
+                            fill: royalblue;
+                        }
+                        &:nth-child(3), &:nth-child(4){
+                            stroke: #FFFFFF;
+                        }
+                        &:last-child{
+                            stroke: #000000;
+                        }
+    
+                    }
+                }
+            }
+            span{
+                // display: none;
+                top: 104%;
+                // left: -8%;
+                left: 30%;
+            }
+        }
+    }
+    .SecondaryInput{
+        .ConfirmPasswordPlaceholder{
+        //    display: none;
+            z-index:3;
+            svg{
+                &:first-of-type{
+                    display: none;
+                    path{
+                        &:first-child{
+                            stroke: #000000;
+                            fill: royalblue;
+                        }
+                        &:last-child{
+                            stroke: #FFFFFF;
+                            fill: #000000;
+                        }
+    
+                    }
+                }
+                &:last-of-type{
+                    display: inline;
+                    path{
+                        &:nth-child(1){
+                            stroke: #000000;
+                            fill: royalblue;
+                        }
+                        &:nth-child(2){
+                            stroke: #000000;
+                            fill: royalblue;
+                        }
+                        &:nth-child(3), &:nth-child(4){
+                            stroke: #FFFFFF;
+                        }
+                        &:last-child{
+                            stroke: #000000;
+                        }
+    
+                    }
+                }
+            }
+        }
+        .RecoveryQuestionPlaceholder{
+        //    display: none;
+            z-index:2;
+            span{
+                top: 104%;
+                // left: -5%;
+                left: 30%;
+            }
+        }
+        .RecoveryAnswerPlaceholder{
+            // display: none;
+            z-index:1;
+            span{
+                top: 104%;
+                // left: -13.5%;
+                left: 30%;
+            }
+        }
+        .CaptchaPlaceholder{
+            overflow: hidden;
+            z-index:0;
+            span{
+                top: 35%;
+                left: 65%;
+            }
+            div{
+                padding-bottom: 0;
+                padding-top: 0;
+                margin: 0 auto;
+    
+                #captcha{
+                    display: block;
+                    background-color: white;
+                    margin: 0 auto;
+                }
+            }
+        }
+    }    
+    .UsernamePlaceholder span::after, .PasswordPlaceholder span::after, .ConfirmPasswordPlaceholder span::after, .RecoveryQuestionPlaceholder span::after, .RecoveryAnswerPlaceholder span::after{
+        border-color: transparent transparent #000000 transparent;
+        top: -42%;
+        right: 25%;
+    }	
+    .AltSignInOpts{
+        // display: none;
+        opacity: 1;
+       
+        .AltBlock{
+            display: none;
+            position: absolute;
+            background-color: transparent;
+            width: 100%;
+            height: 100%;
+            z-index: 100;
+        }
+       
+        div{
+            display: block;
+            margin: 0 auto;
+            margin-bottom: 3%;
+        
+            span{
+                iframe{
+                    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 25%);
+                    transition: box-shadow .281s;
+                    &:hover{
+                        box-shadow: 0 0 5px #4285f4;
+                    }
+                }
+            }
+        }
+        p{
+            text-align: center;
+            color: white;
+            font: bold $mob_fntsz Arial;
+            padding-top: 3%;
+            padding-bottom: 3%;
+        }
+        span{
+            display: block;
+            // display: none;
+            margin: 0 auto;
+            visibility: visible;
+            opacity: 1;
+            position: relative;
+            background-color: transparent;
+            padding: inherit;
+            pointer-events: auto;
+            text-align: inherit;
+            font-weight: bold;
+    
+            &::after{
+                display: none;
+            }
+        }
+        svg{
+            position: relative;
+            width: inherit;
+            height: inherit;
+        }
+    }
+    .ForgotPasswordPlaceholder{
+        // display: none;
+        p{
+            font-family: auto;
+            font-size: calc(max(#{$mob_fntsz},12px));
+            color: $active;
+            margin: 0 auto;
+            width: fit-content;
+            text-align: unset;
+            padding-bottom: 3%;
+            cursor: pointer;
+            text-decoration: underline;
+            text-decoration-color: rgba(255,255,255,0);
+            transition: text-decoration-color .281s;
+            will-change: text-decoration-color;
+            &:hover{
+                text-decoration-color: rgba(255,255,255,1);
+            }
+        }
+    }
+}
+
+.hidden{
+    position: absolute !important;
+	visibility: hidden;
+	pointer-events: none;
+}
+
+.begone{
+    display: none;
+}
+
+.activeform{
+    text-shadow: 0 0 10px black, 0 0 10px $glow, 0 0 20px $glow, 0 0 30px $glow, 0 0 40px $glow, 0 0 50px $glow;
+}
+.inactiveform{
+    text-shadow: 0 0 0px black;
+}
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 576px) {
+	.FormPlaceholder{
+		border: solid black;
+	}
+}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 576px) {
+	.FormPlaceholder{
+		border: solid orange;
+        margin: 0 15% ;
+        // border-radius: 12% 0;
+	}
+    .MainForm{
+        .UsernamePlaceholder span::after, .PasswordPlaceholder span::after, .ConfirmPasswordPlaceholder span::after, .RecoveryQuestionPlaceholder span::after, .RecoveryAnswerPlaceholder span::after{
+            top: -50%;
+        }
+    }
+}
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+	.FormPlaceholder{
+        border: solid white;
+		margin: 0 22.5%;
+		font-size: $tab_fntsz;
+	}
+	.SelectFormPlaceholder{
+		height:6vw;
+        div{
+            &:first-child{
+                font-size: $tab_hdr;
+            }
+        }
+	}
+	.MainForm{
+        div{
+            label{
+		        font-size: $tab_hdr;
+            }
+            input{
+                font-size: $tab_fntsz;
+            }
+            span{
+                &::after{
+                    margin-left: -$tab_fntsz;
+                    border-width: $tab_fntsz; 
+                }
+            }
+        }
+        input[type="button"]{
+            font-size: $tab_fntsz;
+        }
+        .UsernamePlaceholder span::after, .PasswordPlaceholder span::after, .ConfirmPasswordPlaceholder span::after, .RecoveryQuestionPlaceholder span::after, .RecoveryAnswerPlaceholder span::after{
+            border-color: transparent transparent #000000 transparent;
+            top: -70%;
+            left: 25%;
+        }
+        .ConfirmPasswordPlaceholder{
+            span {
+                top: 46%;
+                left: 90%;
+
+                &::after{
+                    top: 6%;
+                    left: -6.8%;
+                    border-color: transparent #000000  transparent transparent;
+                }
+            }
+        }
+        .CaptchaPlaceholder{
+            span {
+                top: 73%;
+                left: 90%;
+
+                &::after{
+                    top: 6%;
+                    left: -6.8%;
+                    border-color: transparent #000000  transparent transparent;
+                }
+            }
+        }
+
+        .ForgotPasswordPlaceholder{
+            p{
+                font-size: $tab_fntsz;
+            }
+        }
+	}
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+	.FormPlaceholder{
+		border: solid yellow;
+		margin: 0 26.25%;
+		font-size: 1.25vw;
+	}
+	.SelectFormPlaceholder{
+		height:4vw;
+	}
+	.SelectFormPlaceholder div:first-child {
+		font-size: 1.4vw;	
+	}
+	
+	.MainForm div p{
+		font-size: 1.4vw;
+	}
+	.MainForm div input{
+		font: normal 1.25vw Arial;
+	}
+
+	.UsernamePlaceholder span{
+		width: 80%;
+		top: 30%;
+		left: 90%;
+	}
+	.PasswordPlaceholder span, .RecoveryQuestionPlaceholder span, .RecoveryAnswerPlaceholder span{
+		width: 80%;
+		top: 20%;
+		left: 90%;
+	}
+	.ConfirmPasswordPlaceholder span {
+		width: 50%;
+		top: 39%;
+		left: 90%;
+	}
+	.CaptchaPlaceholder span {
+		width: 50%;
+		top: 72%;
+		left: 90%;
+	}
+
+	.MainForm div span::after{
+		margin-left: -1.25vw;
+		border-width: 1.25vw;
+		border-color: transparent #000000  transparent transparent; /*arrow position of tooltip*/
+	}
+	.UsernamePlaceholder span::after, .PasswordPlaceholder span::after, .RecoveryQuestionPlaceholder span::after, .RecoveryAnswerPlaceholder span::after{
+	top: 27%;
+	left: -4.25%;
+}
+	.ConfirmPasswordPlaceholder span::after, .CaptchaPlaceholder span::after{
+		top: 14%;
+		left: -6.8%;
+	}
+		
+	.MainForm input[type="button"]{
+		font: bold 1.25vw Labelfont;
+	}
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+	.FormPlaceholder{
+		border: solid blue;
+	}
+	
+}
+
+ 
+@keyframes glow {
+    from {
+      text-shadow: 0 0 10px $active, 0 0 20px $active, 0 0 30px $glow, 0 0 40px $glow, 0 0 50px $glow
+    //   text-shadow: 0 0 10px $active, 0 0 20px $active, 0 0 30px $glow, 0 0 40px $glow, 0 0 50px $glow, 0 0 60px $glow, 0 0 70px $glow;
+    }  
+    to {
+      text-shadow: 0 0 20px $active, 0 0 30px $glow, 0 0 40px $glow, 0 0 50px $glow, 0 0 60px $glow
+    //   text-shadow: 0 0 20px $active, 0 0 30px $glow, 0 0 40px $glow, 0 0 50px $glow, 0 0 60px $glow, 0 0 70px $glow, 0 0 80px $glow;
+    }
+}

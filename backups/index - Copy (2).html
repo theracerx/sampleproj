@@ -1,0 +1,1242 @@
+<html>
+<head>
+
+<link rel="stylesheet" href="css/LogIn_styles.css">
+<link rel="stylesheet" href="css/vivify.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+<script>
+// Heavily edited code from https://gist.github.com/Tito0269/2014c7001c89ed596171baea229d3363
+
+console.log("Try adding Aascii ART https://www.text-image.com/convert/ascii.html");
+var c_user, c_progpos, c_prog, temp_user, temp_pass, user_ip , cookies , v_prog1, v_prog2, v_stat;
+
+
+var user_progress;
+//copied from https://www.cs.cmu.edu/~biglou/resources/
+var bad_filter = ["abbo","abo","abortion","abuse","addict","addicts","adult","africa","african","alla","allah","alligatorbait","amateur","american","anal","analannie","analsex","angie","angry","anus","arab","arabs","areola","argie","aroused","arse","arsehole","asian","ass","assassin","assassinate","assassination","assault","assbagger","assblaster","assclown","asscowboy","asses","assfuck","assfucker","asshat","asshole","assholes","asshore","assjockey","asskiss","asskisser","assklown","asslick","asslicker","asslover","assman","assmonkey","assmunch","assmuncher","asspacker","asspirate","asspuppies","assranger","asswhore","asswipe","athletesfoot","attack","australian","babe","babies","backdoor","backdoorman","backseat","badfuck","balllicker","balls","ballsack","banging","baptist","barelylegal","barf","barface","barfface","bast","bastard ","bazongas","bazooms","beaner","beast","beastality","beastial","beastiality","beatoff","beat-off","beatyourmeat","beaver","bestial","bestiality","bi","biatch","bible","bicurious","bigass","bigbastard","bigbutt","bigger","bisexual","bi-sexual","bitch","bitcher","bitches","bitchez","bitchin","bitching","bitchslap","bitchy","biteme","black","blackman","blackout","blacks","blind","blow","blowjob","boang","bogan","bohunk","bollick","bollock","bomb","bombers","bombing","bombs","bomd","bondage","boner","bong","boob","boobies","boobs","booby","boody","boom","boong","boonga","boonie","booty","bootycall","bountybar","bra","brea5t","breast","breastjob","breastlover","breastman","brothel","bugger","buggered","buggery","bullcrap","bulldike","bulldyke","bullshit","bumblefuck","bumfuck","bunga","bunghole","buried","burn","butchbabes","butchdike","butchdyke","butt","buttbang","butt-bang","buttface","buttfuck","butt-fuck","buttfucker","butt-fucker","buttfuckers","butt-fuckers","butthead","buttman","buttmunch","buttmuncher","buttpirate","buttplug","buttstain","byatch","cacker","cameljockey","cameltoe","canadian","cancer","carpetmuncher","carruth","catholic","catholics","cemetery","chav","cherrypopper","chickslick","children's","chin","chinaman","chinamen","chinese","chink","chinky","choad","chode","christ","christian","church","cigarette","cigs","clamdigger","clamdiver","clit","clitoris","clogwog","cocaine","cock","cockblock","cockblocker","cockcowboy","cockfight","cockhead","cockknob","cocklicker","cocklover","cocknob","cockqueen","cockrider","cocksman","cocksmith","cocksmoker","cocksucer","cocksuck ","cocksucked ","cocksucker","cocksucking","cocktail","cocktease","cocky","cohee","coitus","color","colored","coloured","commie","communist","condom","conservative","conspiracy","coolie","cooly","coon","coondog","copulate","cornhole","corruption","cra5h","crabs","crack","crackpipe","crackwhore","crack-whore","crap","crapola","crapper","crappy","crash","creamy","crime","crimes","criminal","criminals","crotch","crotchjockey","crotchmonkey","crotchrot","cum","cumbubble","cumfest","cumjockey","cumm","cummer","cumming","cumquat","cumqueen","cumshot","cunilingus","cunillingus","cunn","cunnilingus","cunntt","cunt","cunteyed","cuntfuck","cuntfucker","cuntlick ","cuntlicker ","cuntlicking ","cuntsucker","cybersex","cyberslimer","dago","dahmer","dammit","damn","damnation","damnit","darkie","darky","datnigga","dead","deapthroat","death","deepthroat","defecate","dego","demon","deposit","desire","destroy","deth","devil","devilworshipper","dick","dickbrain","dickforbrains","dickhead","dickless","dicklick","dicklicker","dickman","dickwad","dickweed","diddle","die","died","dies","dike","dildo","dingleberry","dink","dipshit","dipstick","dirty","disease","diseases","disturbed","dive","dix","dixiedike","dixiedyke","doggiestyle","doggystyle","dong","doodoo","doo-doo","doom","dope","dragqueen","dragqween","dripdick","drug","drunk","drunken","dumb","dumbass","dumbbitch","dumbfuck","dyefly","dyke","easyslut","eatballs","eatme","eatpussy","ecstacy","ejaculate","ejaculated","ejaculating ","ejaculation","enema","enemy","erect","erection","ero","escort","ethiopian","ethnic","european","evl","excrement","execute","executed","execution","executioner","explosion","facefucker","faeces","fag","fagging","faggot","fagot","failed","failure","fairies","fairy","faith","fannyfucker","fart","farted ","farting ","farty ","fastfuck","fat","fatah","fatass","fatfuck","fatfucker","fatso","fckcum","fear","feces","felatio ","felch","felcher","felching","fellatio","feltch","feltcher","feltching","fetish","fight","filipina","filipino","fingerfood","fingerfuck ","fingerfucked ","fingerfucker ","fingerfuckers","fingerfucking ","fire","firing","fister","fistfuck","fistfucked ","fistfucker ","fistfucking ","fisting","flange","flasher","flatulence","floo","flydie","flydye","fok","fondle","footaction","footfuck","footfucker","footlicker","footstar","fore","foreskin","forni","fornicate","foursome","fourtwenty","fraud","freakfuck","freakyfucker","freefuck","fu","fubar","fuc","fucck","fuck","fucka","fuckable","fuckbag","fuckbuddy","fucked","fuckedup","fucker","fuckers","fuckface","fuckfest","fuckfreak","fuckfriend","fuckhead","fuckher","fuckin","fuckina","fucking","fuckingbitch","fuckinnuts","fuckinright","fuckit","fuckknob","fuckme ","fuckmehard","fuckmonkey","fuckoff","fuckpig","fucks","fucktard","fuckwhore","fuckyou","fudgepacker","fugly","fuk","fuks","funeral","funfuck","fungus","fuuck","gangbang","gangbanged ","gangbanger","gangsta","gatorbait","gay","gaymuthafuckinwhore","gaysex ","geez","geezer","geni","genital","german","getiton","gin","ginzo","gipp","girls","givehead","glazeddonut","gob","god","godammit","goddamit","goddammit","goddamn","goddamned","goddamnes","goddamnit","goddamnmuthafucker","goldenshower","gonorrehea","gonzagas","gook","gotohell","goy","goyim","greaseball","gringo","groe","gross","grostulation","gubba","gummer","gun","gyp","gypo","gypp","gyppie","gyppo","gyppy","hamas","handjob","hapa","harder","hardon","harem","headfuck","headlights","hebe","heeb","hell","henhouse","heroin","herpes","heterosexual","hijack","hijacker","hijacking","hillbillies","hindoo","hiscock","hitler","hitlerism","hitlerist","hiv","ho","hobo","hodgie","hoes","hole","holestuffer","homicide","homo","homobangers","homosexual","honger","honk","honkers","honkey","honky","hook","hooker","hookers","hooters","hore","hork","horn","horney","horniest","horny","horseshit","hosejob","hoser","hostage","hotdamn","hotpussy","hottotrot","hummer","husky","hussy","hustler","hymen","hymie","iblowu","idiot","ikey","illegal","incest","insest","intercourse","interracial","intheass","inthebuff","israel","israeli","israel's","italiano","itch","jackass","jackoff","jackshit","jacktheripper","jade","jap","japanese","japcrap","jebus","jeez","jerkoff","jesus","jesuschrist","jew","jewish","jiga","jigaboo","jigg","jigga","jiggabo","jigger ","jiggy","jihad","jijjiboo","jimfish","jism","jiz ","jizim","jizjuice","jizm ","jizz","jizzim","jizzum","joint","juggalo","jugs","junglebunny","kaffer","kaffir","kaffre","kafir","kanake","kid","kigger","kike","kill","killed","killer","killing","kills","kink","kinky","kissass","kkk","knife","knockers","kock","kondum","koon","kotex","krap","krappy","kraut","kum","kumbubble","kumbullbe","kummer","kumming","kumquat","kums","kunilingus","kunnilingus","kunt","ky","kyke","lactate","laid","lapdance","latin","lesbain","lesbayn","lesbian","lesbin","lesbo","lez","lezbe","lezbefriends","lezbo","lezz","lezzo","liberal","libido","licker","lickme","lies","limey","limpdick","limy","lingerie","liquor","livesex","loadedgun","lolita","looser","loser","lotion","lovebone","lovegoo","lovegun","lovejuice","lovemuscle","lovepistol","loverocket","lowlife","lsd","lubejob","lucifer","luckycammeltoe","lugan","lynch","macaca","mad","mafia","magicwand","mams","manhater","manpaste","marijuana","mastabate","mastabater","masterbate","masterblaster","mastrabator","masturbate","masturbating","mattressprincess","meatbeatter","meatrack","meth","mexican","mgger","mggor","mickeyfinn","mideast","milf","minority","mockey","mockie","mocky","mofo","moky","moles","molest","molestation","molester","molestor","moneyshot","mooncricket","mormon","moron","moslem","mosshead","mothafuck","mothafucka","mothafuckaz","mothafucked ","mothafucker","mothafuckin","mothafucking ","mothafuckings","motherfuck","motherfucked","motherfucker","motherfuckin","motherfucking","motherfuckings","motherlovebone","muff","muffdive","muffdiver","muffindiver","mufflikcer","mulatto","muncher","munt","murder","murderer","muslim","naked","narcotic","nasty","nastybitch","nastyho","nastyslut","nastywhore","nazi","necro","negro","negroes","negroid","negro's","nig","niger","nigerian","nigerians","nigg","nigga","niggah","niggaracci","niggard","niggarded","niggarding","niggardliness","niggardliness's","niggardly","niggards","niggard's","niggaz","nigger","niggerhead","niggerhole","niggers","nigger's","niggle","niggled","niggles","niggling","nigglings","niggor","niggur","niglet","nignog","nigr","nigra","nigre","nip","nipple","nipplering","nittit","nlgger","nlggor","nofuckingway","nook","nookey","nookie","noonan","nooner","nude","nudger","nuke","nutfucker","nymph","ontherag","oral","orga","orgasim ","orgasm","orgies","orgy","osama","paki","palesimian","palestinian","pansies","pansy","panti","panties","payo","pearlnecklace","peck","pecker","peckerwood","pee","peehole","pee-pee","peepshow","peepshpw","pendy","penetration","peni5","penile","penis","penises","penthouse","period","perv","phonesex","phuk","phuked","phuking","phukked","phukking","phungky","phuq","pi55","picaninny","piccaninny","pickaninny","piker","pikey","piky","pimp","pimped","pimper","pimpjuic","pimpjuice","pimpsimp","pindick","piss","pissed","pisser","pisses ","pisshead","pissin ","pissing","pissoff ","pistol","pixie","pixy","playboy","playgirl","pocha","pocho","pocketpool","pohm","polack","pom","pommie","pommy","poo","poon","poontang","poop","pooper","pooperscooper","pooping","poorwhitetrash","popimp","porchmonkey","porn","pornflick","pornking","porno","pornography","pornprincess","pot","poverty","premature","pric","prick","prickhead","primetime","propaganda","pros","prostitute","protestant","pu55i","pu55y","pube","pubic","pubiclice","pud","pudboy","pudd","puddboy","puke","puntang","purinapricness","puss","pussie","pussies","pussy","pussycat","pussyeater","pussyfucker","pussylicker","pussylips","pussylover","pussypounder","pusy","quashie","queef","queer","quickie","quim","ra8s","rabbi","racial","racist","radical","radicals","raghead","randy","rape","raped","raper","rapist","rearend","rearentry","rectum","redlight","redneck","reefer","reestie","refugee","reject","remains","rentafuck","republican","rere","retard","retarded","ribbed","rigger","rimjob","rimming","roach","robber","roundeye","rump","russki","russkie","sadis","sadom","samckdaddy","sandm","sandnigger","satan","scag","scallywag","scat","schlong","screw","screwyou","scrotum","scum","semen","seppo","servant","sex","sexed","sexfarm","sexhound","sexhouse","sexing","sexkitten","sexpot","sexslave","sextogo","sextoy","sextoys","sexual","sexually","sexwhore","sexy","sexymoma","sexy-slim","shag","shaggin","shagging","shat","shav","shawtypimp","sheeney","shhit","shinola","shit","shitcan","shitdick","shite","shiteater","shited","shitface","shitfaced","shitfit","shitforbrains","shitfuck","shitfucker","shitfull","shithapens","shithappens","shithead","shithouse","shiting","shitlist","shitola","shitoutofluck","shits","shitstain","shitted","shitter","shitting","shitty ","shoot","shooting","shortfuck","showtime","sick","sissy","sixsixsix","sixtynine","sixtyniner","skank","skankbitch","skankfuck","skankwhore","skanky","skankybitch","skankywhore","skinflute","skum","skumbag","slant","slanteye","slapper","slaughter","slav","slave","slavedriver","sleezebag","sleezeball","slideitin","slime","slimeball","slimebucket","slopehead","slopey","slopy","slut","sluts","slutt","slutting","slutty","slutwear","slutwhore","smack","smackthemonkey","smut","snatch","snatchpatch","snigger","sniggered","sniggering","sniggers","snigger's","sniper","snot","snowback","snownigger","sob","sodom","sodomise","sodomite","sodomize","sodomy","sonofabitch","sonofbitch","sooty","sos","soviet","spaghettibender","spaghettinigger","spank","spankthemonkey","sperm","spermacide","spermbag","spermhearder","spermherder","spic","spick","spig","spigotty","spik","spit","spitter","splittail","spooge","spreadeagle","spunk","spunky","squaw","stagg","stiffy","strapon","stringer","stripclub","stroke","stroking","stupid","stupidfuck","stupidfucker","suck","suckdick","sucker","suckme","suckmyass","suckmydick","suckmytit","suckoff","suicide","swallow","swallower","swalow","swastika","sweetness","syphilis","taboo","taff","tampon","tang","tantra","tarbaby","tard","teat","terror","terrorist","teste","testicle","testicles","thicklips","thirdeye","thirdleg","threesome","threeway","timbernigger","tinkle","tit","titbitnipply","titfuck","titfucker","titfuckin","titjob","titlicker","titlover","tits","tittie","titties","titty","tnt","toilet","tongethruster","tongue","tonguethrust","tonguetramp","tortur","torture","tosser","towelhead","trailertrash","tramp","trannie","tranny","transexual","transsexual","transvestite","triplex","trisexual","trojan","trots","tuckahoe","tunneloflove","turd","turnon","twat","twink","twinkie","twobitwhore","uck","uk","unfuckable","upskirt","uptheass","upthebutt","urinary","urinate","urine","usama","uterus","vagina","vaginal","vatican","vibr","vibrater","vibrator","vietcong","violence","virgin","virginbreaker","vomit","vulva","wab","wank","wanker","wanking","waysted","weapon","weenie","weewee","welcher","welfare","wetb","wetback","wetspot","whacker","whash","whigger","whiskey","whiskeydick","whiskydick","whit","whitenigger","whites","whitetrash","whitey","whiz","whop","whore","whorefucker","whorehouse","wigger","willie","williewanker","willy","wn","wog","women's","wop","wtf","wuss","wuzzie","xtc","xxx","yankee","yellowman","zigabo","zipperhead"];
+var script_url = "https://script.google.com/macros/s/AKfycbyJ21nFcwUuHpbQ6jB_ud9VRKwwQ3FPLU1dlmsh/exec";
+
+//ONLY USE PROMISE ON ASYNC FUNCTIONS
+//AWAIT returns undefined on promises but value on ()=>return
+
+
+//Form Commands
+async function Register(){
+		disableBtn("RegisterBtn",true);
+		formstat("checking Captcha...");
+		geoloc = await requestAstronomy();
+		r_captcha = await validateCaptcha();
+		if (r_captcha == "true"){
+			formstat("Registering...",0,"blue");
+			if (geoloc == "true"){
+				delay = 0;
+			} else {
+				delay = 5000;
+			}
+			setTimeout(async function(){
+				//extracts value from input
+				var username =	temp_user = $("#Username").val(); 
+				var password = $("#Password").val();
+				var user_clear = true;
+				if (!username == false || !password == false){ //checks for bad words
+					tempname = username.split(" ");
+					for (i in tempname){
+						if ( bad_filter.includes(tempname[i])){
+							bdword = bad_filter[bad_filter.indexOf(tempname[i])];
+							if(confirm("Really? ... You want to be called " + bdword.toUpperCase() + "?")){
+								if(confirm("Last chance mate... You'll be called " + bdword.toUpperCase() +" in our Research. Continue?")){
+									user_clear = true;
+								} else {
+									user_clear = false;
+								}
+							} else {
+								user_clear = false;
+							}
+						}
+					}
+				} else {
+					user_clear = false;
+					alert("Oh c'mon you can do better than a blank name or password");
+					formstat("Please try again!",0,"red")
+				}
+				if (!getCookie("c_loc")){
+					formstat("Server is not responding.Please try again later...", 0 ,"red")
+					user_clear == false;
+				}	
+				if (user_clear == true){ //checks if user is clear for registration			
+					var url = script_url+"?username=" + username + "&password=" + await convertSHA256(password + username) + "&country=" + getCookie("c_loc") + "&flag=" + getCookie("c_flag") + "&sunrise=" + getCookie("c_sunrise") + "&sunset=" + getCookie("c_sunset") + "&solar_noon=" + getCookie("c_solar_noon") + "&moonrise=" + getCookie("c_moonrise") + "&moonset=" + getCookie("c_moonset") + "&action=verify_user&action2=register_user";
+					var request = jQuery.ajax({
+					  crossDomain: true,
+					  url: url ,
+					  method: "GET",
+					  dataType: "jsonp"
+					});
+				} else {
+					disableBtn("RegisterBtn",true);
+					console.log("Registration aborted by system");
+				}				
+			},delay)
+		} else {
+			disableBtn("RegisterBtn",false);
+			console.log("Registration aborted by system");
+		}
+} 
+async function updateName(sv_resp){
+	var user_clear = true;
+	if(sv_resp){
+		updateCookie("c_user",sv_resp["name"]);
+		console.log("Username successfully by server")
+	} else if (getCookie("c_user") && !sv_resp){
+		var username = prompt("Enter your new username",getCookie("c_user"));
+		
+		if (!username == false){ //checks for bad words
+			tempname = username.split(" ");
+			for (i in tempname){
+				if ( bad_filter.includes(tempname[i])){
+					bdword = bad_filter[bad_filter.indexOf(tempname[i])];
+					if(confirm("Really? ... You want to be called " + bdword.toUpperCase() + "?")){
+						if(confirm("Last chance mate... You'll be called " + bdword.toUpperCase() +" in our Research. Continue?")){
+							user_clear = true;
+							break;
+						} else {
+							user_clear = false;
+							break;
+						}
+					} else {
+						user_clear = false;
+						break;
+					}
+				}
+			}
+		} else {
+			user_clear = false;
+		}	
+				
+		if (!username == false){
+			var pass = prompt("Please input your password to verify it's really you","password");
+			if (pass == null || pass == ""){
+				user_clear = false;
+			}
+		}
+			
+		if (user_clear == true){
+			oldname = getCookie("c_user");
+			var n_pass = await convertSHA256(pass + username);
+			//console.log(n_pass);
+			var v_pass = await convertSHA256(pass + oldname);
+			//console.log(v_pass);
+			var url = script_url+"?newname=" + username + "&username=" + oldname + "&password=" + v_pass + "&newpassword=" + n_pass + "&action=verify_pass&action2=update_username";
+			var request = jQuery.ajax({
+			  crossDomain: true,
+			  url: url ,
+			  method: "GET",
+			  dataType: "jsonp"
+			});
+		} else {
+			console.log("Update username aborted by user");
+		}
+	
+	} else {
+		console.log("No user has Logged In yet");
+		console.log("Update username aborted by system");
+	}	
+}
+async function LogIn() { //verify_user > verify_pass
+    disableBtn("LogInBtn",true);
+	formstat("checking Captcha...")
+	r_captcha = await validateCaptcha();	
+	if (r_captcha == "true"){
+		formstat("Logging In...")
+		console.log("Logging In...");
+		//extracts value from input
+		var username =	$("#Username").val(); 
+		var password = $("#Password").val();
+		
+		if(!username == false || !password == false){
+			var npass = await convertSHA256(password + username);
+			//console.log(npass);
+			var url = script_url+"?username=" + username + "&password="+ npass + "&action=verify_user&action2=verify_pass";
+			var request = jQuery.ajax({
+			  crossDomain: true,
+			  url: url ,
+			  method: "GET",
+			  dataType: "jsonp"
+			});
+		} else {
+			disableBtn("LogInBtn",false);
+			formstat("Username isn't registered yet",0,"red")
+			console.log("LogIn aborted by system")
+		}	
+	} else {
+		disableBtn("LogInBtn",false);
+		console.log("LogIn aborted by system...")
+	}
+}
+function LogOut(){
+	unlockUserSettings(false);
+	updateCookie("c_user","",-1);
+	updateCookie("c_progpos","",-1);
+	updateCookie("c_prog","",-1);
+	updateCookie("c_loc","",-1);
+	updateCookie("c_flag","",-1);
+	console.log("TO DO: Redirect to MAIN PAGE");
+}
+async function passwordRecoveryquestion(){
+	formstat("Registration successful!",0,"green");
+	var user_clear = true;
+	var security_question = prompt("Please add a security question incase you lost your password:","Example: My hometown is?");
+	if (security_question == null || security_question == ""){
+		user_clear = false;
+	} else {
+		var security_answer = prompt(security_question.replace("?","") + "?","");
+		if (security_answer == null || security_answer == ""){
+			user_clear = false;
+		}
+	}
+	
+	if (user_clear == true){
+		if (confirm(security_question.replace("?","") + "? Answer: " + security_answer + " || Continue? " )){
+			var sec_ques = security_question.replace("?","");
+			var sec_ans = await convertSHA256(security_answer + sec_ques);
+			var url = script_url+"?username=" + temp_user + "&sec_ques=" + sec_ques + "&sec_ans=" + sec_ans + "&action=secure_pass";
+			var request = jQuery.ajax({
+			  crossDomain: true,
+			  url: url ,
+			  method: "GET",
+			  dataType: "jsonp"
+			});
+			temp_user = null;
+		} else {
+			passwordRecoveryquestion();
+		}
+	} else {
+		passwordRecoveryquestion();
+	}
+}
+function forgotPassword(sv_resp){
+	if(!sv_resp){
+		disableBtn("forgotPasswordBtn",true);
+		var user_clear = true;
+		var username = prompt("Enter username to be recovered","Example: Benjamin");
+		if (username == null || username == ""){
+			user_clear = false;
+		}	
+		if (user_clear == true){
+			var temp_user = username
+			var url = script_url+"?username=" + username + "&action=recover_pass";
+			var request = jQuery.ajax({
+			  crossDomain: true,
+			  url: url ,
+			  method: "GET",
+			  dataType: "jsonp"
+			});
+		} else {
+			console.log("Forgot password aborted by user")
+		}
+	} else {
+		alert("Sorry, username: " + sv_resp + "doesn't exist yet");
+	}
+	
+
+}
+async function recoverPassword(username,sec_ques,sec_ans){
+	var user_clear = true;
+	var isDone = false;
+	var attempt = 0;
+	while(!isDone){
+		var recover_ans = prompt("SECURITY QUESTION: " + sec_ques["ques"] + "?","Answer here");
+		if (recover_ans == null || recover_ans == ""){
+			user_clear = false;
+		}
+		if (user_clear == true){
+			recover_ans = await convertSHA256(recover_ans + sec_ques["ques"]);
+			if (sec_ans["ans"] == recover_ans){
+				temp_user = username["name"];
+				isDone = true;
+				updatePassword(true);
+			} else {
+				attempt++;
+				if (attempt != 3){
+					alert("Security answer didn't match, Attempt " + attempt + " of 3");
+				} else {
+					alert("Security answer didn't match, Attempt " + attempt + " of 3");
+					console.log("Password recovery aborted by system...");
+					break;
+				}
+			}
+		} else {
+			console.log("Password recovery aborted by user...")
+			break;
+		}
+	}
+}
+async function updatePassword(stat){ //can be called directly or by recoverPassword	
+	if(getCookie("c_user") || stat == true){
+		var user_clear = true;
+		
+		if(getCookie("c_user")){ // check if getCookie("c_user") || temp_user
+			var new_pass = prompt("Enter new password for " + getCookie("c_user"),"new password");
+		} else if (stat == true){
+			var new_pass = prompt("Enter new password for " + temp_user,"new password");
+		}
+		
+		if (new_pass == null || new_pass == ""){
+			user_clear = false;
+		} else {
+			var confirm_pass = prompt("Confirm new password", "retype your new password");
+			if (confirm_pass == null || confirm_pass == ""){
+				user_clear = false;
+			}
+		}
+		
+		if (user_clear == true && new_pass == confirm_pass){
+			
+			if (getCookie("c_user")){ // check if getCookie("c_user") || temp_user
+				var npass = await convertSHA256(new_pass + getCookie("c_user"));
+				var url = script_url+"?username=" + getCookie("c_user") + "&password=" + npass + "&action=update_pass";
+				
+			} else if (stat == true){
+				var npass = await convertSHA256(new_pass + temp_user);
+				var url = script_url+"?username=" + temp_user + "&password=" + npass + "&action=update_pass";
+			}
+			
+			var request = jQuery.ajax({
+			  crossDomain: true,
+			  url: url ,
+			  method: "GET",
+			  dataType: "jsonp"
+			});
+			//console.log("cookie has name " + getCookie("c_user"));
+			//console.log("temp user has name " + temp_user);
+		} else if (user_clear == true){
+			if(confirm("Retyped password didn't match. Retry?")){
+				updatePassword(true);
+			} else {
+				console.log("Password update cancelled by user");
+			}
+		} else {
+			console.log("Password update cancelled by user");
+		}
+		
+	} else {
+		console.log("No user has Logged In yet")
+	}
+}
+async function updateRecoveryquestion(){
+	if(confirm("Would you like to update your security question?")){
+		var user_clear = true;
+		var security_question = prompt("Please add your new security question incase you lost your password again:","Example: My mother's maiden name is?");
+		if (security_question == null || security_question == ""){
+			user_clear = false;
+		} else {
+			var security_answer = prompt(security_question.replace("?","") + "?","");
+			if (security_answer == null || security_answer == ""){
+				user_clear = false;
+			}
+		}
+		
+		if (user_clear == true){
+			if (confirm(security_question.replace("?","") + "? Answer: " + security_answer + " || Continue? " )){
+				var sec_ques = security_question.replace("?","");
+				var sec_ans = await convertSHA256(security_answer + sec_ques);
+				
+				if (getCookie("c_user")){
+					var url = script_url+"?username=" + getCookie("c_user") + "&sec_ques=" + sec_ques + "&sec_ans=" + sec_ans + "&action=update_secure_pass";
+				} else if (temp_user){
+					var url = script_url+"?username=" + temp_user + "&sec_ques=" + sec_ques + "&sec_ans=" + sec_ans + "&action=update_secure_pass";
+				}
+				
+				var request = jQuery.ajax({
+					  crossDomain: true,
+					  url: url ,
+					  method: "GET",
+					  dataType: "jsonp"
+					});
+					temp_user = null;
+			} else {
+				updateRecoveryquestion();
+			}
+		}		
+	} else {
+		console.log("User aborted updating Recovery question")
+		temp_user = null;
+	}
+}
+async function convertSHA256(message) {
+  var msgUint8 = new TextEncoder().encode(message);                           // encode as (utf-8) Uint8Array
+  var hashBuffer = await crypto.subtle.digest('SHA-256', msgUint8);           // hash the message
+  var hashArray = Array.from(new Uint8Array(hashBuffer));                     // convert buffer to byte array
+  var hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join(''); // convert bytes to hex string
+  return hashHex;
+}
+
+function retrieveUserdata(data){
+	alert("RETRIEVED USER DATA FIRED")
+	var url = script_url+"?username=" + username + "&action=retrieve_userdata";
+	var request = jQuery.ajax({
+	  crossDomain: true,
+	  url: url ,
+	  method: "GET",
+	  dataType: "jsonp"
+	});
+}
+
+function unlockUserSettings(status){
+	if (status == false || status == true){
+		if (status == false){
+			document.getElementById("LogOutBtn").setAttribute("disabled",true);
+			document.getElementById("updateUsernameBtn").setAttribute("disabled",true);
+			document.getElementById("updatePasswordBtn").setAttribute("disabled",true);
+			document.getElementById("forgotPasswordBtn").removeAttribute("disabled");
+			document.getElementById("LogInBtn").removeAttribute("disabled");
+			document.getElementById("RegisterBtn").removeAttribute("disabled");
+			console.log("Usersettings are now locked!")
+		} else {
+			document.getElementById("LogOutBtn").removeAttribute("disabled");
+			document.getElementById("updateUsernameBtn").removeAttribute("disabled");
+			document.getElementById("updatePasswordBtn").removeAttribute("disabled");
+			document.getElementById("forgotPasswordBtn").setAttribute("disabled",true);
+			document.getElementById("LogInBtn").setAttribute("disabled",true);
+			document.getElementById("RegisterBtn").setAttribute("disabled",true);
+			console.log("Usersettings are now unlocked!")
+		}	
+	} else {
+		console.log("ERROR on parameter 1 on unlockUserSettings");
+	}
+}
+function disableBtn(Btn,status){
+	user_clear = true;
+	if(!document.getElementById(Btn)){
+		console.log("ID " + Btn + " seems to be missing");
+		user_clear = false;
+	}
+	if(user_clear == true){
+		if(status == false || status == true){
+			if (status == false){
+				document.getElementById(Btn).removeAttribute("disabled");
+			} else {
+				document.getElementById(Btn).setAttribute("disabled","true")
+			}	
+		} else {
+			console.log("Error on parameter 2 on disableBtn(" + Btn + ", " + status + ")");
+		}
+	} else {
+		console.log("Error on parameter 1 on disableBtn(" + Btn + ", " + status + ")");
+	}	
+}
+function formstat(msg,dur,color){
+	document.getElementById("form_stat").innerHTML = msg; 
+	if(dur){
+		setTimeout(function(){
+			document.getElementById("form_stat").innerHTML = "";
+		},dur)
+	}
+	if(color && color != 0){
+		document.getElementById("form_stat").style.color = color;
+	} else {
+		document.getElementById("form_stat").style.color = "black";
+	}
+}
+
+
+//User detection
+function userState(sv_resp,sv_data){
+	if (sv_resp["state"] == "exist"){
+		formstat("Username already taken",0,"red");
+		disableBtn("RegisterBtn",false);
+	} else if (sv_resp["state"] == "registered"){
+		formstat("Account successfully registered!",0,"green");
+		passwordRecoveryquestion();
+		disableBtn("RegisterBtn",false);
+	} else if (sv_resp["state"] == "unregistered"){
+		formstat("Username isn't registered yet!",0,"red");
+		disableBtn("LogInBtn",false);
+	} else if (sv_resp["state"] == "incorrectpass"){
+		formstat("Incorrect password!",0,"red");
+		disableBtn("LogInBtn",false);
+	} else if (sv_resp["state"] == "verified"){ //returns all necessary data
+		formstat("LogIn successful...",0,"green")
+		console.log("LOGIN SUCCESSFUL!")
+		unlockUserSettings(true);
+		//datame = sv_data;
+		updateCookie("c_user", sv_data["c_user"]);
+		updateCookie("c_progpos", sv_data["c_progpos"]);
+		updateCookie("c_loc", sv_data["c_loc"]);
+		updateCookie("c_sunrise", sv_data["c_sunrise"].replace("::",":"));
+		updateCookie("c_sunset", sv_data["c_sunset"].replace("::",":"));
+		updateCookie("c_solar_noon", sv_data["c_solar_noon"].replace("::",":"));
+		updateCookie("c_moonrise", sv_data["c_moonrise"].replace("::",":"));
+		updateCookie("c_moonset", sv_data["c_moonset"].replace("::",":"));
+		updateCookie("c_flag", sv_data["c_flag"]);
+	} else {
+		alert("Error on userStat(" + sv_resp["state"] + ") returned undefined");
+	}
+}
+
+//User progress commands
+function requestProgress(){ //request row of Progress Attempt#
+	// get propos from cookies?
+	c_user = getCookie("c_user");
+	c_progpos = String(getCookie("c_progpos")).charAt(0);
+	
+	var url = script_url+"?username=" + c_user + "&progpos=" + c_progpos + "&action=retrieve_prog";
+	var request = jQuery.ajax({
+		crossDomain: true,
+		url: url ,
+		method: "GET",
+		dataType: "jsonp"
+	});	
+}
+function recieveProgress(progress){ //returns row of Progress Attempt#
+	c_prog = progress["row"][0];
+	//console.log(progress["row"]);
+	console.log(progress["row"][0]);
+	
+	var prog_string;
+	
+	for (i in c_prog){
+		if (i == 0){
+			prog_string = c_prog[i] + "||"
+		} else {
+			prog_string = prog_string + c_prog[i] + "||"
+		}
+	}
+	
+	updateCookie("c_prog",prog_string)/// name||103242||1234||1231	
+}
+function updateProgress(){ //update only by Chapter
+	
+	//how to wait for the variable
+	
+	c_user = getCookie("c_user");
+	
+	//only send the chapter position and chapter value
+	c_progpos = String(getCookie("c_progpos")).charAt(0);
+	c_progpos2 = String(getCookie("c_progpos")).slice(-1); 
+	n_prog = getCookie("c_prog").split("||").pop();
+	
+	var url = script_url+"?username=" + c_user + "&progpos=" + c_progpos + "&progpos2=" + c_progpos2 + "&prog=" + n_prog[c_progpos2] + "&action=update_prog";
+	var request = jQuery.ajax({
+		crossDomain: true,
+		url: url ,
+		method: "GET",
+		dataType: "jsonp"
+	});	
+}
+function verifyProgress(data){ //fired only by antiSkip
+	var user_clear = true;
+	if(!data == true){
+		console.log("Retrieving database info");
+		c_user = getCookie("c_user");
+		c_progpos = getCookie("c_progpos");
+		var url = script_url+"?username=" + c_user + "&progpos=" + c_progpos + "&action=verify_prog";
+		var request = jQuery.ajax({
+			crossDomain: true,
+			url: url ,
+			method: "GET",
+			dataType: "jsonp"
+		});	
+	} else {
+		v_prog1 = getCookie("c_prog").split("||").pop();
+		v_prog2 = data["row"][0];
+		
+		for (i in v_prog1){
+			if (v_prog1[i] != v_prog2[i]){
+				user_clear = false;
+				break;
+			}
+		}
+		
+		if (user_clear == true){
+			console.log("Progress were the same")
+		} else {
+			console.log("Progress weren't the same")
+		}
+
+	}
+}
+function verifyProgressPos(data){	
+	if (!data == true){
+		console.log("Retrieving database info");
+		c_user = getCookie("c_user");
+		var url = script_url+"?username=" + c_user + "&action=verify_progpos";
+		var request = jQuery.ajax({
+			crossDomain: true,
+			url: url ,
+			method: "GET",
+			dataType: "jsonp"
+		});
+	} else {
+		console.log(data);
+		v_prog1 = getCookie("c_progpos");
+		v_prog2 = data["progpos"]
+		
+		if (v_prog1 == v_prog2){
+			v_stat = true;
+			console.log("Progpos were the same")
+		} else {
+			v_stat = false;
+			console.log("Progpos weren't the same")
+		}
+	}
+}
+
+//Cookie commands
+function grabCookies(){ //refresh cookies
+	//retrieved from https://gist.github.com/codebubb/ab5cfaf8b70d198e55a5642e9a63ab37
+	//cookies = document.cookie.split(';').map(cookie => cookie.split('=')).reduce((accumulator, [key, value]) => ({ ...accumulator, [key.trim()]: decodeURIComponent(value) }), {});
+	alert("yessssssss")
+
+}	
+function getCookie(name){ 
+	//console.log(cookies);
+	cookies = document.cookie.split(';').map(cookie => cookie.split('=')).reduce((accumulator, [key, value]) => ({ ...accumulator, [key.trim()]: decodeURIComponent(value) }), {});
+	
+	if(cookies[name]){
+		return cookies[name];
+	} else {
+		console.log("cookies[" + name + "] returned null");
+	}
+}	
+function updateCookie(name, value, dur){
+	if(dur){
+		if (dur >= 14){
+			dur = 14;
+		}
+	} else {
+		dur = 14;
+	}
+	
+	var d = new Date();
+	var d = new Date(d.getTime() + 1000 * 60 * 60 * 24 * dur); //7days = 1week
+	document.cookie =  name + "=" + value + "; expires=" + d.toGMTString() + ";";
+}
+
+/*
+function downloadPass(){
+	var user_agree = true;
+	if (confirm("Would you like to backup your password on your device? You can only do this once...")){
+		user_agree = true;
+	} else {
+		if (confirm("There's no 'Forgot my Password' function here...Continue backup?")){
+			user_agree = true;
+		} else {
+			user_agree = false;
+		}
+	}
+	if (user_agree == true){
+		var filename = temp_user + "'s Password";
+		var text = temp_pass;
+		var element = document.createElement('a');
+		element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+		element.setAttribute('download', filename);
+
+		element.style.display = 'none';
+		document.body.appendChild(element);
+
+		element.click();
+
+		document.body.removeChild(element);
+		
+		temp_pass = temp_pass = null;
+	} else {
+		temp_pass = temp_pass = null;
+		console.log("user denied backup");
+	}
+	
+}
+*/
+
+
+//Progress detection
+function Retrieve_prog2() { //retrieve_prog
+    console.log("Retrieving Progress...");
+	if (!c_user == false){
+		var username =	c_user;
+		var progress_pos = c_progressPos;
+		var url = script_url+"?callback=ctrlq&username=" + username + "&progress_pos=" + progress_pos + "&action=retrieve_prog";
+		var request = jQuery.ajax({
+		  crossDomain: true,
+		  url: url ,
+		  method: "GET",
+		  dataType: "jsonp"
+		});
+	} else {
+		alert("Failed to retrieve user data! No User is currently logged in!");
+	}
+}
+function userProgress(progress){ //collects user's current progress
+	console.log("user progress received");
+	user_Progress = progress["progress"][0];
+	getUserLoc(user_Progress);
+}
+function getUserLoc(progress){
+	console.log("getUserLoc FIRED!");
+	for (i in progress){
+		if (String(progress[i]).indexOf("0") == true){
+			console.log("Location detected");
+			nLoc = parseFloat(String(progress[i]).lastIndexOf("0"));
+			if (nLoc == String(progress[i]).length){
+				jumptoLoc(c_progressPos, i , 0); // returns (1stAttempt,Chapter1,1)
+				break;
+			} else {
+				nLoc = (String(progress[i]).length) - (nLoc + 1);
+				jumptoLoc(c_progressPos, i , nLoc);
+				break;
+			}
+		}
+	}
+}
+function jumptoLoc(progressPos, chapter, Loc){
+	console.log("JumpToLoc FIRED!");
+	console.log(progressPos + ", " + chapter + ", " + Loc);
+	console.log("TO DO: Add function to jump to a certain location");
+	console.log("REMEMBER: Every 5secs collect what time the player is in the video");
+}
+
+/*
+
+function antiSkip(c_user, c_progpos, c_prog, c_time){
+	console.log("antiSkip FIRED");
+	
+	if (!c_user){ //check if user is logged in
+		console.log("No user logged in");
+	} else if (c_progpos != p_progpos){ //check if in the right progress pos
+		console.log("Incorrect progress position!");
+		console.log("TO DO redirect to right prog_pos");
+		//Redirect(c_prog) which gets the user's progress & prog_pos from the database and use it to redirect the player
+	} else if (c_prog != d_progpos){ // check if database progress match with cookie progress
+		//Redirect(c_prog) which gets the user's progress from the database and use it to redirect the player
+	} else if (c_time){
+		console.log("Teleport player to correct time");
+		//BEWARE of in-game scores, some scores maybe skipped due to time skipping
+		//Redirect(c_time, c_score) which gets the user's progress from the database and use it to redirect the player
+	}
+	
+	
+	
+	if (!c_progressPos == true || !user_progress == true){
+		alert("Pls LogIn || redirect || cookies for c_progressPos and user_Progress missing!");
+	}
+}	
+
+
+// to add cookies do document.cookie = "name=dog"
+function checkCookie(){
+	var c_user = getCookie("c_user");
+	var c_progpos = getCookie("c_progressPos");
+	var c_prog = getCookie("user_progress");
+	var c_time = getCookie("current_time");
+	var c_score = getCookie("current_score"); //store game scores
+	antiSkip(c_user, c_progpos, c_prog, c_time);
+}
+function getCookie(required_data){
+	//retrieved from https://gist.github.com/codebubb/ab5cfaf8b70d198e55a5642e9a63ab37
+	var cookies = document.cookie.split(';').map(cookie => cookie.split('=')).reduce((accumulator, [key, value]) => ({ ...accumulator, [key.trim()]: decodeURIComponent(value) }), {});
+	if(cookies(required_data)){
+		return cookies(required_data);
+	} else {
+		return null;
+	}
+}
+
+*/
+
+//TO DO
+function collectStat(data){
+	console.log("TO DO ADD DATA REPRESENTATION");
+}
+
+function testme(animal){
+	return new Promise((resolve, reject) =>{
+		//console.log("I received a " + animal)
+		if (animal == "dog"){//value returned
+			resolve("you get dog food");
+		} else if (animal == "pig"){
+			resolve(animal + " is not a dog")
+		} else {
+			reject(animal + " wtf")
+		}
+		
+	}).then(
+	result=>console.log(result + " DONE!"),
+	error=>console.log(error + " done!")
+	)
+}
+
+	
+function promiseMe(n){
+	//n = 10;
+	var promise = Promise.resolve(n*10);
+	promise.then(a=>undefined);//a is n*10, this resolves to undefined
+	promise.then(b=>console.log(b));
+	promise.catch(error=>"yeeet");
+}
+function promiseMe2(animal){
+	//n = 10;
+	var dog = new Promise((resolve, reject) => {
+		//console.log("I received a " + animal)
+		if (animal == "dog"){//value returned
+			resolve("you get dog food");
+		} else {//no value returned
+			reject(animal + " is not a dog")
+		}
+	})
+	
+	dog.then(a=>undefined)
+	dog.then(b=>console.log(b))
+	dog.catch(error=>"yeeet");
+}
+
+
+async function dog(){
+	var aaa = await testme("dog")
+	console.log(aaa)
+}
+
+//Google App Script Debug commands
+function copyme(trgt){
+	if (!trgt == false){
+		console.log(trgt["data"]);
+	}
+}
+function consoleme(trgt){ // remember to use obj["msg"]
+	if (!trgt == false){
+		console.log(trgt["msg"]);
+	}
+}
+function alertme(trgt){ // remember to use obj["msg"]
+	if (!trgt == false && typeof(trgt) == "object"){
+		alert(trgt["msg"]);
+	}
+}
+var datame;
+function checkme(data){
+	datame = data;
+	//console.log(data["data"]);
+}
+
+function test(){
+	var url = script_url+"?&action=test";
+	var request = jQuery.ajax({
+	  crossDomain: true,
+	  url: url ,
+	  method: "GET",
+	  dataType: "jsonp"
+	});
+}
+
+
+//SAMPLE AWAIT USE
+function sec5(){	
+	zzzzzzz = 0;
+	for (i in bad_filter){
+		zzzzzzz++;
+		if (zzzzzzz/7) {
+			zzzzzzz = zzzzzzz + 7;
+		}
+	}
+	return zzzzzzz
+}
+
+</script> 
+ 
+<script>  //astronomy
+//geolocation from https://stackoverflow.com/questions/391979/how-to-get-clients-ip-address-usin g-javascript
+function requestAstronomy(request){ //called by register
+	if(getCookie("c_loc")){
+		status = false;
+		console.log("geolocation already exists!")
+	} else if (!request){
+		status = false;
+		var url = script_url+"?action=request_astronomy";
+		var request = jQuery.ajax({
+			crossDomain: true,
+			url: url ,
+			method: "GET",
+			dataType: "jsonp"
+		});
+		console.log("retrieiving geolocation...");
+	} else {
+		status = true
+		$.getJSON('https://api.ipgeolocation.io/astronomy?apiKey=' + request["key"], function(data) {
+			user_ip = data
+			//console.log(data);
+			updateCookie("c_loc",data["location"]["country_code2"]);
+			updateCookie("c_flag","https://ipgeolocation.io/static/flags/" + data["location"]["country_code2"].toLowerCase() + "_64.png");
+			updateCookie("c_sunrise",data["sunrise"].replace(":","::"));
+			updateCookie("c_sunset",data["sunset"].replace(":","::"));
+			updateCookie("c_solar_noon",data["solar_noon"].replace(":","::"));
+			updateCookie("c_moonrise",data["moonrise"].replace(":","::"));
+			updateCookie("c_moonset",data["moonset"].replace(":","::"));
+		});
+		console.log("geolocation retrieved");
+	}
+	return status;
+}	
+
+//moon phase from https://gist.github.com/endel/dfe6bb2fbe679781948c
+console.log("TO DO: ADD requestMoonPhase to AntiSkip");
+requestMoonPhase();
+function requestMoonPhase(){ 
+
+	var c = e = jd = b = 0;
+	var today = new Date();
+	var year = today.getFullYear();
+	var month = today.getMonth();
+	var day = today.getDate();
+	if (month < 3) {
+		year--;
+		month += 12;
+	 }
+
+	++month;
+
+	c = 365.25 * year;
+
+	e = 30.6 * month;
+
+	jd = c + e + day - 694039.09; //jd is total days elapsed
+
+	jd /= 29.5305882; //divide by the moon cycle
+
+	b = parseInt(jd); //int(jd) -> b, take integer part of jd
+
+	jd -= b; //subtract integer part to leave fractional part of original jd
+
+	b = Math.round(jd * 8); //scale fraction from 0-8 and round
+
+    if (b >= 8 ) {
+      b = 0; //0 and 8 are the same so turn 8 into 0
+
+    }
+	
+    var phases = ["New Moon", "Waxing Crescent Moon","Quarter Moon","Waxing Gibbous Moon","Full Moon","Waning Gibbous Moon","Last Quarter Moon","Waning Crescent Moon"];
+	updateCookie("c_phase", phases[b],1);
+	console.log("TO DO: replace background with a " + phases[b]);
+	
+}
+</script>
+
+<script> //captcha edited from https://codepen.io/manishjanky/pen/eRNKLL
+var code;
+async function requestCaptcha(){
+	var charsArray = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	var lengthOtp = 6;
+	var captcha = [];
+	 for (var i = 0; i < lengthOtp; i++) {
+		//below code will not allow Repetition of Characters
+		var index = Math.floor(Math.random() * charsArray.length + 1); //get the next character from the array
+		if (captcha.indexOf(charsArray[index]) == -1)
+		  captcha.push(charsArray[index]);
+		else i--;
+	  }
+	document.getElementsByClassName('Captcha')[0].innerHTML = "";
+	var canv = document.createElement("canvas");
+	canv.id = "captcha";
+	canv.width = 125;
+	canv.height = 50;
+	var ctx = canv.getContext("2d");
+	ctx.font = "25px Georgia";
+	captcha.unshift("   ");
+	ctx.strokeText(captcha.join(""), 0, 30);
+	captcha.shift();
+	code = await convertSHA256(captcha.join(""));
+	captcha = null;
+	//console.log(code);
+	//code = data["captcha"].join("");
+	document.getElementsByClassName("Captcha")[0].appendChild(canv);
+}
+async function validateCaptcha() {
+	var trgt_code = document.getElementById("cpatchaTextBox").value;
+	var t_code = await convertSHA256(trgt_code);
+	if (t_code == code) {
+		status = true;
+		requestCaptcha();
+	} else {
+		status = false;
+		formstat("Invalid Captcha! Please try again...",0,"red")
+		requestCaptcha();
+	}
+	return status;
+}
+</script>
+
+<script> //Form Interactivity
+function FormActive(form){
+	FormPlcHldr = document.getElementsByClassName("FormPlaceholder")[0];
+	LogInForm = document.getElementsByClassName("SelectForm1")[0];
+	RegisterForm = document.getElementsByClassName("SelectForm2")[0];
+	MainForm = document.getElementsByClassName("MainForm")[0];
+	UserPlcHldr = document.getElementsByClassName("UsernamePlaceholder")[0];
+	PassPlcHldr = document.getElementsByClassName("PasswordPlaceholder")[0];
+	CPassPlcHldr = document.getElementsByClassName("ConfirmPasswordPlaceholder")[0];
+	RQPlcHldr = document.getElementsByClassName("RecoveryQuestionPlaceholder")[0];
+	RAPlcHldr = document.getElementsByClassName("RecoveryAnswerPlaceholder")[0];
+	CaptchaPlcHldr = document.getElementsByClassName("CaptchaPlaceholder")[0];
+	LogInBtn = document.getElementsByClassName("LogInBtn")[0];
+	RegisterBtn = document.getElementsByClassName("RegisterBtn")[0];
+	ForgotPassLink = document.getElementsByClassName("ForgotPassText")[0];
+	
+	if(form == LogInForm){
+		if(!RegisterBtn.classList.contains("hidden")){
+			//console.log("LogInForm detected")
+			form.style.zIndex = 2;
+			form.style.backgroundColor = "#4b0082";
+			form.style.color = "#FFF"
+			form.style.fontSize = "1.1em"
+			form.style.animation = "glow 1s ease-in-out infinite alternate";
+			RegisterForm.style.zIndex = 1;
+			RegisterForm.style.backgroundColor = "#3c0069";
+			RegisterForm.style.color = "#808080";
+			RegisterForm.style.fontSize = "1em";
+			RegisterForm.style.animation = "glow 0s ease-in-out infinite alternate";
+			
+			//reveal
+			ForgotPassLink.className = "ForgotPassText vivify popIn delay-1000";
+			ForgotPassLink.onanimationend = (event)=> event.target.classList.remove("hidden");
+			LogInBtn.className = "LogInBtn vivify popIn delay-900";
+			LogInBtn.onanimationend = (event)=> event.target.classList.remove("hidden");
+			
+			//hide
+			UserPlcHldr.childNodes[3].style.display = "none";
+			PassPlcHldr.childNodes[3].style.display = "none";
+			
+			RegisterBtn.className = "RegisterBtn hidden";
+			CPassPlcHldr.className = "ConfirmPasswordPlaceholder vivify fadeOut";
+			CPassPlcHldr.onanimationend = (event)=> event.target.classList.add("hidden");
+			RQPlcHldr.className = "RecoveryQuestionPlaceholder vivify fadeOut";
+			RQPlcHldr.onanimationend = (event)=> event.target.classList.add("hidden");
+			RAPlcHldr.className = "RecoveryAnswerPlaceholder vivify fadeOut";
+			RAPlcHldr.onanimationend = (event)=> event.target.classList.add("hidden");
+			CaptchaPlcHldr.className = "CaptchaPlaceholder vivify fadeOut";
+			CaptchaPlcHldr.onanimationend = (event)=> event.target.classList.add("hidden");
+			
+			//modify
+			FormPlcHldr.style.borderRadius = "12% 0";
+			FormPlcHldr.style.minHeight = "270px";
+			FormPlcHldr.style.maxHeight = "270px";
+			MainForm.style.overflow = "hidden";
+			MainForm.ontransitionend = (event)=> event.target.style.overflow = "visible";
+			MainForm.style.overflow = "hidden";
+			MainForm.style.height = "25%";
+			MainForm.style.minHeight = "160px";
+			MainForm.style.maxHeight = "160px";
+		}
+	} else if (form == RegisterForm){
+		if(!LogInBtn.classList.contains("hidden")){
+			//console.log("RegisterForm detected")
+			form.style.zIndex = 2;
+			form.style.backgroundColor = "#4b0082"; 
+			form.style.color = "#FFF";
+			form.style.fontSize= "1.1em";
+			form.style.animation = "glow 1s ease-in-out infinite alternate";
+			LogInForm.style.zIndex = 1;
+			LogInForm.style.backgroundColor = "#3c0069";
+			LogInForm.style.color = "#808080";
+			LogInForm.style.fontSize = "1em";
+			LogInForm.style.animation = "glow 0s ease-in-out infinite alternate";
+			
+			//hide
+			ForgotPassLink.className = "ForgotPassText vivify fadeOut duration-100";
+			ForgotPassLink.onanimationend = (event)=> event.target.classList.add("hidden");
+			LogInBtn.className = "LogInBtn vivify fadeOut duration-100";
+			LogInBtn.onanimationend = (event)=> event.target.classList.add("hidden");
+			
+			//reveal
+			UserPlcHldr.childNodes[3].style.display = "block";
+			PassPlcHldr.childNodes[3].style.display = "block";
+			RegisterBtn.className = "RegisterBtn vivify popIn";
+			RegisterBtn.onanimationend = (event)=> event.target.classList.remove("hidden");
+			CPassPlcHldr.className = "ConfirmPasswordPlaceholder vivify popIn delay-100";
+			CPassPlcHldr.onanimationend = (event)=> event.target.classList.remove("hidden");
+			RQPlcHldr.className = "RecoveryQuestionPlaceholder vivify popIn delay-200";
+			RQPlcHldr.onanimationend = (event)=> event.target.classList.remove("hidden");
+			RAPlcHldr.className = "RecoveryAnswerPlaceholder vivify popIn delay-300";
+			RAPlcHldr.onanimationend = (event)=> event.target.classList.remove("hidden");
+			CaptchaPlcHldr.className = "CaptchaPlaceholder vivify popIn delay-400";
+			CaptchaPlcHldr.onanimationend = (event)=> event.target.classList.remove("hidden");
+			
+			FormPlcHldr.style.borderRadius = "0 12%";
+			FormPlcHldr.style.minHeight = "500px";
+			FormPlcHldr.style.maxHeight = "500px";
+			//FormPlcHldr.style.height = "75%";
+			//MainForm.style.paddingBottom = "66%";
+			//MainForm.ontransitionstart = (event)=> event.target.style,overflow = "hidden";
+			
+			//MainForm.ontransitionend = (event)=> event.target.style.overflow = "visible";
+			MainForm.style.overflow = "hidden";
+			//MainForm.ontransitionstart = (event)=> event.target.style.overflow = "hidden";
+			MainForm.ontransitionend = (event)=> event.target.style.overflow = "visible";
+			//MainForm.style.oveflow = "hidden";
+			MainForm.style.height = "63%";
+			MainForm.style.minHeight = "395px";
+			MainForm.style.maxHeight = "395px";
+		}
+	}
+}
+var executed = false;
+var c_input;
+function alphanumericCheck(e){
+	user_clear = true;
+	if (e.keyCode == 13){
+		isDisabled = document.getElementById("LogInBtn").disabled
+		if (executed == false && isDisabled != true){
+			executed = true;
+			LogIn();
+			setTimeout(function(){executed = false},1000)
+		}
+	} else if (e.keyCode >= 48 && e.keyCode <= 57){	// 0-9
+	} else if (e.keyCode >= 65 && e.keyCode <= 90){ // a-z
+	} else if (e.keyCode >= 97 && e.keyCode <= 122){ // A-Z
+	} else if (e.keyCode == 8 || e.keyCode == 46 ){ //del Backspace
+	} else {
+		user_clear = false;
+		e.preventDefault();
+		formstat("only alphanumeric characters please...")
+		//alert("You can't do that!");
+	}	
+	if(user_clear == true){
+		c_input = e.target;
+		//console.log(e);
+		
+		if(e.keyCode == 8 || e.keyCode == 46){ //del Backspace
+			console.log(c_input.value);
+			if (!c_input == false && c_input.value.length <= 1 ){
+				console.log("dflt BACKGROUND")
+				c_input.style.cssText = "background-color:";
+			} else { //for selection delete
+				setTimeout(function(){
+					if(c_input.value == ""){
+						console.log("dflt BACKGROUND");
+						c_input.style.cssText = "background-color:";
+					}
+				},0);
+			}
+		} else {
+			if (!c_input == false){
+				console.log("modded BACKGROUND");
+				c_input.style.cssText = "background-color:#FFFFFF !important";
+			}
+		}
+	}
+}
+ 
+
+
+</script>
+
+
+</head>
+<body onload="requestCaptcha()">
+<div style="
+    display: block;
+    position: absolute;
+    width: 100%;
+    background-color: red;
+    height: 50%;
+    /* display: none; */
+"></div>
+<div style="
+    display: block;
+    position: absolute;
+    width: 50%;
+    background-color: green;
+    height: 50%;
+    /* display: none; */
+    z-index: 1;
+"></div>
+<div class="FormPlaceholder">
+	<div class="SelectFormPlaceholder">
+		<div class="SelectForm1" onpointerenter="FormActive(this)"><p>LogIn</p></div>
+		<div class="SelectForm2" onpointerenter="FormActive(this)"><p>Register</p></div>
+	</div>
+	
+	<div class="MainForm">
+		
+		<div class="UsernamePlaceholder">
+			<p> Username: </p>
+			<span>At most 10 characters and no special characters</span>
+			<input type="text" name="username" autocomplete="off" onkeydown="return alphanumericCheck(event)" id="Username" maxlength="10">
+		</div>
+		<div class="PasswordPlaceholder">
+			<p> Password: </p>
+			<span> Try adding uppercase and lowercase letters, numbers, and symbols </span>
+			<input type = "password" name ="password" autocomplete="off" onkeydown="return alphanumericCheck(event)" id="Password">
+		</div>
+		<div class="ConfirmPasswordPlaceholder hidden">
+			<p> Confirm Password: </p>
+			<span>Retype your password</span>
+			<input type="password" name ="cpassword" autocomplete="off" onkeydown="return alphanumericCheck(event)" id="cPassword" >
+		</div>
+		<div class="RecoveryQuestionPlaceholder hidden">
+			<p> Recovery Question: </p>
+			<span>Add a Recovery Question just incase you forgot your password</span>
+			<input type="text" name ="recques" autocomplete="off" onkeydown="return alphanumericCheck(event)" placeholder="Example: My favorite place is?" id="rQuestion" >
+		</div>
+		<div class="RecoveryAnswerPlaceholder hidden">
+			<p> Recovery Answer: </p>
+			<span>Add a Recovery Answer that only you know and can't be found elsewhere</span>
+			<input type="text" name ="recans" autocomplete="off" onkeydown="return alphanumericCheck(event)" placeholder="Example: Antartica"id="rPassword">
+		</div>		
+		<div class="CaptchaPlaceholder hidden">
+			<p>Captcha</p>
+			<span>Verify if you're human</span>
+			<div class="Captcha"></div>
+			<input type="text" name="Captcha" autocomplete="off" onkeydown="return alphanumericCheck(event)" placeholder="enter the code above" id="cpatchaTextBox" maxlength="6"/>
+		</div>
+		<button class="LogInBtn" onclick="LogIn()">LogIn</button>
+		<button class="RegisterBtn hidden" onclick="Register()">Register</button>
+		<a href="#" class="ForgotPass" title="Forgot Your Password?">
+			<p class="ForgotPassText">Forgot password?</p>
+		</a>
+	
+	</div>
+	
+	
+
+</div>
+
+
+
+
+<div align="center" style="display:none;">
+	
+	<div ><strong id="form_stat"></strong></div>
+	<div id="loader"></div>
+
+	<p id="re"></p>
+	<button id="RegisterBtn" onclick="Register()"> Register</button>
+	<button id="LogInBtn" onclick="LogIn()">LogIn</button>
+	<button id="LogOutBtn" onclick="LogOut()" disabled>LogOut</button>
+	<button id="updateUsernameBtn" onclick="updateName()" disabled>Update Username</button>
+	<button id="updatePasswordBtn" onclick="updatePassword()" disabled>Update Password</button>
+	<button id="forgotPasswordBtn" onclick="forgotPassword()" >Forgot my Password</button>
+	
+	<div id="showData"></div>
+	<div id="google_translate_element"></div>
+</div>
+
+
+
+<div align="center" style="display:none"><!--Statistics-->
+	<p>Currently Registered:<span id="total_Reg"></span></p>
+</div>
+
+<div align="center" style="display:none">
+	<p>ANDROID LABS 2017 | All Rights Reserved</p>
+</div>
+
+
+</body>
+
+
+
+
+
+
+
+<html>

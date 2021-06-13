@@ -1,0 +1,3292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="LogIn Page for Heartily Sorry">
+	<!-- <meta name="google-signin-scope" content="profile email"> -->
+	<meta name="google-signin-client_id" content="749312594134-pitilbajjpv6g4v1a0prp5151juucfcv.apps.googleusercontent.com">
+	<!-- 749312594134-pitilbajjpv6g4v1a0prp5151juucfcv.apps.googleusercontent.com -->
+	<!-- rkyO0wqmR07DQWdK6Lk4ga1P -->
+
+	<title>Beta LogIn Page</title>
+	<link rel="stylesheet" href="css/styles.css" defer>
+	<link rel="stylesheet" href="css/vivify.min.css" defer>
+
+	<script src="https://apis.google.com/js/platform.js" async defer></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" defer></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous" defer></script>
+
+
+	<script defer> //Form Login & Register Setup; Heavily edited code from https://gist.github.com/Tito0269/2014c7001c89ed596171baea229d3363
+
+	console.log("Try adding Aascii ART https://www.text-image.com/convert/ascii.html");
+	var c_user, c_progpos, c_prog, temp_user, c_resp, c_linking, c_linkmodal, c_epT, c_epVal, user_ip, user_resp, cookies , v_prog1, v_prog2, v_stat, fail_atmpt, sv_stat;
+	var user_progress;
+	var r_updateName = false;
+	//copied from https://www.cs.cmu.edu/~biglou/resources/
+	var bad_filter = ["abbo","abo","abortion","abuse","addict","addicts","adult","africa","african","alla","allah","alligatorbait","amateur","american","anal","analannie","analsex","angie","angry","anus","arab","arabs","areola","argie","aroused","arse","arsehole","asian","ass","assassin","assassinate","assassination","assault","assbagger","assblaster","assclown","asscowboy","asses","assfuck","assfucker","asshat","asshole","assholes","asshore","assjockey","asskiss","asskisser","assklown","asslick","asslicker","asslover","assman","assmonkey","assmunch","assmuncher","asspacker","asspirate","asspuppies","assranger","asswhore","asswipe","athletesfoot","attack","australian","babe","babies","backdoor","backdoorman","backseat","badfuck","balllicker","balls","ballsack","banging","baptist","barelylegal","barf","barface","barfface","bast","bastard ","bazongas","bazooms","beaner","beast","beastality","beastial","beastiality","beatoff","beat-off","beatyourmeat","beaver","bestial","bestiality","bi","biatch","bible","bicurious","bigass","bigbastard","bigbutt","bigger","bisexual","bi-sexual","bitch","bitcher","bitches","bitchez","bitchin","bitching","bitchslap","bitchy","biteme","black","blackman","blackout","blacks","blind","blow","blowjob","boang","bogan","bohunk","bollick","bollock","bomb","bombers","bombing","bombs","bomd","bondage","boner","bong","boob","boobies","boobs","booby","boody","boom","boong","boonga","boonie","booty","bootycall","bountybar","bra","brea5t","breast","breastjob","breastlover","breastman","brothel","bugger","buggered","buggery","bullcrap","bulldike","bulldyke","bullshit","bumblefuck","bumfuck","bunga","bunghole","buried","burn","butchbabes","butchdike","butchdyke","butt","buttbang","butt-bang","buttface","buttfuck","butt-fuck","buttfucker","butt-fucker","buttfuckers","butt-fuckers","butthead","buttman","buttmunch","buttmuncher","buttpirate","buttplug","buttstain","byatch","cacker","cameljockey","cameltoe","canadian","cancer","carpetmuncher","carruth","catholic","catholics","cemetery","chav","cherrypopper","chickslick","children's","chin","chinaman","chinamen","chinese","chink","chinky","choad","chode","christ","christian","church","cigarette","cigs","clamdigger","clamdiver","clit","clitoris","clogwog","cocaine","cock","cockblock","cockblocker","cockcowboy","cockfight","cockhead","cockknob","cocklicker","cocklover","cocknob","cockqueen","cockrider","cocksman","cocksmith","cocksmoker","cocksucer","cocksuck ","cocksucked ","cocksucker","cocksucking","cocktail","cocktease","cocky","cohee","coitus","color","colored","coloured","commie","communist","condom","conservative","conspiracy","coolie","cooly","coon","coondog","copulate","cornhole","corruption","cra5h","crabs","crack","crackpipe","crackwhore","crack-whore","crap","crapola","crapper","crappy","crash","creamy","crime","crimes","criminal","criminals","crotch","crotchjockey","crotchmonkey","crotchrot","cum","cumbubble","cumfest","cumjockey","cumm","cummer","cumming","cumquat","cumqueen","cumshot","cunilingus","cunillingus","cunn","cunnilingus","cunntt","cunt","cunteyed","cuntfuck","cuntfucker","cuntlick ","cuntlicker ","cuntlicking ","cuntsucker","cybersex","cyberslimer","dago","dahmer","dammit","damn","damnation","damnit","darkie","darky","datnigga","dead","deapthroat","death","deepthroat","defecate","dego","demon","deposit","desire","destroy","deth","devil","devilworshipper","dick","dickbrain","dickforbrains","dickhead","dickless","dicklick","dicklicker","dickman","dickwad","dickweed","diddle","die","died","dies","dike","dildo","dingleberry","dink","dipshit","dipstick","dirty","disease","diseases","disturbed","dive","dix","dixiedike","dixiedyke","doggiestyle","doggystyle","dong","doodoo","doo-doo","doom","dope","dragqueen","dragqween","dripdick","drug","drunk","drunken","dumb","dumbass","dumbbitch","dumbfuck","dyefly","dyke","easyslut","eatballs","eatme","eatpussy","ecstacy","ejaculate","ejaculated","ejaculating ","ejaculation","enema","enemy","erect","erection","ero","escort","ethiopian","ethnic","european","evl","excrement","execute","executed","execution","executioner","explosion","facefucker","faeces","fag","fagging","faggot","fagot","failed","failure","fairies","fairy","faith","fannyfucker","fart","farted ","farting ","farty ","fastfuck","fat","fatah","fatass","fatfuck","fatfucker","fatso","fckcum","fear","feces","felatio ","felch","felcher","felching","fellatio","feltch","feltcher","feltching","fetish","fight","filipina","filipino","fingerfood","fingerfuck ","fingerfucked ","fingerfucker ","fingerfuckers","fingerfucking ","fire","firing","fister","fistfuck","fistfucked ","fistfucker ","fistfucking ","fisting","flange","flasher","flatulence","floo","flydie","flydye","fok","fondle","footaction","footfuck","footfucker","footlicker","footstar","fore","foreskin","forni","fornicate","foursome","fourtwenty","fraud","freakfuck","freakyfucker","freefuck","fu","fubar","fuc","fucck","fuck","fucka","fuckable","fuckbag","fuckbuddy","fucked","fuckedup","fucker","fuckers","fuckface","fuckfest","fuckfreak","fuckfriend","fuckhead","fuckher","fuckin","fuckina","fucking","fuckingbitch","fuckinnuts","fuckinright","fuckit","fuckknob","fuckme ","fuckmehard","fuckmonkey","fuckoff","fuckpig","fucks","fucktard","fuckwhore","fuckyou","fudgepacker","fugly","fuk","fuks","funeral","funfuck","fungus","fuuck","gangbang","gangbanged ","gangbanger","gangsta","gatorbait","gay","gaymuthafuckinwhore","gaysex ","geez","geezer","geni","genital","german","getiton","gin","ginzo","gipp","girls","givehead","glazeddonut","gob","god","godammit","goddamit","goddammit","goddamn","goddamned","goddamnes","goddamnit","goddamnmuthafucker","goldenshower","gonorrehea","gonzagas","gook","gotohell","goy","goyim","greaseball","gringo","groe","gross","grostulation","gubba","gummer","gun","gyp","gypo","gypp","gyppie","gyppo","gyppy","hamas","handjob","hapa","harder","hardon","harem","headfuck","headlights","hebe","heeb","hell","henhouse","heroin","herpes","heterosexual","hijack","hijacker","hijacking","hillbillies","hindoo","hiscock","hitler","hitlerism","hitlerist","hiv","ho","hobo","hodgie","hoes","hole","holestuffer","homicide","homo","homobangers","homosexual","honger","honk","honkers","honkey","honky","hook","hooker","hookers","hooters","hore","hork","horn","horney","horniest","horny","horseshit","hosejob","hoser","hostage","hotdamn","hotpussy","hottotrot","hummer","husky","hussy","hustler","hymen","hymie","iblowu","idiot","ikey","illegal","incest","insest","intercourse","interracial","intheass","inthebuff","israel","israeli","israel's","italiano","itch","jackass","jackoff","jackshit","jacktheripper","jade","jap","japanese","japcrap","jebus","jeez","jerkoff","jesus","jesuschrist","jew","jewish","jiga","jigaboo","jigg","jigga","jiggabo","jigger ","jiggy","jihad","jijjiboo","jimfish","jism","jiz ","jizim","jizjuice","jizm ","jizz","jizzim","jizzum","joint","juggalo","jugs","junglebunny","kaffer","kaffir","kaffre","kafir","kanake","kid","kigger","kike","kill","killed","killer","killing","kills","kink","kinky","kissass","kkk","knife","knockers","kock","kondum","koon","kotex","krap","krappy","kraut","kum","kumbubble","kumbullbe","kummer","kumming","kumquat","kums","kunilingus","kunnilingus","kunt","ky","kyke","lactate","laid","lapdance","latin","lesbain","lesbayn","lesbian","lesbin","lesbo","lez","lezbe","lezbefriends","lezbo","lezz","lezzo","liberal","libido","licker","lickme","lies","limey","limpdick","limy","lingerie","liquor","livesex","loadedgun","lolita","looser","loser","lotion","lovebone","lovegoo","lovegun","lovejuice","lovemuscle","lovepistol","loverocket","lowlife","lsd","lubejob","lucifer","luckycammeltoe","lugan","lynch","macaca","mad","mafia","magicwand","mams","manhater","manpaste","marijuana","mastabate","mastabater","masterbate","masterblaster","mastrabator","masturbate","masturbating","mattressprincess","meatbeatter","meatrack","meth","mexican","mgger","mggor","mickeyfinn","mideast","milf","minority","mockey","mockie","mocky","mofo","moky","moles","molest","molestation","molester","molestor","moneyshot","mooncricket","mormon","moron","moslem","mosshead","mothafuck","mothafucka","mothafuckaz","mothafucked ","mothafucker","mothafuckin","mothafucking ","mothafuckings","motherfuck","motherfucked","motherfucker","motherfuckin","motherfucking","motherfuckings","motherlovebone","muff","muffdive","muffdiver","muffindiver","mufflikcer","mulatto","muncher","munt","murder","murderer","muslim","naked","narcotic","nasty","nastybitch","nastyho","nastyslut","nastywhore","nazi","necro","negro","negroes","negroid","negro's","nig","niger","nigerian","nigerians","nigg","nigga","niggah","niggaracci","niggard","niggarded","niggarding","niggardliness","niggardliness's","niggardly","niggards","niggard's","niggaz","nigger","niggerhead","niggerhole","niggers","nigger's","niggle","niggled","niggles","niggling","nigglings","niggor","niggur","niglet","nignog","nigr","nigra","nigre","nip","nipple","nipplering","nittit","nlgger","nlggor","nofuckingway","nook","nookey","nookie","noonan","nooner","nude","nudger","nuke","nutfucker","nymph","ontherag","oral","orga","orgasim ","orgasm","orgies","orgy","osama","paki","palesimian","palestinian","pansies","pansy","panti","panties","payo","pearlnecklace","peck","pecker","peckerwood","pee","peehole","pee-pee","peepshow","peepshpw","pendy","penetration","peni5","penile","penis","penises","penthouse","period","perv","phonesex","phuk","phuked","phuking","phukked","phukking","phungky","phuq","pi55","picaninny","piccaninny","pickaninny","piker","pikey","piky","pimp","pimped","pimper","pimpjuic","pimpjuice","pimpsimp","pindick","piss","pissed","pisser","pisses ","pisshead","pissin ","pissing","pissoff ","pistol","pixie","pixy","playboy","playgirl","pocha","pocho","pocketpool","pohm","polack","pom","pommie","pommy","poo","poon","poontang","poop","pooper","pooperscooper","pooping","poorwhitetrash","popimp","porchmonkey","porn","pornflick","pornking","porno","pornography","pornprincess","pot","poverty","premature","pric","prick","prickhead","primetime","propaganda","pros","prostitute","protestant","pu55i","pu55y","pube","pubic","pubiclice","pud","pudboy","pudd","puddboy","puke","puntang","purinapricness","puss","pussie","pussies","pussy","pussycat","pussyeater","pussyfucker","pussylicker","pussylips","pussylover","pussypounder","pusy","quashie","queef","queer","quickie","quim","ra8s","rabbi","racial","racist","radical","radicals","raghead","randy","rape","raped","raper","rapist","rearend","rearentry","rectum","redlight","redneck","reefer","reestie","refugee","reject","remains","rentafuck","republican","rere","retard","retarded","ribbed","rigger","rimjob","rimming","roach","robber","roundeye","rump","russki","russkie","sadis","sadom","samckdaddy","sandm","sandnigger","satan","scag","scallywag","scat","schlong","screw","screwyou","scrotum","scum","semen","seppo","servant","sex","sexed","sexfarm","sexhound","sexhouse","sexing","sexkitten","sexpot","sexslave","sextogo","sextoy","sextoys","sexual","sexually","sexwhore","sexy","sexymoma","sexy-slim","shag","shaggin","shagging","shat","shav","shawtypimp","sheeney","shhit","shinola","shit","shitcan","shitdick","shite","shiteater","shited","shitface","shitfaced","shitfit","shitforbrains","shitfuck","shitfucker","shitfull","shithapens","shithappens","shithead","shithouse","shiting","shitlist","shitola","shitoutofluck","shits","shitstain","shitted","shitter","shitting","shitty ","shoot","shooting","shortfuck","showtime","sick","sissy","sixsixsix","sixtynine","sixtyniner","skank","skankbitch","skankfuck","skankwhore","skanky","skankybitch","skankywhore","skinflute","skum","skumbag","slant","slanteye","slapper","slaughter","slav","slave","slavedriver","sleezebag","sleezeball","slideitin","slime","slimeball","slimebucket","slopehead","slopey","slopy","slut","sluts","slutt","slutting","slutty","slutwear","slutwhore","smack","smackthemonkey","smut","snatch","snatchpatch","snigger","sniggered","sniggering","sniggers","snigger's","sniper","snot","snowback","snownigger","sob","sodom","sodomise","sodomite","sodomize","sodomy","sonofabitch","sonofbitch","sooty","sos","soviet","spaghettibender","spaghettinigger","spank","spankthemonkey","sperm","spermacide","spermbag","spermhearder","spermherder","spic","spick","spig","spigotty","spik","spit","spitter","splittail","spooge","spreadeagle","spunk","spunky","squaw","stagg","stiffy","strapon","stringer","stripclub","stroke","stroking","stupid","stupidfuck","stupidfucker","suck","suckdick","sucker","suckme","suckmyass","suckmydick","suckmytit","suckoff","suicide","swallow","swallower","swalow","swastika","sweetness","syphilis","taboo","taff","tampon","tang","tantra","tarbaby","tard","teat","terror","terrorist","teste","testicle","testicles","thicklips","thirdeye","thirdleg","threesome","threeway","timbernigger","tinkle","tit","titbitnipply","titfuck","titfucker","titfuckin","titjob","titlicker","titlover","tits","tittie","titties","titty","tnt","toilet","tongethruster","tongue","tonguethrust","tonguetramp","tortur","torture","tosser","towelhead","trailertrash","tramp","trannie","tranny","transexual","transsexual","transvestite","triplex","trisexual","trojan","trots","tuckahoe","tunneloflove","turd","turnon","twat","twink","twinkie","twobitwhore","uck","uk","unfuckable","upskirt","uptheass","upthebutt","urinary","urinate","urine","usama","uterus","vagina","vaginal","vatican","vibr","vibrater","vibrator","vietcong","violence","virgin","virginbreaker","vomit","vulva","wab","wank","wanker","wanking","waysted","weapon","weenie","weewee","welcher","welfare","wetb","wetback","wetspot","whacker","whash","whigger","whiskey","whiskeydick","whiskydick","whit","whitenigger","whites","whitetrash","whitey","whiz","whop","whore","whorefucker","whorehouse","wigger","willie","williewanker","willy","wn","wog","women's","wop","wtf","wuss","wuzzie","xtc","xxx","yankee","yellowman","zigabo","zipperhead"];
+	// var script_url = "https://script.google.com/macros/s/AKfycbyJ21nFcwUuHpbQ6jB_ud9VRKwwQ3FPLU1dlmsh/exec";
+	// var script_url = "https://script.google.com/macros/s/AKfycbzRmAsLmualVM9CEE9p_6A6Y9ooIHxkAE9XBiNndL4TChMQrL32yQO8ZkniX9DF0aOn/exec";
+	var script_url = "https://script.google.com/macros/s/AKfycbz9joV_wl2mXJUIq8NNvuXBUxI3ThNfh1w8p-V7Evg/dev"
+	
+	//ONLY USE PROMISE ON ASYNC FUNCTIONS
+	//AWAIT returns undefined on promises but value on ()=>return
+
+	//Form Commands
+	async function Register(){
+			disableFormBtns(true);
+			geoloc = await requestAstronomy(); //string
+			r_captcha = verifyRecaptcha(); //boolean
+			if (r_captcha == true){
+				newModal("Queue", "please wait","Registering...",3000)
+				if (geoloc == "true" || geoloc == true){ // checks if Astronomy is available
+					delay = 0;
+				} else {
+					delay = 5000;
+				}
+				setTimeout(async function(){
+					//extracts value from input
+					var user_clear = true;
+					var username =	temp_user = document.getElementById("Username").value;
+					var userid = document.getElementById("UserID").value;
+					var password = document.getElementById("Password").value;
+					var cpassword = document.getElementById("cPassword").value;
+					var rquestion = (document.getElementById("rQuestion").value).replaceAll("?","");
+					var rpassword = document.getElementById("rPassword").value;
+					
+					if (!username == false && !password == false && !cpassword == false && !rquestion == false && !rpassword == false){ //checks for bad words
+						// console.log("filter")
+						for (i in bad_filter){
+							if (username.includes(bad_filter[i])){
+								ques1 = newModal("Warning","Really? ... You want to be called " + bad_filter[i].toUpperCase(),"",100000)
+								ans1 = await booleanResp(ques1)
+								if(ans1){
+									ques2 = newModal("Warning","Last chance mate... You'll be called " + bad_filter[i].toUpperCase() + " in our Research. Continue?","",100000)
+									ans2 = await booleanResp(ques2)
+									if(ans2){
+										user_clear = true;
+									} else {
+										user_clear = false;
+										document.getElementById("Username").style.border = "solid red";
+										newModal("Error","Please change the marked targets","Change of mind");
+										break;
+									}
+								} else {
+									user_clear = false;
+									document.getElementById("Username").style.border = "solid red";
+									newModal("Error","Please change the marked targets","Change of mind");
+									break;
+								}
+							}
+						}
+						// console.log("is pass equal")
+						if (cpassword == password){
+							user_clear = true;
+						} else {
+							user_clear = false;
+							document.getElementById("cPassword").style.border = "solid red";
+							newModal("Error","Please retype your password to continue","Pass didn't match")
+						}
+					
+					} else if (!username == false && !rquestion == false && !rpassword == false && !userid == false){
+						console.log("Alt Sign In Register detected")
+						if (password == false && cpassword == false){
+							password = userid;
+							cpassword = userid;
+							
+
+							// console.log("Alt Sign In with no pass and cpass")
+						} else {
+							user_clear = false;
+							document.getElementById("cPassword").style.border = "solid red";
+							newModal("Error","Please retype your password to continue","Pass didn't match")
+							// console.log("Alt Sign In with pass or cpass")
+						}
+					} else {
+						user_clear = false;
+						newModal("Error", "Please fill in the mark targets","Missing input...")
+						if (username == false){
+							document.getElementById("Username").style.border = "solid red";
+						}
+						if (password == false){
+							document.getElementById("Password").style.border = "solid red";
+						}	
+						if (cpassword == false){
+								document.getElementById("cPassword").style.border = "solid red";
+							}	
+						if (rquestion == false){
+								document.getElementById("rQuestion").style.border = "solid red";
+							}	
+						if (rpassword == false){
+								document.getElementById("rPassword").style.border = "solid red";
+							}	
+					}
+					if (!getCookie("c_loc")){
+						// console.log("is country available?")
+						user_clear == false;
+						newModal("Error","Please try again later...","Server Down...")
+					}	
+					if (user_clear == true){ //checks if user is clear for registration			
+						if(!userid == true){
+							userid = "none"
+						}
+						//newModal("Queue", "please wait","Registering...",3000)
+						// console.log(username)
+						// console.log(userid)
+						// console.log(password)
+						// console.log(cpassword)
+						// console.log(await convertSHA256(password + username))
+
+						var url = script_url+"?username=" + username + "&userID=" + userid + "&password=" + await convertSHA256(password + username) + "&sec_ques=" + rquestion + "&sec_ans=" + await convertSHA256(rpassword) + "&country=" + getCookie("c_loc") + "&flag=" + getCookie("c_flag") + "&sunrise=" + getCookie("c_sunrise") + "&sunset=" + getCookie("c_sunset") + "&solar_noon=" + getCookie("c_solar_noon") + "&moonrise=" + getCookie("c_moonrise") + "&moonset=" + getCookie("c_moonset") + "&action=verify_user&action2=register_user";
+						var request = jQuery.ajax({
+							crossDomain: true,
+							url: url ,
+							method: "GET",
+							dataType: "jsonp"
+						});
+						isServerDown();
+					} else {
+						disableFormBtns(false);
+						console.log("Register aborted by system")
+						// newModal("Error","","Registration Aborted");
+					}			
+				},delay)
+			} else {
+				disableFormBtns(false);
+				console.log("Register aborted by system")
+				// newModal("Error","","Registration Aborted");
+			}
+	} 	
+	async function updateName(){
+		if (r_updateName == false){
+			
+			console.log(" word filter ples");
+			//word filter ples
+			//release r_updateName
+			r_updateName = true;
+
+			ques1 = newModal("Input","Enter new name:","Update Username")
+			var username = await inputResp(ques1);
+
+			if (username != false){
+				r_updateName = false;
+
+				ques2 = newModal("Input","Please enter your password: (If none, leave it blank)","Verify if it is really you")
+				var password = await inputResp(ques2);
+
+				if (password != false || password == ""){
+					if (getCookie("c_userid") == "none"){ //Regular
+						console.log("update name but verify Pass first")
+						
+						var url = script_url+"?newname=" + username + "&username=" + getCookie("c_user") + "&newpassword=" + await convertSHA256(password + username) + "&password=" + await convertSHA256(password + getCookie("c_user")) + "&sessionID=" + getCookie("c_sessionid") + "&rank=" + getCookie("c_rank") + "&action=update_username";
+						console.log(url);
+						https://script.google.com/macros/s/AKfycbyJ21nFcwUuHpbQ6jB_ud9VRKwwQ3FPLU1dlmsh/exec?newname=mmm&username=mmm&newpassword=4378c5895e7ade691792a8bbed89dbfcbea257a8949a3b1132a875e67aa45583&password=4378c5895e7ade691792a8bbed89dbfcbea257a8949a3b1132a875e67aa45583&sessionID=ljq4efrr6&rank=8&action=update_username
+						var request = jQuery.ajax({
+							crossDomain: true,
+							url: url ,
+							method: "GET",
+							dataType: "jsonp"
+						});
+						isServerDown();
+					} else { //Alt Sign In
+						if(password == ""){ //AltSignIn //has no password from the start
+							console.log("update name for AltSignIn")
+							//old= user			userid+user			id
+							//new= nuser		userid+nuser		id
+							console.log(await convertSHA256(getCookie("c_userid") + getCookie("c_user")))
+							var url = script_url+"?newname=" + username + "&username=" + getCookie("c_user") + "&newpassword=" + await convertSHA256(getCookie("c_userid") + username) + "&password=" + await convertSHA256(getCookie("c_userid") + getCookie("c_user")) + "&sessionID=" + getCookie("c_sessionid") + "&rank=" + getCookie("c_rank") + "&action=update_username";
+						} else { //Linked Account
+							//old= user			pass+user			id
+							//new= nuser		pass+nuser			id
+							console.log("use User + UserId for pass; IGNORE USERID")
+							var url = script_url+"?newname=" + username + "&username=" + getCookie("c_user") + "&newpassword=" + await convertSHA256(password + username) + "&password=" + await convertSHA256(password + getCookie("c_user")) + "&sessionID=" + getCookie("c_sessionid") + "&rank=" + getCookie("c_rank") + "&action=update_username";
+						}
+
+						var request = jQuery.ajax({
+							crossDomain: true,
+							url: url ,
+							method: "GET",
+							dataType: "jsonp"
+						});
+						isServerDown();					
+					}
+				} else {
+					newModal("Error","user aborted username update","Update failed")
+					r_updateName = false;
+				}
+			} else {
+				// newModal("Error","user aborted username update","Update failed")
+				r_updateName = false;
+			}
+		}
+	}	
+	async function LogIn(){
+		
+		if (disableFormBtns(true,"LogInBtn") != "none"){
+			disableFormBtns(true);
+
+			var username =	document.getElementById("Username").value || false; 
+			var password = document.getElementById("Password").value || false;
+			
+			if(!getCookie("f_atmpt") == true){ //resets failed attempts and check if refresh on cldwn
+				updateCookie("f_atmpt",0,1)
+			} else {
+				p_atmpt = getCookie("f_atmpt")
+				if (p_atmpt >= 5 || p_atmpt <= 0){
+					updateCookie("f_atmpt",0,1)
+				}
+			}
+
+			if(username != false && password != false){
+			
+				newModal("Queue", "","Verifying user", 3000)
+				
+				document.getElementById("Username").style.border = "default";
+				document.getElementById("Password").style.border = "default";
+				var sessionid = (Math.random() * 1000000000).toString(36).substr(2, 9);
+				var url = script_url+"?username=" + username + "&password="+ await convertSHA256(password + username) + "&sessionID=" + sessionid + "&action=verify_user&action2=verify_pass";
+				var request = jQuery.ajax({
+					crossDomain: true,
+					url: url ,
+					method: "GET",
+					dataType: "jsonp"
+				});
+				isServerDown();	
+			} else {
+				setTimeout(()=>disableFormBtns(false),3000)
+				newModal("Error", "Please fill in the mark targets","Missing input...")
+				console.log("LogIn aborted by system")
+				if (username == false){
+					document.getElementById("Username").style.border = "solid red";
+				}
+				if (password == false){
+					document.getElementById("Password").style.border = "solid red";
+				}
+				
+			}	
+		} else {
+			console.log("Please wait");
+		}
+	}
+	function LogOut(){
+		// unlockUserSettings(false);
+		updateCookie("c_user","",-1);
+		updateCookie("c_progpos","",-1);
+		updateCookie("c_prog","",-1);
+		updateCookie("c_loc","",-1);
+		updateCookie("c_country","",-1);
+		updateCookie("c_flag","",-1);
+		updateCookie("c_userid","",-1);
+		updateCookie("c_sessionid","",-1);
+		updateCookie("c_rank","",-1);
+		updateCookie("f_atmpt","",-1);
+		window.location.assign(window.location.origin + "/index.html"); 
+	}
+	async function linkAccount(){
+		if (getCookie("c_userid") == "none"){
+			//Require session ID to ease verification
+			c_linking = true;
+			console.log(c_linking)
+			ques1 = newModal("Link","Select an account to link with: (Note: you can only link one!)","Link Account")
+			c_linkmodal = ques1;
+			ans1 = await booleanResp(ques1,true);
+		} else {
+			newModal("Done","Google or Facebook account found","Already linked")
+		}
+	}
+	async function unlinkAccount(){
+		if (getCookie("c_userid") != "none"){
+			
+			ques1 = newModal("Warning","Are you sure you want to unlink your account?","Unlink Account")
+			ans1 = await booleanResp(ques1)
+
+			if(ans1 != false){
+				var url = script_url + "?userID=" + getCookie("c_userid") + "&username=" + getCookie("c_user") + "&sessionID=" + getCookie("c_sessionid") + "&rank=" + getCookie("c_rank") + "&action=unlink_altsignin";
+				var request = jQuery.ajax({
+					crossDomain: true,
+					url: url ,
+					method: "GET",
+					dataType: "jsonp"
+				});
+				isServerDown();
+			}
+		} else {
+			newModal("Error","Google or Facebook account not found","Not linked yet")
+		}
+	}
+	async function forgotPassword(){
+			disableFormBtns(true);
+			var user_clear = true;
+			// var ques1 = newModal("Input","Enter username to be recovered:","Forgot Password")
+			ques1 = newModal("Input","Enter username to be recovered:","Account Recovery...");
+			ans1 = await inputResp(ques1);
+			console.log(ans1);
+			if (ans1 != false){
+				newModal("Queue","please wait...","Verifying user")
+				var url = script_url+"?username=" + manualSpCharDel(ans1)+ "&action=recover_pass";
+				var request = jQuery.ajax({
+					crossDomain: true,
+					url: url ,
+					method: "GET",
+					dataType: "jsonp"
+				});
+				isServerDown()
+				//must pass a user state on the server side
+			} else {
+				newModal("Error","user aborted recovery","Recovery failed")
+				disableFormBtns(false);
+			}
+			
+	}
+	async function recoverPassword(username,sec_ques,sec_ans,i){
+		var user_clear = true;
+
+		newModal("Done","please wait...","User found!")
+
+		ques1 = newModal("Input", sec_ques["ques"] + "?","SECURITY QUESTION:")
+		ans1 = await inputResp(ques1);
+		code = await convertSHA256(ans1)
+		
+		if (sec_ans["ans"] == code){
+			updateForgottenPassword(username,ans1,sec_ans["ans"],i)		
+		} else if (ans1 == false){
+			newModal("Error","user aborted recovery","Recovery failed")
+			disableFormBtns(false)
+		} else {
+			ques2 = newModal("Input", "Try again: " + sec_ques["ques"] + "?","SECURITY QUESTION:")
+			ans2 = await inputResp(ques2);
+			code2 = await convertSHA256(ans2)
+			if (sec_ans["ans"] == code2){
+				updateForgottenPassword(username,ans2,sec_ans["ans"],i)	
+			} else if (ans2 == false){
+				newModal("Error","user aborted recovery","Recovery failed")
+				disableFormBtns(false)
+			} else {
+				ques3 = newModal("Input", "Last try: "+ sec_ques["ques"] + "?","SECURITY QUESTION:")
+				ans3 = await inputResp(ques3);
+				code3 = await convertSHA256(ans3)
+				if (sec_ans["ans"] == code3){
+					updateForgottenPassword(username,ans3,sec_ans["ans"],i)	
+				} else if (ans3 == false){
+					newModal("Error","user aborted recovery","Recovery failed")
+					disableFormBtns(false)
+				} else {
+					newModal("Error","user failed too many attempts...","Recovery failed")
+					disableFormBtns(false)
+				}
+			}
+		}
+	}
+	async function updateForgottenPassword(username,ans,r_ans,i){ //can be called directly or by recoverPassword	
+		code = await convertSHA256(ans);
+		if (r_ans == code){
+
+			newModal("Done","updating your password...","User verified")
+
+			attempt = 0;
+			while (attempt < 3){
+				ques1 = newModal("Input","Enter new password:","New Password")
+				ans1 = await inputResp(ques1);
+				if (ans1 != false){
+					ques2 = newModal("Input","Retype new password:","New Password")
+					ans2 = await inputResp(ques2);
+					if(ans1 == ans2){
+						attempt = 3;
+						//console.log("fire update password")
+						console.log("fire update password")
+						// console.log(username)
+						var url = script_url+"?username=" + username["name"] + "&password=" + await convertSHA256(ans2 + username["name"]) + "&rank=" + i + "&action=update_pass";
+						var request = jQuery.ajax({
+							crossDomain: true,
+							url: url ,
+							method: "GET",
+							dataType: "jsonp"
+						});
+						isServerDown()
+						newModal("Queue","please wait...","Updating Pass",5000);
+					} else {
+						attempt = attempt + 1;
+						console.log(attempt)
+						if (attempt == 3){
+							newModal("Error","user failed too many attempts to update password","Recovery failed")
+							disableFormBtns(false)
+						} else {
+							newModal("Error","please try again","Update failed",5000)
+						}
+					}
+				} else {
+					attempt = 3;
+					newModal("Error","user aborted password update","Recovery failed")
+				}
+			}
+		} else {
+			console.log("Password didn't match... I wonder why -_-")
+			disableFormBtns(false);
+		}
+		
+	}
+	async function updatePassword(){
+		ques1 = newModal("Input","Enter new password:","New Password")
+		ans1 = await inputResp(ques1);
+
+		if (ans1 != false){
+			ques2 = newModal("Input","Retype new password:","New Password")
+			ans2 = await inputResp(ques2);
+			
+			if (ans2 != false && ans1 == ans2){
+				var url = script_url+"?username=" + getCookie("c_user") + "&password=" + await convertSHA256(ans2 + getCookie("c_user")) + "&sessionID=" + getCookie("c_sessionid") + "&rank=" + getCookie("c_rank") + "&action=update_pass2";
+				var request = jQuery.ajax({
+					crossDomain: true,
+					url: url ,
+					method: "GET",
+					dataType: "jsonp"
+				});
+				isServerDown();
+			} else if (ans2 == false){
+				newModal("Error","user aborted password update","Update failed")
+			} else if (ans1 != ans2){
+				newModal("Error","retyped password didn't match","Update failed")
+			} 
+		}	
+	}
+	async function updateRecovery(){
+
+		ques1 = newModal("Input","Input your new Recovery Question:","Recovery Update");
+		ans1 = await inputResp(ques1)
+		
+
+		if(ans1 != false){
+			ques2 = newModal("Input","Input your new Recovery Answer:","Recovery Update");
+			ans2 = await inputResp(ques2);
+			
+			if(ans2 != false){
+				newModal("Queue","updating security...","")
+				ans1 = ans1.replaceAll("?","");
+				var url = script_url+"?username=" + getCookie("c_user") + "&sec_ques=" + ans1 + "&sec_ans=" + await convertSHA256(ans2) + "&sessionID=" + getCookie("c_sessionid") + "&rank=" + getCookie("c_rank") + "&action=update_recovery";
+				var request = jQuery.ajax({
+					crossDomain: true,
+					url: url ,
+					method: "GET",
+					dataType: "jsonp"
+				});
+			}
+		}
+	}
+	async function convertSHA256(message) {
+	var msgUint8 = new TextEncoder().encode(message);                           // encode as (utf-8) Uint8Array
+	var hashBuffer = await crypto.subtle.digest('SHA-256', msgUint8);           // hash the message
+	var hashArray = Array.from(new Uint8Array(hashBuffer));                     // convert buffer to byte array
+	var hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join(''); // convert bytes to hex string
+	return hashHex;
+	}
+	async function convertSHA1(message) {
+	var msgUint8 = new TextEncoder().encode(message);                           // encode as (utf-8) Uint8Array
+	var hashBuffer = await crypto.subtle.digest('SHA-1', msgUint8);           // hash the message
+	var hashArray = Array.from(new Uint8Array(hashBuffer));                     // convert buffer to byte array
+	var hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join(''); // convert bytes to hex string
+	return hashHex;
+	}
+
+	function retrieveUserdata(data){ //unused
+		alert("RETRIEVED USER DATA FIRED")
+		var url = script_url+"?username=" + username + "&action=retrieve_userdata";
+		var request = jQuery.ajax({
+		crossDomain: true,
+		url: url ,
+		method: "GET",
+		dataType: "jsonp"
+		});
+		isServerDown()
+	}
+	function disableFormBtns(status,target){
+
+		if (status == true && !target == true && !document.getElementsByClassName("resp_form")[0] != true){
+			document.getElementsByClassName("LogInBtn")[0].style.pointerEvents = "none";
+			document.getElementsByClassName("RegisterBtn")[0].style.pointerEvents = "none";
+			document.getElementsByClassName("AltBlock")[0].style.display = "block";
+			document.getElementsByClassName("ForgotPasswordPlaceholder")[0].style.pointerEvents = "none";
+			console.log("FORMS DISABLED!!!!")
+		} else if (status == false && !target == true  && !document.getElementsByClassName("resp_form")[0] != true){
+			document.getElementsByClassName("LogInBtn")[0].style.pointerEvents = "auto";
+			document.getElementsByClassName("RegisterBtn")[0].style.pointerEvents = "auto";
+			document.getElementsByClassName("AltBlock")[0].style.display = "none";
+			document.getElementsByClassName("ForgotPasswordPlaceholder")[0].style.pointerEvents = "auto";
+			console.log("FORMS ENABLED!!!!")
+		} else if (!target == false) {
+			return document.getElementsByClassName(target)[0].style.pointerEvents;
+		} else if (!document.getElementsByClassName("resp_form")[0] == true){
+			console.log("resp_form already removed!")
+		} else {
+			alert("Error on disableFromBtn() with status:" + status + " and target:" + target )
+		}
+
+		function Alt_disable(item, index){
+			item.style.pointerEvents = "none";
+			// console.log(item)
+			// console.log(index)
+		}
+		function Alt_enable(item, index){
+			item.style.pointerEvents = "auto";
+			// console.log(item)
+			// console.log(index)
+		}
+	}
+	function isServerDown(){ // use clearTimeout(sv_stat) to cancel Done on LogIn Register Update Name Update Pass Alt SignIn
+		console.log("Checking server stat...")
+		clearTimeout(sv_stat);
+		sv_stat = setTimeout(function(){
+			newModal("Error","Please try again later...","Server Down");
+			disableFormBtns(false);
+		},30000)
+	}
+	function moveSignInBtns(location){
+		gbtn = document.getElementById("googleSignIn")
+		fbtn = document.getElementsByClassName("fb-login-button")[0]
+		if(!location){
+			document.getElementsByClassName("AltSignInOpts")[0].appendChild(gbtn);
+			document.getElementsByClassName("AltSignInOpts")[0].appendChild(fbtn);
+		} else {
+			document.getElementsByClassName(location)[0].appendChild(gbtn);
+			document.getElementsByClassName(location)[0].appendChild(fbtn);
+		}
+		
+	}
+	
+	//User detection
+	function userState(sv_resp,sv_data){
+		// clearTimeout(sv_stat)
+		if (sv_resp["state"] == "exist"){
+			newModal("Error","Username already taken ):","",20000)
+			disableFormBtns(false);
+		} else if (sv_resp["state"] == "missing"){
+			fail_atmpt = parseInt(getCookie("f_atmpt")) + 1;
+			updateCookie("f_atmpt", fail_atmpt,1)
+			console.log(fail_atmpt);
+			// newModal("Error","Username doesn't exist","Recovery failed")
+
+			if (fail_atmpt >= 4 || fail_atmpt < 0){
+				atmpt_cldwn = 60000
+				setTimeout(function(){
+					updateCookie("f_atmpt", 0, 1);
+				},atmpt_cldwn)
+				newModal("Error","Please wait 60 secs to try again","Invalid User",atmpt_cldwn)
+			} else {
+				newModal("Error","Please try again","Invalid User")
+				atmpt_cldwn = 3000
+				setTimeout(function(){
+					updateCookie("f_atmpt", parseInt(getCookie("f_atmpt")) - 1,1)
+				},atmpt_cldwn * 5 * fail_atmpt)
+			}
+
+			setTimeout(function(){
+				disableFormBtns(false);
+			},atmpt_cldwn)
+
+			disableFormBtns(false);
+		} else if(sv_resp["state"] == "altmissing"){
+			newModal("Error","Linked account is missing...")
+		} else if (sv_resp["state"] == "registered"){
+			document.getElementsByClassName("AltSignInOpts")[0].style.display = "block";
+			FormActive(document.getElementsByClassName("SelectForm1")[0]);
+			newModal("Done","Account successfuly registered","",20000);
+			autoLogOutAlt();
+			disableFormBtns(false);
+		} else if (sv_resp["state"] == "unregistered"){
+			fail_atmpt = parseInt(getCookie("f_atmpt")) + 1;
+			updateCookie("f_atmpt", fail_atmpt,1)
+			console.log(fail_atmpt);
+			document.getElementById("Username").style.border = "solid red";
+
+			if (fail_atmpt >= 4 || fail_atmpt < 0){
+				atmpt_cldwn = 60000
+				setTimeout(function(){
+					updateCookie("f_atmpt", 0, 1);
+				},atmpt_cldwn)
+				newModal("Error","Please wait 60 secs to try again","Invalid User",atmpt_cldwn)
+			} else {
+				newModal("Error","Please try again","Invalid User")
+				atmpt_cldwn = 3000
+				setTimeout(function(){
+					updateCookie("f_atmpt", parseInt(getCookie("f_atmpt")) - 1,1)
+				},atmpt_cldwn * 5 * fail_atmpt)
+			}
+
+			setTimeout(function(){
+				disableFormBtns(false);
+			},atmpt_cldwn)
+
+		} else if (sv_resp["state"] == "incorrectpass"){
+			fail_atmpt = parseInt(getCookie("f_atmpt")) + 1;
+			updateCookie("f_atmpt", fail_atmpt,1)
+			console.log(fail_atmpt);
+			if(!document.getElementsByClassName("resp_form")[0] != true){
+				document.getElementById("Password").style.border = "solid red";
+			}
+			
+
+			if (fail_atmpt >= 4 || fail_atmpt < 0){
+				atmpt_cldwn = 60000
+				setTimeout(function(){
+					updateCookie("f_atmpt", 0, 1);
+				},atmpt_cldwn)
+				newModal("Error","Please wait 60 secs to try again","Invalid Pass",atmpt_cldwn)
+			} else {
+				newModal("Error","Please try again","Invalid Pass")
+				atmpt_cldwn = 3000
+				setTimeout(function(){
+					updateCookie("f_atmpt", parseInt(getCookie("f_atmpt")) - 1,1)
+				},atmpt_cldwn * 5 * fail_atmpt)
+			}
+
+			setTimeout(function(){
+				disableFormBtns(false);
+			},atmpt_cldwn)
+
+		} else if (sv_resp["state"] == "passupdated"){
+			newModal("Done","","Pass updated!");
+			disableFormBtns(false);
+		} else if (sv_resp["state"] == "userupdated"){
+			updateCookie("c_user",sv_data["c_user"]);
+			newModal("Done","Hello " + sv_data["c_user"] + "!","User updated!");
+		} else if (sv_resp["state"] == "linked"){
+			updateCookie("c_userid",sv_data["c_userid"]);
+			newModal("Done","Account successfully linked!");
+		} else if (sv_resp["state"] == "unlinked"){
+			updateCookie("c_userid",sv_data["c_userid"]);
+			newModal("Done","Account successfully unlinked!");
+		} else if (sv_resp["state"] == "linked_already"){
+			newModal("Error","Account was already linked...");
+		} else if (sv_resp["state"] == "linked_inuse"){
+			newModal("Error","Link account was already in use...","Link failed");
+		} else if (sv_resp["state"] == "unlinked_already"){
+			newModal("Error","Account was already unlinked...");
+		} else if (sv_resp["state"] == "recovery_updated"){
+			newModal("Done","Recovery updated finish!");
+		} else if (sv_resp["state"] == "invalid_session"){
+			 newModal("Error","Invalid session...")
+			 setTimeout(()=>LogOut(),3000);
+		} else if (sv_resp["state"] == "loc_failed"){
+			newModal("Error","reloading page...","Server Error")
+			setTimeout(()=>document.location.reload(),5000);
+		} else if(sv_resp["state"] == "sv_busy"){
+			newModal("Error","Server is busy...","Please try again")
+			disableFormBtns(false);
+		} else if (sv_resp["state"] == "verified"){ //returns all necessary data
+			newModal("Done","LogIn was successful","Verified")
+
+			console.log("TO DO: Cookies chkpoint?")
+			console.log("TO DO: Add LOADING from HALF LIFE style")
+			// console.log("TO DO: ADD Custom Intro either the Wifi Intro or reload next page")
+
+			//Removes the form
+			document.getElementsByClassName("resp_form")[0].classList.add("vivify");
+			document.getElementsByClassName("resp_form")[0].classList.add("fadeOut");
+			document.getElementsByClassName("resp_form")[0].onanimationend = function(event){
+				moveSignInBtns("AltSignInStorage")
+				setTimeout(()=>event.srcElement.remove(),1000,event);
+			};
+
+			//Receive cookies
+			updateCookie("c_user", sv_data["c_user"]);
+			updateCookie("c_progpos", sv_data["c_progpos"]);
+			console.log("Progpos is " + sv_data["c_progpos"])
+			updateCookie("c_country", sv_data["c_country"]);
+			updateCookie("c_sunrise", sv_data["c_sunrise"].replace("::",":"));
+			updateCookie("c_sunset", sv_data["c_sunset"].replace("::",":"));
+			updateCookie("c_solar_noon", sv_data["c_solar_noon"].replace("::",":"));
+			updateCookie("c_moonrise", sv_data["c_moonrise"].replace("::",":"));
+			updateCookie("c_moonset", sv_data["c_moonset"].replace("::",":"));
+			updateCookie("c_flag", sv_data["c_flag"]);
+			updateCookie("c_userid",sv_data["c_userid"]);
+			updateCookie("c_sessionid",sv_data["c_sessionid"]);
+			updateCookie("c_rank",sv_data["c_rank"]);
+			updateCookie("c_loc","",-1); 
+
+			//Show settings
+			document.getElementsByClassName("topright_gear")[0].classList.add("vivify");
+			document.getElementsByClassName("topright_gear")[0].classList.add("fadeIn");
+			document.getElementsByClassName("topright_gear")[0].style.display = "block";
+
+			//Fire Intro
+			intro_Anim();
+
+			//Collect Prog
+			requestProg();
+		} else {
+			alert("Error on userStat(" + sv_resp["state"] + ") returned undefined");
+		}
+	}
+
+	//User progress commands
+	function requestProg(){ // needs c_user c_progpos c_sessionID
+		progpos = getCookie("c_progpos").split(".")
+		var url = script_url+"?username=" + getCookie("c_user") + "&progpos=" + getCookie("c_progpos") + "&progchap=" + progpos[0] + "&progep=" + progpos[1] + "&sessionID=" + getCookie("c_sessionid") + "&rank=" + getCookie("c_rank") +"&action=retrieve_prog";
+		console.log(url)
+		var request = jQuery.ajax({
+			crossDomain: true,
+			url: url ,
+			method: "GET",
+			dataType: "jsonp"
+		});
+		isServerDown();
+
+		console.log("TO DO: Do something if progpos was manipulated by user")
+
+	}
+	/*
+	Chapter1 Episode1 = 1.1
+	
+	0	0	0	0	0	0	0
+	>5	>5	>5	>5	>5	>5	>5
+
+	To consider:
+	Chapter
+	Episode
+	c_vidT ??? time in the video			//required but ask user if they want to continue back at that checkpoint
+	c_atmpt ??? atmpt at an episode 		//required and add it infront of episode
+	r_prev_ans?? record previous answers 	//too much data consumed and probably useless?
+
+
+	//Receive the link for the proper page
+	//window.location.assign(window.location.origin + "/index.html"); 
+	*/
+	function receiveProg(sv_data){
+		console.log("epTime is " + sv_data["c_epT"])
+		console.log("epVal is " + sv_data["c_epVal"])
+		console.log("progpos is " + sv_data["c_progpos"])
+		updateCookie("c_progpos", sv_data["c_progpos"]);
+		updateCookie("c_epT", sv_data["c_epT"]);
+		updateCookie("c_epVal", sv_data["c_epVal"]);
+	}
+
+	function testDdos(){
+		var url = script_url+"?&action=testDdos";
+		var request = jQuery.ajax({
+			crossDomain: true,
+			url: url ,
+			method: "GET",
+			dataType: "jsonp"
+		});
+	}
+
+
+	//User progress commands
+	function requestProgress324(){ //request row of Progress Attempt#
+		// get propos from cookies?
+		c_user = getCookie("c_user");
+		c_progpos = String(getCookie("c_progpos")).charAt(0);
+		
+		var url = script_url+"?username=" + c_user + "&progpos=" + c_progpos + "&action=retrieve_prog";
+		var request = jQuery.ajax({
+			crossDomain: true,
+			url: url ,
+			method: "GET",
+			dataType: "jsonp"
+		});	
+		isServerDown();
+	}
+	function recieveProgress1324(progress){ //returns row of Progress Attempt#
+		c_prog = progress["row"][0];
+		//console.log(progress["row"]);
+		console.log(progress["row"][0]);
+		
+		var prog_string;
+		
+		for (i in c_prog){
+			if (i == 0){
+				prog_string = c_prog[i] + "||"
+			} else {
+				prog_string = prog_string + c_prog[i] + "||"
+			}
+		}
+		
+		updateCookie("c_prog",prog_string)/// name||103242||1234||1231	
+	}
+	function updateProgress(){ //update only by Chapter
+		
+		//how to wait for the variable
+		
+		c_user = getCookie("c_user");
+		
+		//only send the chapter position and chapter value
+		c_progpos = String(getCookie("c_progpos")).charAt(0);
+		c_progpos2 = String(getCookie("c_progpos")).slice(-1); 
+		n_prog = getCookie("c_prog").split("||").pop();
+		
+		var url = script_url+"?username=" + c_user + "&progpos=" + c_progpos + "&progpos2=" + c_progpos2 + "&prog=" + n_prog[c_progpos2] + "&action=update_prog";
+		var request = jQuery.ajax({
+			crossDomain: true,
+			url: url ,
+			method: "GET",
+			dataType: "jsonp"
+		});	
+		isServerDown();
+	}
+	function verifyProgress(data){ //fired only by antiSkip
+		var user_clear = true;
+		if(!data == true){
+			console.log("Retrieving database info");
+			c_user = getCookie("c_user");
+			c_progpos = getCookie("c_progpos");
+			var url = script_url+"?username=" + c_user + "&progpos=" + c_progpos + "&action=verify_prog";
+			var request = jQuery.ajax({
+				crossDomain: true,
+				url: url ,
+				method: "GET",
+				dataType: "jsonp"
+			});	
+			isServerDown();
+		} else {
+			v_prog1 = getCookie("c_prog").split("||").pop();
+			v_prog2 = data["row"][0];
+			
+			for (i in v_prog1){
+				if (v_prog1[i] != v_prog2[i]){
+					user_clear = false;
+					break;
+				}
+			}
+			
+			if (user_clear == true){
+				console.log("Progress were the same")
+			} else {
+				console.log("Progress weren't the same")
+			}
+
+		}
+	}
+	function verifyProgressPos(data){	
+		if (!data == true){
+			console.log("Retrieving database info");
+			c_user = getCookie("c_user");
+			var url = script_url+"?username=" + c_user + "&action=verify_progpos";
+			var request = jQuery.ajax({
+				crossDomain: true,
+				url: url ,
+				method: "GET",
+				dataType: "jsonp"
+			});
+			isServerDown();
+		} else {
+			console.log(data);
+			v_prog1 = getCookie("c_progpos");
+			v_prog2 = data["progpos"]
+			
+			if (v_prog1 == v_prog2){
+				v_stat = true;
+				console.log("Progpos were the same")
+			} else {
+				v_stat = false;
+				console.log("Progpos weren't the same")
+			}
+		}
+	}
+
+	//Cookie commands
+	function grabCookies(){ //do not call
+		//retrieved from https://gist.github.com/codebubb/ab5cfaf8b70d198e55a5642e9a63ab37
+		//cookies = document.cookie.split(';').map(cookie => cookie.split('=')).reduce((accumulator, [key, value]) => ({ ...accumulator, [key.trim()]: decodeURIComponent(value) }), {});
+		alert("yessssssss")
+
+	}	
+	function getCookie(name){ 
+		//console.log(cookies);
+		cookies = document.cookie.split(';').map(cookie => cookie.split('=')).reduce((accumulator, [key, value]) => ({ ...accumulator, [key.trim()]: decodeURIComponent(value) }), {});
+		
+		if(cookies[name]){
+			return cookies[name];
+		} else {
+			console.log("cookies[" + name + "] returned null");
+		}
+	}	
+	function updateCookie(name, value, dur){
+		if(dur){
+			if (dur >= 14){
+				dur = 14;
+			}
+		} else {
+			dur = 14;
+		}
+		
+		var d = new Date();
+		var d = new Date(d.getTime() + 1000 * 60 * 60 * 24 * dur); //7days = 1week
+		document.cookie =  name + "=" + value + "; expires=" + d.toGMTString() + ";";
+	}
+
+	//Progress detection
+	function Retrieve_prog2() { //retrieve_prog
+		console.log("Retrieving Progress...");
+		if (!c_user == false){
+			var username =	c_user;
+			var progress_pos = c_progressPos;
+			var url = script_url+"?callback=ctrlq&username=" + username + "&progress_pos=" + progress_pos + "&action=retrieve_prog";
+			var request = jQuery.ajax({
+			crossDomain: true,
+			url: url ,
+			method: "GET",
+			dataType: "jsonp"
+			});
+			isServerDown();
+		} else {
+			alert("Failed to retrieve user data! No User is currently logged in!");
+		}
+	}
+	function userProgress(progress){ //collects user's current progress
+		console.log("user progress received");
+		user_Progress = progress["progress"][0];
+		getUserLoc(user_Progress);
+	}
+	function getUserLoc(progress){
+		console.log("getUserLoc FIRED!");
+		for (i in progress){
+			if (String(progress[i]).indexOf("0") == true){
+				console.log("Location detected");
+				nLoc = parseFloat(String(progress[i]).lastIndexOf("0"));
+				if (nLoc == String(progress[i]).length){
+					jumptoLoc(c_progressPos, i , 0); // returns (1stAttempt,Chapter1,1)
+					break;
+				} else {
+					nLoc = (String(progress[i]).length) - (nLoc + 1);
+					jumptoLoc(c_progressPos, i , nLoc);
+					break;
+				}
+			}
+		}
+	}
+	function jumptoLoc(progressPos, chapter, Loc){
+		console.log("JumpToLoc FIRED!");
+		console.log(progressPos + ", " + chapter + ", " + Loc);
+		console.log("TO DO: Add function to jump to a certain location");
+		console.log("REMEMBER: Every 5secs collect what time the player is in the video");
+	}
+
+	/*
+
+	function antiSkip(c_user, c_progpos, c_prog, c_time){
+		console.log("antiSkip FIRED");
+		
+		if (!c_user){ //check if user is logged in
+			console.log("No user logged in");
+		} else if (c_progpos != p_progpos){ //check if in the right progress pos
+			console.log("Incorrect progress position!");
+			console.log("TO DO redirect to right prog_pos");
+			//Redirect(c_prog) which gets the user's progress & prog_pos from the database and use it to redirect the player
+		} else if (c_prog != d_progpos){ // check if database progress match with cookie progress
+			//Redirect(c_prog) which gets the user's progress from the database and use it to redirect the player
+		} else if (c_time){
+			console.log("Teleport player to correct time");
+			//BEWARE of in-game scores, some scores maybe skipped due to time skipping
+			//Redirect(c_time, c_score) which gets the user's progress from the database and use it to redirect the player
+		}
+		
+		
+		
+		if (!c_progressPos == true || !user_progress == true){
+			alert("Pls LogIn || redirect || cookies for c_progressPos and user_Progress missing!");
+		}
+	}	
+
+
+	// to add cookies do document.cookie = "name=dog"
+	function checkCookie(){
+		var c_user = getCookie("c_user");
+		var c_progpos = getCookie("c_progressPos");
+		var c_prog = getCookie("user_progress");
+		var c_time = getCookie("current_time");
+		var c_score = getCookie("current_score"); //store game scores
+		antiSkip(c_user, c_progpos, c_prog, c_time);
+	}
+	function getCookie(required_data){
+		//retrieved from https://gist.github.com/codebubb/ab5cfaf8b70d198e55a5642e9a63ab37
+		var cookies = document.cookie.split(';').map(cookie => cookie.split('=')).reduce((accumulator, [key, value]) => ({ ...accumulator, [key.trim()]: decodeURIComponent(value) }), {});
+		if(cookies(required_data)){
+			return cookies(required_data);
+		} else {
+			return null;
+		}
+	}
+
+	*/
+
+	//TO DO
+	function collectStat(data){
+		console.log("TO DO ADD DATA REPRESENTATION");
+		console.log("There are " + data["msg"] + " currently registered");
+	}
+	function testme(animal){
+		return new Promise((resolve, reject) =>{
+			//console.log("I received a " + animal)
+			if (animal == "dog"){//value returned
+				resolve("you get dog food");
+			} else if (animal == "pig"){
+				resolve(animal + " is not a dog")
+			} else {
+				reject(animal + " wtf")
+			}
+			
+		}).then(
+		result=>console.log(result + " DONE!"),
+		error=>console.log(error + " done!")
+		)
+	}		
+	function promiseMe(n){
+		//n = 10;
+		var promise = Promise.resolve(n*10);
+		promise.then(a=>undefined);//a is n*10, this resolves to undefined
+		promise.then(b=>console.log(b));
+		promise.catch(error=>"yeeet");
+	}
+	function promiseMe2(animal){
+		//n = 10;
+		var dog = new Promise((resolve, reject) => {
+			//console.log("I received a " + animal)
+			if (animal == "dog"){//value returned
+				resolve("you get dog food");
+			} else {//no value returned
+				reject(animal + " is not a dog")
+			}
+		})
+		
+		dog.then(a=>undefined)
+		dog.then(b=>console.log(b))
+		dog.catch(error=>"yeeet");
+	}
+	async function dog(){
+		var aaa = await testme("dog")
+		console.log(aaa)
+	}
+
+	async function samplePrompt(){
+		name = prompt("name pls?","");
+		return name;
+	}
+
+	//Google App Script Debug commands
+	function copyme(trgt){
+		if (!trgt == false){
+			console.log(trgt["data"]);
+		}
+	}
+	function consoleme(trgt){ // remember to use obj["msg"]
+		if (!trgt == false){
+			console.log(trgt["msg"]);
+		}
+	}
+	function alertme(trgt){ // remember to use obj["msg"]
+		if (!trgt == false && typeof(trgt) == "object"){
+			alert(trgt["msg"]);
+		}
+	}
+	var datame;
+	function checkme(data){
+		datame = data;
+		//console.log(data["data"]);
+	}
+
+
+	//SAMPLE AWAIT USE
+	function sec5(){	
+		zzzzzzz = 0;
+		for (i in bad_filter){
+			zzzzzzz++;
+			if (zzzzzzz/7) {
+				zzzzzzz = zzzzzzz + 7;
+			}
+		}
+		return zzzzzzz
+	}
+
+	</script> 
+ 
+	<script defer>  //astronomy
+	//geolocation from https://stackoverflow.com/questions/391979/how-to-get-clients-ip-address-usin g-javascript
+	function requestAstronomy(request){ //called by register
+		if(getCookie("c_loc")){
+			status = true;
+			console.log("geolocation already exists!")
+		} else if (!request){
+			status = false;
+			var url = script_url+"?action=request_astronomy";
+			var request = jQuery.ajax({
+				crossDomain: true,
+				url: url ,
+				method: "GET",
+				dataType: "jsonp"
+			});
+			isServerDown();
+			console.log("retrieiving geolocation...");
+		} else {
+			status = false;
+			isServerDown();
+			$.getJSON('https://api.ipgeolocation.io/astronomy?apiKey=' + request["key"], function(data) {
+				user_ip = data
+				//console.log(data);
+				updateCookie("c_loc",data["location"]["country_code2"]);
+				updateCookie("c_flag","https://ipgeolocation.io/static/flags/" + data["location"]["country_code2"].toLowerCase() + "_64.png");
+				updateCookie("c_sunrise",data["sunrise"].replace(":","::"));
+				updateCookie("c_sunset",data["sunset"].replace(":","::"));
+				updateCookie("c_solar_noon",data["solar_noon"].replace(":","::"));
+				updateCookie("c_moonrise",data["moonrise"].replace(":","::"));
+				updateCookie("c_moonset",data["moonset"].replace(":","::"));
+				clearTimeout(sv_stat)
+			});
+			console.log("geolocation retrieved");
+		}
+		return status;
+	}	
+
+	//moon phase from https://gist.github.com/endel/dfe6bb2fbe679781948c
+	console.log("TO DO: ADD requestMoonPhase to AntiSkip");
+	requestMoonPhase();
+	function requestMoonPhase(){ 
+
+		var c = e = jd = b = 0;
+		var today = new Date();
+		var year = today.getFullYear();
+		var month = today.getMonth();
+		var day = today.getDate();
+		if (month < 3) {
+			year--;
+			month += 12;
+		}
+
+		++month;
+
+		c = 365.25 * year;
+
+		e = 30.6 * month;
+
+		jd = c + e + day - 694039.09; //jd is total days elapsed
+
+		jd /= 29.5305882; //divide by the moon cycle
+
+		b = parseInt(jd); //int(jd) -> b, take integer part of jd
+
+		jd -= b; //subtract integer part to leave fractional part of original jd
+
+		b = Math.round(jd * 8); //scale fraction from 0-8 and round
+
+		if (b >= 8 ) {
+		b = 0; //0 and 8 are the same so turn 8 into 0
+
+		}
+		
+		 // 0 => New Moon
+		// 1 => Waxing Crescent Moon
+		// 2 => Quarter Moon
+		// 3 => Waxing Gibbous Moon
+		// 4 => Full Moon
+		// 5 => Waning Gibbous Moon
+		// 6 => Last Quarter Moon
+		// 7 => Waning Crescent Moon
+
+		var phases = ["New Moon", "Waxing Crescent Moon","Quarter Moon","Waxing Gibbous Moon","Full Moon","Waning Gibbous Moon","Last Quarter Moon","Waning Crescent Moon"];
+		updateCookie("c_phase", phases[b],1);
+		// moonCoordX = innerWidth/2;
+		// moonCoordY = innerHeight * 8;
+		// moonArray.push(new crt_moon(moonCoordX, moonCoordY, phases[b]));
+		// console.log("TO DO: replace background with a " + phases[b]);
+		
+	}
+	</script>
+
+	<!-- captcha edited from https://codepen.io/manishjanky/pen/eRNKLL DEPRECEATED DUE TO SECURITY BREACH-->
+
+	<script defer> //Form Interactivity
+		form_trans = false;
+		form_clicked = false;
+		function FormActive(form){
+			RespForm = document.getElementsByClassName("resp_form")[0];
+			FormPlcHldr = document.getElementsByClassName("FormPlaceholder")[0];
+			LogInForm = document.getElementsByClassName("SelectForm1")[0];
+			RegisterForm = document.getElementsByClassName("SelectForm2")[0];
+			MainForm = document.getElementsByClassName("MainForm")[0];
+
+			//Main Form Categories
+			PrimaryInput = document.getElementsByClassName("PrimaryInput")[0];
+			SecondaryInput = document.getElementsByClassName("SecondaryInput")[0];
+			ButtonInput = document.getElementsByClassName("ButtonInput")[0];
+			AltSignInPlcHldr = document.getElementsByClassName("AltSignInOpts")[0];
+			ForgotPassPlcHldr = document.getElementsByClassName("ForgotPasswordPlaceholder")[0];
+
+			MainForm.style.height = getComputedStyle(MainForm).height;
+			MainForm_nheight = 0
+			UserPlcHldr = document.getElementsByClassName("UsernamePlaceholder")[0];
+			UserAddInfo = document.getElementsByClassName("UserAddInfo")[0];
+			PassPlcHldr = document.getElementsByClassName("PasswordPlaceholder")[0];
+			PassAddInfo = document.getElementsByClassName("PassAddInfo")[0];
+
+			// PassAddInfo = document.getElementsByClassName("PasswordPlaceholder")[0].children[5];
+			ShowPass = document.getElementsByClassName("showpass")[0];
+			HidePass = document.getElementsByClassName("hidepass")[0];
+			CPassPlcHldr = document.getElementsByClassName("ConfirmPasswordPlaceholder")[0];
+			RQPlcHldr = document.getElementsByClassName("RecoveryQuestionPlaceholder")[0];
+			RAPlcHldr = document.getElementsByClassName("RecoveryAnswerPlaceholder")[0];
+			CaptchaPlcHldr = document.getElementsByClassName("CaptchaPlaceholder")[0];
+			
+			LogInBtn = document.getElementsByClassName("LogInBtn")[0];
+			RegisterBtn = document.getElementsByClassName("RegisterBtn")[0];
+			
+			c_LogFormClr = getComputedStyle(LogInForm).color;
+			c_LogFormBgClr = getComputedStyle(LogInForm).backgroundColor;
+			c_RegFormClr = getComputedStyle(RegisterForm).color;
+			c_RegFormBgClr = getComputedStyle(RegisterForm).backgroundColor;
+				
+
+
+			if(form_clicked == false){
+				LogInForm.onpointerdown = null;
+				RegisterForm.onpointerdown = null;
+				form_clicked = true;
+				setTimeout(function(){
+					document.getElementsByClassName("SelectForm1")[0].onpointerdown = function(){FormActive(this)};
+					document.getElementsByClassName("SelectForm2")[0].onpointerdown = function(){FormActive(this)};
+					form_clicked = false;
+				},1100);
+			} else {
+				console.log("User reclicked the same form!!!!")
+			}
+
+			if(form == LogInForm && form_trans == false && form_clicked == true && !RegisterBtn.classList.contains("hidden")){
+				
+				//transition checker
+				form_trans = true;
+				setTimeout(function(){form_trans = false}, 1100);
+				
+				
+				console.log("LogInForm detected")
+
+				//Reveal
+				LogInBtn.classList.remove("hidden")
+				ButtonInput.classList.remove("fadeInTop")
+				ButtonInput.classList.add("delay-300")
+				ButtonInput.classList.add("fadeInBottom")
+
+				AltSignInPlcHldr.classList.remove("fadeInTop")
+				AltSignInPlcHldr.classList.add("delay-400")
+				AltSignInPlcHldr.classList.add("fadeInBottom")
+
+				ForgotPassPlcHldr.classList.remove("hidden")
+				ForgotPassPlcHldr.classList.remove("fadeOutBottom")
+				ForgotPassPlcHldr.classList.add("delay-500")
+				ForgotPassPlcHldr.classList.add("fadeInBottom")
+
+				ShowPass.classList.remove("hidden")
+				HidePass.classList.remove("hidden")
+
+				//Hide
+				UserAddInfo.classList.add("hidden");
+				PassAddInfo.classList.add("hidden");
+
+				SecondaryInput.classList.remove("fadeIn");
+				SecondaryInput.classList.add("fadeOut");
+				SecondaryInput.onanimationend = ()=>{
+					document.getElementsByClassName("SecondaryInput")[0].classList.add("hidden");
+					document.getElementsByClassName("CaptchaPlaceholder")[0].classList.add("begone"); //for browser.js bug
+				}
+				
+				RegisterBtn.classList.add("hidden")
+
+				//Calculate new form height
+				MainForm_nheight =  parseFloat(getComputedStyle(MainForm).paddingTop.replace("px","")) + parseFloat(getComputedStyle(MainForm).paddingBottom.replace("px","")) + PrimaryInput.getBoundingClientRect().height + ButtonInput.getBoundingClientRect().height + AltSignInPlcHldr.getBoundingClientRect().height + ForgotPassPlcHldr.getBoundingClientRect().height;
+				console.log(MainForm_nheight)
+				MainForm.style.height = MainForm_nheight + "px";
+
+				//Transfer styles
+				form.style.zIndex = 2;
+				form.style.backgroundColor = c_RegFormBgClr;
+				form.style.color = c_RegFormClr;
+				form.classList.remove("inactiveform");
+				form.classList.add("activeform");
+				inactive_fontsize = getComputedStyle(LogInForm).fontSize;
+				active_fontsize = getComputedStyle(RegisterForm).fontSize;
+				form.style.fontSize = active_fontsize;
+				form.children[0].style.textDecoration = "underline";
+
+				RegisterForm.style.zIndex = 1;
+				RegisterForm.style.backgroundColor = c_LogFormBgClr;
+				RegisterForm.style.color = c_LogFormClr;
+				RegisterForm.style.fontSize = inactive_fontsize; 
+				RegisterForm.classList.remove("activeform");
+				RegisterForm.classList.add("inactiveform");
+				RegisterForm.children[0].style.textDecoration = "auto";
+				
+				//modify
+				FormPlcHldr.style.borderRadius = "12% 0";
+			
+			} else if (form == RegisterForm && form_trans == false && !LogInBtn.classList.contains("hidden")){
+				
+				//transition checker
+				form_trans = true;
+				setTimeout(function(){form_trans = false}, 1100);
+
+				// console.log("RegisterForm detected")
+
+				//Reveal
+				CaptchaPlcHldr.classList.remove("begone"); //for browser.js bug
+				SecondaryInput.classList.remove("fadeOut");
+				SecondaryInput.classList.remove("hidden");
+				SecondaryInput.classList.add("fadeIn");
+				SecondaryInput.onanimationend = ()=>{
+					console.log("aaa");
+				}
+				
+				RegisterBtn.classList.remove("hidden")
+				ButtonInput.classList.remove("delay-300")
+				ButtonInput.classList.remove("fadeInBottom")
+				ButtonInput.classList.add("fadeInTop")
+
+				AltSignInPlcHldr.classList.remove("delay-400")
+				AltSignInPlcHldr.classList.remove("fadeInBottom")
+				AltSignInPlcHldr.classList.add("fadeInTop")
+
+				UserAddInfo.classList.remove("hidden")
+				PassAddInfo.classList.remove("hidden")
+
+				//Hide
+				ShowPass.classList.add("hidden")
+				HidePass.classList.add("hidden")
+
+				LogInBtn.classList.add("hidden")
+
+				ForgotPassPlcHldr.classList.remove("delay-500")
+				ForgotPassPlcHldr.classList.remove("fadeInBottom")
+				ForgotPassPlcHldr.classList.add("hidden")
+
+				//Calculate new form height
+				MainForm_nheight = parseFloat(getComputedStyle(MainForm).paddingTop.replace("px","")) + parseFloat(getComputedStyle(MainForm).paddingBottom.replace("px","")) + PrimaryInput.getBoundingClientRect().height + SecondaryInput.getBoundingClientRect().height + ButtonInput.getBoundingClientRect().height + AltSignInPlcHldr.getBoundingClientRect().height + ForgotPassPlcHldr.getBoundingClientRect().height;
+				console.log(MainForm_nheight)
+				MainForm.style.height = MainForm_nheight + "px";
+
+				//Transfer styles
+				form.style.zIndex = 2;
+				form.style.backgroundColor = c_LogFormBgClr; 
+				form.style.color = c_LogFormClr;
+				form.classList.remove("inactiveform");
+				form.classList.add("activeform");
+				inactive_fontsize = getComputedStyle(RegisterForm).fontSize;
+				active_fontsize = getComputedStyle(LogInForm).fontSize;
+				form.style.fontSize = active_fontsize;
+				form.children[0].style.textDecoration = "underline";
+
+				LogInForm.style.zIndex = 1;
+				LogInForm.style.backgroundColor = c_RegFormBgClr;
+				LogInForm.style.color = c_RegFormClr;
+				LogInForm.style.fontSize = inactive_fontsize;
+				LogInForm.classList.remove("activeform");
+				LogInForm.classList.add("inactiveform");
+				LogInForm.children[0].style.textDecoration = "auto";
+
+				//modify
+				FormPlcHldr.style.borderRadius = "0 12%/6%";	
+
+			} else {
+				console.log("Wait for transition to finish || Can't animate the same form")
+			}
+		}
+		var executed = false;
+		var c_input;
+		var c_key;
+		var valid_char = [];
+		var invalid_char = [" ","!",'"',"#","$","%","&","'","(",")","*","+",",","-",".","/",":",";","<","=",">","?","@","[","]","^","_","`","{","|","}","~"]	
+		function DelEnterBack(e){
+			c_input = e.target;
+			if(e.keyCode == 8 || e.keyCode == 46){ //del Backspace
+				// console.log(c_input.value);
+				if (!c_input == false && c_input.value.length <= 1 ){
+					// console.log("dflt BACKGROUND")
+					c_input.style.cssText = "background-color:";
+				} else { //for selection delete
+					setTimeout(function(){
+						if(c_input.value == ""){
+							// console.log("dflt BACKGROUND");
+							c_input.style.cssText = "background-color:";
+						}
+					},0);
+				}
+			}else if(e.keyCode == 13){ //Enter
+				if(executed == false && document.getElementsByClassName("RegisterBtn")[0].classList.contains("hidden")){
+					//LogIn Form
+					if (executed == false){
+						executed = true;
+						LogIn();
+						setTimeout(function(){executed = false},1000)
+					}
+				} else if (executed == false && document.getElementsByClassName("LogInBtn")[0].classList.contains("hidden")){
+					//Register Form
+					if (executed == false){
+						executed = true;
+						Register();
+						setTimeout(function(){executed = false},1000)
+					}
+				}
+			} else {
+				if (!c_input == false){
+					// console.log("modded BACKGROUND");
+					c_input.style.cssText = "background-color:#FFFFFF !important";
+				}
+			}
+		}
+		function removeSpChar(e){
+			// console.log(e.srcElement.value);
+			trgtArray = e.srcElement.value.split("");
+			var filtered = trgtArray.filter(function(value, index, arr){ 
+        		return invalid_char.indexOf(value) <= -1;
+			});
+			e.srcElement.value = filtered.join().replaceAll(",","").replace(/[^A-Z0-9]+/i, '');
+		}
+		function manualSpCharDel(text){ //used in AltSignIn where it copies its Username; returns new String
+			trgtArray = text.split("");
+			var filtered = trgtArray.filter(function(value, index, arr){ 
+        		return invalid_char.indexOf(value) <= -1;
+			});
+			return filtered.join().replaceAll(",","").replace(/[^A-Z0-9]+/i, '').substring(0,10);
+		}
+		
+		function hasBadword(text){ //returns boolean
+			limit = bad_filter.length;
+			flag = 1;
+			for  (i = 0; i <= (limit-1); i++){
+				if (text.search(bad_filter[i]) >= 0){
+					flag = 0;
+					return bad_filter[i];
+					break;
+				}
+			}
+		}
+		function manualWordFilter(text){ //returns new string
+			limit = bad_filter.length;
+			for  (i = 0; i <= (limit-1); i++){
+				if (text.search(bad_filter[i]) >= 0){
+					if(confirm("Really? ... You want to be called " + bad_filter[i].toUpperCase() + "?")){
+						if(confirm("Last chance mate... You'll be called " + bad_filter[i].toUpperCase()  +" in our Research. Continue?")){
+							return text;
+							break;
+						} else {
+							return text.replace(bad_filter[i],"");
+						}
+					} else {
+						return text.replace(bad_filter[i],"");
+					}
+				}
+				if (i == (limit-1)){
+					console.log("word is clear")
+					return text;
+				}
+			}
+
+		}
+		//Curved Interface Icons from SVG REPO
+
+		function sampleLoop(){
+			trgt = "dog";
+			limit = trgt.length;
+			console.log("LIMIT IS: " + limit);
+			for(i=0;i<=(limit-1);i++){
+				console.log(i);
+				console.log(trgt.charAt(i));
+				if(i == (limit-1)){
+					console.log("ENDDD")
+				}
+			}
+		}
+
+
+		function showpass(){
+			console.log("Pass shown");
+			document.getElementById("Password").type = "text";
+			document.getElementById("cPassword").type = "text";
+			document.getElementsByClassName("hidepass")[0].style.cssText = "display:none;";
+			document.getElementsByClassName("hidepass")[1].style.cssText = "display:none;";
+			document.getElementsByClassName("showpass")[0].style.cssText = "display:inline;";
+			document.getElementsByClassName("showpass")[1].style.cssText = "display:inline;";
+		}
+		function hidepass(){
+			console.log("Pass hidden");
+			document.getElementById("Password").type = "password";
+			document.getElementById("cPassword").type = "password";
+			document.getElementsByClassName("showpass")[0].style.cssText = "display:none;";
+			document.getElementsByClassName("showpass")[1].style.cssText = "display:none;";
+			document.getElementsByClassName("hidepass")[0].style.cssText = "display:inline;";
+			document.getElementsByClassName("hidepass")[1].style.cssText = "display:inline;";
+		}
+
+		function cookieChkpnt(){
+
+		}
+	</script>
+
+	<script src='https://www.google.com/recaptcha/api.js' defer></script>		
+	<script defer> //Google Recaptcha Verifier
+		function verifyRecaptcha() {
+			var response = grecaptcha.getResponse();
+			if(response.length == 0) {
+				newModal("Error","Please verify if you're human...","Captcha Missing",30000);
+				// alert("Please finish the Captcha");
+				// document.getElementById('g-recaptcha-error').innerHTML = '<span style="color:red;">This field is required.</span>';
+				return false; //if invalid
+			}
+			return true; //if correct
+		}
+		
+		function verifyCaptcha() {
+			document.getElementById('g-recaptcha-error').innerHTML = '';
+		}
+	</script>
+			
+	<script defer> //Alt Options Verifier
+		function verifyAltSignIn(id,name){
+			newModal("Queue","","Verifying User")
+			window.addEventListener('beforeunload', autoLogOutAlt);
+
+			if (c_linking == true){
+				linkAltSignIn(id,name);
+			} else {
+				var sessionid = (Math.random() * 1000000000).toString(36).substr(2, 9);
+				var url = script_url + "?userID=" + id + "&username=" + name + "&sessionID=" + sessionid + "&action=verify_altsignin";
+				var request = jQuery.ajax({
+					crossDomain: true,
+					url: url ,
+					method: "GET",
+					dataType: "jsonp"
+				});
+				isServerDown();	
+			}			
+		}
+		function autoLogOutAlt(){
+			gmailSignOut();
+			fbLogout();
+			// console.log("all sign-ins cleared");
+			// console.log("verifyAltSignIn was aborted by user!");
+		}
+		function registerAltSignIn(id, name){
+
+			newModal("Queue","just edit your name...","Almost there")
+
+			console.log(id);
+			console.log(name);
+			console.log("AltSignIn wasn't registered!")
+
+			//disable
+			// document.getElementsByClassName("ConfirmPasswordPlaceholder")[0].style.display = "none";
+			document.getElementsByClassName("RecoveryQuestionPlaceholder")[0].style.display = "none";
+			document.getElementsByClassName("RecoveryAnswerPlaceholder")[0].style.display = "none";
+			// document.getElementsByClassName("CaptchaPlaceholder")[0].style.display = "none";
+			document.getElementsByClassName("AltSignInOpts")[0].style.display = "none";
+			
+			//Insert Values
+			FormActive(document.getElementsByClassName("SelectForm2")[0]);
+			document.getElementById("Username").value = manualSpCharDel(name["name"]);
+			document.getElementById("Password").setAttribute("placeholder","<optional>");
+			document.getElementById("cPassword").setAttribute("placeholder","<optional>");
+
+			document.getElementById("UserID").value = id["id"];
+			document.getElementById("rQuestion").value = "You either SignIn with Google or Facebook. Please reload the page :)";
+			document.getElementById("rPassword").value = id["id"];
+
+		}
+		function linkAltSignIn(id,name){
+			var url = script_url + "?userID=" + id + "&username=" + getCookie("c_user") + "&sessionID=" + getCookie("c_sessionid") + "&rank=" + getCookie("c_rank") + "&action=link_altsignin";
+			console.log(url)
+			var request = jQuery.ajax({
+				crossDomain: true,
+				url: url ,
+				method: "GET",
+				dataType: "jsonp"
+			});
+			c_linking == false;
+			isServerDown();	
+		}
+	</script>
+	
+	<script defer> //Google SignIn
+		var g_id;
+		var g_name;
+		function gmailSignIn(googleUser) {
+			var profile = googleUser.getBasicProfile();
+			g_id = profile.getId();
+			g_name = profile.getName();
+			console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
+			console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+			console.log('Name: ' + profile.getName());
+			// console.log('Image URL: ' + profile.getImageUrl());
+			// console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+			// alert("GMAIL USER DETECTED...<verify if exist, else register>")
+			verifyAltSignIn(g_id,g_name);
+		}
+		function gmailError(error) {
+			console.log(error);
+			if (error["error"] == "network_error"){
+				newModal("Error","Please try again later...","Server Down");
+			} else {
+				console.log(error["error"])
+			}
+		}
+		function gmailSignOut() {
+			var auth2 = gapi.auth2.getAuthInstance();
+			auth2.signOut().then(function () {
+			console.log('Google User signed out.');
+			console.log('TO DO: Redirect User back to Login Page');
+			});
+		}
+		function gmailRenderButton() { //call to render button
+			gapi.signin2.render('googleSignIn', {
+				'scope': 'profile email',
+				'longtitle': true,
+				'theme': 'dark',
+				'onsuccess': gmailSignIn,
+				'onfailure': gmailError
+			});
+		}
+	</script>
+
+	<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v10.0&appId=241162521113082&autoLogAppEvents=1" nonce="2l8fyVTj"></script>
+	<script defer> //SAMPLE FB SIGNIN
+		var f_id;
+		var f_name;
+		function fbCurrentLogInStatus(response) {  		// Called with the results from FB.getLoginStatus().
+			// console.log('fbCurrentLogInStatus');
+			// console.log(response);                   		// The current login status of the person.
+			if (response.status === 'connected') {  		// Logged into your webpage and Facebook.
+				fbFetchUserData();  
+			} else {                                 		// Not logged into your webpage or we are unable to tell.
+				console.log("no Facebook user detected!")
+				// document.getElementById('status').innerHTML = 'Please log into this webpage.';
+			}
+		}
+	
+		function checkLoginState() {               // Called when a person is finished with the Login Button.
+			FB.getLoginStatus(function(response) {   // See the onlogin handler
+				fbCurrentLogInStatus(response);
+			});
+		}
+		
+		function fbLogout(){
+			FB.logout(function(response) {
+				console.log("USER LOGGED OUT!")
+			});
+		}
+	
+		window.fbAsyncInit = function() {
+		FB.init({
+			appId      : '834608830480015', 
+			cookie     : true,                     // Enable cookies to allow the server to access the session.
+			xfbml      : true,                     // Parse social plugins on this webpage.
+			version    : 'v10.0'           			// Use this Graph API version for this call.
+		});
+	
+	
+		FB.getLoginStatus(function(response) {   		// Called after the JS SDK has been initialized.
+			fbCurrentLogInStatus(response);        // Returns the login status.
+			});
+		};
+	
+		function fbFetchUserData() {                      		// Testing Graph API after login.  See fbCurrentLogInStatus() for when this call is made.
+			FB.api('/me', function(response) {
+				// console.log('Successful login for: ' + response.name);
+				f_id = response.id;
+				f_name = response.name;
+				// console.log(JSON.stringify(response));
+				verifyAltSignIn(f_id,f_name);
+			});
+		}
+  
+  	</script>
+
+	<script defer>  //check internet bandwidth  and status from https://gist.github.com/fedir/5619422
+		var arrTimes = [];
+		var i = 0; // start
+		var timesToTest = 5;
+		var tThreshold = 150; //ms
+		// var testImage = "imgs/speedtest.jpg"; // small image in your server
+		var testImage = "https://en.wikipedia.org/static/images/project-logos/enwiki.png"; // small image in your server
+		var dummyImage = new Image();
+		var isConnectedFast = false;
+
+		testLatency(function(avg){
+		isConnectedFast = (avg <= tThreshold);
+		/** output */
+			newModal("Queue", "average: " + avg.toFixed(2) + " Mbps","Internet Speed:");
+		});
+
+		/** test and average time took to download image from server, called recursively timesToTest times */
+		function testLatency(cb) {
+			var tStart = new Date().getTime();
+			if (i<timesToTest-1) {
+				dummyImage.src = testImage + '?t=' + tStart;
+				dummyImage.onload = function() {
+				var tEnd = new Date().getTime();
+				var tTimeTook = tEnd-tStart;
+				arrTimes[i] = tTimeTook;
+				testLatency(cb);
+				i++;
+				};
+			} else {
+				/** calculate average of array items then callback */
+				var sum = arrTimes.reduce(function(a, b) { return a + b; });
+				var avg = sum / arrTimes.length;
+				cb(avg);
+			}
+		}
+
+		window.addEventListener('online',  updateOnlineStatus);
+		window.addEventListener('offline', updateOnlineStatus);
+
+		function updateOnlineStatus(event) {
+			var condition = navigator.onLine ? "online" : "offline";
+			if (condition == "online"){
+				newModal("Done","your connection was restored","Online",60000)
+			} else {
+				newModal("Error","Please check your Internet connection","Offline",60000)
+			}
+		}
+	</script>
+
+	<script defer>	//Modal creator
+
+	var modalcount = 0;
+	var modalDfltdur = 10000;
+	var modalQueueTitle = ["Please wait...", "Almost there!", "Hang on...", "In Queue..."]
+	var modalDoneTitle = ["Finish!", "Success!", "Done!"];
+	var modalErrorTitle = ["Oops!", "Sorry...", "Error!"];
+	var modalWarningTitle = ["Wait a minute...", "Ummm...", "Hold up...", "Warning!"];
+
+	function newModal(type,msg,title,dur,Yval,Nval){ // must have Done, Queued, Error, Warning,
+		modalcount++;
+
+		if (!dur == false && typeof(dur) == "number"){//has value
+			modaldur = dur;
+		} else {
+			modaldur = modalDfltdur
+		}
+
+		//Svg important attribute
+		var xmlns = "http://www.w3.org/2000/svg";
+
+		//Spawn Areas
+		var top_modals = document.getElementsByClassName("top_modals")[0];
+		var botright_modals = document.getElementsByClassName("botright_modals")[0];
+		
+		//Grid Cont
+		var newModalgrid = document.createElement("div");
+
+		//Icon Cont
+		var modalIconCont = document.createElement("div");
+		var modalIcon = document.createElement("img");
+
+		//Text Cont
+		var modalTextCont = document.createElement("div");
+		var modalTextHeader = document.createElement("span");
+		var modalTextContent = document.createElement("p");
+
+		//Exit Cont
+		var modalExitCont = document.createElement("div");
+		var modalExit = document.createElement("span");
+
+		if (type == "Queue"){ //round time
+			newModalgrid.setAttribute("class","Queue vivify fadeInRight");
+
+			modalIcon.src = "../imgs/Queue.svg"
+			modalIconCont.appendChild(modalIcon);
+
+			if(!title == false){ //has value
+				modalTextHeader.innerText = title;
+			} else {
+				index = Math.floor(Math.random()*modalQueueTitle.length);
+				modalTextHeader.innerText = modalQueueTitle[index];
+				// console.log(index);
+			}
+
+			modalTextContent.innerHTML = msg;
+			modalTextCont.appendChild(modalTextHeader);
+			modalTextCont.appendChild(modalTextContent);
+			
+			modalExitCont.onpointerup = function(event){
+				selfDel_modal(event);
+			};
+			modalExit.setAttribute("class","close" + modalcount);
+			modalExit.innerHTML = "&times;";
+
+			setTimeout(function(c_num){
+				// console.log(c_num);
+				trgt = document.getElementsByClassName("close" + c_num)[0];
+				if(trgt != null){
+					// console.log(trgt);
+					newclassname = trgt.parentElement.parentElement.classList[0] + " " + trgt.parentElement.parentElement.classList[1] + " " + "fadeOut";
+					trgt.parentElement.parentElement.onanimationend = function(){trgt.parentElement.parentElement.remove();}
+					trgt.parentElement.parentElement.setAttribute("class", newclassname);
+				} else {
+					console.log("Modal was previously closed by user!")
+				}	
+			},modaldur,modalcount);
+			modalExitCont.appendChild(modalExit);
+
+			newModalgrid.appendChild(modalIconCont);
+
+			newModalgrid.appendChild(modalTextCont);
+			newModalgrid.appendChild(modalExitCont);
+
+			botright_modals.appendChild(newModalgrid);
+		} else if (type == "Done"){ // box check
+			newModalgrid.setAttribute("class","Done vivify fadeInRight");
+
+			modalIcon.src = "../imgs/Success.svg"
+			modalIconCont.appendChild(modalIcon);
+			
+			if(!title == false){ //has value
+				modalTextHeader.innerText = title;
+			} else {
+				index = Math.floor(Math.random()*modalDoneTitle.length);
+				modalTextHeader.innerText = modalDoneTitle[index];
+				// console.log(index);
+			}
+
+			modalTextContent.innerHTML = msg;
+			modalTextCont.appendChild(modalTextHeader);
+			modalTextCont.appendChild(modalTextContent);
+
+			modalExitCont.onpointerup = function(event){
+				selfDel_modal(event);
+			};
+			modalExit.setAttribute("class","close" + modalcount);
+			modalExit.innerHTML = "&times;";
+
+			setTimeout(function(c_num){
+				// console.log(c_num);
+				trgt = document.getElementsByClassName("close" + c_num)[0];
+				if(trgt != null){
+					// console.log(trgt);
+					newclassname = trgt.parentElement.parentElement.classList[0] + " " + trgt.parentElement.parentElement.classList[1] + " " + "fadeOut";
+					trgt.parentElement.parentElement.onanimationend = function(){trgt.parentElement.parentElement.remove();}
+					trgt.parentElement.parentElement.setAttribute("class", newclassname);
+				} else {
+					console.log("Modal was previously closed by user!")
+				}
+				
+			},modaldur,modalcount);
+			modalExitCont.appendChild(modalExit);
+
+			modalExitCont.appendChild(modalExit);
+
+			newModalgrid.appendChild(modalIconCont);
+
+			newModalgrid.appendChild(modalTextCont);
+			newModalgrid.appendChild(modalExitCont);
+
+			botright_modals.appendChild(newModalgrid);
+
+		} else if (type == "Error"){ // box X
+			newModalgrid.setAttribute("class","Error vivify fadeInRight");
+
+			modalIcon.src = "../imgs/Error.svg"
+			
+			modalIconCont.appendChild(modalIcon);
+			
+			if(!title == false){ //has value
+				modalTextHeader.innerText = title;
+			} else {
+				index = Math.floor(Math.random()*modalErrorTitle.length);
+				modalTextHeader.innerText = modalErrorTitle[index];
+				// console.log(index);
+			}
+
+			modalTextContent.innerHTML = msg;
+			modalTextCont.appendChild(modalTextHeader);
+			modalTextCont.appendChild(modalTextContent);
+			
+			modalExitCont.onpointerup = function(event){
+				selfDel_modal(event);
+			};
+			modalExit.setAttribute("class","close" + modalcount);
+			modalExit.innerHTML = "&times;";
+
+			setTimeout(function(c_num){
+				// console.log(c_num);
+				trgt = document.getElementsByClassName("close" + c_num)[0];
+				if(trgt != null){
+					// console.log(trgt);
+					newclassname = trgt.parentElement.parentElement.classList[0] + " " + trgt.parentElement.parentElement.classList[1] + " " + "fadeOut";
+					trgt.parentElement.parentElement.onanimationend = function(){trgt.parentElement.parentElement.remove();}
+					trgt.parentElement.parentElement.setAttribute("class", newclassname);
+				} else {
+					console.log("Modal was previously closed by user!")
+				}	
+			},modaldur,modalcount);
+			modalExit.innerHTML = "&times;";
+			modalExitCont.appendChild(modalExit);
+
+			newModalgrid.appendChild(modalIconCont);
+
+			newModalgrid.appendChild(modalTextCont);
+			newModalgrid.appendChild(modalExitCont);
+
+			botright_modals.appendChild(newModalgrid);
+
+		} else if (type == "Warning"){// triangle exclamation
+			newModalgrid.setAttribute("class","Warning vivify fadeIn");
+
+			modalIconCont.setAttribute("class","icon");
+			modalIcon.src = "../imgs/Warning.svg"
+			modalIconCont.appendChild(modalIcon);
+
+			modalTextCont.setAttribute("class","content");		
+
+			if(!title == false){ //has value
+				modalTextHeader.innerText = title;
+			} else {
+				index = Math.floor(Math.random()*modalWarningTitle.length);
+				modalTextHeader.innerText = modalWarningTitle[index];
+			}
+
+			modalTextContent.innerHTML = msg;
+
+			var modalTrueBtn = document.createElement("span"); //True
+			if(!Yval == false){
+				modalTrueBtn.innerText = Yval;
+			} else {
+				modalTrueBtn.innerText = "Yes";
+			}
+			modalTrueBtn.setAttribute("class", "TrueBtn PromptBtn" + modalcount);
+
+			var modalFalseBtn = document.createElement("span"); //False
+			if(!Nval == false){
+				modalFalseBtn.innerText = Nval;
+			} else {
+				modalFalseBtn.innerText = "No";
+			}
+			modalFalseBtn.setAttribute("class", "FalseBtn PromptBtn" + modalcount);
+
+			// booleanListener(modalTrueBtn,modalFalseBtn);
+
+			modalTextCont.appendChild(modalTextHeader);
+			modalTextCont.appendChild(modalTextContent);
+
+			newModalgrid.appendChild(modalIconCont);
+			newModalgrid.appendChild(modalTextCont);
+			newModalgrid.appendChild(modalTrueBtn);
+			newModalgrid.appendChild(modalFalseBtn);
+
+			top_modals.appendChild(newModalgrid);
+			
+			return modalcount;
+			console.log("TO DO: ADD background to disable any other movement and prevent new Warning modal from spawning");
+		} else if (type == "Input"){// triangle exclamation
+			newModalgrid.setAttribute("class","Warning vivify fadeIn");
+
+			modalIconCont.setAttribute("class","icon");
+			modalIcon.src = "../imgs/Input.svg"
+			modalIconCont.appendChild(modalIcon);
+
+			modalTextCont.setAttribute("class","content");		
+
+			if(!title == false){ //has value
+				modalTextHeader.innerText = title;
+			} else {
+				modalTextHeader.innerText = "Title missing on param3";
+			}
+
+			modalTextContent.innerHTML = msg;
+
+			var modalTextInput = document.createElement("input");
+			modalTextInput.setAttribute("class","modalInput" + modalcount);
+			modalTextInput.setAttribute("type","text");
+			modalTextInput.setAttribute("autocomplete","off");
+			modalTextInput.setAttribute("placeholder","Enter here");
+			modalTextInput.setAttribute("maxlength","10");
+			// modalTextInput.oninput = removeSpChar(event);
+			// modalTextInput.addEventListener("input",removeSpChar())
+			// modalTextInput.addEventListener("keydown",DelEnterBack(event))
+			// modalTextInput.onkeydown = DelEnterBack(event);
+
+
+
+			var modalTrueBtn = document.createElement("span"); //True
+			modalTrueBtn.innerText = "Send";
+			modalTrueBtn.setAttribute("class", "TrueBtn PromptBtn" + modalcount);
+
+			var modalFalseBtn = document.createElement("span"); //False
+			modalFalseBtn.innerText = "Cancel";
+			modalFalseBtn.setAttribute("class", "FalseBtn PromptBtn" + modalcount);
+
+			// booleanListener(modalTrueBtn,modalFalseBtn);
+
+			modalTextCont.appendChild(modalTextHeader);
+			modalTextCont.appendChild(modalTextContent);
+			modalTextCont.appendChild(modalTextInput);
+
+			newModalgrid.appendChild(modalIconCont);
+			newModalgrid.appendChild(modalTextCont);
+			newModalgrid.appendChild(modalTrueBtn);
+			newModalgrid.appendChild(modalFalseBtn);
+			// newModalgrid.appendChild(modalInput)
+
+			top_modals.appendChild(newModalgrid);
+			
+			return modalcount;
+			console.log("TO DO: ADD background to disable any other movement and prevent new Warning modal from spawning");
+		} else if(type == "Link"){
+			newModalgrid.setAttribute("class","Warning vivify fadeIn");
+
+			modalIconCont.setAttribute("class","icon");
+			modalIcon.src = "../imgs/Input.svg"
+			modalIconCont.appendChild(modalIcon);
+
+			modalTextCont.setAttribute("class","content content" + modalcount);		
+
+			if(!title == false){ //has value
+				modalTextHeader.innerText = title;
+			} else {
+				modalTextHeader.innerText = "Title missing on param3";
+			}
+
+			modalTextContent.innerHTML = msg;
+
+			var modalAltBtn = document.createElement("div")
+			modalAltBtn.setAttribute("class","AltBtn AltBtn" + modalcount)
+
+
+			var modalTrueBtn = document.createElement("span"); //True
+			modalTrueBtn.innerText = "Done";
+			modalTrueBtn.setAttribute("class", "TrueBtn PromptBtn" + modalcount);
+
+			var modalFalseBtn = document.createElement("span"); //False
+			modalFalseBtn.innerText = "Cancel";
+			modalFalseBtn.setAttribute("class", "FalseBtn PromptBtn" + modalcount);
+
+			// booleanListener(modalTrueBtn,modalFalseBtn);
+
+			modalTextCont.appendChild(modalTextHeader);
+			modalTextCont.appendChild(modalTextContent);
+			modalTextCont.appendChild(modalAltBtn);
+
+			newModalgrid.appendChild(modalIconCont);
+			newModalgrid.appendChild(modalTextCont);
+			newModalgrid.appendChild(modalTrueBtn);
+			newModalgrid.appendChild(modalFalseBtn);
+			// newModalgrid.appendChild(modalInput)
+
+			top_modals.appendChild(newModalgrid);
+			
+			moveSignInBtns("AltBtn" + modalcount)
+
+			return modalcount;
+		} else {
+			alert("Invalid type on parameter1 of newModal()")
+		}
+	}
+	function selfDel_modal(event,animClass){
+		if (!animClass){ //no value
+			animClass = "fadeOut"
+		} else {
+			animClass = animClass;
+		}
+		
+		// console.log(event);
+		// c_resp = event;
+		// console.log(event.srcElement);
+		// console.log(event.srcElement.parentElement);
+		// console.log("Element.className " + event.srcElement.parentElement.className + " was removed!");
+		c_class = event.srcElement.parentElement.classList[0] + " " + event.srcElement.parentElement.classList[1]; 
+		newclassname = c_class + " " + animClass;
+		event.srcElement.parentElement.onanimationend = function(event){event.target.remove()};
+		event.srcElement.parentElement.setAttribute("class", newclassname);
+	}
+	function booleanResp(modalcount,link) { //from https://stackoverflow.com/a/63718685
+		return new Promise(function (resolve, reject) {
+			var trueBtn = document.getElementsByClassName("PromptBtn" + modalcount)[0]
+			var falseBtn = document.getElementsByClassName("PromptBtn" + modalcount)[1]
+
+			if (link == true){
+				var trueBtnFunc = event => { //True Boolean func
+					trueBtn.removeEventListener("pointerup", trueBtnFunc);
+					falseBtn.removeEventListener("pointerup", falseBtnFunc);
+					// c_resp = true;
+					console.log(true)
+					// c_resp = event; //for debugging
+					selfDel_modal(event,"fadeOut dur-100");
+					moveSignInBtns("AltSignInStorage")
+					resolve(true);
+					};
+				var falseBtnFunc = event => { //False Boolean func
+					falseBtn.removeEventListener("pointerup", falseBtnFunc);
+					trueBtn.removeEventListener("pointerup", trueBtnFunc);
+					// c_resp = false;
+					console.log(false)
+					selfDel_modal(event,"fadeOut dur-100");
+					moveSignInBtns("AltSignInStorage")
+					resolve(false);
+				};
+			} else {
+				var trueBtnFunc = event => { //True Boolean func
+					trueBtn.removeEventListener("pointerup", trueBtnFunc);
+					falseBtn.removeEventListener("pointerup", falseBtnFunc);
+					// c_resp = true;
+					console.log(true)
+					// c_resp = event; //for debugging
+					selfDel_modal(event,"fadeOut dur-100");
+					resolve(true);
+					};
+				var falseBtnFunc = event => { //False Boolean func
+					falseBtn.removeEventListener("pointerup", falseBtnFunc);
+					trueBtn.removeEventListener("pointerup", trueBtnFunc);
+					// c_resp = false;
+					console.log(false)
+					selfDel_modal(event,"fadeOut dur-100");
+					resolve(false);
+				};
+			}
+			
+			
+			
+			//Adds event listener
+			trueBtn.addEventListener("pointerup", trueBtnFunc);
+			falseBtn.addEventListener("pointerup", falseBtnFunc);
+		});
+	}
+	function inputResp(modalcount) { //from https://stackoverflow.com/a/63718685
+		return new Promise(function (resolve, reject) {
+			var modalInput = document.getElementsByClassName("modalInput" + modalcount)[0]
+			var trueBtn = document.getElementsByClassName("PromptBtn" + modalcount)[0]
+			var falseBtn = document.getElementsByClassName("PromptBtn" + modalcount)[1]
+			
+			var modalInputFunc = event => {
+				if (event.keyCode == 13){
+					//custom selfDel_modal
+					c_class = event.srcElement.parentElement.parentElement.classList[0] + " " + event.srcElement.parentElement.parentElement.classList[1]; 
+					newclassname = c_class + " fadeOut";
+					event.srcElement.parentElement.parentElement.onanimationend = function(event){event.target.remove()};
+					event.srcElement.parentElement.parentElement.setAttribute("class", newclassname);
+					//
+					resolve(event.srcElement.parentElement.lastChild.value);
+				}
+			}
+			
+			var trueBtnFunc = event => { //True Boolean func
+				trueBtn.removeEventListener("pointerup", trueBtnFunc);
+				falseBtn.removeEventListener("pointerup", falseBtnFunc);
+				// c_resp = true;
+				// user_resp = event.srcElement.parentElement.children[1].lastChild.value
+				console.log(true);
+				// console.log(event)
+				// c_resp = event; //for debugging
+				selfDel_modal(event,"fadeOut dur-100");
+				resolve(event.srcElement.parentElement.children[1].lastChild.value);
+			};
+			var falseBtnFunc = event => { //False Boolean func
+				falseBtn.removeEventListener("pointerup", falseBtnFunc);
+				trueBtn.removeEventListener("pointerup", trueBtnFunc);
+				// c_resp = false;
+				console.log(false)
+				selfDel_modal(event,"fadeOut dur-100");
+				resolve(false);
+			};
+			
+			//Adds event listener
+			modalInput.addEventListener("keydown", modalInputFunc)
+			trueBtn.addEventListener("pointerup", trueBtnFunc);
+			falseBtn.addEventListener("pointerup", falseBtnFunc);
+		});
+	}
+
+	async function awaitClicks(){
+
+		// var trueBtn = document.getElementsByClassName("TrueBtn")[0];
+		// var falseBtn = document.getElementsByClassName("FalseBtn")[0];
+
+		await waitListener(trueBtn, falseBtn).then(e=>{
+			console.log("e.clientX: " + e.clientX);
+		});
+
+		console.log("attmept1");
+		console.log(c_resp);
+	
+	}
+	// awaitClicks();
+	
+	</script>
+
+	<script defer>	//constellation generator
+	var pointer = {
+		x: undefined,
+		y: undefined
+	}
+	var ctx;
+	
+	
+	// var colorArray = ["#ffffff","#ffff00","#ff00ff","#00ffff","#ff0000","#0000ff","#00ff00"]
+	var colorArray = [
+			"9, 82 , 189",
+			"165, 191, 240",
+			"17, 140, 214",
+			"26, 174, 232",
+			"242, 232, 201"
+	];
+
+	// var colorArray = [
+	// 		"216,153,170,",
+	// 		"38,12,29",
+	// 		"114,64,101",
+	// 		"43,24,63",
+	// ];
+	function constellation_setup(){
+		var constellation = document.getElementsByTagName("canvas")[0];
+		var const_cont = document.getElementsByClassName("const_cont")[0];
+
+		const_cont.classList.add("vivify");
+		const_cont.classList.add("fadeIn");
+		
+		constellation.height = window.innerHeight;
+		constellation.width = window.innerWidth;
+
+		ctx =  constellation .getContext("2d");
+
+		//Audio
+		console.log("TO DO: create more bg music to choose from")
+		console.log("TO DO: Add silent audio for Bg music... maybe in the settings")
+		console.log("TO DO: Remove this if player is already Logged In and trying to continue")
+		var audio = new Audio("audio/CrystalEmpire_Night.ogg");
+		audio.volume = 0.5;
+		audio.loop = true;
+
+		document.addEventListener('pointerup', musicPlay);
+		function musicPlay() {
+			setTimeout(function(){
+				audio.play();
+				newModal("Queue","Night in Crystal Kingdom - Hirosashii","Now Playing");
+			},1000,audio)
+
+			document.removeEventListener('pointerup', musicPlay);
+			
+		}
+	}
+
+	var starArray = [];
+	function crt_star(isMobile,x,y,radius,alpha,color,increment){
+		this.isMobile = isMobile;
+		this.x = x;
+		this.y = y;
+		this.secondRad = radius
+		this.alpha = alpha;
+		this.increment = increment;
+		this.dx = this.increment;
+		this.dy = this.increment;
+		this.boost = 1;
+		this.color = color;
+		this.shadow = "rgb(" + this.color + ")"
+
+		this.draw = function(){
+			ctx.globalCompositeOperation = "destination-over"
+
+			ctx.save();
+			ctx.beginPath();
+			ctx.arc(this.x, this.y, this.secondRad, 0, Math.PI * 2, false);	
+			// ctx.shadowColor = this.shadow;
+			ctx.shadowColor = "rgb(" + this.color + ")";
+			ctx.shadowBlur = this.secondRad * this.alpha * 4;
+			ctx.shadowOffsetX = 0;
+			ctx.shadowOffsetY = 0;
+			ctx.fillStyle = "rgba("+ this.color + "," + this.alpha + ")";
+			ctx.fill();
+			ctx.closePath();
+			ctx.restore();
+
+
+			// //shadows
+			// ctx.shadowColor = "rgb(" + this.color + ")";
+			// ctx.shadowBlur = this.secondRad * this.alpha;
+			// ctx.shadowOffsetX = 0;
+			// ctx.shadowOffsetY = 0;
+
+
+			// //rectangle
+			// ctx.fillStyle= this.fill;
+			// ctx.fillRect(this.x, this.y, this.hr, this.vr)
+			ctx.globalCompositeOperation = "source-over"
+		}
+
+		this.update = function(){
+			// this.draw();
+			// console.log(this.alpha);
+			// console.log(this.color);
+			
+			if (this.isMobile == 0){
+				
+				if (this.alpha > 1 || this.alpha < 0){ //opacity manager
+					this.increment = -this.increment;
+					
+					if (this.alpha < 0){
+						chance = Math.random();
+						this.color = colorArray[Math.floor(Math.random() * colorArray.length)];
+
+						if (chance >= 0.75){
+							this.x = Math.random() * (innerWidth - (radius * 2)) + radius;
+							this.y = Math.random() * (innerHeight - (radius * 2)) + radius;
+						}
+					}
+				} else if (this.alpha == 1.2 || this.alpha == -0.2){
+					alert("SOMETHING WENT WRONG!")
+					stop_Anim();
+				}
+				
+				if (this.x + this.secondRad > innerWidth/2){ //horizontal speed
+					this.dx = Math.abs(this.dx);
+				} else {
+					this.dx = -(Math.abs(this.dx));
+				}
+				
+				if (this.y + this.secondRad > innerHeight/2){ //vertical speed
+					this.dy = Math.abs(this.dy);
+				} else {
+					this.dy = -(Math.abs(this.dy));
+				}
+
+				//if star goes beyond border
+				// if (this.x + this.secondRad > innerWidth + this.secondRad || this.x + this.secondRad < 0 - this.secondRad || this.y + this.secondRad > innerHeight + this.secondRad || this.y + this.secondRad > 0 - this.secondRad){
+				// 	this.color = colorArray[Math.floor(Math.random() * colorArray.length)];
+				// 	this.x = Math.random() * (innerWidth - (radius * 2)) + radius;
+				// 	this.y = Math.random() * (innerHeight - (radius * 2)) + radius;
+				// }
+				
+				if (this.x + this.secondRad > innerWidth + this.secondRad || this.x + this.secondRad < 0 - this.secondRad || this.y + this.secondRad > innerHeight + this.secondRad || this.y + this.secondRad < 0 - this.secondRad ){
+					this.alpha = 0;
+					this.color = colorArray[Math.floor(Math.random() * colorArray.length)];
+					this.x = Math.random() * (innerWidth - (radius * 2)) + radius;
+					this.y = Math.random() * (innerHeight - (radius * 2)) + radius;
+				}
+
+				//interactivity
+				if (pointer.x - this.x < 40 && pointer.x - this.x > -40 && pointer.y - this.y < 40 && pointer.y - this.y > -40){
+					this.boost += 2;
+				} else {
+					if (this.boost != 1){
+						this.boost -= 2;
+					}
+				}
+
+				this.alpha = this.alpha + this.increment;
+				this.x += this.dx * 20 * this.boost;
+				this.y += this.dy * 20 * this.boost; 
+			}
+			this.draw();
+		}
+		
+		this.intro = function(){			
+			// this.y = this.y + this.dy;
+			// this.y += this.dy * 20 * relativeTrans  * 2;
+			this.y += 1 * relativeTrans * .25;
+			// this.y += this.dy * 20 ;
+			this.draw();
+			
+		}
+	}	
+	function gen_star(){
+		starArray.length = 0;
+		if (innerWidth <= 576){ //Star limiter
+			isMobile = 1;
+			starcnt = 25;
+		} else if (innerWidth <= 992){
+			starcnt = 100;
+			isMobile = 0;
+		} else {
+			starcnt = 150;
+			isMobile = 0;
+		}
+
+		for (i=0;i<starcnt;i++){ // star generator
+			var radius = Math.random() * 3 + 0.5;
+			var x = Math.random() * (innerWidth - (radius * 2)) + radius;
+			var y = Math.random() * (innerHeight - (radius * 2)) + radius;
+			
+			if (isMobile == 1){ //either fixes alpha to 1 for mobile optimization
+				var alpha = 1;
+			} else {
+				var alpha = Math.round(Math.random() * 100) / 100;
+			}
+			
+			var color = colorArray[Math.floor(Math.random() * colorArray.length)];
+			var chance = Math.random();
+			if (chance > 0.75){
+				var increment = 0.01;
+			} else if (chance > 0.5){
+				var increment = 0.005;
+			} else {
+				var increment = 0.001;
+			}
+
+			starArray.push(new crt_star(isMobile,x,y,radius,alpha,color,increment))
+		}
+	}
+	gen_star();
+
+	var moonArray = [];
+	function crt_moon(isMobile, x, y, radius, mphase){
+		this.isMobile = isMobile;
+		this.x = x
+		this.y = y
+		this.secondRad = radius;
+		this.shdwBlur = this.secondRad/2;
+
+		this.alpha = 1;
+		this.increment = 0.0025;
+		this.mphase = mphase;
+		this.srcGlowYOffset = this.secondRad * 10;
+		this.glowYOffset = this.secondRad * -10;
+		
+		//main #D9D9D9
+		//patch #A6A6A6 #595959
+		//shade #262626 #0D0D0D
+		this.colorMn =  "#D9D9D9";
+		this.colorHole = "#A6A6A6";
+		this.colorHoleShdw = "#595959";
+		this.colorShdLght = "#262626";
+		this.colorShdDrk = "#0D0D0D"
+		this.bgGlow = "rgba(255,255,255, .75)";
+		this.fgGlow = "rgba(235,200,21,.125)";
+
+		// 0 => New Moon
+		// 1 => Waxing Crescent Moon
+		// 2 => Quarter Moon
+		// 3 => Waxing Gibbous Moon
+		// 4 => Full Moon
+		// 5 => Waning Gibbous Moon
+		// 6 => Last Quarter Moon
+		// 7 => Waning Crescent Moon
+		//NewMn 			mnPos 0 	mnRd 50 shdwPos 0 		shdwRad 0
+		//WxCrs 			mnPos 0	 	mnRd 50 shdwPos -25 	shdwRad 55 || 40
+		// 1stQtr 			mnPos 0 	mnRd 50 shdwPos -250 	shdwRad 250
+		//WxGb 				mnPos 25 	mnRd 50 shdwPos 0 		shdwRad 50
+	
+		//FullMoon 			mnPos 0 	mnRd 50 shdwPos 9999 	shdwRad 50
+		//WnGb 				mnPos -25 	mnRd 50 shdwPos 0 		shdwRad 50
+		//3rdQtr 			mnPos 0 	mnRd 50 shdwPos 250 	shdwRad 250
+		//WnCrs 			mnPos 0 	mnRd 50 shdwPos 25 		shdwRad 55 || 40
+		
+		// ctx.globalCompositeOperation = "source-atop"
+		// // ctx.globalCompositeOperation = "destination-atop" //for Wanning & Waxing Gibbous only!
+		// this.shdwComp = "destination-atop";
+
+		if (this.mphase == "New Moon"){ //mnPos 0 	mnRd 50 shdwPos 0 	shdwRad 0
+			this.mnPos = this.secondRad * 0;
+			this.mnRad = this.secondRad * 1;
+			this.shdwPos = this.secondRad * 0;
+			this.shdwRad = this.secondRad * .95;
+			this.shdwComp = "source-atop";
+			this.holeShdwOffset = this.secondRad * 0;
+		} else if (this.mphase == "Waxing Crescent Moon"){ //mnPos 0	mnRd 50 shdwPos -25 	shdwRad 55 || 40
+			this.mnPos = this.secondRad * 0; 
+			this.mnRad = this.secondRad * 1;
+			this.shdwPos = this.secondRad * -0.5;
+			this.shdwRad = this.secondRad * 1.1;
+			this.shdwComp = "source-atop";
+			this.holeShdwOffset = this.secondRad * 0.02;
+		} else if (this.mphase == "Quarter Moon"){//mnPos 0 	mnRd 50 shdwPos -250 	shdwRad 250
+			this.mnPos = this.secondRad * 0;
+			this.mnRad = this.secondRad * 1;
+			this.shdwPos = this.secondRad * -5;
+			this.shdwRad = this.secondRad * 5;
+			this.shdwComp = "source-atop";
+			this.holeShdwOffset = this.secondRad * 0.02;
+		} else if (this.mphase == "Waxing Gibbous Moon"){//mnPos 25 	mnRd 50 shdwPos 0 		shdwRad 50
+			this.mnPos = this.secondRad * 0.5;
+			this.mnRad = this.secondRad * 1;
+			this.shdwPos = this.secondRad * 0;
+			this.shdwRad = this.secondRad * 1;
+			this.shdwComp = "destination-atop";
+			this.holeShdwOffset = this.secondRad * 0.02;
+		} else if (this.mphase == "Full Moon"){//mnPos 0 	mnRd 50 shdwPos 9999 	shdwRad 50
+			this.mnPos = this.secondRad * 0;
+			this.mnRad = this.secondRad * 1;
+			this.shdwPos = this.secondRad * 200;
+			this.shdwRad = this.secondRad * 1;
+			this.shdwComp = "source-atop";
+			this.holeShdwOffset = this.secondRad * 0;
+		} else if (this.mphase == "Waning Gibbous Moon"){//mnPos -25 	mnRd 50 shdwPos 0 		shdwRad 50
+			this.mnPos = this.secondRad * -0.5;
+			this.mnRad = this.secondRad * 1;
+			this.shdwPos = this.secondRad * 0;
+			this.shdwRad = this.secondRad * 1;
+			this.shdwComp = "destination-atop";
+			this.holeShdwOffset = this.secondRad * -0.02;
+		} else if (this.mphase == "Last Quarter Moon"){//mnPos 0 	mnRd 50 shdwPos 250 	shdwRad 250
+			this.mnPos = this.secondRad * 0;
+			this.mnRad = this.secondRad * 1;
+			this.shdwPos = this.secondRad * 5;
+			this.shdwRad = this.secondRad * 5;
+			this.shdwComp = "source-atop";
+			this.holeShdwOffset = this.secondRad * -0.02;
+		} else if (this.mphase == "Waning Crescent Moon"){//mnPos 0 	mnRd 50 shdwPos 25 		shdwRad 55 || 40
+			this.mnPos = this.secondRad * 0;
+			this.mnRad = this.secondRad * 1;
+			this.shdwPos = this.secondRad * .5;
+			this.shdwRad = this.secondRad * 1.1;
+			this.shdwComp = "source-atop";
+			this.holeShdwOffset = this.secondRad * -0.02;
+		}
+
+
+		this.draw = function(){	
+			
+			//Moon patches
+			ctx.beginPath();
+			ctx.arc(this.x - (this.secondRad * .1), this.y - (this.secondRad * .2), (this.secondRad * .3), 0, Math.PI * 2, false);
+			ctx.fillStyle = this.colorHole;
+			ctx.fill();
+			ctx.closePath();
+			ctx.arc(this.x - (this.secondRad * .1) + this.holeShdwOffset, this.y - (this.secondRad * .2), (this.secondRad * .3), 0, Math.PI * 2, false);
+			ctx.fillStyle = this.colorHoleShdw;
+			ctx.fill();
+			ctx.closePath();
+
+			ctx.beginPath()
+			ctx.arc(this.x - (this.secondRad * .9), this.y - (this.secondRad * .3), (this.secondRad * .15), 0, Math.PI * 2, false);
+			ctx.fillStyle = this.colorHole;
+			ctx.fill();
+			ctx.closePath();
+			ctx.beginPath();
+			ctx.arc(this.x - (this.secondRad * .9) + this.holeShdwOffset, this.y - (this.secondRad * .3), (this.secondRad * .15), 0, Math.PI * 2, false);
+			ctx.fillStyle = this.colorHoleShdw;
+			ctx.fill();
+			ctx.closePath()
+
+			ctx.beginPath()
+			ctx.arc(this.x - (this.secondRad * .3), this.y - (this.secondRad * .8), (this.secondRad * .175), 0, Math.PI * 2, false);
+			ctx.fillStyle = this.colorHole;
+			ctx.fill();
+			ctx.closePath();
+			ctx.beginPath();
+			ctx.arc(this.x - (this.secondRad * .3) + this.holeShdwOffset, this.y - (this.secondRad * .8), (this.secondRad * .175), 0, Math.PI * 2, false);
+			ctx.fillStyle = this.colorHoleShdw;
+			ctx.fill();
+			ctx.closePath()
+
+			ctx.beginPath()
+			ctx.arc(this.x + (this.secondRad * .3), this.y - (this.secondRad * .6), (this.secondRad * .125), 0, Math.PI * 2, false);
+			ctx.fillStyle = this.colorHole;
+			ctx.fill();
+			ctx.closePath();
+			ctx.beginPath();
+			ctx.arc(this.x + (this.secondRad * .3) + this.holeShdwOffset, this.y - (this.secondRad * .6), (this.secondRad * .125), 0, Math.PI * 2, false);
+			ctx.fillStyle = this.colorHoleShdw;
+			ctx.fill();
+			ctx.closePath()
+
+			ctx.beginPath()
+			ctx.arc(this.x + (this.secondRad * .5), this.y + (this.secondRad * .7), (this.secondRad * .4), 0, Math.PI * 2, false);
+			ctx.fillStyle = this.colorHole;
+			ctx.fill();
+			ctx.closePath();
+			ctx.beginPath();
+			ctx.arc(this.x + (this.secondRad * .5) + this.holeShdwOffset, this.y + (this.secondRad * .7), (this.secondRad * .4), 0, Math.PI * 2, false);
+			ctx.fillStyle = this.colorHoleShdw;
+			ctx.fill();
+			ctx.closePath()
+
+			ctx.beginPath()
+			ctx.arc(this.x - (this.secondRad * .2), this.y + (this.secondRad * .7), (this.secondRad * .15), 0, Math.PI * 2, false);
+			ctx.fillStyle = this.colorHole;
+			ctx.fill();
+			ctx.closePath();
+			ctx.beginPath();
+			ctx.arc(this.x - (this.secondRad * .2) + this.holeShdwOffset, this.y + (this.secondRad * .7), (this.secondRad * .15), 0, Math.PI * 2, false);
+			ctx.fillStyle = this.colorHoleShdw;
+			ctx.fill();
+			ctx.closePath()
+
+			ctx.beginPath()
+			ctx.arc(this.x + (this.secondRad * .7), this.y , (this.secondRad * .1), 0, Math.PI * 2, false);
+			ctx.fillStyle = this.colorHole;
+			ctx.fill();
+			ctx.closePath();
+			ctx.beginPath();
+			ctx.arc(this.x + (this.secondRad * .7) + this.holeShdwOffset, this.y , (this.secondRad * .1), 0, Math.PI * 2, false);
+			ctx.fillStyle = this.colorHoleShdw;
+			ctx.fill();
+			ctx.closePath()
+			
+
+			//Main moon
+			ctx.globalCompositeOperation = "destination-atop";
+
+			ctx.save();
+			ctx.beginPath();
+			ctx.arc(this.x + this.mnPos, this.y, this.mnRad, 0, Math.PI * 2, false);	
+			ctx.fillStyle = this.colorMn;
+			ctx.fill();
+			ctx.closePath();
+			ctx.restore();
+
+			//Shadow
+			ctx.globalCompositeOperation = this.shdwComp; // can not use "destination-out" because stars shouldn't pass through the moon's shadow
+
+			ctx.beginPath();	
+			// ctx.arc(this.x + this.shdwPos, this.y, this.shdwRad, 0, Math.PI * 2, false);
+			ctx.arc(this.x + this.shdwPos, this.y, this.shdwRad, 0, Math.PI * 2, false);
+			ctx.fillStyle = this.colorShdDrk;
+			ctx.fill();
+			ctx.closePath();
+			
+			//Glow
+			ctx.globalCompositeOperation = "destination-over"; //back light
+
+			ctx.save();
+			ctx.beginPath();
+			ctx.arc(this.x, this.y + this.srcGlowYOffset, this.secondRad, 0, Math.PI * 2, false);	
+			ctx.shadowColor = this.bgGlow;
+			ctx.shadowBlur = this.shdwBlur * 4 * this.alpha;
+			ctx.shadowOffsetX = 0;
+			ctx.shadowOffsetY = this.glowYOffset;
+			// ctx.fillStyle =  "red";
+			ctx.fill();
+			ctx.closePath();
+			ctx.restore();
+
+			ctx.globalCompositeOperation = "source-over"; //front light
+
+			ctx.save();
+			ctx.beginPath();
+			ctx.arc(this.x, this.y + this.srcGlowYOffset, this.secondRad, 0, Math.PI * 2, false);	
+			ctx.shadowColor = this.fgGlow;
+			ctx.shadowBlur = this.shdwBlur * 2 * this.alpha;
+			ctx.shadowOffsetX = 0;
+			ctx.shadowOffsetY = this.glowYOffset;
+			// ctx.fillStyle =  "red";
+			ctx.fill();
+			ctx.closePath();
+			ctx.restore();
+			
+			ctx.globalCompositeOperation = "destination-over" //resets the position to the let the stars spawn
+			// ctx.globalCompositeOperation = "source-over" //resets the position to the let the stars spawn
+			// colors of the moon
+			//main #D9D9D9
+			//patch #A6A6A6 #595959
+			//shade #262626 #0D0D0D
+		}
+
+		this.update = function(){
+
+			if (isMobile == 0){
+				if (this.alpha > 1 || this.alpha < 0.25 ){ //opacity manager
+					this.increment = -this.increment;
+				}
+				this.alpha = this.alpha + this.increment;			
+			}
+			this.draw();
+		}
+		
+		this.center = function(){
+			if (this.y >= innerHeight * .775){
+				this.y -= 3
+				relativeTrans = 1;
+			} else if (this.y >= innerHeight * .75){
+				this.y -= 2.75
+				relativeTrans = .9;
+ 			} else if (this.y >= innerHeight * .725){
+				this.y -= 2.5
+				relativeTrans = .825;
+			} else if (this.y >= innerHeight * .7){
+				this.y -= 2.25
+				relativeTrans = .75;
+			} else if (this.y >= innerHeight * .675){
+				this.y -= 2
+				relativeTrans = .675;
+			} else if (this.y >= innerHeight * .65){
+				this.y -= 1.75
+				relativeTrans = .6;
+			} else if (this.y >= innerHeight * .625){
+				this.y -= 1.5
+				relativeTrans = .525;
+			} else if (this.y >= innerHeight * .6){
+				this.y -= 1.25
+				relativeTrans = .45;
+			} else if (this.y >= innerHeight * .575){
+				this.y -= 1
+				relativeTrans = .375;
+			} else if (this.y >= innerHeight * .55){
+				this.y -= .75
+				relativeTrans = .3;
+			} else if (this.y >= innerHeight * .525){
+				this.y -= .5
+				relativeTrans = .225;
+			} else if (this.y >= innerHeight * .5125){
+				this.y -= .25
+				relativeTrans = .15;
+			} else if (this.y > innerHeight * .5){
+				this.y -= .125
+				relativeTrans = .075;
+			} else {
+				introAnim = false;
+			}
+			this.draw();
+		}
+	}
+	function gen_moon(){
+		moonArray.length = 0;
+		// 0 => New Moon
+		// 1 => Waxing Crescent Moon
+		// 2 => Quarter Moon
+		// 3 => Waxing Gibbous Moon
+		// 4 => Full Moon
+		// 5 => Waning Gibbous Moon
+		// 6 => Last Quarter Moon
+		// 7 => Waning Crescent Moon
+
+		if (innerWidth <= 576){ //Star limiter
+			radius = 50;
+			isMobile = 1;
+		} else if (innerWidth <= 992){
+			radius = 75;
+			isMobile = 0;
+		} else {
+			radius = 100;
+			isMobile = 0;
+		}
+
+		moonCoordX = innerWidth * .5;
+		moonCoordY = innerHeight * .8;
+		moonPhase = getCookie("c_phase");
+		// moonPhase = "Waning Crescent Moon";
+		moonArray.push(new crt_moon(isMobile, moonCoordX, moonCoordY, radius, moonPhase));
+	}
+	gen_moon();
+
+	var signalArray = [];
+	function crt_signal(x,y,radius){
+		this.centerX = x;
+		this.centerY = y;
+		this.radius = radius;
+		this.thickness = 10;
+		this.thicknessN = 10;
+		this.alpha = 0;
+		this.increment = .01;
+		this.incrementN = .01;
+
+		this.rangeRad = this.radius
+
+		this.firstXR = this.firstXL = x;
+		this.firstRad = radius;
+		this.secondXR = this.secondXL = x;
+		this.secondRad = radius * .75;
+		this.thirdXR = this.thirdXL = x;
+		this.thirdRad = radius * .5;
+
+		/*
+			//////////////////				-50, -50		0, -50			50, -50		
+			/A		B		C/
+			/				 /
+			/D		E		F/				-50, 0			0, 0 			50, 0
+			/				 /
+			/G		H		I/
+			//////////////////				-50, 50			0, 50			50, 50
+
+			Ex. radius is 50....
+
+
+		*/
+
+		this.draw = function(){
+			
+			ctx.globalCompositeOperation = "destination-over"
+			//range signal
+			ctx.beginPath();
+			ctx.arc(this.centerX, this.centerY, this.rangeRad, 0, 2 * Math.PI);
+			ctx.lineWidth = this.thickness / 2;
+			ctx.strokeStyle = "rgba(255,255,255," + this.alpha + ")" 
+			ctx.stroke();
+			ctx.closePath();
+
+			// ctx.globalCompositeOperation = "source-atop"
+			ctx.globalCompositeOperation = "source-over"
+			// ctx.globalCompositeOperation = "darker"
+
+			//first signal
+			ctx.beginPath();
+			ctx.moveTo(this.firstXL, this.centerY - (this.firstRad * 2))
+			//ctx.bezierCurveTo(Ax,Ay,Gx,Gy,Hx,Hy)
+			//ctx.bezierCurveTo(-50,-50,-50,50,0,50)
+			ctx.bezierCurveTo( this.firstXL - this.firstRad, this.centerY - this.firstRad, this.firstXL - this.firstRad, this.centerY + this.firstRad, this.firstXL, this.centerY + (this.firstRad * 2 ))
+			ctx.lineWidth = this.thickness;
+			ctx.lineCap = "round";
+			ctx.strokeStyle = "rgba(216,252,253," + this.alpha + ")"
+			ctx.stroke();
+			ctx.closePath();
+
+			//first signal mirror
+			ctx.beginPath();
+			ctx.moveTo(this.firstXR, this.centerY - (this.firstRad * 2))
+			//ctx.bezierCurveTo(Cx,Cy,Ix,Iy,Hx,Hy)
+			//ctx.bezierCurveTo(50,-50,50,50,0,50)
+			ctx.bezierCurveTo( this.firstXR + this.firstRad, this.centerY - this.firstRad, this.firstXR + this.firstRad, this.centerY + this.firstRad, this.firstXR, this.centerY + (this.firstRad * 2))
+			ctx.lineWidth = this.thickness;
+			ctx.lineCap = "round";
+			ctx.stroke();
+			ctx.closePath();
+
+			//2nd signal
+			ctx.beginPath();
+			ctx.moveTo(this.secondXL, this.centerY - (this.secondRad * 2))
+			//ctx.bezierCurveTo(Ax,Ay,Gx,Gy,Hx,Hy)
+			//ctx.bezierCurveTo(-50,-50,-50,50,0,50)
+			ctx.bezierCurveTo( this.secondXL - this.secondRad, this.centerY - this.secondRad, this.secondXL - this.secondRad, this.centerY + this.secondRad, this.secondXL, this.centerY + (this.secondRad * 2 ))
+			ctx.lineWidth = this.thickness;
+			ctx.lineCap = "round";
+			ctx.strokeStyle = "rgba(158,182,208," + this.alpha + ")"
+			ctx.stroke();
+			ctx.closePath();
+
+			//2nd signal mirror
+			ctx.beginPath();
+			ctx.moveTo(this.secondXR, this.centerY - (this.secondRad * 2))
+			//ctx.bezierCurveTo(Cx,Cy,Ix,Iy,Hx,Hy)
+			//ctx.bezierCurveTo(50,-50,50,50,0,50)
+			ctx.bezierCurveTo( this.secondXR + this.secondRad, this.centerY - this.secondRad, this.secondXR + this.secondRad, this.centerY + this.secondRad, this.secondXR, this.centerY + (this.secondRad * 2))
+			ctx.lineWidth = this.thickness;
+			ctx.lineCap = "round";
+			ctx.stroke();
+			ctx.closePath();
+
+			//3rd signal
+			ctx.beginPath();
+			ctx.moveTo(this.thirdXL, this.centerY - (this.thirdRad * 2))
+			//ctx.bezierCurveTo(Ax,Ay,Gx,Gy,Hx,Hy)
+			//ctx.bezierCurveTo(-50,-50,-50,50,0,50)
+			ctx.bezierCurveTo( this.thirdXL - this.thirdRad, this.centerY - this.thirdRad, this.thirdXL - this.thirdRad, this.centerY + this.thirdRad, this.thirdXL, this.centerY + (this.thirdRad* 2 ))
+			ctx.lineWidth = this.thickness;
+			ctx.lineCap = "round";
+			ctx.strokeStyle = "rgba(120,132,165," + this.alpha + ")"
+			ctx.stroke();
+			ctx.closePath();
+
+			//3rd signal mirror
+			ctx.beginPath();
+			ctx.moveTo(this.thirdXR, this.centerY - (this.thirdRad * 2))
+			//ctx.bezierCurveTo(Cx,Cy,Ix,Iy,Hx,Hy)
+			//ctx.bezierCurveTo(50,-50,50,50,0,50)
+			ctx.bezierCurveTo( this.thirdXR + this.thirdRad, this.centerY - this.thirdRad, this.thirdXR + this.thirdRad, this.centerY + this.thirdRad, this.thirdXR, this.centerY + (this.thirdRad* 2))
+			ctx.lineWidth = this.thickness;
+			ctx.lineCap = "round";
+			ctx.stroke();
+			ctx.closePath();
+
+			// ctx.globalCompositeOperation = "destination-over"
+
+		}
+
+		this.update = function(){
+			if (this.alpha < 0){
+				setTimeout(()=>audio2.play(),1000)
+				this.rangeRad = this.radius
+
+				this.firstRad = this.radius;
+				this.secondRad = this.radius * .75;
+				this.thirdRad = this.radius * .5;
+				this.firstXL = this.firstXR = this.centerX;
+				this.secondXL = this.secondXR = this.centerX;
+				this.thirdXL = this.thirdXR = this.centerX;
+				this.increment = this.incrementN
+				this.thickness = this.thicknessN;
+			} else if (this.alpha > 1){
+				this.increment = -this.increment;
+			}
+			this.thickness = this.thickness * 0.99
+
+			this.rangeRad = this.rangeRad * 1.03
+			
+			this.firstRad += .2
+			this.secondRad += .1
+			this.thirdRad += .05
+			this.firstXL -= .9
+			this.firstXR += .9
+			this.secondXL -= .6
+			this.secondXR += .6
+			this.thirdXL -= .3
+			this.thirdXR += .3
+			
+			this.alpha += this.increment
+			this.draw();
+		}
+	}
+	function gen_signal(){
+		signalCoordX = innerWidth * .5;
+		signalCoordY = innerHeight * .5;
+		radius = 10
+
+		signalArray.push(new crt_signal(signalCoordX,signalCoordY,radius))
+	}
+	gen_signal();
+
+	var audio2 = new Audio("audio/no_signal.mp3")
+	audio2.volume = 1;
+
+
+	function init(){
+		// alert("Init fired")
+		gen_star();
+		gen_moon();
+	}
+	
+	var stopAnim = false;
+	var introAnim = true;
+	var relativeTrans;
+	var AnimFrame;
+
+	function animate(){
+		// console.log(stopAnim);
+		if (stopAnim == true ){
+			// console.log("anim stopped")
+		} else {
+			AnimFrame = requestAnimationFrame(animate);
+			ctx.clearRect(0,0,innerWidth,innerHeight);
+			for (i=0;i<moonArray.length;i++){
+				// console.log("B")
+				moonArray[i].update();
+			}
+			for (i=0;i<starArray.length;i++){
+				// console.log("A")
+				starArray[i].update();
+			}
+		}
+	}
+	function intro_Anim(){
+		ctx.clearRect(0,0,innerWidth,innerHeight);
+		for (i=0;i<moonArray.length;i++){
+			// console.log("B")
+			moonArray[i].center();
+		}
+		for (i=0;i<starArray.length;i++){
+				// console.log("A")
+				starArray[i].intro();
+		}
+		if (introAnim == false){
+			cancelAnimationFrame(AnimFrame);
+			AnimFrame = requestAnimationFrame(intro_Anim2);
+		} else {
+			AnimFrame = requestAnimationFrame(intro_Anim);	
+		}	
+	}
+
+	function intro_Anim2(){
+		ctx.clearRect(0,0,innerWidth,innerHeight);
+		for (i=0;i<moonArray.length;i++){
+			// console.log("B")
+			moonArray[i].draw();
+		}
+		for (i=0;i<starArray.length;i++){
+				// console.log("A")
+				starArray[i].draw();
+		}
+		for (i=0;i<signalArray.length;i++){
+				// console.log("A")
+				signalArray[i].update();
+		}
+		requestAnimationFrame(intro_Anim2);
+	}
+
+	function stop_Anim(){
+		cancelAnimationFrame(AnimFrame)
+		console.log("Prev val of anim was " + stopAnim);
+		stopAnim = true;
+		console.log("Anim force stopped")
+		console.log(stopAnim);
+	}
+	setTimeout(function(){constellation_setup();},1000);
+	setTimeout(function(){
+		animate();
+		if (innerWidth < 576){
+			// console.log("cancelled")
+			setTimeout(function(){
+				cancelAnimationFrame(AnimFrame);
+				stopAnim = true;
+			},1000);
+		}
+	},1100);
+
+	window.onresize = function(){
+			var constellation = document.getElementsByTagName("canvas")[0];
+			constellation.width = window.innerWidth;
+			constellation.height = window.innerHeight;
+			stopAnim = true;
+			cancelAnimationFrame(AnimFrame);
+			stopAnim = false;
+			animate();
+			
+			if(innerWidth < 576){
+				console.log("cancelled")
+				setTimeout(function(){
+					cancelAnimationFrame(AnimFrame);
+					stopAnim = true;
+				},0);
+			} else {
+				init();
+			}
+			
+	}
+	
+	
+	window.onbeforeunload = function(){ // for faster unload
+		cancelAnimationFrame(globalID)
+		stop_Anim();
+	}
+	
+	if (innerWidth > 576){ //cursor detection for interactivity
+		window.addEventListener('pointerdown',function(event){
+			pointer.x = event.x;
+			pointer.y = event.y; 
+		})
+		window.addEventListener('pointermove',function(event){
+			pointer.x = event.x;
+			pointer.y = event.y; 
+		})
+	}
+	
+	</script>
+
+	<script>	//Settings
+		// var SettingAnim = false;
+		function showSettings(event){
+			datame = event;
+			// console.log(event);
+			c_type = getComputedStyle(event.srcElement.parentElement.children[2]).display
+			if (c_type == "none"){
+				// console.log("none to flex")
+
+				event.srcElement.style.transform = "rotate(180deg)"
+				event.srcElement.parentElement.children[2].style.display = "flex";
+				children = event.srcElement.parentElement.children[2].children.length;
+				// SettingAnim = true;
+				
+				for(i=0;i<children;i++){
+					event.srcElement.parentElement.children[2].children[i].children[0].classList.remove("fadeOutRight");
+					event.srcElement.parentElement.children[2].children[i].children[0].classList.add("fadeInRight");
+					
+					if (i == (children - 1)){
+						event.srcElement.parentElement.children[2].children[i].children[0].onanimationend = function(event){
+							datame = event;
+							event.srcElement.parentElement.parentElement.style.display = "flex";
+							// SettingAnim = false;
+						}
+					}
+				}
+				event.srcElement.parentElement.children[0].style.transform = "translateX(0%)"
+			} else if (c_type == "flex" ) {
+				// console.log("flex to none")
+
+				event.srcElement.style.transform = "rotate(0deg)"
+				children = event.srcElement.parentElement.children[2].children.length;
+				// SettingAnim = true;
+
+				for(i=0;i<children;i++){
+					event.srcElement.parentElement.children[2].children[i].children[0].classList.remove("fadeInRight");
+					event.srcElement.parentElement.children[2].children[i].children[0].classList.add("fadeOutRight");
+					
+					if (i == (children - 1)){
+
+						event.srcElement.parentElement.children[2].children[i].children[0].onanimationend = function(event){
+							datame = event;
+							event.srcElement.parentElement.parentElement.style.display = "none";
+							// SettingAnim = false;
+						}
+					}
+				}
+				event.srcElement.parentElement.children[0].style.transform = "translateX(100%)"
+			}
+		}
+		window.addEventListener('click', function(e){   
+			if (document.getElementsByClassName('topright_gear')[0].children[2].contains(e.target)){
+				// console.log("inside but ul")
+			} else if (document.getElementsByClassName('topright_gear')[0].children[1].contains(e.target)){
+				// console.log("inside but gear")
+			} else {
+				// console.log("outside")
+				if ((document.getElementsByClassName('topright_gear')[0].children[2].style.display == "flex") ){
+					console.log("hide elem")
+
+					settings = document.getElementsByClassName("topright_gear")[0]
+					children = settings.children[2].children.length;
+					settings.children[1].style.transform = "rotate(0deg)"
+					// SettingAnim = true;
+
+					for(i=0;i<children;i++){
+						settings.children[2].children[i].children[0].classList.remove("fadeInRight");
+						settings.children[2].children[i].children[0].classList.add("fadeOutRight");
+						
+						if (i == (children - 1)){
+							settings.children[2].children[i].children[0].onanimationend = function(event){
+								event.srcElement.parentElement.parentElement.style.display = "none";
+								// SettingAnim = false;
+							}
+						}
+					}
+					settings.children[0].style.transform = "translateX(100%)"
+
+				}
+			}
+		});
+		function hideSettings(){
+			if (document.getElementsByClassName('topright_gear')[0].children[2].style.display == "flex"){
+				console.log("hide elem")
+
+				settings = document.getElementsByClassName("topright_gear")[0]
+				children = settings.children[2].children.length;
+				settings.children[1].style.transform = "rotate(0deg)"
+				// SettingAnim = true;
+
+				for(i=0;i<children;i++){
+					settings.children[2].children[i].children[0].classList.remove("fadeInRight");
+					settings.children[2].children[i].children[0].classList.add("fadeOutRight");
+					
+					if (i == (children - 1)){
+						settings.children[2].children[i].children[0].onanimationend = function(event){
+							event.srcElement.parentElement.parentElement.style.display = "none";
+							// SettingAnim = false;
+						}
+					}
+				}
+				settings.children[0].style.transform = "translateX(100%)"
+
+			}
+		}
+	</script>
+
+</head>
+<body onload="gmailRenderButton();moveSignInBtns()">
+<!-- <audio style="visibility: hidden;" class="bgAudio" loop>
+	<source src="audio/CrystalEmpire_Night.ogg" type = "audio/ogg">
+</audio> -->
+<!-- asdf -->
+<!-- asdfadfadfa asdaf-->
+<div id="fb-root"></div>
+<div class="const_cont">
+	<canvas class="constellation" onload="reloadFade(event)"></canvas>
+</div>
+
+<div class="topright_gear">	
+	<div class="gradient_bg"></div>
+	<img onpointerup="showSettings(event)" src="../imgs/Settings.svg" title="Settings">
+	<ul>
+		<li><span class="vivify dur-100" onpointerup="updateName();hideSettings()">Update Username</span></li>
+		<li><span class="vivify delay-100 dur-100" onpointerup="updatePassword();hideSettings()">Update Password</span></li>
+		<li><span class="vivify delay-150 dur-100" onpointerup="updateRecovery();hideSettings()">Update Recovery</span></li>
+		<li><span class="vivify delay-200 dur-100" onpointerup="unlinkAccount();hideSettings()">Unlink Account</span></li>
+		<li><span class="vivify delay-250 dur-100" onpointerup="linkAccount();hideSettings()">Link Account</span></li>
+		<li><span class="vivify delay-300 dur-100" onpointerup="LogOut();hideSettings()">Sign Out</span></li>
+	</ul>
+</div>
+
+<div class="top_modals"><!-- insert cookie and yt modal chkpnt here --></div>
+<div class="botright_modals"></div>
+<div class="AltSignInStorage">
+	<div id="googleSignIn"></div>
+	<div class="fb-login-button" on-login="checkLoginState()" data-scope="public_profile, email" data-width="" data-size="medium" data-button-type="login_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="false"></div>
+</div>
+
+<div class="resp_form">
+	<div class="FormPlaceholder">
+		<div class="SelectFormPlaceholder">
+			<div class="SelectForm1 activeform" onpointerdown="FormActive(this)"><p>LogIn</p></div>
+			<div class="SelectForm2" onpointerdown="FormActive(this)"><p>Register</p></div>
+		</div>		
+		<form class="MainForm" onresize="resize_Canvas()">
+			<div class="PrimaryInput">
+				<div class="UsernamePlaceholder">
+					<label for="Username">Username:</label>
+					<input id="Username" class="Username" type="text" name="username" autocomplete="off" oninput="removeSpChar(event)" onkeydown="DelEnterBack(event)"  maxlength="10">
+					<input id="UserID" type="hidden" name="userid" >
+					<svg class="UserAddInfo hidden" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M21.2502 12C21.2502 18.937 18.9372 21.25 12.0002 21.25C5.06324 21.25 2.75024 18.937 2.75024 12C2.75024 5.063 5.06324 2.75 12.0002 2.75C18.9372 2.75 21.2502 5.063 21.2502 12Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+						<path d="M12.0002 15.895V12" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+						<path d="M12.0045 8.5H11.9955" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+					</svg>
+					<span>At most 10 characters only and no special characters</span>
+				
+				</div>
+				<div class="PasswordPlaceholder">
+					<label for="Password">Password:</label>
+					<input id="Password" class="Password" type="password" name="password" autocomplete="off" onkeydown="DelEnterBack(event)" maxlength="64">
+					<svg class="showpass" onpointerdown="hidepass(event)" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M2.75024 12.052C2.75024 15.332 6.89224 19.354 12.0022 19.354C17.1112 19.354 21.2542 15.335 21.2542 12.052C21.2542 8.769 17.1112 4.75 12.0022 4.75C6.89224 4.75 2.75024 8.772 2.75024 12.052Z" stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M15.1643 12.0519C15.1643 13.7979 13.7483 15.2139 12.0023 15.2139C10.2563 15.2139 8.84033 13.7979 8.84033 12.0519C8.84033 10.3049 10.2563 8.88989 12.0023 8.88989C13.7483 8.88989 15.1643 10.3049 15.1643 12.0519Z" stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+						<title>Show/Hide</title>
+					</svg>
+					<svg class="hidepass" onpointerdown="showpass(event)" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M6.42 17.7298C4.19 16.2698 2.75 14.0698 2.75 12.1398C2.75 8.85984 6.89 4.83984 12 4.83984C14.09 4.83984 16.03 5.50984 17.59 6.54984" stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+						<path d="M19.8498 8.61035C20.7408 9.74035 21.2598 10.9904 21.2598 12.1404C21.2598 15.4204 17.1098 19.4404 11.9998 19.4404C11.0898 19.4404 10.2008 19.3104 9.36975 19.0804" stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+						<path d="M9.76572 14.3672C9.17072 13.7782 8.83772 12.9752 8.84072 12.1382C8.83672 10.3932 10.2487 8.97518 11.9947 8.97218C12.8347 8.97018 13.6407 9.30318 14.2347 9.89718" stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+						<path d="M15.1095 12.6992C14.8755 13.9912 13.8645 15.0042 12.5725 15.2412" stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+						<path d="M19.8917 4.25L4.11768 20.024" stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+						<title>Show/Hide</title>
+					</svg>
+					<svg class="PassAddInfo hidden" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M21.2502 12C21.2502 18.937 18.9372 21.25 12.0002 21.25C5.06324 21.25 2.75024 18.937 2.75024 12C2.75024 5.063 5.06324 2.75 12.0002 2.75C18.9372 2.75 21.2502 5.063 21.2502 12Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+						<path d="M12.0002 15.895V12" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+						<path d="M12.0045 8.5H11.9955" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+					</svg>
+					<span> Try adding upper & lower case letters, numbers, and symbols </span>
+				</div>
+			</div>
+			<div class="SecondaryInput vivify hidden">
+				<div class="ConfirmPasswordPlaceholder ">
+					<label for="cPassword">Confirm Password:</label>
+					<!-- <span>Retype your password</span> -->
+					<input id="cPassword" class="cPassword"type="password" name ="cpassword" autocomplete="off" onkeydown="DelEnterBack(event)"  maxlength="64" >
+					<svg class="showpass" onpointerdown="hidepass(event)" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M2.75024 12.052C2.75024 15.332 6.89224 19.354 12.0022 19.354C17.1112 19.354 21.2542 15.335 21.2542 12.052C21.2542 8.769 17.1112 4.75 12.0022 4.75C6.89224 4.75 2.75024 8.772 2.75024 12.052Z" stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M15.1643 12.0519C15.1643 13.7979 13.7483 15.2139 12.0023 15.2139C10.2563 15.2139 8.84033 13.7979 8.84033 12.0519C8.84033 10.3049 10.2563 8.88989 12.0023 8.88989C13.7483 8.88989 15.1643 10.3049 15.1643 12.0519Z" stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+						<title>Show/Hide</title>
+					</svg>
+					<svg class="hidepass" onpointerdown="showpass(event)" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M6.42 17.7298C4.19 16.2698 2.75 14.0698 2.75 12.1398C2.75 8.85984 6.89 4.83984 12 4.83984C14.09 4.83984 16.03 5.50984 17.59 6.54984" stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+						<path d="M19.8498 8.61035C20.7408 9.74035 21.2598 10.9904 21.2598 12.1404C21.2598 15.4204 17.1098 19.4404 11.9998 19.4404C11.0898 19.4404 10.2008 19.3104 9.36975 19.0804" stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+						<path d="M9.76572 14.3672C9.17072 13.7782 8.83772 12.9752 8.84072 12.1382C8.83672 10.3932 10.2487 8.97518 11.9947 8.97218C12.8347 8.97018 13.6407 9.30318 14.2347 9.89718" stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+						<path d="M15.1095 12.6992C14.8755 13.9912 13.8645 15.0042 12.5725 15.2412" stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+						<path d="M19.8917 4.25L4.11768 20.024" stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+						<title>Show/Hide</title>
+					</svg>
+				</div>
+				<div class="RecoveryQuestionPlaceholder ">
+					<label for="rQuestion">Recovery Question:</label>
+					<input id="rQuestion" class="rQuestion" type="text" name ="recques" autocomplete="off" onkeydown="DelEnterBack(event)" placeholder="e.g. My favorite place is?" maxlength="64" >
+					<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M21.2502 12C21.2502 18.937 18.9372 21.25 12.0002 21.25C5.06324 21.25 2.75024 18.937 2.75024 12C2.75024 5.063 5.06324 2.75 12.0002 2.75C18.9372 2.75 21.2502 5.063 21.2502 12Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+						<path d="M12.0002 15.895V12" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+						<path d="M12.0045 8.5H11.9955" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+					</svg>
+					<span>Add a Recovery Question just incase you forgot your password</span>
+				</div>
+				<div class="RecoveryAnswerPlaceholder ">
+					<label for="rPassword">Recovery Answer:</label>
+					<input id="rPassword" class="rPassword"  type="text" name ="recans" autocomplete="off" onkeydown="DelEnterBack(event)" placeholder="e.g. Antartica" maxlength="64">
+					<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M21.2502 12C21.2502 18.937 18.9372 21.25 12.0002 21.25C5.06324 21.25 2.75024 18.937 2.75024 12C2.75024 5.063 5.06324 2.75 12.0002 2.75C18.9372 2.75 21.2502 5.063 21.2502 12Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+						<path d="M12.0002 15.895V12" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+						<path d="M12.0045 8.5H11.9955" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+					</svg>
+					<span> Only you must know the answer and it cannot be found elsewhere</span>
+				</div>		
+				<div class="CaptchaPlaceholder ">
+					<label>Captcha:</label>
+					<div class="g-recaptcha" data-sitekey="6LdaHtQaAAAAAFRKQQ3qAt3rYhh1Cac_htaDzVMV" data-callback="verifyCaptcha"></div>
+					<div id="g-recaptcha-error"></div>
+				</div>
+			</div>
+			<div class="ButtonInput vivify">
+				<input type="button" class="LogInBtn" onpointerup="LogIn()" value="LogIn" />
+				<input type="button" class="RegisterBtn hidden" onpointerup="Register()" value="Register" />	
+			</div>
+			
+			<div class="AltSignInOpts vivify">
+				<div class="AltBlock"></div>
+				<p id="AltSignLineBreak">- - - OR - - -</p>
+			</div>
+			
+			<div class="ForgotPasswordPlaceholder vivify" onpointerup="forgotPassword()">
+				<p> Forgot Password? </p>		
+			</div>			
+		</form>
+	</div>
+</div>
+
+
+</body>
+<html>

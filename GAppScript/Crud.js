@@ -1,3 +1,5 @@
+//use clasp push to update
+
 
 var ss=SpreadsheetApp.openByUrl("https://docs.google.com/spreadsheets/d/1bk2Jqs0owKd-4DzXyPucnu-TVZc7y-n2o0xv4C20vDQ/edit?usp=sharing");
 var sheet = ss.getSheetByName("LogBook");

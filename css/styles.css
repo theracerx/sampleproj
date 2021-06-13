@@ -369,6 +369,7 @@ body {
 }
 
 .resp_form {
+  opacity: 1;
   display: block;
   width: 100%;
   height: auto;

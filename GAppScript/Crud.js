@@ -1,4 +1,6 @@
 //use clasp push to update
+//use clasp push -w to autoupdate
+//use clasp pull to retreive current file
 
 
 var ss=SpreadsheetApp.openByUrl("https://docs.google.com/spreadsheets/d/1bk2Jqs0owKd-4DzXyPucnu-TVZc7y-n2o0xv4C20vDQ/edit?usp=sharing");

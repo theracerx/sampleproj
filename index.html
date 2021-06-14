@@ -282,6 +282,7 @@
 		updateCookie("c_sessionid","",-1);
 		updateCookie("c_rank","",-1);
 		updateCookie("f_atmpt","",-1);
+		updateCookie("c_linkAtch","",-1);
 		window.location.assign(window.location.origin + "/index.html"); 
 	}
 	async function linkAccount(){
@@ -722,6 +723,7 @@
 	}
 
 	//User progress commands
+	updateCookie("c_linkAtch","",-1)
 	function requestProg(){ // needs c_user c_progpos c_sessionID
 		progpos = getCookie("c_progpos").split(".")
 		var url = script_url+"?username=" + getCookie("c_user") + "&progpos=" + getCookie("c_progpos") + "&progchap=" + progpos[0] + "&progep=" + progpos[1] + "&sessionID=" + getCookie("c_sessionid") + "&rank=" + getCookie("c_rank") +"&action=retrieve_prog";
@@ -758,9 +760,16 @@
 		console.log("epTime is " + sv_data["c_epT"])
 		console.log("epVal is " + sv_data["c_epVal"])
 		console.log("progpos is " + sv_data["c_progpos"])
+		console.log("linkAtch is " + sv_data["c_linkAtch"])
+
 		updateCookie("c_progpos", sv_data["c_progpos"]);
 		updateCookie("c_epT", sv_data["c_epT"]);
 		updateCookie("c_epVal", sv_data["c_epVal"]);
+		
+		setTimeout(()=>updateCookie("c_linkAtch", sv_data["c_linkAtch"]),4500);
+		newModal("Queue","","",3000)
+
+		console.log("TO DO: Do something if you retrieve the c_linkAtch; Change signal color")
 	}
 
 	function testDdos(){
@@ -2285,6 +2294,7 @@
 		audio.loop = true;
 
 		document.addEventListener('pointerup', musicPlay);
+		document.addEventListener('keypress', musicPlay);
 		function musicPlay() {
 			setTimeout(function(){
 				audio.play();
@@ -2292,6 +2302,7 @@
 			},1000,audio)
 
 			document.removeEventListener('pointerup', musicPlay);
+			document.removeEventListener('keypress'	, musicPlay);
 			
 		}
 	}
@@ -2804,7 +2815,11 @@
 		this.secondRad = radius * .75;
 		this.thirdXR = this.thirdXL = x;
 		this.thirdRad = radius * .5;
-
+		
+		this.signal0Stroke = "255,255,255";
+		this.signal1Stroke = "216,252,253";
+		this.signal2Stroke = "158,182,208";
+		this.signal3Stroke = "120,132,165";
 		/*
 			//////////////////				-50, -50		0, -50			50, -50		
 			/A		B		C/
@@ -2826,7 +2841,7 @@
 			ctx.beginPath();
 			ctx.arc(this.centerX, this.centerY, this.rangeRad, 0, 2 * Math.PI);
 			ctx.lineWidth = this.thickness / 2;
-			ctx.strokeStyle = "rgba(255,255,255," + this.alpha + ")" 
+			ctx.strokeStyle = "rgba(" + this.signal0Stroke + "," + this.alpha + ")" 
 			ctx.stroke();
 			ctx.closePath();
 
@@ -2842,7 +2857,7 @@
 			ctx.bezierCurveTo( this.firstXL - this.firstRad, this.centerY - this.firstRad, this.firstXL - this.firstRad, this.centerY + this.firstRad, this.firstXL, this.centerY + (this.firstRad * 2 ))
 			ctx.lineWidth = this.thickness;
 			ctx.lineCap = "round";
-			ctx.strokeStyle = "rgba(216,252,253," + this.alpha + ")"
+			ctx.strokeStyle = "rgba("  + this.signal1Stroke + "," + this.alpha + ")"
 			ctx.stroke();
 			ctx.closePath();
 
@@ -2865,7 +2880,7 @@
 			ctx.bezierCurveTo( this.secondXL - this.secondRad, this.centerY - this.secondRad, this.secondXL - this.secondRad, this.centerY + this.secondRad, this.secondXL, this.centerY + (this.secondRad * 2 ))
 			ctx.lineWidth = this.thickness;
 			ctx.lineCap = "round";
-			ctx.strokeStyle = "rgba(158,182,208," + this.alpha + ")"
+			ctx.strokeStyle = "rgba(" + this.signal2Stroke + "," + this.alpha + ")"
 			ctx.stroke();
 			ctx.closePath();
 
@@ -2888,7 +2903,7 @@
 			ctx.bezierCurveTo( this.thirdXL - this.thirdRad, this.centerY - this.thirdRad, this.thirdXL - this.thirdRad, this.centerY + this.thirdRad, this.thirdXL, this.centerY + (this.thirdRad* 2 ))
 			ctx.lineWidth = this.thickness;
 			ctx.lineCap = "round";
-			ctx.strokeStyle = "rgba(120,132,165," + this.alpha + ")"
+			ctx.strokeStyle = "rgba(" + this.signal3Stroke + "," + this.alpha + ")"
 			ctx.stroke();
 			ctx.closePath();
 
@@ -2908,8 +2923,15 @@
 		}
 
 		this.update = function(){
-			if (this.alpha < 0){
-				setTimeout(()=>audio2.play(),1000)
+			if (this.alpha <= 0){
+				if (!getCookie("c_linkAtch") != true){
+					console.log("found")
+					setTimeout(()=>audio3.play(),1000)
+				} else {
+					console.log("notfound")
+					setTimeout(()=>audio2.play(),1000)
+				}
+				
 				this.rangeRad = this.radius
 
 				this.firstRad = this.radius;
@@ -2952,6 +2974,9 @@
 
 	var audio2 = new Audio("audio/no_signal.mp3")
 	audio2.volume = 1;
+
+	var audio3 = new Audio("audio/new_signal.mp3")
+	audio3.volume = 1;
 
 
 	function init(){

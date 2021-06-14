@@ -1746,13 +1746,6 @@ function getmatchedRow(rowloc, trgtsheet) {
 
 
 //Triggers
-function clearMe(){
-  sheet6.getRange(8,1).setValue(0);
-  console.log("HI")
-  //var aaa = sheet6.getRange(8,1).getValue()
-  //console.log(cat)
-  //console.log(aaa)
-}
 
 //resets CRUD count to 0 after 100secs cuz 500request/100secs only!
 function clearCRUDLimit(){ 
@@ -1767,6 +1760,73 @@ function clearGeoLocLimit(){
   sheet6.getRange(4,2).setValue(0)
   console.log("New val " + sheet6.getRange(4,2).getValue())
 }
+//removes idle players going past 15 mins of their last active time
+function afkManager(){
+  lr = sheet.getLastRow();
+  console.log(lr);
+  for(var i=1;i<=lr;i++){
+    trgt = sheet.getRange(i,12).getValue();
+    if (trgt == "online"){
+      
+      //get Last Active
+      var d1 = sheet.getRange(2,2).getValue();
+      d1 = d1.split(" ")
+
+      d1Type = d1[2];
+      d1Amp = 0;
+      if(d1Type == "PM"){
+        d1Amp = 12 * 60 * 60 * 1000 //12hrs
+      }
+      d1 = d1[1].split(":") //orginal
+      var hhTmsd1 = parseInt(d1[0]) * 60 * 60 * 1000;
+      var mmTmsd1 = parseInt(d1[1]) * 60 * 1000 
+      var ssTmsd1 = parseInt(d1[2]) * 1000
+      var totald1 = hhTmsd1 + mmTmsd1 + ssTmsd1 + d1Amp
+      // console.log(totald1 + d1Type);
+
+      //getNewDate
+      var d2 = new Date()
+      d2 = d2.toLocaleString();
+      d2 = d2.split(" ")
+
+      d2Type = d2[2]
+      d2Amp = 0;
+      if(d2Type == "PM"){
+        d2Amp = 12 * 60 * 60 * 1000 //12hrs
+      }
+      d2 = d2[1].split(":") //orignal
+      var hhTmsd2 = parseInt(d2[0]) * 60 * 60 * 1000;
+      var mmTmsd2 = parseInt(d2[1]) * 60 * 1000;
+      var ssTmsd2 = parseInt(d2[2]) * 1000;
+      var totald2 = hhTmsd2 + mmTmsd2 + ssTmsd2 + d2Amp
+      //console.log(totald2 + d2Type);
+
+
+      var activeTime = (totald2 - totald1)/60/1000;
+      if (activeTime >= 15){
+        sheet.getRange(i,12).setValue("offline")
+      }
+    }
+  }
+}
+//updates current online players
+function countOnline(){
+  var total = 0;
+  lr = sheet.getLastRow();
+  console.log(lr);
+  for(var i=1;i<=lr;i++){
+    trgt = sheet.getRange(i,12).getValue();
+    if (trgt == "online"){
+      total = total + 1
+    }
+  }
+  sheet6.getRange(3,2).setValue(total);
+}
+
+
+
+
+
 
 function exeCount(){
   console.log("Old val " + sheet6.getRange(6,2).getValue())
@@ -1826,18 +1886,7 @@ function countStandby(){
   }
   console.log(total)
 }
-function countOnline(){
-  var total = 0;
-  lr = sheet.getLastRow();
-  console.log(lr);
-  for(var i=1;i<=lr;i++){
-    trgt = sheet.getRange(i,12).getValue();
-    if (trgt == "online"){
-      total = total + 1
-    }
-  }
-  console.log(total)
-}
+
 function checkDate(){
 
   //get Last Active
@@ -1885,55 +1934,6 @@ function checkDate(){
   // var total = hhTms + mmTms + ssTms
   // console.log(total);
   
-}
-//removes idle players going past 15 mins of their last active time
-function afkManager(){
-  lr = sheet.getLastRow();
-  console.log(lr);
-  for(var i=1;i<=lr;i++){
-    trgt = sheet.getRange(i,12).getValue();
-    if (trgt == "online"){
-      
-      //get Last Active
-      var d1 = sheet.getRange(2,2).getValue();
-      d1 = d1.split(" ")
-
-      d1Type = d1[2];
-      d1Amp = 0;
-      if(d1Type == "PM"){
-        d1Amp = 12 * 60 * 60 * 1000 //12hrs
-      }
-      d1 = d1[1].split(":") //orginal
-      var hhTmsd1 = parseInt(d1[0]) * 60 * 60 * 1000;
-      var mmTmsd1 = parseInt(d1[1]) * 60 * 1000 
-      var ssTmsd1 = parseInt(d1[2]) * 1000
-      var totald1 = hhTmsd1 + mmTmsd1 + ssTmsd1 + d1Amp
-      // console.log(totald1 + d1Type);
-
-      //getNewDate
-      var d2 = new Date()
-      d2 = d2.toLocaleString();
-      d2 = d2.split(" ")
-
-      d2Type = d2[2]
-      d2Amp = 0;
-      if(d2Type == "PM"){
-        d2Amp = 12 * 60 * 60 * 1000 //12hrs
-      }
-      d2 = d2[1].split(":") //orignal
-      var hhTmsd2 = parseInt(d2[0]) * 60 * 60 * 1000;
-      var mmTmsd2 = parseInt(d2[1]) * 60 * 1000;
-      var ssTmsd2 = parseInt(d2[2]) * 1000;
-      var totald2 = hhTmsd2 + mmTmsd2 + ssTmsd2 + d2Amp
-      //console.log(totald2 + d2Type);
-
-
-      var activeTime = (totald2 - totald1)/60/1000;
-      if (activeTime >= 15){
-        sheet.getRange(i,12).setValue("offline")
-      }
-    }
-  }
 }
 
 

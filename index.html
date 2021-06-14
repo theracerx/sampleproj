@@ -766,7 +766,10 @@
 		updateCookie("c_epT", sv_data["c_epT"]);
 		updateCookie("c_epVal", sv_data["c_epVal"]);
 		
-		setTimeout(()=>updateCookie("c_linkAtch", sv_data["c_linkAtch"]),4500);
+		setTimeout(()=>{
+			updateCookie("c_linkAtch", sv_data["c_linkAtch"]);
+			newModal("Done","please click the moon","Signal Received")
+		},4500);
 		newModal("Queue","","",3000)
 
 		console.log("TO DO: Do something if you retrieve the c_linkAtch; Change signal color")
@@ -2927,6 +2930,21 @@
 				if (!getCookie("c_linkAtch") != true){
 					console.log("found")
 					setTimeout(()=>audio3.play(),1000)
+					// this.signal0Stroke = "252,214,103"; //
+					this.signal0Stroke = "242,232,201";
+					// this.signal1Stroke = "136,217,105"; //
+					this.signal1Stroke = "26,174,232";
+					// this.signal2Stroke = "70,203,24"; //
+					this.signal2Stroke = "17,140,214";
+					// this.signal3Stroke = "6,161,11"; //
+					this.signal3Stroke = "9,82,189";
+
+
+					// "9, 82 , 189",
+					// "165, 191, 240", //
+					// "17, 140, 214",
+					// "26, 174, 232", //
+					// "242, 232, 201"
 				} else {
 					console.log("notfound")
 					setTimeout(()=>audio2.play(),1000)

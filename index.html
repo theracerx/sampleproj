@@ -1518,6 +1518,25 @@
 		function cookieChkpnt(){
 
 		}
+	
+		function antiIdle(){
+
+			document.onpointermove = () => idleTime = 0;
+			document.onkeypress = () => idleTime = 0;
+
+			var idleTime = 0;
+
+			setInterval(()=>{ //for every min add 1min to idleTime
+				idleTime += 1
+				if(idleTime >= 15){
+					newModal("Error","you have been idle for too long...","User is Idle")
+					console.log("User is idle for 15mins")
+					//do something to redirect
+				}
+				console.log(idleTime);
+			}, 60 * 1000)
+		}
+		antiIdle();
 	</script>
 
 	<script src='https://www.google.com/recaptcha/api.js' defer></script>		

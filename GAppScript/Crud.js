@@ -1767,10 +1767,7 @@ function clearGeoLocLimit(){
   sheet6.getRange(4,2).setValue(0)
   console.log("New val " + sheet6.getRange(4,2).getValue())
 }
-//removes idle players going past 5 mins of their last active time
-function antiIdle(){
-   
-}
+
 function exeCount(){
   console.log("Old val " + sheet6.getRange(6,2).getValue())
 
@@ -1841,7 +1838,103 @@ function countOnline(){
   }
   console.log(total)
 }
+function checkDate(){
 
+  //get Last Active
+  var d1 = sheet.getRange(2,2).getValue();
+  d1 = d1.split(" ")
+  // console.log(d1[1])
+
+  d1Type = d1[2];
+  // d1 = d1[1].split(":") //orginal
+  d1= ["11","59","00"] //test
+  var hhTmsd1 = parseInt(d1[0]) * 60 * 60 * 1000;
+  var mmTmsd1 = parseInt(d1[1]) * 60 * 1000 
+  var ssTmsd1 = parseInt(d1[2]) * 1000
+  var totald1 = hhTmsd1 + mmTmsd1 + ssTmsd1
+  console.log(totald1 + d1Type);
+
+  //getNewDate
+  var d2 = new Date()
+  d2 = d2.toLocaleString();
+  d2 = d2.split(" ")
+  // console.log(d2[0])
+
+  d2Type = d2[2]
+  // d2 = d2[1].split(":") //orignal
+  d2 = ["12","00","00"] //test
+  var hhTmsd2 = parseInt(d2[0]) * 60 * 60 * 1000;
+  var mmTmsd2 = parseInt(d2[1]) * 60 * 1000;
+  var ssTmsd2 = parseInt(d2[2]) * 1000;
+  var totald2 = hhTmsd2 + mmTmsd2 + ssTmsd2
+  console.log(totald2 + d2Type);
+
+  var lastActive = ((totald2 - totald1)/60)/1000;
+  console.log(typeof(lastActive))
+  console.log(lastActive + "min")
+
+
+
+  //Time String to millisecond converter
+  // var t = "01:01:01"; // hh:mm:ss
+  // t = t.split(":")
+  // console.log(t[0]);
+  // var hhTms = parseInt(t[0]) * 60 * 60 * 1000;
+  // var mmTms = parseInt(t[1]) * 60 * 1000 
+  // var ssTms = parseInt(t[2]) * 1000
+  // var total = hhTms + mmTms + ssTms
+  // console.log(total);
+  
+}
+//removes idle players going past 15 mins of their last active time
+function afkManager(){
+  lr = sheet.getLastRow();
+  console.log(lr);
+  for(var i=1;i<=lr;i++){
+    trgt = sheet.getRange(i,12).getValue();
+    if (trgt == "online"){
+      
+      //get Last Active
+      var d1 = sheet.getRange(2,2).getValue();
+      d1 = d1.split(" ")
+
+      d1Type = d1[2];
+      d1Amp = 0;
+      if(d1Type == "PM"){
+        d1Amp = 12 * 60 * 60 * 1000 //12hrs
+      }
+      d1 = d1[1].split(":") //orginal
+      var hhTmsd1 = parseInt(d1[0]) * 60 * 60 * 1000;
+      var mmTmsd1 = parseInt(d1[1]) * 60 * 1000 
+      var ssTmsd1 = parseInt(d1[2]) * 1000
+      var totald1 = hhTmsd1 + mmTmsd1 + ssTmsd1 + d1Amp
+      // console.log(totald1 + d1Type);
+
+      //getNewDate
+      var d2 = new Date()
+      d2 = d2.toLocaleString();
+      d2 = d2.split(" ")
+
+      d2Type = d2[2]
+      d2Amp = 0;
+      if(d2Type == "PM"){
+        d2Amp = 12 * 60 * 60 * 1000 //12hrs
+      }
+      d2 = d2[1].split(":") //orignal
+      var hhTmsd2 = parseInt(d2[0]) * 60 * 60 * 1000;
+      var mmTmsd2 = parseInt(d2[1]) * 60 * 1000;
+      var ssTmsd2 = parseInt(d2[2]) * 1000;
+      var totald2 = hhTmsd2 + mmTmsd2 + ssTmsd2 + d2Amp
+      //console.log(totald2 + d2Type);
+
+
+      var activeTime = (totald2 - totald1)/60/1000;
+      if (activeTime >= 15){
+        sheet.getRange(i,12).setValue("offline")
+      }
+    }
+  }
+}
 
 
 

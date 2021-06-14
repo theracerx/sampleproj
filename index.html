@@ -1518,13 +1518,26 @@
 		function cookieChkpnt(){
 
 		}
-	
+		
+		var idleTime = 0;
 		function antiIdle(){
+			document.addEventListener("pointermove",idleZero)
+			document.addEventListener("pointerdown",idleZero)
+			document.addEventListener("keypress",idleZero)
 
-			document.onpointermove = () => idleTime = 0;
-			document.onkeypress = () => idleTime = 0;
-
-			var idleTime = 0;
+			
+			function idleZero(){
+				// console.log("0")
+				idleTime = 0;
+				document.removeEventListener("pointermove",idleZero)
+				document.removeEventListener("pointerdown",idleZero)
+				document.removeEventListener("keypress",idleZero)
+				setTimeout(()=>{
+					document.addEventListener("pointermove",idleZero)
+					document.addEventListener("pointerdown",idleZero)
+					document.addEventListener("keypress",idleZero)
+				}, 60 * 1000)
+			}
 
 			setInterval(()=>{ //for every min add 1min to idleTime
 				idleTime += 1

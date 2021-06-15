@@ -4,11 +4,1974 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-signin-client_id" content="749312594134-pitilbajjpv6g4v1a0prp5151juucfcv.apps.googleusercontent.com">
+	
     <title>Introt</title>
 	<link rel="stylesheet" href="css/pagestyles.css" defer>
 	<link rel="stylesheet" href="css/vivify.min.css" defer>
+
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" defer></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous" defer></script>
+
+
+    <script defer> //Form Login & Register Setup; Heavily edited code from https://gist.github.com/Tito0269/2014c7001c89ed596171baea229d3363
+
+        var c_user, c_progpos, c_prog, temp_user, c_resp, c_linking, c_linkmodal, c_epT, c_epVal, user_ip, user_resp, cookies , v_prog1, v_prog2, v_stat, fail_atmpt, sv_stat;
+        var user_progress;
+        var r_updateName = false;
+        //copied from https://www.cs.cmu.edu/~biglou/resources/
+        var bad_filter = ["abbo","abo","abortion","abuse","addict","addicts","adult","africa","african","alla","allah","alligatorbait","amateur","american","anal","analannie","analsex","angie","angry","anus","arab","arabs","areola","argie","aroused","arse","arsehole","asian","ass","assassin","assassinate","assassination","assault","assbagger","assblaster","assclown","asscowboy","asses","assfuck","assfucker","asshat","asshole","assholes","asshore","assjockey","asskiss","asskisser","assklown","asslick","asslicker","asslover","assman","assmonkey","assmunch","assmuncher","asspacker","asspirate","asspuppies","assranger","asswhore","asswipe","athletesfoot","attack","australian","babe","babies","backdoor","backdoorman","backseat","badfuck","balllicker","balls","ballsack","banging","baptist","barelylegal","barf","barface","barfface","bast","bastard ","bazongas","bazooms","beaner","beast","beastality","beastial","beastiality","beatoff","beat-off","beatyourmeat","beaver","bestial","bestiality","bi","biatch","bible","bicurious","bigass","bigbastard","bigbutt","bigger","bisexual","bi-sexual","bitch","bitcher","bitches","bitchez","bitchin","bitching","bitchslap","bitchy","biteme","black","blackman","blackout","blacks","blind","blow","blowjob","boang","bogan","bohunk","bollick","bollock","bomb","bombers","bombing","bombs","bomd","bondage","boner","bong","boob","boobies","boobs","booby","boody","boom","boong","boonga","boonie","booty","bootycall","bountybar","bra","brea5t","breast","breastjob","breastlover","breastman","brothel","bugger","buggered","buggery","bullcrap","bulldike","bulldyke","bullshit","bumblefuck","bumfuck","bunga","bunghole","buried","burn","butchbabes","butchdike","butchdyke","butt","buttbang","butt-bang","buttface","buttfuck","butt-fuck","buttfucker","butt-fucker","buttfuckers","butt-fuckers","butthead","buttman","buttmunch","buttmuncher","buttpirate","buttplug","buttstain","byatch","cacker","cameljockey","cameltoe","canadian","cancer","carpetmuncher","carruth","catholic","catholics","cemetery","chav","cherrypopper","chickslick","children's","chin","chinaman","chinamen","chinese","chink","chinky","choad","chode","christ","christian","church","cigarette","cigs","clamdigger","clamdiver","clit","clitoris","clogwog","cocaine","cock","cockblock","cockblocker","cockcowboy","cockfight","cockhead","cockknob","cocklicker","cocklover","cocknob","cockqueen","cockrider","cocksman","cocksmith","cocksmoker","cocksucer","cocksuck ","cocksucked ","cocksucker","cocksucking","cocktail","cocktease","cocky","cohee","coitus","color","colored","coloured","commie","communist","condom","conservative","conspiracy","coolie","cooly","coon","coondog","copulate","cornhole","corruption","cra5h","crabs","crack","crackpipe","crackwhore","crack-whore","crap","crapola","crapper","crappy","crash","creamy","crime","crimes","criminal","criminals","crotch","crotchjockey","crotchmonkey","crotchrot","cum","cumbubble","cumfest","cumjockey","cumm","cummer","cumming","cumquat","cumqueen","cumshot","cunilingus","cunillingus","cunn","cunnilingus","cunntt","cunt","cunteyed","cuntfuck","cuntfucker","cuntlick ","cuntlicker ","cuntlicking ","cuntsucker","cybersex","cyberslimer","dago","dahmer","dammit","damn","damnation","damnit","darkie","darky","datnigga","dead","deapthroat","death","deepthroat","defecate","dego","demon","deposit","desire","destroy","deth","devil","devilworshipper","dick","dickbrain","dickforbrains","dickhead","dickless","dicklick","dicklicker","dickman","dickwad","dickweed","diddle","die","died","dies","dike","dildo","dingleberry","dink","dipshit","dipstick","dirty","disease","diseases","disturbed","dive","dix","dixiedike","dixiedyke","doggiestyle","doggystyle","dong","doodoo","doo-doo","doom","dope","dragqueen","dragqween","dripdick","drug","drunk","drunken","dumb","dumbass","dumbbitch","dumbfuck","dyefly","dyke","easyslut","eatballs","eatme","eatpussy","ecstacy","ejaculate","ejaculated","ejaculating ","ejaculation","enema","enemy","erect","erection","ero","escort","ethiopian","ethnic","european","evl","excrement","execute","executed","execution","executioner","explosion","facefucker","faeces","fag","fagging","faggot","fagot","failed","failure","fairies","fairy","faith","fannyfucker","fart","farted ","farting ","farty ","fastfuck","fat","fatah","fatass","fatfuck","fatfucker","fatso","fckcum","fear","feces","felatio ","felch","felcher","felching","fellatio","feltch","feltcher","feltching","fetish","fight","filipina","filipino","fingerfood","fingerfuck ","fingerfucked ","fingerfucker ","fingerfuckers","fingerfucking ","fire","firing","fister","fistfuck","fistfucked ","fistfucker ","fistfucking ","fisting","flange","flasher","flatulence","floo","flydie","flydye","fok","fondle","footaction","footfuck","footfucker","footlicker","footstar","fore","foreskin","forni","fornicate","foursome","fourtwenty","fraud","freakfuck","freakyfucker","freefuck","fu","fubar","fuc","fucck","fuck","fucka","fuckable","fuckbag","fuckbuddy","fucked","fuckedup","fucker","fuckers","fuckface","fuckfest","fuckfreak","fuckfriend","fuckhead","fuckher","fuckin","fuckina","fucking","fuckingbitch","fuckinnuts","fuckinright","fuckit","fuckknob","fuckme ","fuckmehard","fuckmonkey","fuckoff","fuckpig","fucks","fucktard","fuckwhore","fuckyou","fudgepacker","fugly","fuk","fuks","funeral","funfuck","fungus","fuuck","gangbang","gangbanged ","gangbanger","gangsta","gatorbait","gay","gaymuthafuckinwhore","gaysex ","geez","geezer","geni","genital","german","getiton","gin","ginzo","gipp","girls","givehead","glazeddonut","gob","god","godammit","goddamit","goddammit","goddamn","goddamned","goddamnes","goddamnit","goddamnmuthafucker","goldenshower","gonorrehea","gonzagas","gook","gotohell","goy","goyim","greaseball","gringo","groe","gross","grostulation","gubba","gummer","gun","gyp","gypo","gypp","gyppie","gyppo","gyppy","hamas","handjob","hapa","harder","hardon","harem","headfuck","headlights","hebe","heeb","hell","henhouse","heroin","herpes","heterosexual","hijack","hijacker","hijacking","hillbillies","hindoo","hiscock","hitler","hitlerism","hitlerist","hiv","ho","hobo","hodgie","hoes","hole","holestuffer","homicide","homo","homobangers","homosexual","honger","honk","honkers","honkey","honky","hook","hooker","hookers","hooters","hore","hork","horn","horney","horniest","horny","horseshit","hosejob","hoser","hostage","hotdamn","hotpussy","hottotrot","hummer","husky","hussy","hustler","hymen","hymie","iblowu","idiot","ikey","illegal","incest","insest","intercourse","interracial","intheass","inthebuff","israel","israeli","israel's","italiano","itch","jackass","jackoff","jackshit","jacktheripper","jade","jap","japanese","japcrap","jebus","jeez","jerkoff","jesus","jesuschrist","jew","jewish","jiga","jigaboo","jigg","jigga","jiggabo","jigger ","jiggy","jihad","jijjiboo","jimfish","jism","jiz ","jizim","jizjuice","jizm ","jizz","jizzim","jizzum","joint","juggalo","jugs","junglebunny","kaffer","kaffir","kaffre","kafir","kanake","kid","kigger","kike","kill","killed","killer","killing","kills","kink","kinky","kissass","kkk","knife","knockers","kock","kondum","koon","kotex","krap","krappy","kraut","kum","kumbubble","kumbullbe","kummer","kumming","kumquat","kums","kunilingus","kunnilingus","kunt","ky","kyke","lactate","laid","lapdance","latin","lesbain","lesbayn","lesbian","lesbin","lesbo","lez","lezbe","lezbefriends","lezbo","lezz","lezzo","liberal","libido","licker","lickme","lies","limey","limpdick","limy","lingerie","liquor","livesex","loadedgun","lolita","looser","loser","lotion","lovebone","lovegoo","lovegun","lovejuice","lovemuscle","lovepistol","loverocket","lowlife","lsd","lubejob","lucifer","luckycammeltoe","lugan","lynch","macaca","mad","mafia","magicwand","mams","manhater","manpaste","marijuana","mastabate","mastabater","masterbate","masterblaster","mastrabator","masturbate","masturbating","mattressprincess","meatbeatter","meatrack","meth","mexican","mgger","mggor","mickeyfinn","mideast","milf","minority","mockey","mockie","mocky","mofo","moky","moles","molest","molestation","molester","molestor","moneyshot","mooncricket","mormon","moron","moslem","mosshead","mothafuck","mothafucka","mothafuckaz","mothafucked ","mothafucker","mothafuckin","mothafucking ","mothafuckings","motherfuck","motherfucked","motherfucker","motherfuckin","motherfucking","motherfuckings","motherlovebone","muff","muffdive","muffdiver","muffindiver","mufflikcer","mulatto","muncher","munt","murder","murderer","muslim","naked","narcotic","nasty","nastybitch","nastyho","nastyslut","nastywhore","nazi","necro","negro","negroes","negroid","negro's","nig","niger","nigerian","nigerians","nigg","nigga","niggah","niggaracci","niggard","niggarded","niggarding","niggardliness","niggardliness's","niggardly","niggards","niggard's","niggaz","nigger","niggerhead","niggerhole","niggers","nigger's","niggle","niggled","niggles","niggling","nigglings","niggor","niggur","niglet","nignog","nigr","nigra","nigre","nip","nipple","nipplering","nittit","nlgger","nlggor","nofuckingway","nook","nookey","nookie","noonan","nooner","nude","nudger","nuke","nutfucker","nymph","ontherag","oral","orga","orgasim ","orgasm","orgies","orgy","osama","paki","palesimian","palestinian","pansies","pansy","panti","panties","payo","pearlnecklace","peck","pecker","peckerwood","pee","peehole","pee-pee","peepshow","peepshpw","pendy","penetration","peni5","penile","penis","penises","penthouse","period","perv","phonesex","phuk","phuked","phuking","phukked","phukking","phungky","phuq","pi55","picaninny","piccaninny","pickaninny","piker","pikey","piky","pimp","pimped","pimper","pimpjuic","pimpjuice","pimpsimp","pindick","piss","pissed","pisser","pisses ","pisshead","pissin ","pissing","pissoff ","pistol","pixie","pixy","playboy","playgirl","pocha","pocho","pocketpool","pohm","polack","pom","pommie","pommy","poo","poon","poontang","poop","pooper","pooperscooper","pooping","poorwhitetrash","popimp","porchmonkey","porn","pornflick","pornking","porno","pornography","pornprincess","pot","poverty","premature","pric","prick","prickhead","primetime","propaganda","pros","prostitute","protestant","pu55i","pu55y","pube","pubic","pubiclice","pud","pudboy","pudd","puddboy","puke","puntang","purinapricness","puss","pussie","pussies","pussy","pussycat","pussyeater","pussyfucker","pussylicker","pussylips","pussylover","pussypounder","pusy","quashie","queef","queer","quickie","quim","ra8s","rabbi","racial","racist","radical","radicals","raghead","randy","rape","raped","raper","rapist","rearend","rearentry","rectum","redlight","redneck","reefer","reestie","refugee","reject","remains","rentafuck","republican","rere","retard","retarded","ribbed","rigger","rimjob","rimming","roach","robber","roundeye","rump","russki","russkie","sadis","sadom","samckdaddy","sandm","sandnigger","satan","scag","scallywag","scat","schlong","screw","screwyou","scrotum","scum","semen","seppo","servant","sex","sexed","sexfarm","sexhound","sexhouse","sexing","sexkitten","sexpot","sexslave","sextogo","sextoy","sextoys","sexual","sexually","sexwhore","sexy","sexymoma","sexy-slim","shag","shaggin","shagging","shat","shav","shawtypimp","sheeney","shhit","shinola","shit","shitcan","shitdick","shite","shiteater","shited","shitface","shitfaced","shitfit","shitforbrains","shitfuck","shitfucker","shitfull","shithapens","shithappens","shithead","shithouse","shiting","shitlist","shitola","shitoutofluck","shits","shitstain","shitted","shitter","shitting","shitty ","shoot","shooting","shortfuck","showtime","sick","sissy","sixsixsix","sixtynine","sixtyniner","skank","skankbitch","skankfuck","skankwhore","skanky","skankybitch","skankywhore","skinflute","skum","skumbag","slant","slanteye","slapper","slaughter","slav","slave","slavedriver","sleezebag","sleezeball","slideitin","slime","slimeball","slimebucket","slopehead","slopey","slopy","slut","sluts","slutt","slutting","slutty","slutwear","slutwhore","smack","smackthemonkey","smut","snatch","snatchpatch","snigger","sniggered","sniggering","sniggers","snigger's","sniper","snot","snowback","snownigger","sob","sodom","sodomise","sodomite","sodomize","sodomy","sonofabitch","sonofbitch","sooty","sos","soviet","spaghettibender","spaghettinigger","spank","spankthemonkey","sperm","spermacide","spermbag","spermhearder","spermherder","spic","spick","spig","spigotty","spik","spit","spitter","splittail","spooge","spreadeagle","spunk","spunky","squaw","stagg","stiffy","strapon","stringer","stripclub","stroke","stroking","stupid","stupidfuck","stupidfucker","suck","suckdick","sucker","suckme","suckmyass","suckmydick","suckmytit","suckoff","suicide","swallow","swallower","swalow","swastika","sweetness","syphilis","taboo","taff","tampon","tang","tantra","tarbaby","tard","teat","terror","terrorist","teste","testicle","testicles","thicklips","thirdeye","thirdleg","threesome","threeway","timbernigger","tinkle","tit","titbitnipply","titfuck","titfucker","titfuckin","titjob","titlicker","titlover","tits","tittie","titties","titty","tnt","toilet","tongethruster","tongue","tonguethrust","tonguetramp","tortur","torture","tosser","towelhead","trailertrash","tramp","trannie","tranny","transexual","transsexual","transvestite","triplex","trisexual","trojan","trots","tuckahoe","tunneloflove","turd","turnon","twat","twink","twinkie","twobitwhore","uck","uk","unfuckable","upskirt","uptheass","upthebutt","urinary","urinate","urine","usama","uterus","vagina","vaginal","vatican","vibr","vibrater","vibrator","vietcong","violence","virgin","virginbreaker","vomit","vulva","wab","wank","wanker","wanking","waysted","weapon","weenie","weewee","welcher","welfare","wetb","wetback","wetspot","whacker","whash","whigger","whiskey","whiskeydick","whiskydick","whit","whitenigger","whites","whitetrash","whitey","whiz","whop","whore","whorefucker","whorehouse","wigger","willie","williewanker","willy","wn","wog","women's","wop","wtf","wuss","wuzzie","xtc","xxx","yankee","yellowman","zigabo","zipperhead"];
+        // var script_url = "https://script.google.com/macros/s/AKfycbyJ21nFcwUuHpbQ6jB_ud9VRKwwQ3FPLU1dlmsh/exec";
+        // var script_url = "https://script.google.com/macros/s/AKfycbzRmAsLmualVM9CEE9p_6A6Y9ooIHxkAE9XBiNndL4TChMQrL32yQO8ZkniX9DF0aOn/exec";
+        var script_url = "https://script.google.com/macros/s/AKfycbz9joV_wl2mXJUIq8NNvuXBUxI3ThNfh1w8p-V7Evg/dev"
+        
+        //ONLY USE PROMISE ON ASYNC FUNCTIONS
+        //AWAIT returns undefined on promises but value on ()=>return
+    
+        //Form Commands
+        async function Register(){
+                disableFormBtns(true);
+                geoloc = await requestAstronomy(); //string
+                r_captcha = verifyRecaptcha(); //boolean
+                if (r_captcha == true){
+                    newModal("Queue", "please wait","Registering...",3000)
+                    if (geoloc == "true" || geoloc == true){ // checks if Astronomy is available
+                        delay = 0;
+                    } else {
+                        delay = 5000;
+                    }
+                    setTimeout(async function(){
+                        //extracts value from input
+                        var user_clear = true;
+                        var username =	temp_user = document.getElementById("Username").value;
+                        var userid = document.getElementById("UserID").value;
+                        var password = document.getElementById("Password").value;
+                        var cpassword = document.getElementById("cPassword").value;
+                        var rquestion = (document.getElementById("rQuestion").value).replaceAll("?","");
+                        var rpassword = document.getElementById("rPassword").value;
+                        
+                        if (!username == false && !password == false && !cpassword == false && !rquestion == false && !rpassword == false){ //checks for bad words
+                            // console.log("filter")
+                            for (i in bad_filter){
+                                if (username.includes(bad_filter[i])){
+                                    ques1 = newModal("Warning","Really? ... You want to be called " + bad_filter[i].toUpperCase(),"",100000)
+                                    ans1 = await booleanResp(ques1)
+                                    if(ans1){
+                                        ques2 = newModal("Warning","Last chance mate... You'll be called " + bad_filter[i].toUpperCase() + " in our Research. Continue?","",100000)
+                                        ans2 = await booleanResp(ques2)
+                                        if(ans2){
+                                            user_clear = true;
+                                        } else {
+                                            user_clear = false;
+                                            document.getElementById("Username").style.border = "solid red";
+                                            newModal("Error","Please change the marked targets","Change of mind");
+                                            break;
+                                        }
+                                    } else {
+                                        user_clear = false;
+                                        document.getElementById("Username").style.border = "solid red";
+                                        newModal("Error","Please change the marked targets","Change of mind");
+                                        break;
+                                    }
+                                }
+                            }
+                            // console.log("is pass equal")
+                            if (cpassword == password){
+                                user_clear = true;
+                            } else {
+                                user_clear = false;
+                                document.getElementById("cPassword").style.border = "solid red";
+                                newModal("Error","Please retype your password to continue","Pass didn't match")
+                            }
+                        
+                        } else if (!username == false && !rquestion == false && !rpassword == false && !userid == false){
+                            console.log("Alt Sign In Register detected")
+                            if (password == false && cpassword == false){
+                                password = userid;
+                                cpassword = userid;
+                                
+    
+                                // console.log("Alt Sign In with no pass and cpass")
+                            } else {
+                                user_clear = false;
+                                document.getElementById("cPassword").style.border = "solid red";
+                                newModal("Error","Please retype your password to continue","Pass didn't match")
+                                // console.log("Alt Sign In with pass or cpass")
+                            }
+                        } else {
+                            user_clear = false;
+                            newModal("Error", "Please fill in the mark targets","Missing input...")
+                            if (username == false){
+                                document.getElementById("Username").style.border = "solid red";
+                            }
+                            if (password == false){
+                                document.getElementById("Password").style.border = "solid red";
+                            }	
+                            if (cpassword == false){
+                                    document.getElementById("cPassword").style.border = "solid red";
+                                }	
+                            if (rquestion == false){
+                                    document.getElementById("rQuestion").style.border = "solid red";
+                                }	
+                            if (rpassword == false){
+                                    document.getElementById("rPassword").style.border = "solid red";
+                                }	
+                        }
+                        if (!getCookie("c_loc")){
+                            // console.log("is country available?")
+                            user_clear == false;
+                            newModal("Error","Please try again later...","Server Down...")
+                        }	
+                        if (user_clear == true){ //checks if user is clear for registration			
+                            if(!userid == true){
+                                userid = "none"
+                            }
+                            //newModal("Queue", "please wait","Registering...",3000)
+                            // console.log(username)
+                            // console.log(userid)
+                            // console.log(password)
+                            // console.log(cpassword)
+                            // console.log(await convertSHA256(password + username))
+    
+                            var url = script_url+"?username=" + username + "&userID=" + userid + "&password=" + await convertSHA256(password + username) + "&sec_ques=" + rquestion + "&sec_ans=" + await convertSHA256(rpassword) + "&country=" + getCookie("c_loc") + "&flag=" + getCookie("c_flag") + "&sunrise=" + getCookie("c_sunrise") + "&sunset=" + getCookie("c_sunset") + "&solar_noon=" + getCookie("c_solar_noon") + "&moonrise=" + getCookie("c_moonrise") + "&moonset=" + getCookie("c_moonset") + "&action=verify_user&action2=register_user";
+                            var request = jQuery.ajax({
+                                crossDomain: true,
+                                url: url ,
+                                method: "GET",
+                                dataType: "jsonp"
+                            });
+                            isServerDown();
+                        } else {
+                            disableFormBtns(false);
+                            console.log("Register aborted by system")
+                            // newModal("Error","","Registration Aborted");
+                        }			
+                    },delay)
+                } else {
+                    disableFormBtns(false);
+                    console.log("Register aborted by system")
+                    // newModal("Error","","Registration Aborted");
+                }
+        } 	
+        async function updateName(){
+            if (r_updateName == false){
+                
+                console.log(" word filter ples");
+                //word filter ples
+                //release r_updateName
+                r_updateName = true;
+    
+                ques1 = newModal("Input","Enter new name:","Update Username")
+                var username = await inputResp(ques1);
+    
+                if (username != false){
+                    r_updateName = false;
+    
+                    ques2 = newModal("Input","Please enter your password: (If none, leave it blank)","Verify if it is really you")
+                    var password = await inputResp(ques2);
+    
+                    if (password != false || password == ""){
+                        if (getCookie("c_userid") == "none"){ //Regular
+                            console.log("update name but verify Pass first")
+                            
+                            var url = script_url+"?newname=" + username + "&username=" + getCookie("c_user") + "&newpassword=" + await convertSHA256(password + username) + "&password=" + await convertSHA256(password + getCookie("c_user")) + "&sessionID=" + getCookie("c_sessionid") + "&rank=" + getCookie("c_rank") + "&action=update_username";
+                            console.log(url);
+                            https://script.google.com/macros/s/AKfycbyJ21nFcwUuHpbQ6jB_ud9VRKwwQ3FPLU1dlmsh/exec?newname=mmm&username=mmm&newpassword=4378c5895e7ade691792a8bbed89dbfcbea257a8949a3b1132a875e67aa45583&password=4378c5895e7ade691792a8bbed89dbfcbea257a8949a3b1132a875e67aa45583&sessionID=ljq4efrr6&rank=8&action=update_username
+                            var request = jQuery.ajax({
+                                crossDomain: true,
+                                url: url ,
+                                method: "GET",
+                                dataType: "jsonp"
+                            });
+                            isServerDown();
+                        } else { //Alt Sign In
+                            if(password == ""){ //AltSignIn //has no password from the start
+                                console.log("update name for AltSignIn")
+                                //old= user			userid+user			id
+                                //new= nuser		userid+nuser		id
+                                console.log(await convertSHA256(getCookie("c_userid") + getCookie("c_user")))
+                                var url = script_url+"?newname=" + username + "&username=" + getCookie("c_user") + "&newpassword=" + await convertSHA256(getCookie("c_userid") + username) + "&password=" + await convertSHA256(getCookie("c_userid") + getCookie("c_user")) + "&sessionID=" + getCookie("c_sessionid") + "&rank=" + getCookie("c_rank") + "&action=update_username";
+                            } else { //Linked Account
+                                //old= user			pass+user			id
+                                //new= nuser		pass+nuser			id
+                                console.log("use User + UserId for pass; IGNORE USERID")
+                                var url = script_url+"?newname=" + username + "&username=" + getCookie("c_user") + "&newpassword=" + await convertSHA256(password + username) + "&password=" + await convertSHA256(password + getCookie("c_user")) + "&sessionID=" + getCookie("c_sessionid") + "&rank=" + getCookie("c_rank") + "&action=update_username";
+                            }
+    
+                            var request = jQuery.ajax({
+                                crossDomain: true,
+                                url: url ,
+                                method: "GET",
+                                dataType: "jsonp"
+                            });
+                            isServerDown();					
+                        }
+                    } else {
+                        newModal("Error","user aborted username update","Update failed")
+                        r_updateName = false;
+                    }
+                } else {
+                    // newModal("Error","user aborted username update","Update failed")
+                    r_updateName = false;
+                }
+            }
+        }	
+        async function LogIn(){
+            
+            if (disableFormBtns(true,"LogInBtn") != "none"){
+                disableFormBtns(true);
+    
+                var username =	document.getElementById("Username").value || false; 
+                var password = document.getElementById("Password").value || false;
+                
+                if(!getCookie("f_atmpt") == true){ //resets failed attempts and check if refresh on cldwn
+                    updateCookie("f_atmpt",0,1)
+                } else {
+                    p_atmpt = getCookie("f_atmpt")
+                    if (p_atmpt >= 5 || p_atmpt <= 0){
+                        updateCookie("f_atmpt",0,1)
+                    }
+                }
+    
+                if(username != false && password != false){
+                
+                    newModal("Queue", "","Verifying user", 3000)
+                    
+                    document.getElementById("Username").style.border = "default";
+                    document.getElementById("Password").style.border = "default";
+                    var sessionid = (Math.random() * 1000000000).toString(36).substr(2, 9);
+                    var url = script_url+"?username=" + username + "&password="+ await convertSHA256(password + username) + "&sessionID=" + sessionid + "&action=verify_user&action2=verify_pass";
+                    var request = jQuery.ajax({
+                        crossDomain: true,
+                        url: url ,
+                        method: "GET",
+                        dataType: "jsonp"
+                    });
+                    isServerDown();	
+                } else {
+                    setTimeout(()=>disableFormBtns(false),3000)
+                    newModal("Error", "Please fill in the mark targets","Missing input...")
+                    console.log("LogIn aborted by system")
+                    if (username == false){
+                        document.getElementById("Username").style.border = "solid red";
+                    }
+                    if (password == false){
+                        document.getElementById("Password").style.border = "solid red";
+                    }
+                    
+                }	
+            } else {
+                console.log("Please wait");
+            }
+        }
+        function LogOut(){
+            // unlockUserSettings(false);
+            updateCookie("c_user","",-1);
+            updateCookie("c_progpos","",-1);
+            updateCookie("c_prog","",-1);
+            updateCookie("c_loc","",-1);
+            updateCookie("c_country","",-1);
+            updateCookie("c_flag","",-1);
+            updateCookie("c_userid","",-1);
+            updateCookie("c_sessionid","",-1);
+            updateCookie("c_rank","",-1);
+            updateCookie("f_atmpt","",-1);
+            updateCookie("c_linkAtch","",-1);
+            window.location.assign(window.location.origin + "/index.html"); 
+        }
+        async function linkAccount(){
+            if (getCookie("c_userid") == "none"){
+                //Require session ID to ease verification
+                c_linking = true;
+                console.log(c_linking)
+                ques1 = newModal("Link","Select an account to link with: (Note: you can only link one!)","Link Account")
+                c_linkmodal = ques1;
+                ans1 = await booleanResp(ques1,true);
+            } else {
+                newModal("Done","Google or Facebook account found","Already linked")
+            }
+        }
+        async function unlinkAccount(){
+            if (getCookie("c_userid") != "none"){
+                
+                ques1 = newModal("Warning","Are you sure you want to unlink your account?","Unlink Account")
+                ans1 = await booleanResp(ques1)
+    
+                if(ans1 != false){
+                    var url = script_url + "?userID=" + getCookie("c_userid") + "&username=" + getCookie("c_user") + "&sessionID=" + getCookie("c_sessionid") + "&rank=" + getCookie("c_rank") + "&action=unlink_altsignin";
+                    var request = jQuery.ajax({
+                        crossDomain: true,
+                        url: url ,
+                        method: "GET",
+                        dataType: "jsonp"
+                    });
+                    isServerDown();
+                }
+            } else {
+                newModal("Error","Google or Facebook account not found","Not linked yet")
+            }
+        }
+        async function forgotPassword(){
+                disableFormBtns(true);
+                var user_clear = true;
+                // var ques1 = newModal("Input","Enter username to be recovered:","Forgot Password")
+                ques1 = newModal("Input","Enter username to be recovered:","Account Recovery...");
+                ans1 = await inputResp(ques1);
+                console.log(ans1);
+                if (ans1 != false){
+                    newModal("Queue","please wait...","Verifying user")
+                    var url = script_url+"?username=" + manualSpCharDel(ans1)+ "&action=recover_pass";
+                    var request = jQuery.ajax({
+                        crossDomain: true,
+                        url: url ,
+                        method: "GET",
+                        dataType: "jsonp"
+                    });
+                    isServerDown()
+                    //must pass a user state on the server side
+                } else {
+                    newModal("Error","user aborted recovery","Recovery failed")
+                    disableFormBtns(false);
+                }
+                
+        }
+        async function recoverPassword(username,sec_ques,sec_ans,i){
+            var user_clear = true;
+    
+            newModal("Done","please wait...","User found!")
+    
+            ques1 = newModal("Input", sec_ques["ques"] + "?","SECURITY QUESTION:")
+            ans1 = await inputResp(ques1);
+            code = await convertSHA256(ans1)
+            
+            if (sec_ans["ans"] == code){
+                updateForgottenPassword(username,ans1,sec_ans["ans"],i)		
+            } else if (ans1 == false){
+                newModal("Error","user aborted recovery","Recovery failed")
+                disableFormBtns(false)
+            } else {
+                ques2 = newModal("Input", "Try again: " + sec_ques["ques"] + "?","SECURITY QUESTION:")
+                ans2 = await inputResp(ques2);
+                code2 = await convertSHA256(ans2)
+                if (sec_ans["ans"] == code2){
+                    updateForgottenPassword(username,ans2,sec_ans["ans"],i)	
+                } else if (ans2 == false){
+                    newModal("Error","user aborted recovery","Recovery failed")
+                    disableFormBtns(false)
+                } else {
+                    ques3 = newModal("Input", "Last try: "+ sec_ques["ques"] + "?","SECURITY QUESTION:")
+                    ans3 = await inputResp(ques3);
+                    code3 = await convertSHA256(ans3)
+                    if (sec_ans["ans"] == code3){
+                        updateForgottenPassword(username,ans3,sec_ans["ans"],i)	
+                    } else if (ans3 == false){
+                        newModal("Error","user aborted recovery","Recovery failed")
+                        disableFormBtns(false)
+                    } else {
+                        newModal("Error","user failed too many attempts...","Recovery failed")
+                        disableFormBtns(false)
+                    }
+                }
+            }
+        }
+        async function updateForgottenPassword(username,ans,r_ans,i){ //can be called directly or by recoverPassword	
+            code = await convertSHA256(ans);
+            if (r_ans == code){
+    
+                newModal("Done","updating your password...","User verified")
+    
+                attempt = 0;
+                while (attempt < 3){
+                    ques1 = newModal("Input","Enter new password:","New Password")
+                    ans1 = await inputResp(ques1);
+                    if (ans1 != false){
+                        ques2 = newModal("Input","Retype new password:","New Password")
+                        ans2 = await inputResp(ques2);
+                        if(ans1 == ans2){
+                            attempt = 3;
+                            //console.log("fire update password")
+                            console.log("fire update password")
+                            // console.log(username)
+                            var url = script_url+"?username=" + username["name"] + "&password=" + await convertSHA256(ans2 + username["name"]) + "&rank=" + i + "&action=update_pass";
+                            var request = jQuery.ajax({
+                                crossDomain: true,
+                                url: url ,
+                                method: "GET",
+                                dataType: "jsonp"
+                            });
+                            isServerDown()
+                            newModal("Queue","please wait...","Updating Pass",5000);
+                        } else {
+                            attempt = attempt + 1;
+                            console.log(attempt)
+                            if (attempt == 3){
+                                newModal("Error","user failed too many attempts to update password","Recovery failed")
+                                disableFormBtns(false)
+                            } else {
+                                newModal("Error","please try again","Update failed",5000)
+                            }
+                        }
+                    } else {
+                        attempt = 3;
+                        newModal("Error","user aborted password update","Recovery failed")
+                    }
+                }
+            } else {
+                console.log("Password didn't match... I wonder why -_-")
+                disableFormBtns(false);
+            }
+            
+        }
+        async function updatePassword(){
+            ques1 = newModal("Input","Enter new password:","New Password")
+            ans1 = await inputResp(ques1);
+    
+            if (ans1 != false){
+                ques2 = newModal("Input","Retype new password:","New Password")
+                ans2 = await inputResp(ques2);
+                
+                if (ans2 != false && ans1 == ans2){
+                    var url = script_url+"?username=" + getCookie("c_user") + "&password=" + await convertSHA256(ans2 + getCookie("c_user")) + "&sessionID=" + getCookie("c_sessionid") + "&rank=" + getCookie("c_rank") + "&action=update_pass2";
+                    var request = jQuery.ajax({
+                        crossDomain: true,
+                        url: url ,
+                        method: "GET",
+                        dataType: "jsonp"
+                    });
+                    isServerDown();
+                } else if (ans2 == false){
+                    newModal("Error","user aborted password update","Update failed")
+                } else if (ans1 != ans2){
+                    newModal("Error","retyped password didn't match","Update failed")
+                } 
+            }	
+        }
+        async function updateRecovery(){
+    
+            ques1 = newModal("Input","Input your new Recovery Question:","Recovery Update");
+            ans1 = await inputResp(ques1)
+            
+    
+            if(ans1 != false){
+                ques2 = newModal("Input","Input your new Recovery Answer:","Recovery Update");
+                ans2 = await inputResp(ques2);
+                
+                if(ans2 != false){
+                    newModal("Queue","updating security...","")
+                    ans1 = ans1.replaceAll("?","");
+                    var url = script_url+"?username=" + getCookie("c_user") + "&sec_ques=" + ans1 + "&sec_ans=" + await convertSHA256(ans2) + "&sessionID=" + getCookie("c_sessionid") + "&rank=" + getCookie("c_rank") + "&action=update_recovery";
+                    var request = jQuery.ajax({
+                        crossDomain: true,
+                        url: url ,
+                        method: "GET",
+                        dataType: "jsonp"
+                    });
+                }
+            }
+        }
+        async function convertSHA256(message) {
+        var msgUint8 = new TextEncoder().encode(message);                           // encode as (utf-8) Uint8Array
+        var hashBuffer = await crypto.subtle.digest('SHA-256', msgUint8);           // hash the message
+        var hashArray = Array.from(new Uint8Array(hashBuffer));                     // convert buffer to byte array
+        var hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join(''); // convert bytes to hex string
+        return hashHex;
+        }
+        async function convertSHA1(message) {
+        var msgUint8 = new TextEncoder().encode(message);                           // encode as (utf-8) Uint8Array
+        var hashBuffer = await crypto.subtle.digest('SHA-1', msgUint8);           // hash the message
+        var hashArray = Array.from(new Uint8Array(hashBuffer));                     // convert buffer to byte array
+        var hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join(''); // convert bytes to hex string
+        return hashHex;
+        }
+    
+        function retrieveUserdata(data){ //unused
+            alert("RETRIEVED USER DATA FIRED")
+            var url = script_url+"?username=" + username + "&action=retrieve_userdata";
+            var request = jQuery.ajax({
+            crossDomain: true,
+            url: url ,
+            method: "GET",
+            dataType: "jsonp"
+            });
+            isServerDown()
+        }
+        function disableFormBtns(status,target){
+    
+            if (status == true && !target == true && !document.getElementsByClassName("resp_form")[0] != true){
+                document.getElementsByClassName("LogInBtn")[0].style.pointerEvents = "none";
+                document.getElementsByClassName("RegisterBtn")[0].style.pointerEvents = "none";
+                document.getElementsByClassName("AltBlock")[0].style.display = "block";
+                document.getElementsByClassName("ForgotPasswordPlaceholder")[0].style.pointerEvents = "none";
+                //console.log("FORMS DISABLED!!!!")
+            } else if (status == false && !target == true  && !document.getElementsByClassName("resp_form")[0] != true){
+                document.getElementsByClassName("LogInBtn")[0].style.pointerEvents = "auto";
+                document.getElementsByClassName("RegisterBtn")[0].style.pointerEvents = "auto";
+                document.getElementsByClassName("AltBlock")[0].style.display = "none";
+                document.getElementsByClassName("ForgotPasswordPlaceholder")[0].style.pointerEvents = "auto";
+                console.log("FORMS ENABLED!!!!")
+            } else if (!target == false) {
+                return document.getElementsByClassName(target)[0].style.pointerEvents;
+            } else if (!document.getElementsByClassName("resp_form")[0] == true){
+                console.log("resp_form already removed!")
+            } else {
+                alert("Error on disableFromBtn() with status:" + status + " and target:" + target )
+            }
+    
+            function Alt_disable(item, index){
+                item.style.pointerEvents = "none";
+                // console.log(item)
+                // console.log(index)
+            }
+            function Alt_enable(item, index){
+                item.style.pointerEvents = "auto";
+                // console.log(item)
+                // console.log(index)
+            }
+        }
+        function isServerDown(){ // use clearTimeout(sv_stat) to cancel Done on LogIn Register Update Name Update Pass Alt SignIn
+            console.log("Checking server stat...")
+            clearTimeout(sv_stat);
+            sv_stat = setTimeout(function(){
+                newModal("Error","Please try again later...","Server Down");
+                disableFormBtns(false);
+            },30000)
+        }
+        function moveSignInBtns(location){
+            gbtn = document.getElementById("googleSignIn")
+            fbtn = document.getElementsByClassName("fb-login-button")[0]
+            if(!location){
+                document.getElementsByClassName("AltSignInOpts")[0].appendChild(gbtn);
+                document.getElementsByClassName("AltSignInOpts")[0].appendChild(fbtn);
+            } else {
+                document.getElementsByClassName(location)[0].appendChild(gbtn);
+                document.getElementsByClassName(location)[0].appendChild(fbtn);
+            }
+            
+        }
+        
+        function signature(){	
+        console.log(`%c
+                              010
+                            01010101
+                    01010101010101010
+                    01010101010101010
+                    01010101010101010     010101010
+                     1010101010101010  1010101010101
+                       10101010101010101010101010101
+                        01010101010101010101010101010
+             101010101010101010101010101010101010101010
+           10101010101010101010101010101010101010101010
+           101010101010101010101010101010101010101010
+             10101010101010101010101010101
+              01010101010101010101010101010
+              0101010101010101010101010101010		Nothing to see here...
+               101010101  01 10101010101010101		Made with www.text-image.com
+                        01   10101010101010101
+                      010    10101010101010101
+                    010       01010101   101
+                                 101
+                                 
+                                 `, "font-family:monospace")
+        }
+        signature();
+    
+        //User detection
+        function userState(sv_resp,sv_data){
+            // clearTimeout(sv_stat)
+            if (sv_resp["state"] == "exist"){
+                newModal("Error","Username already taken ):","",20000)
+                disableFormBtns(false);
+            } else if (sv_resp["state"] == "missing"){
+                fail_atmpt = parseInt(getCookie("f_atmpt")) + 1;
+                updateCookie("f_atmpt", fail_atmpt,1)
+                console.log(fail_atmpt);
+                // newModal("Error","Username doesn't exist","Recovery failed")
+    
+                if (fail_atmpt >= 4 || fail_atmpt < 0){
+                    atmpt_cldwn = 60000
+                    setTimeout(function(){
+                        updateCookie("f_atmpt", 0, 1);
+                    },atmpt_cldwn)
+                    newModal("Error","Please wait 60 secs to try again","Invalid User",atmpt_cldwn)
+                } else {
+                    newModal("Error","Please try again","Invalid User")
+                    atmpt_cldwn = 3000
+                    setTimeout(function(){
+                        updateCookie("f_atmpt", parseInt(getCookie("f_atmpt")) - 1,1)
+                    },atmpt_cldwn * 5 * fail_atmpt)
+                }
+    
+                setTimeout(function(){
+                    disableFormBtns(false);
+                },atmpt_cldwn)
+    
+                disableFormBtns(false);
+            } else if(sv_resp["state"] == "altmissing"){
+                newModal("Error","Linked account is missing...")
+            } else if (sv_resp["state"] == "registered"){
+                document.getElementsByClassName("AltSignInOpts")[0].style.display = "block";
+                FormActive(document.getElementsByClassName("SelectForm1")[0]);
+                newModal("Done","Account successfuly registered","",20000);
+                autoLogOutAlt();
+                disableFormBtns(false);
+            } else if (sv_resp["state"] == "unregistered"){
+                fail_atmpt = parseInt(getCookie("f_atmpt")) + 1;
+                updateCookie("f_atmpt", fail_atmpt,1)
+                console.log(fail_atmpt);
+                document.getElementById("Username").style.border = "solid red";
+    
+                if (fail_atmpt >= 4 || fail_atmpt < 0){
+                    atmpt_cldwn = 60000
+                    setTimeout(function(){
+                        updateCookie("f_atmpt", 0, 1);
+                    },atmpt_cldwn)
+                    newModal("Error","Please wait 60 secs to try again","Invalid User",atmpt_cldwn)
+                } else {
+                    newModal("Error","Please try again","Invalid User")
+                    atmpt_cldwn = 3000
+                    setTimeout(function(){
+                        updateCookie("f_atmpt", parseInt(getCookie("f_atmpt")) - 1,1)
+                    },atmpt_cldwn * 5 * fail_atmpt)
+                }
+    
+                setTimeout(function(){
+                    disableFormBtns(false);
+                },atmpt_cldwn)
+    
+            } else if (sv_resp["state"] == "incorrectpass"){
+                fail_atmpt = parseInt(getCookie("f_atmpt")) + 1;
+                updateCookie("f_atmpt", fail_atmpt,1)
+                console.log(fail_atmpt);
+                if(!document.getElementsByClassName("resp_form")[0] != true){
+                    document.getElementById("Password").style.border = "solid red";
+                }
+                
+    
+                if (fail_atmpt >= 4 || fail_atmpt < 0){
+                    atmpt_cldwn = 60000
+                    setTimeout(function(){
+                        updateCookie("f_atmpt", 0, 1);
+                    },atmpt_cldwn)
+                    newModal("Error","Please wait 60 secs to try again","Invalid Pass",atmpt_cldwn)
+                } else {
+                    newModal("Error","Please try again","Invalid Pass")
+                    atmpt_cldwn = 3000
+                    setTimeout(function(){
+                        updateCookie("f_atmpt", parseInt(getCookie("f_atmpt")) - 1,1)
+                    },atmpt_cldwn * 5 * fail_atmpt)
+                }
+    
+                setTimeout(function(){
+                    disableFormBtns(false);
+                },atmpt_cldwn)
+    
+            } else if (sv_resp["state"] == "passupdated"){
+                newModal("Done","","Pass updated!");
+                disableFormBtns(false);
+            } else if (sv_resp["state"] == "userupdated"){
+                updateCookie("c_user",sv_data["c_user"]);
+                newModal("Done","Hello " + sv_data["c_user"] + "!","User updated!");
+            } else if (sv_resp["state"] == "linked"){
+                updateCookie("c_userid",sv_data["c_userid"]);
+                newModal("Done","Account successfully linked!");
+            } else if (sv_resp["state"] == "unlinked"){
+                updateCookie("c_userid",sv_data["c_userid"]);
+                newModal("Done","Account successfully unlinked!");
+            } else if (sv_resp["state"] == "linked_already"){
+                newModal("Error","Account was already linked...");
+            } else if (sv_resp["state"] == "linked_inuse"){
+                newModal("Error","Link account was already in use...","Link failed");
+            } else if (sv_resp["state"] == "unlinked_already"){
+                newModal("Error","Account was already unlinked...");
+            } else if (sv_resp["state"] == "recovery_updated"){
+                newModal("Done","Recovery updated finish!");
+            } else if (sv_resp["state"] == "invalid_session"){
+                 newModal("Error","Invalid session...")
+                 setTimeout(()=>LogOut(),3000);
+            } else if (sv_resp["state"] == "loc_failed"){
+                newModal("Error","reloading page...","Server Error")
+                setTimeout(()=>document.location.reload(),5000);
+            } else if(sv_resp["state"] == "sv_busy"){
+                newModal("Error","Server is busy...","Please try again")
+                disableFormBtns(false);
+            } else if (sv_resp["state"] == "sv_full"){
+                newModal("Error","Server is full...","Please try again later")
+            } else if (sv_resp["state"] == "verified"){ //returns all necessary data
+                newModal("Done","LogIn was successful","Verified",4500)
+    
+                //Removes the form
+                document.getElementsByClassName("resp_form")[0].classList.add("vivify");
+                document.getElementsByClassName("resp_form")[0].classList.add("fadeOut");
+                document.getElementsByClassName("resp_form")[0].onanimationend = function(event){
+                    moveSignInBtns("AltSignInStorage")
+                    setTimeout(()=>event.srcElement.remove(),1000,event);
+                };
+    
+                //Receive cookies
+                updateCookie("c_user", sv_data["c_user"]);
+                //updateCookie("c_progpos", sv_data["c_progpos"]);
+                //console.log("Progpos is " + sv_data["c_progpos"])
+                updateCookie("c_country", sv_data["c_country"]);
+                updateCookie("c_sunrise", sv_data["c_sunrise"].replace("::",":"));
+                updateCookie("c_sunset", sv_data["c_sunset"].replace("::",":"));
+                updateCookie("c_solar_noon", sv_data["c_solar_noon"].replace("::",":"));
+                updateCookie("c_moonrise", sv_data["c_moonrise"].replace("::",":"));
+                updateCookie("c_moonset", sv_data["c_moonset"].replace("::",":"));
+                updateCookie("c_flag", sv_data["c_flag"]);
+                updateCookie("c_userid",sv_data["c_userid"]);
+                updateCookie("c_sessionid",sv_data["c_sessionid"]);
+                updateCookie("c_rank",sv_data["c_rank"]);
+                updateCookie("c_loc","",-1); 
+    
+                //Show settings
+                document.getElementsByClassName("topright_gear")[0].classList.add("vivify");
+                document.getElementsByClassName("topright_gear")[0].classList.add("fadeIn");
+                document.getElementsByClassName("topright_gear")[0].style.display = "block";
+    
+                //Fire Intro
+                intro_Anim();
+    
+                //Collect Prog
+                requestProg();
+            } else if (sv_resp["state"] == "alreadyIn"){
+                newModal("Done","please wait...","User detected",4500);
+    
+                //Removes the form
+                document.getElementsByClassName("resp_form")[0].classList.add("vivify");
+                document.getElementsByClassName("resp_form")[0].classList.add("fadeOut");
+                document.getElementsByClassName("resp_form")[0].onanimationend = function(event){
+                    moveSignInBtns("AltSignInStorage")
+                    setTimeout(()=>event.srcElement.remove(),1000,event);
+                };
+    
+                //Show settings
+                document.getElementsByClassName("topright_gear")[0].classList.add("vivify");
+                document.getElementsByClassName("topright_gear")[0].classList.add("fadeIn");
+                document.getElementsByClassName("topright_gear")[0].style.display = "block";
+    
+                //Fire Intro
+                setTimeout(()=>intro_Anim(),2000)
+    
+                //Collect Prog
+                // requestProg();
+            } else {
+                alert("Error on userStat(" + sv_resp["state"] + ") returned undefined");
+            }
+        }
+    
+        //User progress commands
+        updateCookie("c_linkAtch","",-1)
+        function requestProg(){ // needs c_user c_progpos c_sessionID
+            var url = script_url+"?username=" + getCookie("c_user") + "&sessionID=" + getCookie("c_sessionid") + "&rank=" + getCookie("c_rank") +"&action=retrieve_prog";
+            var request = jQuery.ajax({
+                crossDomain: true,
+                url: url ,
+                method: "GET",
+                dataType: "jsonp"
+            });
+            isServerDown();
+        }
+        function receiveProg(sv_data){
+            // console.log("epTime is " + sv_data["c_epT"])
+            // console.log("epVal is " + sv_data["c_epVal"])
+            // console.log("progpos is " + sv_data["c_progpos"])
+            // console.log("linkAtch is " + sv_data["c_linkAtch"])
+    
+            updateCookie("c_progpos", sv_data["c_progpos"]);
+            updateCookie("c_epT", sv_data["c_epT"]);
+            updateCookie("c_epVal", sv_data["c_epVal"]);
+            
+            setTimeout(()=>{
+                updateCookie("c_linkAtch", sv_data["c_linkAtch"]);
+                newModal("Done","","Signal Received",3000)
+            },4500);
+    
+            console.log("TO DO: Do something if you retrieve the c_linkAtch; Change signal color")
+        }
+        console.log("TO DO: Cookies chkpoint?")
+        function verifyProg(){ 
+            var url = script_url+"?username=" + getCookie("c_user") + "&progpos=" + getCookie("c_progpos") + "&sessionID=" + getCookie("c_sessionid") + "&rank=" + getCookie("c_rank") +"&action=verify_prog";
+            var request = jQuery.ajax({
+                crossDomain: true,
+                url: url ,
+                method: "GET",
+                dataType: "jsonp"
+            });
+            isServerDown();
+        }
+        function progState(sv_resp){
+            if(sv_resp["state"] == "verified"){
+                //Show settings
+                document.getElementsByClassName("topright_gear")[0].classList.add("vivify");
+                document.getElementsByClassName("topright_gear")[0].classList.add("fadeIn");
+                document.getElementsByClassName("topright_gear")[0].style.display = "block";
+                newModal("Done","","Session valid")
+            } else if(sv_resp["state"] == "invalid") {
+                newModal("Error","redirecting you shortly...","Invalid Session",3000)
+                setTimeout(()=>LogOut(),3000)
+            } else {    
+                console.log(" No progState for " + sv_resp["state"])
+            }
+        }
+    
+        /*
+        Chapter1 Episode1 = 1.1
+        
+        0	0	0	0	0	0	0
+        >5	>5	>5	>5	>5	>5	>5
+    
+        To consider:
+        Chapter
+        Episode
+        c_vidT ??? time in the video			//required but ask user if they want to continue back at that checkpoint
+        c_atmpt ??? atmpt at an episode 		//required and add it infront of episode
+        r_prev_ans?? record previous answers 	//too much data consumed and probably useless?
+    
+    
+        //Receive the link for the proper page
+        //window.location.assign(window.location.origin + "/index.html"); 
+        */
+    
+        function testDdos(){
+            var url = script_url+"?&action=testDdos";
+            var request = jQuery.ajax({
+                crossDomain: true,
+                url: url ,
+                method: "GET",
+                dataType: "jsonp"
+            });
+        }
+    
+        //Anti Skip
+        async function AntiSkip(){
+            requestMoonPhase();
+            if(!getCookie("c_user") != true && !getCookie("c_sessionid") != true && 
+            !getCookie("c_rank") != true){
+                
+                if( !getCookie("c_progpos") == true){
+                    disableFormBtns(true);
+                    ques1 = newModal("Warning","Continue as " + getCookie("c_user") + "?","Account detected")
+                    ans1 = await booleanResp(ques1);
+        
+                    if(ans1 != false){
+                        sv_resp = {state : "alreadyIn"}
+                        userState(sv_resp);
+                        requestProg();
+                    } else {
+                        LogOut();
+                    }
+                } else {
+                    verifyProg();
+                }   
+            }
+        }
+        setTimeout(()=>AntiSkip(),1000)
+    
+        //User progress commands
+        function requestProgress324(){ //request row of Progress Attempt#
+            // get propos from cookies?
+            c_user = getCookie("c_user");
+            c_progpos = String(getCookie("c_progpos")).charAt(0);
+            
+            var url = script_url+"?username=" + c_user + "&progpos=" + c_progpos + "&action=retrieve_prog";
+            var request = jQuery.ajax({
+                crossDomain: true,
+                url: url ,
+                method: "GET",
+                dataType: "jsonp"
+            });	
+            isServerDown();
+        }
+        function recieveProgress1324(progress){ //returns row of Progress Attempt#
+            c_prog = progress["row"][0];
+            //console.log(progress["row"]);
+            console.log(progress["row"][0]);
+            
+            var prog_string;
+            
+            for (i in c_prog){
+                if (i == 0){
+                    prog_string = c_prog[i] + "||"
+                } else {
+                    prog_string = prog_string + c_prog[i] + "||"
+                }
+            }
+            
+            updateCookie("c_prog",prog_string)/// name||103242||1234||1231	
+        }
+        function updateProgress(){ //update only by Chapter
+            
+            //how to wait for the variable
+            
+            c_user = getCookie("c_user");
+            
+            //only send the chapter position and chapter value
+            c_progpos = String(getCookie("c_progpos")).charAt(0);
+            c_progpos2 = String(getCookie("c_progpos")).slice(-1); 
+            n_prog = getCookie("c_prog").split("||").pop();
+            
+            var url = script_url+"?username=" + c_user + "&progpos=" + c_progpos + "&progpos2=" + c_progpos2 + "&prog=" + n_prog[c_progpos2] + "&action=update_prog";
+            var request = jQuery.ajax({
+                crossDomain: true,
+                url: url ,
+                method: "GET",
+                dataType: "jsonp"
+            });	
+            isServerDown();
+        }
+        function verifyProgress(data){ //fired only by antiSkip
+            var user_clear = true;
+            if(!data == true){
+                console.log("Retrieving database info");
+                c_user = getCookie("c_user");
+                c_progpos = getCookie("c_progpos");
+                var url = script_url+"?username=" + c_user + "&progpos=" + c_progpos + "&action=verify_prog";
+                var request = jQuery.ajax({
+                    crossDomain: true,
+                    url: url ,
+                    method: "GET",
+                    dataType: "jsonp"
+                });	
+                isServerDown();
+            } else {
+                v_prog1 = getCookie("c_prog").split("||").pop();
+                v_prog2 = data["row"][0];
+                
+                for (i in v_prog1){
+                    if (v_prog1[i] != v_prog2[i]){
+                        user_clear = false;
+                        break;
+                    }
+                }
+                
+                if (user_clear == true){
+                    console.log("Progress were the same")
+                } else {
+                    console.log("Progress weren't the same")
+                }
+    
+            }
+        }
+        function verifyProgressPos(data){	
+            if (!data == true){
+                console.log("Retrieving database info");
+                c_user = getCookie("c_user");
+                var url = script_url+"?username=" + c_user + "&action=verify_progpos";
+                var request = jQuery.ajax({
+                    crossDomain: true,
+                    url: url ,
+                    method: "GET",
+                    dataType: "jsonp"
+                });
+                isServerDown();
+            } else {
+                console.log(data);
+                v_prog1 = getCookie("c_progpos");
+                v_prog2 = data["progpos"]
+                
+                if (v_prog1 == v_prog2){
+                    v_stat = true;
+                    console.log("Progpos were the same")
+                } else {
+                    v_stat = false;
+                    console.log("Progpos weren't the same")
+                }
+            }
+        }
+    
+        //Cookie commands
+        function grabCookies(){ //do not call
+            //retrieved from https://gist.github.com/codebubb/ab5cfaf8b70d198e55a5642e9a63ab37
+            //cookies = document.cookie.split(';').map(cookie => cookie.split('=')).reduce((accumulator, [key, value]) => ({ ...accumulator, [key.trim()]: decodeURIComponent(value) }), {});
+            alert("yessssssss")
+    
+        }	
+        function getCookie(name){ 
+            //console.log(cookies);
+            cookies = document.cookie.split(';').map(cookie => cookie.split('=')).reduce((accumulator, [key, value]) => ({ ...accumulator, [key.trim()]: decodeURIComponent(value) }), {});
+            
+            if(cookies[name]){
+                return cookies[name];
+            } else {
+                console.log("cookies[" + name + "] returned null");
+            }
+        }	
+        function updateCookie(name, value, dur){
+            if(dur){
+                if (dur >= 14){
+                    dur = 14;
+                }
+            } else {
+                dur = 14;
+            }
+            
+            var d = new Date();
+            var d = new Date(d.getTime() + 1000 * 60 * 60 * 24 * dur); //7days = 1week
+            document.cookie =  name + "=" + value + "; expires=" + d.toGMTString() + ";";
+        }
+    
+        //Progress detection
+        function Retrieve_prog2() { //retrieve_prog
+            console.log("Retrieving Progress...");
+            if (!c_user == false){
+                var username =	c_user;
+                var progress_pos = c_progressPos;
+                var url = script_url+"?callback=ctrlq&username=" + username + "&progress_pos=" + progress_pos + "&action=retrieve_prog";
+                var request = jQuery.ajax({
+                crossDomain: true,
+                url: url ,
+                method: "GET",
+                dataType: "jsonp"
+                });
+                isServerDown();
+            } else {
+                alert("Failed to retrieve user data! No User is currently logged in!");
+            }
+        }
+        function userProgress(progress){ //collects user's current progress
+            console.log("user progress received");
+            user_Progress = progress["progress"][0];
+            getUserLoc(user_Progress);
+        }
+        function getUserLoc(progress){
+            console.log("getUserLoc FIRED!");
+            for (i in progress){
+                if (String(progress[i]).indexOf("0") == true){
+                    console.log("Location detected");
+                    nLoc = parseFloat(String(progress[i]).lastIndexOf("0"));
+                    if (nLoc == String(progress[i]).length){
+                        jumptoLoc(c_progressPos, i , 0); // returns (1stAttempt,Chapter1,1)
+                        break;
+                    } else {
+                        nLoc = (String(progress[i]).length) - (nLoc + 1);
+                        jumptoLoc(c_progressPos, i , nLoc);
+                        break;
+                    }
+                }
+            }
+        }
+        function jumptoLoc(progressPos, chapter, Loc){
+            console.log("JumpToLoc FIRED!");
+            console.log(progressPos + ", " + chapter + ", " + Loc);
+            console.log("TO DO: Add function to jump to a certain location");
+            console.log("REMEMBER: Every 5secs collect what time the player is in the video");
+        }
+    
+        /*
+    
+        function antiSkip(c_user, c_progpos, c_prog, c_time){
+            console.log("antiSkip FIRED");
+            
+            if (!c_user){ //check if user is logged in
+                console.log("No user logged in");
+            } else if (c_progpos != p_progpos){ //check if in the right progress pos
+                console.log("Incorrect progress position!");
+                console.log("TO DO redirect to right prog_pos");
+                //Redirect(c_prog) which gets the user's progress & prog_pos from the database and use it to redirect the player
+            } else if (c_prog != d_progpos){ // check if database progress match with cookie progress
+                //Redirect(c_prog) which gets the user's progress from the database and use it to redirect the player
+            } else if (c_time){
+                console.log("Teleport player to correct time");
+                //BEWARE of in-game scores, some scores maybe skipped due to time skipping
+                //Redirect(c_time, c_score) which gets the user's progress from the database and use it to redirect the player
+            }
+            
+            
+            
+            if (!c_progressPos == true || !user_progress == true){
+                alert("Pls LogIn || redirect || cookies for c_progressPos and user_Progress missing!");
+            }
+        }	
+    
+    
+        // to add cookies do document.cookie = "name=dog"
+        function checkCookie(){
+            var c_user = getCookie("c_user");
+            var c_progpos = getCookie("c_progressPos");
+            var c_prog = getCookie("user_progress");
+            var c_time = getCookie("current_time");
+            var c_score = getCookie("current_score"); //store game scores
+            antiSkip(c_user, c_progpos, c_prog, c_time);
+        }
+        function getCookie(required_data){
+            //retrieved from https://gist.github.com/codebubb/ab5cfaf8b70d198e55a5642e9a63ab37
+            var cookies = document.cookie.split(';').map(cookie => cookie.split('=')).reduce((accumulator, [key, value]) => ({ ...accumulator, [key.trim()]: decodeURIComponent(value) }), {});
+            if(cookies(required_data)){
+                return cookies(required_data);
+            } else {
+                return null;
+            }
+        }
+    
+        */
+    
+        //TO DO
+        function collectStat(data){
+            console.log("TO DO ADD DATA REPRESENTATION");
+            console.log("There are " + data["msg"] + " currently registered");
+        }
+        function testme(animal){
+            return new Promise((resolve, reject) =>{
+                //console.log("I received a " + animal)
+                if (animal == "dog"){//value returned
+                    resolve("you get dog food");
+                } else if (animal == "pig"){
+                    resolve(animal + " is not a dog")
+                } else {
+                    reject(animal + " wtf")
+                }
+                
+            }).then(
+            result=>console.log(result + " DONE!"),
+            error=>console.log(error + " done!")
+            )
+        }		
+        function promiseMe(n){
+            //n = 10;
+            var promise = Promise.resolve(n*10);
+            promise.then(a=>undefined);//a is n*10, this resolves to undefined
+            promise.then(b=>console.log(b));
+            promise.catch(error=>"yeeet");
+        }
+        function promiseMe2(animal){
+            //n = 10;
+            var dog = new Promise((resolve, reject) => {
+                //console.log("I received a " + animal)
+                if (animal == "dog"){//value returned
+                    resolve("you get dog food");
+                } else {//no value returned
+                    reject(animal + " is not a dog")
+                }
+            })
+            
+            dog.then(a=>undefined)
+            dog.then(b=>console.log(b))
+            dog.catch(error=>"yeeet");
+        }
+        async function dog(){
+            var aaa = await testme("dog")
+            console.log(aaa)
+        }
+    
+        async function samplePrompt(){
+            name = prompt("name pls?","");
+            return name;
+        }
+    
+        //Google App Script Debug commands
+        function copyme(trgt){
+            if (!trgt == false){
+                console.log(trgt["data"]);
+            }
+        }
+        function consoleme(trgt){ // remember to use obj["msg"]
+            if (!trgt == false){
+                console.log(trgt["msg"]);
+            }
+        }
+        function alertme(trgt){ // remember to use obj["msg"]
+            if (!trgt == false && typeof(trgt) == "object"){
+                alert(trgt["msg"]);
+            }
+        }
+        var datame;
+        function checkme(data){
+            datame = data;
+            //console.log(data["data"]);
+        }
+    
+    
+        //SAMPLE AWAIT USE
+        function sec5(){	
+            zzzzzzz = 0;
+            for (i in bad_filter){
+                zzzzzzz++;
+                if (zzzzzzz/7) {
+                    zzzzzzz = zzzzzzz + 7;
+                }
+            }
+            return zzzzzzz
+        }
+    
+    </script> 
+    <script defer>  //astronomy
+        //geolocation from https://stackoverflow.com/questions/391979/how-to-get-clients-ip-address-usin g-javascript
+        function requestAstronomy(request){ //called by register
+            if(getCookie("c_loc")){
+                status = true;
+                console.log("geolocation already exists!")
+            } else if (!request){
+                status = false;
+                var url = script_url+"?action=request_astronomy";
+                var request = jQuery.ajax({
+                    crossDomain: true,
+                    url: url ,
+                    method: "GET",
+                    dataType: "jsonp"
+                });
+                isServerDown();
+                console.log("retrieiving geolocation...");
+            } else {
+                status = false;
+                isServerDown();
+                $.getJSON('https://api.ipgeolocation.io/astronomy?apiKey=' + request["key"], function(data) {
+                    user_ip = data
+                    //console.log(data);
+                    updateCookie("c_loc",data["location"]["country_code2"]);
+                    updateCookie("c_flag","https://ipgeolocation.io/static/flags/" + data["location"]["country_code2"].toLowerCase() + "_64.png");
+                    updateCookie("c_sunrise",data["sunrise"].replace(":","::"));
+                    updateCookie("c_sunset",data["sunset"].replace(":","::"));
+                    updateCookie("c_solar_noon",data["solar_noon"].replace(":","::"));
+                    updateCookie("c_moonrise",data["moonrise"].replace(":","::"));
+                    updateCookie("c_moonset",data["moonset"].replace(":","::"));
+                    clearTimeout(sv_stat)
+                });
+                console.log("geolocation retrieved");
+            }
+            return status;
+        }	
+    
+        //moon phase from https://gist.github.com/endel/dfe6bb2fbe679781948c	
+        function requestMoonPhase(){ 
+    
+            var c = e = jd = b = 0;
+            var today = new Date();
+            var year = today.getFullYear();
+            var month = today.getMonth();
+            var day = today.getDate();
+            if (month < 3) {
+                year--;
+                month += 12;
+            }
+    
+            ++month;
+    
+            c = 365.25 * year;
+    
+            e = 30.6 * month;
+    
+            jd = c + e + day - 694039.09; //jd is total days elapsed
+    
+            jd /= 29.5305882; //divide by the moon cycle
+    
+            b = parseInt(jd); //int(jd) -> b, take integer part of jd
+    
+            jd -= b; //subtract integer part to leave fractional part of original jd
+    
+            b = Math.round(jd * 8); //scale fraction from 0-8 and round
+    
+            if (b >= 8 ) {
+            b = 0; //0 and 8 are the same so turn 8 into 0
+    
+            }
+            
+             // 0 => New Moon
+            // 1 => Waxing Crescent Moon
+            // 2 => Quarter Moon
+            // 3 => Waxing Gibbous Moon
+            // 4 => Full Moon
+            // 5 => Waning Gibbous Moon
+            // 6 => Last Quarter Moon
+            // 7 => Waning Crescent Moon
+    
+            var phases = ["New Moon", "Waxing Crescent Moon","Quarter Moon","Waxing Gibbous Moon","Full Moon","Waning Gibbous Moon","Last Quarter Moon","Waning Crescent Moon"];
+            updateCookie("c_phase", phases[b],1);
+            // moonCoordX = innerWidth/2;
+            // moonCoordY = innerHeight * 8;
+            // moonArray.push(new crt_moon(moonCoordX, moonCoordY, phases[b]));
+            // console.log("TO DO: replace background with a " + phases[b]);
+            
+        }
+    </script>
+    <script defer>	//Modal creator
+
+            var modalcount = 0;
+            var modalDfltdur = 10000;
+            var modalQueueTitle = ["Please wait...", "Almost there!", "Hang on...", "In Queue..."]
+            var modalDoneTitle = ["Finish!", "Success!", "Done!"];
+            var modalErrorTitle = ["Oops!", "Sorry...", "Error!"];
+            var modalWarningTitle = ["Wait a minute...", "Ummm...", "Hold up...", "Warning!"];
+        
+            function newModal(type,msg,title,dur,Yval,Nval){ // must have Done, Queued, Error, Warning,
+                modalcount++;
+        
+                if (!dur == false && typeof(dur) == "number"){//has value
+                    modaldur = dur;
+                } else {
+                    modaldur = modalDfltdur
+                }
+        
+                //Svg important attribute
+                var xmlns = "http://www.w3.org/2000/svg";
+        
+                //Spawn Areas
+                var top_modals = document.getElementsByClassName("top_modals")[0];
+                var botright_modals = document.getElementsByClassName("botright_modals")[0];
+                
+                //Grid Cont
+                var newModalgrid = document.createElement("div");
+        
+                //Icon Cont
+                var modalIconCont = document.createElement("div");
+                var modalIcon = document.createElement("img");
+        
+                //Text Cont
+                var modalTextCont = document.createElement("div");
+                var modalTextHeader = document.createElement("span");
+                var modalTextContent = document.createElement("p");
+        
+                //Exit Cont
+                var modalExitCont = document.createElement("div");
+                var modalExit = document.createElement("span");
+        
+                if (type == "Queue"){ //round time
+                    newModalgrid.setAttribute("class","Queue vivify fadeInRight");
+        
+                    modalIcon.src = "../imgs/Queue.svg"
+                    modalIconCont.appendChild(modalIcon);
+        
+                    if(!title == false){ //has value
+                        modalTextHeader.innerText = title;
+                    } else {
+                        index = Math.floor(Math.random()*modalQueueTitle.length);
+                        modalTextHeader.innerText = modalQueueTitle[index];
+                        // console.log(index);
+                    }
+        
+                    modalTextContent.innerHTML = msg;
+                    modalTextCont.appendChild(modalTextHeader);
+                    modalTextCont.appendChild(modalTextContent);
+                    
+                    modalExitCont.onpointerup = function(event){
+                        selfDel_modal(event, "fadeOutRight");
+                    };
+                    modalExit.setAttribute("class","close" + modalcount);
+                    modalExit.innerHTML = "&times;";
+        
+                    setTimeout(function(c_num){
+                        // console.log(c_num);
+                        trgt = document.getElementsByClassName("close" + c_num)[0];
+                        if(trgt != null){
+                            // console.log(trgt);
+                            newclassname = trgt.parentElement.parentElement.classList[0] + " " + trgt.parentElement.parentElement.classList[1] + " " + "fadeOut";
+                            trgt.parentElement.parentElement.onanimationend = function(){trgt.parentElement.parentElement.remove();}
+                            trgt.parentElement.parentElement.setAttribute("class", newclassname);
+                        }	
+                    },modaldur,modalcount);
+                    modalExitCont.appendChild(modalExit);
+        
+                    newModalgrid.appendChild(modalIconCont);
+        
+                    newModalgrid.appendChild(modalTextCont);
+                    newModalgrid.appendChild(modalExitCont);
+        
+                    botright_modals.appendChild(newModalgrid);
+                } else if (type == "Done"){ // box check
+                    newModalgrid.setAttribute("class","Done vivify fadeInRight");
+        
+                    modalIcon.src = "../imgs/Success.svg"
+                    modalIconCont.appendChild(modalIcon);
+                    
+                    if(!title == false){ //has value
+                        modalTextHeader.innerText = title;
+                    } else {
+                        index = Math.floor(Math.random()*modalDoneTitle.length);
+                        modalTextHeader.innerText = modalDoneTitle[index];
+                        // console.log(index);
+                    }
+        
+                    modalTextContent.innerHTML = msg;
+                    modalTextCont.appendChild(modalTextHeader);
+                    modalTextCont.appendChild(modalTextContent);
+        
+                    modalExitCont.onpointerup = function(event){
+                        selfDel_modal(event, "fadeOutRight");
+                    };
+                    modalExit.setAttribute("class","close" + modalcount);
+                    modalExit.innerHTML = "&times;";
+        
+                    setTimeout(function(c_num){
+                        // console.log(c_num);
+                        trgt = document.getElementsByClassName("close" + c_num)[0];
+                        if(trgt != null){
+                            // console.log(trgt);
+                            newclassname = trgt.parentElement.parentElement.classList[0] + " " + trgt.parentElement.parentElement.classList[1] + " " + "fadeOut";
+                            trgt.parentElement.parentElement.onanimationend = function(){trgt.parentElement.parentElement.remove();}
+                            trgt.parentElement.parentElement.setAttribute("class", newclassname);
+                        }
+                    },modaldur,modalcount);
+                    modalExitCont.appendChild(modalExit);
+        
+                    modalExitCont.appendChild(modalExit);
+        
+                    newModalgrid.appendChild(modalIconCont);
+        
+                    newModalgrid.appendChild(modalTextCont);
+                    newModalgrid.appendChild(modalExitCont);
+        
+                    botright_modals.appendChild(newModalgrid);
+        
+                } else if (type == "Error"){ // box X
+                    newModalgrid.setAttribute("class","Error vivify fadeInRight");
+        
+                    modalIcon.src = "../imgs/Error.svg"
+                    
+                    modalIconCont.appendChild(modalIcon);
+                    
+                    if(!title == false){ //has value
+                        modalTextHeader.innerText = title;
+                    } else {
+                        index = Math.floor(Math.random()*modalErrorTitle.length);
+                        modalTextHeader.innerText = modalErrorTitle[index];
+                        // console.log(index);
+                    }
+        
+                    modalTextContent.innerHTML = msg;
+                    modalTextCont.appendChild(modalTextHeader);
+                    modalTextCont.appendChild(modalTextContent);
+                    
+                    modalExitCont.onpointerup = function(event){
+                        selfDel_modal(event, "fadeOutRight");
+                    };
+                    modalExit.setAttribute("class","close" + modalcount);
+                    modalExit.innerHTML = "&times;";
+        
+                    setTimeout(function(c_num){
+                        // console.log(c_num);
+                        trgt = document.getElementsByClassName("close" + c_num)[0];
+                        if(trgt != null){
+                            // console.log(trgt);
+                            newclassname = trgt.parentElement.parentElement.classList[0] + " " + trgt.parentElement.parentElement.classList[1] + " " + "fadeOut";
+                            trgt.parentElement.parentElement.onanimationend = function(){trgt.parentElement.parentElement.remove();}
+                            trgt.parentElement.parentElement.setAttribute("class", newclassname);
+                        }	
+                    },modaldur,modalcount);
+                    modalExit.innerHTML = "&times;";
+                    modalExitCont.appendChild(modalExit);
+        
+                    newModalgrid.appendChild(modalIconCont);
+        
+                    newModalgrid.appendChild(modalTextCont);
+                    newModalgrid.appendChild(modalExitCont);
+        
+                    botright_modals.appendChild(newModalgrid);
+        
+                } else if (type == "Warning"){// triangle exclamation
+                    newModalgrid.setAttribute("class","Warning vivify fadeIn");
+        
+                    modalIconCont.setAttribute("class","icon");
+                    modalIcon.src = "../imgs/Warning.svg"
+                    modalIconCont.appendChild(modalIcon);
+        
+                    modalTextCont.setAttribute("class","content");		
+        
+                    if(!title == false){ //has value
+                        modalTextHeader.innerText = title;
+                    } else {
+                        index = Math.floor(Math.random()*modalWarningTitle.length);
+                        modalTextHeader.innerText = modalWarningTitle[index];
+                    }
+        
+                    modalTextContent.innerHTML = msg;
+        
+                    var modalTrueBtn = document.createElement("span"); //True
+                    if(!Yval == false){
+                        modalTrueBtn.innerText = Yval;
+                    } else {
+                        modalTrueBtn.innerText = "Yes";
+                    }
+                    modalTrueBtn.setAttribute("class", "TrueBtn PromptBtn" + modalcount);
+        
+                    var modalFalseBtn = document.createElement("span"); //False
+                    if(!Nval == false){
+                        modalFalseBtn.innerText = Nval;
+                    } else {
+                        modalFalseBtn.innerText = "No";
+                    }
+                    modalFalseBtn.setAttribute("class", "FalseBtn PromptBtn" + modalcount);
+        
+                    // booleanListener(modalTrueBtn,modalFalseBtn);
+        
+                    modalTextCont.appendChild(modalTextHeader);
+                    modalTextCont.appendChild(modalTextContent);
+        
+                    newModalgrid.appendChild(modalIconCont);
+                    newModalgrid.appendChild(modalTextCont);
+                    newModalgrid.appendChild(modalTrueBtn);
+                    newModalgrid.appendChild(modalFalseBtn);
+        
+                    top_modals.appendChild(newModalgrid);
+                    
+                    return modalcount;
+                    console.log("TO DO: ADD background to disable any other movement and prevent new Warning modal from spawning");
+                } else if (type == "Input"){// triangle exclamation
+                    newModalgrid.setAttribute("class","Warning vivify fadeIn");
+        
+                    modalIconCont.setAttribute("class","icon");
+                    modalIcon.src = "../imgs/Input.svg"
+                    modalIconCont.appendChild(modalIcon);
+        
+                    modalTextCont.setAttribute("class","content");		
+        
+                    if(!title == false){ //has value
+                        modalTextHeader.innerText = title;
+                    } else {
+                        modalTextHeader.innerText = "Title missing on param3";
+                    }
+        
+                    modalTextContent.innerHTML = msg;
+        
+                    var modalTextInput = document.createElement("input");
+                    modalTextInput.setAttribute("class","modalInput" + modalcount);
+                    modalTextInput.setAttribute("type","text");
+                    modalTextInput.setAttribute("autocomplete","off");
+                    modalTextInput.setAttribute("placeholder","Enter here");
+                    modalTextInput.setAttribute("maxlength","10");
+                    // modalTextInput.oninput = removeSpChar(event);
+                    // modalTextInput.addEventListener("input",removeSpChar())
+                    // modalTextInput.addEventListener("keydown",DelEnterBack(event))
+                    // modalTextInput.onkeydown = DelEnterBack(event);
+        
+        
+        
+                    var modalTrueBtn = document.createElement("span"); //True
+                    modalTrueBtn.innerText = "Send";
+                    modalTrueBtn.setAttribute("class", "TrueBtn PromptBtn" + modalcount);
+        
+                    var modalFalseBtn = document.createElement("span"); //False
+                    modalFalseBtn.innerText = "Cancel";
+                    modalFalseBtn.setAttribute("class", "FalseBtn PromptBtn" + modalcount);
+        
+                    // booleanListener(modalTrueBtn,modalFalseBtn);
+        
+                    modalTextCont.appendChild(modalTextHeader);
+                    modalTextCont.appendChild(modalTextContent);
+                    modalTextCont.appendChild(modalTextInput);
+        
+                    newModalgrid.appendChild(modalIconCont);
+                    newModalgrid.appendChild(modalTextCont);
+                    newModalgrid.appendChild(modalTrueBtn);
+                    newModalgrid.appendChild(modalFalseBtn);
+                    // newModalgrid.appendChild(modalInput)
+        
+                    top_modals.appendChild(newModalgrid);
+                    
+                    return modalcount;
+                    console.log("TO DO: ADD background to disable any other movement and prevent new Warning modal from spawning");
+                } else if(type == "Link"){
+                    newModalgrid.setAttribute("class","Warning vivify fadeIn");
+        
+                    modalIconCont.setAttribute("class","icon");
+                    modalIcon.src = "../imgs/Input.svg"
+                    modalIconCont.appendChild(modalIcon);
+        
+                    modalTextCont.setAttribute("class","content content" + modalcount);		
+        
+                    if(!title == false){ //has value
+                        modalTextHeader.innerText = title;
+                    } else {
+                        modalTextHeader.innerText = "Title missing on param3";
+                    }
+        
+                    modalTextContent.innerHTML = msg;
+        
+                    var modalAltBtn = document.createElement("div")
+                    modalAltBtn.setAttribute("class","AltBtn AltBtn" + modalcount)
+        
+        
+                    var modalTrueBtn = document.createElement("span"); //True
+                    modalTrueBtn.innerText = "Done";
+                    modalTrueBtn.setAttribute("class", "TrueBtn PromptBtn" + modalcount);
+        
+                    var modalFalseBtn = document.createElement("span"); //False
+                    modalFalseBtn.innerText = "Cancel";
+                    modalFalseBtn.setAttribute("class", "FalseBtn PromptBtn" + modalcount);
+        
+                    // booleanListener(modalTrueBtn,modalFalseBtn);
+        
+                    modalTextCont.appendChild(modalTextHeader);
+                    modalTextCont.appendChild(modalTextContent);
+                    modalTextCont.appendChild(modalAltBtn);
+        
+                    newModalgrid.appendChild(modalIconCont);
+                    newModalgrid.appendChild(modalTextCont);
+                    newModalgrid.appendChild(modalTrueBtn);
+                    newModalgrid.appendChild(modalFalseBtn);
+                    // newModalgrid.appendChild(modalInput)
+        
+                    top_modals.appendChild(newModalgrid);
+                    
+                    moveSignInBtns("AltBtn" + modalcount)
+        
+                    return modalcount;
+                } else {
+                    alert("Invalid type on parameter1 of newModal()")
+                }
+            }
+            function selfDel_modal(event,animClass){
+                if (!animClass){ //no value
+                    animClass = "fadeOut dur-100"
+                } else {
+                    animClass = animClass + " dur-100";
+                }
+                
+                // console.log(event);
+                // c_resp = event;
+                // console.log(event.srcElement);
+                // console.log(event.srcElement.parentElement);
+                // console.log("Element.className " + event.srcElement.parentElement.className + " was removed!");
+                c_class = event.srcElement.parentElement.classList[0] + " " + event.srcElement.parentElement.classList[1]; 
+                newclassname = c_class + " " + animClass;
+                event.srcElement.parentElement.onanimationend = function(event){event.target.remove()};
+                event.srcElement.parentElement.setAttribute("class", newclassname);
+            }
+            function booleanResp(modalcount,link) { //from https://stackoverflow.com/a/63718685
+                return new Promise(function (resolve, reject) {
+                    var trueBtn = document.getElementsByClassName("PromptBtn" + modalcount)[0]
+                    var falseBtn = document.getElementsByClassName("PromptBtn" + modalcount)[1]
+        
+                    if (link == true){
+                        var trueBtnFunc = event => { //True Boolean func
+                            trueBtn.removeEventListener("pointerup", trueBtnFunc);
+                            falseBtn.removeEventListener("pointerup", falseBtnFunc);
+                            // c_resp = true;
+                            console.log(true)
+                            // c_resp = event; //for debugging
+                            selfDel_modal(event,"fadeOut dur-100");
+                            moveSignInBtns("AltSignInStorage")
+                            resolve(true);
+                            };
+                        var falseBtnFunc = event => { //False Boolean func
+                            falseBtn.removeEventListener("pointerup", falseBtnFunc);
+                            trueBtn.removeEventListener("pointerup", trueBtnFunc);
+                            // c_resp = false;
+                            console.log(false)
+                            selfDel_modal(event,"fadeOut dur-100");
+                            moveSignInBtns("AltSignInStorage")
+                            resolve(false);
+                        };
+                    } else {
+                        var trueBtnFunc = event => { //True Boolean func
+                            trueBtn.removeEventListener("pointerup", trueBtnFunc);
+                            falseBtn.removeEventListener("pointerup", falseBtnFunc);
+                            // c_resp = true;
+                            console.log(true)
+                            // c_resp = event; //for debugging
+                            selfDel_modal(event,"fadeOut dur-100");
+                            resolve(true);
+                            };
+                        var falseBtnFunc = event => { //False Boolean func
+                            falseBtn.removeEventListener("pointerup", falseBtnFunc);
+                            trueBtn.removeEventListener("pointerup", trueBtnFunc);
+                            // c_resp = false;
+                            console.log(false)
+                            selfDel_modal(event,"fadeOut dur-100");
+                            resolve(false);
+                        };
+                    }
+                    
+                    
+                    
+                    //Adds event listener
+                    trueBtn.addEventListener("pointerup", trueBtnFunc);
+                    falseBtn.addEventListener("pointerup", falseBtnFunc);
+                });
+            }
+            function inputResp(modalcount) { //from https://stackoverflow.com/a/63718685
+                return new Promise(function (resolve, reject) {
+                    var modalInput = document.getElementsByClassName("modalInput" + modalcount)[0]
+                    var trueBtn = document.getElementsByClassName("PromptBtn" + modalcount)[0]
+                    var falseBtn = document.getElementsByClassName("PromptBtn" + modalcount)[1]
+                    
+                    var modalInputFunc = event => {
+                        if (event.keyCode == 13){
+                            //custom selfDel_modal
+                            c_class = event.srcElement.parentElement.parentElement.classList[0] + " " + event.srcElement.parentElement.parentElement.classList[1]; 
+                            newclassname = c_class + " fadeOut";
+                            event.srcElement.parentElement.parentElement.onanimationend = function(event){event.target.remove()};
+                            event.srcElement.parentElement.parentElement.setAttribute("class", newclassname);
+                            //
+                            resolve(event.srcElement.parentElement.lastChild.value);
+                        }
+                    }
+                    
+                    var trueBtnFunc = event => { //True Boolean func
+                        trueBtn.removeEventListener("pointerup", trueBtnFunc);
+                        falseBtn.removeEventListener("pointerup", falseBtnFunc);
+                        // c_resp = true;
+                        // user_resp = event.srcElement.parentElement.children[1].lastChild.value
+                        console.log(true);
+                        // console.log(event)
+                        // c_resp = event; //for debugging
+                        selfDel_modal(event,"fadeOut dur-100");
+                        resolve(event.srcElement.parentElement.children[1].lastChild.value);
+                    };
+                    var falseBtnFunc = event => { //False Boolean func
+                        falseBtn.removeEventListener("pointerup", falseBtnFunc);
+                        trueBtn.removeEventListener("pointerup", trueBtnFunc);
+                        // c_resp = false;
+                        console.log(false)
+                        selfDel_modal(event,"fadeOut dur-100");
+                        resolve(false);
+                    };
+                    
+                    //Adds event listener
+                    modalInput.addEventListener("keydown", modalInputFunc)
+                    trueBtn.addEventListener("pointerup", trueBtnFunc);
+                    falseBtn.addEventListener("pointerup", falseBtnFunc);
+                });
+            }
+        
+            async function awaitClicks(){
+        
+                // var trueBtn = document.getElementsByClassName("TrueBtn")[0];
+                // var falseBtn = document.getElementsByClassName("FalseBtn")[0];
+        
+                await waitListener(trueBtn, falseBtn).then(e=>{
+                    console.log("e.clientX: " + e.clientX);
+                });
+        
+                console.log("attmept1");
+                console.log(c_resp);
+            
+            }
+            // awaitClicks();
+            
+    </script>
+    <script> //Settings
+		// var SettingAnim = false;
+		function showSettings(event){
+			datame = event;
+			// console.log(event);
+			c_type = getComputedStyle(event.srcElement.parentElement.children[2]).display
+			if (c_type == "none"){
+				// console.log("none to flex")
+
+				event.srcElement.style.transform = "rotate(180deg)"
+				event.srcElement.parentElement.children[2].style.display = "flex";
+				children = event.srcElement.parentElement.children[2].children.length;
+				// SettingAnim = true;
+				
+				for(i=0;i<children;i++){
+					event.srcElement.parentElement.children[2].children[i].children[0].classList.remove("fadeOutRight");
+					event.srcElement.parentElement.children[2].children[i].children[0].classList.add("fadeInRight");
+					
+					if (i == (children - 1)){
+						event.srcElement.parentElement.children[2].children[i].children[0].onanimationend = function(event){
+							datame = event;
+							event.srcElement.parentElement.parentElement.style.display = "flex";
+							// SettingAnim = false;
+						}
+					}
+				}
+				event.srcElement.parentElement.children[0].style.transform = "translateX(0%)"
+			} else if (c_type == "flex" ) {
+				// console.log("flex to none")
+
+				event.srcElement.style.transform = "rotate(0deg)"
+				children = event.srcElement.parentElement.children[2].children.length;
+				// SettingAnim = true;
+
+				for(i=0;i<children;i++){
+					event.srcElement.parentElement.children[2].children[i].children[0].classList.remove("fadeInRight");
+					event.srcElement.parentElement.children[2].children[i].children[0].classList.add("fadeOutRight");
+					
+					if (i == (children - 1)){
+
+						event.srcElement.parentElement.children[2].children[i].children[0].onanimationend = function(event){
+							datame = event;
+							event.srcElement.parentElement.parentElement.style.display = "none";
+							// SettingAnim = false;
+						}
+					}
+				}
+				event.srcElement.parentElement.children[0].style.transform = "translateX(100%)"
+			}
+		}
+		window.addEventListener('click', function(e){   
+			if (document.getElementsByClassName('topright_gear')[0].children[2].contains(e.target)){
+				// console.log("inside but ul")
+			} else if (document.getElementsByClassName('topright_gear')[0].children[1].contains(e.target)){
+				// console.log("inside but gear")
+			} else {
+				// console.log("outside")
+				if ((document.getElementsByClassName('topright_gear')[0].children[2].style.display == "flex") ){
+					console.log("hide elem")
+
+					settings = document.getElementsByClassName("topright_gear")[0]
+					children = settings.children[2].children.length;
+					settings.children[1].style.transform = "rotate(0deg)"
+					// SettingAnim = true;
+
+					for(i=0;i<children;i++){
+						settings.children[2].children[i].children[0].classList.remove("fadeInRight");
+						settings.children[2].children[i].children[0].classList.add("fadeOutRight");
+						
+						if (i == (children - 1)){
+							settings.children[2].children[i].children[0].onanimationend = function(event){
+								event.srcElement.parentElement.parentElement.style.display = "none";
+								// SettingAnim = false;
+							}
+						}
+					}
+					settings.children[0].style.transform = "translateX(100%)"
+
+				}
+			}
+		});
+		function hideSettings(){
+			if (document.getElementsByClassName('topright_gear')[0].children[2].style.display == "flex"){
+				console.log("hide elem")
+
+				settings = document.getElementsByClassName("topright_gear")[0]
+				children = settings.children[2].children.length;
+				settings.children[1].style.transform = "rotate(0deg)"
+				// SettingAnim = true;
+
+				for(i=0;i<children;i++){
+					settings.children[2].children[i].children[0].classList.remove("fadeInRight");
+					settings.children[2].children[i].children[0].classList.add("fadeOutRight");
+					
+					if (i == (children - 1)){
+						settings.children[2].children[i].children[0].onanimationend = function(event){
+							event.srcElement.parentElement.parentElement.style.display = "none";
+							// SettingAnim = false;
+						}
+					}
+				}
+				settings.children[0].style.transform = "translateX(100%)"
+
+			}
+		}
+	</script>
+    <script defer> //Google SignIn
+		var g_id;
+		var g_name;
+		function gmailSignIn(googleUser) {
+			var profile = googleUser.getBasicProfile();
+			g_id = profile.getId();
+			g_name = profile.getName();
+			console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
+			console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+			console.log('Name: ' + profile.getName());
+			// console.log('Image URL: ' + profile.getImageUrl());
+			// console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+			// alert("GMAIL USER DETECTED...<verify if exist, else register>")
+			verifyAltSignIn(g_id,g_name);
+		}
+		function gmailError(error) {
+			console.log(error);
+			if (error["error"] == "network_error"){
+				newModal("Error","Please try again later...","Server Down");
+			} else {
+				console.log(error["error"])
+			}
+		}
+		function gmailSignOut() {
+			var auth2 = gapi.auth2.getAuthInstance();
+			auth2.signOut().then(function () {
+			console.log('Google User signed out.');
+			console.log('TO DO: Redirect User back to Login Page');
+			});
+		}
+		function gmailRenderButton() { //call to render button
+			gapi.signin2.render('googleSignIn', {
+				'scope': 'profile email',
+				'longtitle': true,
+				'theme': 'dark',
+				'onsuccess': gmailSignIn,
+				'onfailure': gmailError
+			});
+		}
+	</script>
+
+	<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v10.0&appId=241162521113082&autoLogAppEvents=1" nonce="2l8fyVTj"></script>
+	<script defer> //SAMPLE FB SIGNIN
+		var f_id;
+		var f_name;
+		function fbCurrentLogInStatus(response) {  		// Called with the results from FB.getLoginStatus().
+			// console.log('fbCurrentLogInStatus');
+			// console.log(response);                   		// The current login status of the person.
+			if (response.status === 'connected') {  		// Logged into your webpage and Facebook.
+				fbFetchUserData();  
+			} else {                                 		// Not logged into your webpage or we are unable to tell.
+				//console.log("no Facebook user detected!") AAAAAAAAAA
+				// document.getElementById('status').innerHTML = 'Please log into this webpage.';
+			}
+		}
+	
+		function checkLoginState() {               // Called when a person is finished with the Login Button.
+			FB.getLoginStatus(function(response) {   // See the onlogin handler
+				fbCurrentLogInStatus(response);
+			});
+		}
+		
+		function fbLogout(){
+			FB.logout(function(response) {
+				console.log("USER LOGGED OUT!")
+			});
+		}
+	
+		window.fbAsyncInit = function() {
+		FB.init({
+			appId      : '834608830480015', 
+			cookie     : true,                     // Enable cookies to allow the server to access the session.
+			xfbml      : true,                     // Parse social plugins on this webpage.
+			version    : 'v10.0'           			// Use this Graph API version for this call.
+		});
+	
+	
+		FB.getLoginStatus(function(response) {   		// Called after the JS SDK has been initialized.
+			fbCurrentLogInStatus(response);        // Returns the login status.
+			});
+		};
+	
+		function fbFetchUserData() {                      		// Testing Graph API after login.  See fbCurrentLogInStatus() for when this call is made.
+			FB.api('/me', function(response) {
+				// console.log('Successful login for: ' + response.name);
+				f_id = response.id;
+				f_name = response.name;
+				// console.log(JSON.stringify(response));
+				verifyAltSignIn(f_id,f_name);
+			});
+		}
+  
+  	</script>
+    <script>
+        
+    
+    </script>
+
+
+
+
+
+
+
+
 </head>
-<body class="vivify fadeIn">
-    <p>Hello world</p>
+<body class="vivify fadeIn" onload="gmailRenderButton()">
+    <div id="fb-root"></div>
+    <div class="topright_gear">	
+        <div class="gradient_bg"></div>
+        <img onpointerup="showSettings(event)" src="../imgs/Settings.svg" title="Settings">
+        <ul>
+            <li><span class="vivify dur-100" onpointerup="updateName();hideSettings()">Update Username</span></li>
+            <li><span class="vivify delay-100 dur-100" onpointerup="updatePassword();hideSettings()">Update Password</span></li>
+            <li><span class="vivify delay-150 dur-100" onpointerup="updateRecovery();hideSettings()">Update Recovery</span></li>
+            <li><span class="vivify delay-200 dur-100" onpointerup="unlinkAccount();hideSettings()">Unlink Account</span></li>
+            <li><span class="vivify delay-250 dur-100" onpointerup="linkAccount();hideSettings()">Link Account</span></li>
+            <li><span class="vivify delay-300 dur-100" onpointerup="LogOut();hideSettings()">Sign Out</span></li>
+        </ul>
+    </div>
+
+    <div class="top_modals"><!-- insert cookie and yt modal chkpnt here --></div>
+    <div class="botright_modals"></div>
+    <div class="AltSignInStorage">
+        <div id="googleSignIn"></div>
+        <div class="fb-login-button" on-login="checkLoginState()" data-scope="public_profile, email" data-width="" data-size="medium" data-button-type="login_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="false"></div>
+    </div>
+    <p>Cookie checkpoint</p>
 </body>
 </html>

@@ -25,7 +25,6 @@ function doGet(e){
   
   if(lock.hasLock() == true && sheet6.getRange(6,2).getValue() != 500){ //if lock generated && not limit yet
     
-    // console.log("AAAAA")
     SpreadsheetApp.flush();
 
     //update Script execution count
@@ -100,8 +99,8 @@ function doGet(e){
   }  
 }
 
-//Receive action || parameter and pass it to function to handle
-//proceeds to register_user || verify_pass
+// User authentication
+
 function verify_user(request){
  
   var username = request.parameter.username;
@@ -584,15 +583,11 @@ function retrieve_miscdata(){ //unused
 
 }
 
-
-
+//Progress Configuration
 
 function retrieve_prog(request){ //returns episodeVal, episodeTime, episodeLink
  
   var username = request.parameter.username;
-  //var progpos = request.parameter.progpos;
-  //var progchap = request.parameter.progchap;
-  //var progep = request.parameter.progep;
   var sessionid = request.parameter.sessionID;
   var rank = request.parameter.rank;
   var status = sheet.getRange(rank,12).getValue()
@@ -697,6 +692,49 @@ function retrieve_prog(request){ //returns episodeVal, episodeTime, episodeLink
   }   
 }
 
+function verify_prog1111(request){
+  var msg = "AAAAAAAA"
+ 
+  msg = JSON.stringify({
+    "msg": msg
+  });
+
+ return ContentService.createTextOutput("consoleme(" + msg + ");clearTimeout(sv_stat)").setMimeType(ContentService.MimeType.JAVASCRIPT);
+
+}
+
+function verify_prog(request){
+  var username = request.parameter.username;
+  var progpos = request.parameter.progpos;
+  var sessionid = request.parameter.sessionID;
+  var rank = request.parameter.rank;
+  var status = sheet.getRange(rank,12).getValue()
+
+  var trgt = sheet.getRange(rank,11).getValue();
+  var trgt2 = sheet.getRange(rank,3).getValue();
+  var trgt3 = sheet.getRange(rank,6).getValue();
+
+  if(sessionid == trgt && trgt2 == username && trgt3 == progpos && status == "online"){
+    var prog_state = "verified"
+ 
+    prog_state = JSON.stringify({
+      "state": prog_state
+    });
+  
+     return ContentService.createTextOutput("progState(" + prog_state + ");clearTimeout(sv_stat)").setMimeType(ContentService.MimeType.JAVASCRIPT); 
+  } else { 
+
+    var prog_state = "invalid"
+ 
+    prog_state = JSON.stringify({
+      "state": prog_state
+    });
+
+   return ContentService.createTextOutput("progState(" + prog_state + ");clearTimeout(sv_stat)").setMimeType(ContentService.MimeType.JAVASCRIPT);
+ }   
+}
+
+
 function testme(){
   var trgt3 = sheet.getRange(2,6).getValue();
   var progpos = String(trgt3).split(".")
@@ -705,355 +743,6 @@ function testme(){
   var progep = progpos[1];
   console.log(progep)
   
-}
-
-function retrieve_prog123123(request){
- 
-  var username = request.parameter.username;
-  var progpos = request.parameter.progpos;
-  var progchap = request.parameter.progchap;
-  var progep = request.parameter.progep;
-  var sessionid = request.parameter.sessionID;
-  var rank = request.parameter.rank;
-
-  var trgt = sheet.getRange(rank,11).getValue();
-  var trgt2 = sheet.getRange(rank, 3).getValue();
-  var trgt3 = sheet.getRange(rank,6).getValue();
-  if( sessionid == trgt && trgt2 == username && trgt3 == progpos){
-    if(progchap == "1"){
-      c_ep = parseFloat(progep) + 3 //locates current episode
-      c_epVal = sheet1.getRange(rank,c_ep).getValue(); // current episode value
-
-      if (c_epVal != 0){ //has recorded data 
-
-        //update Attempt
-        var c_epAtmpt = sheet1.getRange(rank,).getValue(); //currentAttempt
-        var c_epAtmptN = parseFloat(c_epAtmpt) + 1;
-        sheet1.getRange(rank,c_ep).setValue(c_epAtmptN) //adds 1 to Attempt
-        var c_epT = sheet1.getRange(rank,2).getValue();
-
-        var msg = c_epVal + "but on its " + c_epAtmptN + " attmept! Plus time at " + c_epT;
-
-        msg = JSON.stringify({
-          "msg": msg
-        });
-
-        return ContentService.createTextOutput("consoleme(" + msg + ");clearTimeout(sv_stat)").setMimeType(ContentService.MimeType.JAVASCRIPT);
-
-      } else { // no recorded data yet
-        
-        sheet1.getRange(rank,3).setValue(1)// resets Attempt to 1
-        sheet1.getRange(rank,2).setValue(); //resets currentTime to 0
-       
-        var msg = c_epVal + " first attempt!";
-
-        msg = JSON.stringify({
-          "msg": msg
-        });
-
-        return ContentService.createTextOutput("consoleme(" + msg + ");clearTimeout(sv_stat)").setMimeType(ContentService.MimeType.JAVASCRIPT);
-      } 
-    } else if (progchap == "2"){
-      var msg = "Success retrieve2"
-
-      msg = JSON.stringify({
-        "msg": msg
-      });
-
-      return ContentService.createTextOutput("consoleme(" + msg + ");clearTimeout(sv_stat)").setMimeType(ContentService.MimeType.JAVASCRIPT);
-    } else if (progchap == "3"){
-      var msg = "Success retrieve3"
-
-      msg = JSON.stringify({
-        "msg": msg
-      });
-
-      return ContentService.createTextOutput("consoleme(" + msg + ");clearTimeout(sv_stat)").setMimeType(ContentService.MimeType.JAVASCRIPT);
-    } else {
-      var msg = "Success retrieveX"
-
-      msg = JSON.stringify({
-        "msg": msg
-      });
-
-      return ContentService.createTextOutput("consoleme(" + msg + ");clearTimeout(sv_stat)").setMimeType(ContentService.MimeType.JAVASCRIPT);
-    }
-  } else if( sessionid != trgt){ //invalid session
-    var user_state = "invalid_session"
-  
-    user_state = JSON.stringify({
-      "state": user_state
-    });
-
-    return ContentService.createTextOutput("userState(" + user_state + ");clearTimeout(sv_stat)").setMimeType(ContentService.MimeType.JAVASCRIPT);
-  } else if (trgt3 != progpos){ //invalid progpos //redirect to correct progpos
-    var msg = "Progpos didn't match!"
-
-    msg = JSON.stringify({
-      "msg": msg
-    });
-
-    return ContentService.createTextOutput("consoleme(" + msg + ");").setMimeType(ContentService.MimeType.JAVASCRIPT);
-  } else { //missing username
-
-    var user_state = "missing"
-  
-    user_state = JSON.stringify({
-      "state": user_state
-    });
-
-    return ContentService.createTextOutput("userState(" + user_state + ");clearTimeout(sv_stat)").setMimeType(ContentService.MimeType.JAVASCRIPT);
-
-  }   
-}
-
-
-function retrieve_prog1111111111(request){
- 
-  var username = request.parameter.username;
-  var progpos = request.parameter.progpos;
-  var progchap = request.parameter.progchap;
-  var progep = request.parameter.progep;
-  var sessionid = request.parameter.sessionID;
-  var rank = request.parameter.rank;
-
-  var trgt = sheet.getRange(rank,11).getValue();
-  var trgt2 = sheet.getRange(rank, 3).getValue();
-  var trgt3 = sheet.getRange(rank,6).getValue();
-  if( sessionid == trgt && trgt2 == username && trgt3 == progpos){
-
-    var msg = "Success retrieve"
-
-    msg = JSON.stringify({
-      "msg": msg
-    });
-
-    return ContentService.createTextOutput("consoleme(" + msg + ");clearTimeout(sv_stat)").setMimeType(ContentService.MimeType.JAVASCRIPT);
-
-
-
-
-
-  } else if( sessionid != trgt){ //invalid session
-    var user_state = "invalid_session"
-  
-    user_state = JSON.stringify({
-      "state": user_state
-    });
-
-    return ContentService.createTextOutput("userState(" + user_state + ");clearTimeout(sv_stat)").setMimeType(ContentService.MimeType.JAVASCRIPT);
-  } else if (trgt3 != progpos){ //invalid progpos //redirect to correct progpos
-    var msg = "Progpos didn't match!"
-
-    msg = JSON.stringify({
-      "msg": msg
-    });
-
-    return ContentService.createTextOutput("consoleme(" + msg + ");").setMimeType(ContentService.MimeType.JAVASCRIPT);
-  } else { //missing username
-
-    var user_state = "missing"
-  
-    user_state = JSON.stringify({
-      "state": user_state
-    });
-
-    return ContentService.createTextOutput("userState(" + user_state + ");clearTimeout(sv_stat)").setMimeType(ContentService.MimeType.JAVASCRIPT);
-
-  }   
-}
-
-
-function retrieve_prog12312312(request){
- 
-  var username = request.parameter.username;
-  var progpos = request.parameter.progpos;
-  //var progchap = request.parameter.progchap;
-  //var progep = request.parameter.progep;
-  var sessionid = request.parameter.sessionID;
-  var rank = request.parameter.rank;
-
-  var flag = 1;
-  var lr= sheet.getLastRow();
-  for(var i=1;i<=lr;i++){
-    var trgt = sheet.getRange(i,11).getValue();
-    if (trgt == sessionid){
-      flag = 0;
-      var trgt2 = sheet.getRange(i, 3).getValue();
-      var trgt3 = sheet.getRange(i,6).getValue();
-      if( trgt2 == username && trgt3 == progpos){
-
-        var msg = "Success retrieve"
-
-        msg = JSON.stringify({
-          "msg": msg
-        });
-
-        return ContentService.createTextOutput("consoleme(" + msg + ");").setMimeType(ContentService.MimeType.JAVASCRIPT);
-
-
-
-
-
-        
-      } else if (trgt3 != progpos){ //invalid progpos
-        var msg = "Progpos didn't match!"
-
-        msg = JSON.stringify({
-          "msg": msg
-        });
-
-        return ContentService.createTextOutput("consoleme(" + msg + ");").setMimeType(ContentService.MimeType.JAVASCRIPT);
-      } else { //missing username
-
-        var user_state = "missing"
-      
-        user_state = JSON.stringify({
-          "state": user_state
-        });
-
-        return ContentService.createTextOutput("userState(" + user_state + ");").setMimeType(ContentService.MimeType.JAVASCRIPT);
-
-      }
-    }     
-  }
-
-  if(flag == 1){
-      var user_state = "invalid_session"
-      
-      user_state = JSON.stringify({
-        "state": user_state
-      });
-
-      var msg = sessionid
-      
-      msg = JSON.stringify({
-        "msg": msg
-      });
-
-      var msg2 = sheet.getRange(3,11).getValue();
-      
-      msg2 = JSON.stringify({
-        "msg": msg2
-      });
-
-      return ContentService.createTextOutput("consoleme(" + msg2 + ");consoleme(" + msg + ");userState(" + user_state + ");").setMimeType(ContentService.MimeType.JAVASCRIPT);
-    
-    }  
-}
-
-function retrieve_progsdfasfdv(request){ //unused
- 
-  var username = request.parameter.username;
-  var progpos = request.parameter.progpos;
-  var sessionid = request.parameter.progpos;
-
-  
-  if (progpos == 1){
-    var flag = 1;
-    var lc= sheet1.getLastColumn();
-    var lr= sheet1.getLastRow();
-    for(var i=1;i<=lr;i++){
-      var trgt = sheet1.getRange(i, 1).getValue();
-      if(username == trgt){
-        flag = 0
-        var trgtrow = sheet1.getRange(i, 1, 1, lc).getValues();
-
-        trgtrow = JSON.stringify({
-        "row": trgtrow
-        });
-
-        return ContentService.createTextOutput("recieveProgress(" + trgtrow + ");").setMimeType(ContentService.MimeType.JAVASCRIPT);
-      }
-    }
-    if(flag == 1){
-      var msg = "Progress for " + username + ", in progpos " + progpos + " is missing!";
-
-      msg = JSON.stringify({
-      "msg": msg
-      });
-
-      return ContentService.createTextOutput("alertme(" + msg + ");").setMimeType(ContentService.MimeType.JAVASCRIPT);
-    }
-  } else if (progpos == 2){
-    var flag = 1;
-    var lc= sheet2.getLastColumn();
-    var lr= sheet2.getLastRow();
-    for(var i=1;i<=lr;i++){
-      var trgt = sheet2.getRange(i, 1).getValue();
-      if(username == trgt){
-        flag = 0
-        var trgtrow = sheet2.getRange(i, 1, 1, lc).getValues();
-
-        trgtrow = JSON.stringify({
-        "row": trgtrow
-        });
-
-        return ContentService.createTextOutput("recieveProgress(" + trgtrow + ");").setMimeType(ContentService.MimeType.JAVASCRIPT);
-      }
-    }
-    if(flag == 1){
-      var msg = "Progress for " + username + ", in progpos " + progpos + " is missing!";
-
-      msg = JSON.stringify({
-      "msg": msg
-      });
-
-      return ContentService.createTextOutput("alertme(" + msg + ");").setMimeType(ContentService.MimeType.JAVASCRIPT);
-    }
-  } else if (progpos == 3){
-    var flag = 1;
-    var lc= sheet3.getLastColumn();
-    var lr= sheet3.getLastRow();
-    for(var i=1;i<=lr;i++){
-      var trgt = sheet3.getRange(i, 1).getValue();
-      if(username == trgt){
-        flag = 0
-        var trgtrow = sheet3.getRange(i, 1, 1, lc).getValues();
-
-        trgtrow = JSON.stringify({
-        "row": trgtrow
-        });
-
-        return ContentService.createTextOutput("recieveProgress(" + trgtrow + ");").setMimeType(ContentService.MimeType.JAVASCRIPT);
-      }
-    }
-    if(flag == 1){
-      var msg = "Progress for " + username + ", in progpos " + progpos + " is missing!";
-
-      msg = JSON.stringify({
-      "msg": msg
-      });
-
-      return ContentService.createTextOutput("alertme(" + msg + ");").setMimeType(ContentService.MimeType.JAVASCRIPT);
-    }
-  } else {
-    var flag = 1;
-    var lc= sheet4.getLastColumn();
-    var lr= sheet4.getLastRow();
-    for(var i=1;i<=lr;i++){
-      var trgt = sheet4.getRange(i, 1).getValue();
-      if(username == trgt){
-        flag = 0
-        var trgtrow = sheet4.getRange(i, 1, 1, lc).getValues();
-
-        trgtrow = JSON.stringify({
-        "row": trgtrow
-        });
-
-        return ContentService.createTextOutput("retrieveProgress(" + trgtrow + ");").setMimeType(ContentService.MimeType.JAVASCRIPT);
-      }
-    }
-    if(flag == 1){
-      var msg = "Progress for " + username + ", in progpos " + progpos + " is missing!";
-
-      msg = JSON.stringify({
-      "msg": msg
-      });
-
-      return ContentService.createTextOutput("alertme(" + msg + ");").setMimeType(ContentService.MimeType.JAVASCRIPT);
-    }
-  }  
 }
 
 
@@ -1207,118 +896,6 @@ function update_prog(request){ //unused
     return ContentService.createTextOutput("alertme(" + msg + ");").setMimeType(ContentService.MimeType.JAVASCRIPT);
   }
 
-}
-
-function verify_prog(request){ //unused
- 
-  var username = request.parameter.username;
-  var progpos = request.parameter.progpos;
-  
-  if (progpos == 1){
-    var flag = 1;
-    var lc= sheet1.getLastColumn();
-    var lr= sheet1.getLastRow();
-    for(var i=1;i<=lr;i++){
-      var trgt = sheet1.getRange(i, 1).getValue();
-      if(username == trgt){
-        flag = 0
-        var trgtrow = sheet1.getRange(i, 1, 1, lc).getValues();
-
-        trgtrow = JSON.stringify({
-        "row": trgtrow
-        });
-
-        return ContentService.createTextOutput("verifyProgress(" + trgtrow + ");").setMimeType(ContentService.MimeType.JAVASCRIPT);
-      }
-    }
-    if(flag == 1){
-      var msg = "Progress for " + username + ", in progpos " + progpos + " is missing!";
-
-      msg = JSON.stringify({
-      "msg": msg
-      });
-
-      return ContentService.createTextOutput("alertme(" + msg + ");").setMimeType(ContentService.MimeType.JAVASCRIPT);
-    }
-  } else if (progpos == 2){
-    var flag = 1;
-    var lc= sheet2.getLastColumn();
-    var lr= sheet2.getLastRow();
-    for(var i=1;i<=lr;i++){
-      var trgt = sheet2.getRange(i, 1).getValue();
-      if(username == trgt){
-        flag = 0
-        var trgtrow = sheet2.getRange(i, 1, 1, lc).getValues();
-
-        trgtrow = JSON.stringify({
-        "row": trgtrow
-        });
-
-        return ContentService.createTextOutput("verifyProgress(" + trgtrow + ");").setMimeType(ContentService.MimeType.JAVASCRIPT);
-      }
-    }
-    if(flag == 1){
-      var msg = "Progress for " + username + ", in progpos " + progpos + " is missing!";
-
-      msg = JSON.stringify({
-      "msg": msg
-      });
-
-      return ContentService.createTextOutput("alertme(" + msg + ");").setMimeType(ContentService.MimeType.JAVASCRIPT);
-    }
-  } else if (progpos == 3){
-    var flag = 1;
-    var lc= sheet3.getLastColumn();
-    var lr= sheet3.getLastRow();
-    for(var i=1;i<=lr;i++){
-      var trgt = sheet3.getRange(i, 1).getValue();
-      if(username == trgt){
-        flag = 0
-        var trgtrow = sheet3.getRange(i, 1, 1, lc).getValues();
-
-        trgtrow = JSON.stringify({
-        "row": trgtrow
-        });
-
-        return ContentService.createTextOutput("verifyProgress(" + trgtrow + ");").setMimeType(ContentService.MimeType.JAVASCRIPT);
-      }
-    }
-    if(flag == 1){
-      var msg = "Progress for " + username + ", in progpos " + progpos + " is missing!";
-
-      msg = JSON.stringify({
-      "msg": msg
-      });
-
-      return ContentService.createTextOutput("alertme(" + msg + ");").setMimeType(ContentService.MimeType.JAVASCRIPT);
-    }
-  } else {
-    var flag = 1;
-    var lc= sheet4.getLastColumn();
-    var lr= sheet4.getLastRow();
-    for(var i=1;i<=lr;i++){
-      var trgt = sheet4.getRange(i, 1).getValue();
-      if(username == trgt){
-        flag = 0
-        var trgtrow = sheet4.getRange(i, 1, 1, lc).getValues();
-
-        trgtrow = JSON.stringify({
-        "row": trgtrow
-        });
-
-        return ContentService.createTextOutput("verifyProgress(" + trgtrow + ");").setMimeType(ContentService.MimeType.JAVASCRIPT);
-      }
-    }
-    if(flag == 1){
-      var msg = "Progress for " + username + ", in progpos " + progpos + " is missing!";
-
-      msg = JSON.stringify({
-      "msg": msg
-      });
-
-      return ContentService.createTextOutput("alertme(" + msg + ");").setMimeType(ContentService.MimeType.JAVASCRIPT);
-    }
-  }  
 }
 
 function verify_progpos(request){ //unused
@@ -1818,8 +1395,6 @@ function countOnline(){
   }
   sheet6.getRange(3,2).setValue(total);
 }
-
-
 
 
 

@@ -20,9 +20,6 @@
 
 
 	<script defer> //Form Login & Register Setup; Heavily edited code from https://gist.github.com/Tito0269/2014c7001c89ed596171baea229d3363
-
-	console.log("TO DO: Cookies chkpoint?")
-
 	var c_user, c_progpos, c_prog, temp_user, c_resp, c_linking, c_linkmodal, c_epT, c_epVal, user_ip, user_resp, cookies , v_prog1, v_prog2, v_stat, fail_atmpt, sv_stat;
 	var user_progress;
 	var r_updateName = false;
@@ -716,8 +713,8 @@
 
 			//Receive cookies
 			updateCookie("c_user", sv_data["c_user"]);
-			updateCookie("c_progpos", sv_data["c_progpos"]);
-			console.log("Progpos is " + sv_data["c_progpos"])
+			//updateCookie("c_progpos", sv_data["c_progpos"]);
+			//console.log("Progpos is " + sv_data["c_progpos"])
 			updateCookie("c_country", sv_data["c_country"]);
 			updateCookie("c_sunrise", sv_data["c_sunrise"].replace("::",":"));
 			updateCookie("c_sunset", sv_data["c_sunset"].replace("::",":"));
@@ -778,23 +775,6 @@
 		});
 		isServerDown();
 	}
-	/*
-	Chapter1 Episode1 = 1.1
-	
-	0	0	0	0	0	0	0
-	>5	>5	>5	>5	>5	>5	>5
-
-	To consider:
-	Chapter
-	Episode
-	c_vidT ??? time in the video			//required but ask user if they want to continue back at that checkpoint
-	c_atmpt ??? atmpt at an episode 		//required and add it infront of episode
-	r_prev_ans?? record previous answers 	//too much data consumed and probably useless?
-
-
-	//Receive the link for the proper page
-	//window.location.assign(window.location.origin + "/index.html"); 
-	*/
 	function receiveProg(sv_data){
 		// console.log("epTime is " + sv_data["c_epT"])
 		// console.log("epVal is " + sv_data["c_epVal"])
@@ -812,6 +792,24 @@
 
 		console.log("TO DO: Do something if you retrieve the c_linkAtch; Change signal color")
 	}
+
+	/*
+	Chapter1 Episode1 = 1.1
+	
+	0	0	0	0	0	0	0
+	>5	>5	>5	>5	>5	>5	>5
+
+	To consider:
+	Chapter
+	Episode
+	c_vidT ??? time in the video			//required but ask user if they want to continue back at that checkpoint
+	c_atmpt ??? atmpt at an episode 		//required and add it infront of episode
+	r_prev_ans?? record previous answers 	//too much data consumed and probably useless?
+
+
+	//Receive the link for the proper page
+	//window.location.assign(window.location.origin + "/index.html"); 
+	*/
 
 	function testDdos(){
 		var url = script_url+"?&action=testDdos";

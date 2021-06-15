@@ -555,6 +555,31 @@
 		
 	}
 	
+	function signature(){	
+	console.log(`%c
+						  010
+	                    01010101
+	            01010101010101010
+	            01010101010101010
+	            01010101010101010     010101010
+	             1010101010101010  1010101010101
+	               10101010101010101010101010101
+	                01010101010101010101010101010
+	     101010101010101010101010101010101010101010
+	   10101010101010101010101010101010101010101010
+	   101010101010101010101010101010101010101010
+	     10101010101010101010101010101
+	      01010101010101010101010101010
+	      0101010101010101010101010101010					Nothing to see here...
+	       101010101  01 10101010101010101
+	                01   10101010101010101
+	              010    10101010101010101
+	            010       01010101   101
+	    	                 101
+							 
+							 `, "font-family:monospace")
+	}
+
 	//User detection
 	function userState(sv_resp,sv_data){
 		// clearTimeout(sv_stat)
@@ -744,8 +769,7 @@
 	//User progress commands
 	updateCookie("c_linkAtch","",-1)
 	function requestProg(){ // needs c_user c_progpos c_sessionID
-		progpos = getCookie("c_progpos").split(".")
-		var url = script_url+"?username=" + getCookie("c_user") + "&progpos=" + getCookie("c_progpos") + "&progchap=" + progpos[0] + "&progep=" + progpos[1] + "&sessionID=" + getCookie("c_sessionid") + "&rank=" + getCookie("c_rank") +"&action=retrieve_prog";
+		var url = script_url+"?username=" + getCookie("c_user") + "&sessionID=" + getCookie("c_sessionid") + "&rank=" + getCookie("c_rank") +"&action=retrieve_prog";
 		var request = jQuery.ajax({
 			crossDomain: true,
 			url: url ,
@@ -812,9 +836,7 @@
 			if(ans1 != false){
 				sv_resp = {state : "alreadyIn"}
 				userState(sv_resp);
-				//requestProg();
-				console.log("TO DO: Anti-skip detected user already logged in")
-				console.log("TO DO: if progpos is correct then do something")
+				requestProg();
 			} else {
 				LogOut();
 			}
@@ -1304,8 +1326,7 @@
 				form_trans = true;
 				setTimeout(function(){form_trans = false}, 1100);
 				
-				
-				console.log("LogInForm detected")
+				//console.log("LogInForm detected")
 
 				//Reveal
 				LogInBtn.classList.remove("hidden")
@@ -1340,7 +1361,7 @@
 
 				//Calculate new form height
 				MainForm_nheight =  parseFloat(getComputedStyle(MainForm).paddingTop.replace("px","")) + parseFloat(getComputedStyle(MainForm).paddingBottom.replace("px","")) + PrimaryInput.getBoundingClientRect().height + ButtonInput.getBoundingClientRect().height + AltSignInPlcHldr.getBoundingClientRect().height + ForgotPassPlcHldr.getBoundingClientRect().height;
-				console.log(MainForm_nheight)
+				//console.log(MainForm_nheight)
 				MainForm.style.height = MainForm_nheight + "px";
 
 				//Transfer styles
@@ -1379,7 +1400,7 @@
 				SecondaryInput.classList.remove("hidden");
 				SecondaryInput.classList.add("fadeIn");
 				SecondaryInput.onanimationend = ()=>{
-					console.log("aaa");
+					asdf = false;
 				}
 				
 				RegisterBtn.classList.remove("hidden")
@@ -1406,7 +1427,7 @@
 
 				//Calculate new form height
 				MainForm_nheight = parseFloat(getComputedStyle(MainForm).paddingTop.replace("px","")) + parseFloat(getComputedStyle(MainForm).paddingBottom.replace("px","")) + PrimaryInput.getBoundingClientRect().height + SecondaryInput.getBoundingClientRect().height + ButtonInput.getBoundingClientRect().height + AltSignInPlcHldr.getBoundingClientRect().height + ForgotPassPlcHldr.getBoundingClientRect().height;
-				console.log(MainForm_nheight)
+				//console.log(MainForm_nheight)
 				MainForm.style.height = MainForm_nheight + "px";
 
 				//Transfer styles
@@ -2285,7 +2306,6 @@
 
 	console.log("TO DO: create more bg music to choose from")
 	console.log("TO DO: Add silent audio for Bg music... maybe in the settings")
-	console.log("TO DO: Remove this if player is already Logged In and trying to continue")
 	
 	document.addEventListener('pointerup', musicPlay);
 	document.addEventListener('keypress', musicPlay);

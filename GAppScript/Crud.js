@@ -1,4 +1,5 @@
-//use clasp clone + scriptID //for first time pull request
+//use clasp clone + scriptID 
+//for first time pull request
 //use clasp push to update
 //use clasp push -w to autoupdate
 //use clasp pull to retreive current file
@@ -14,6 +15,7 @@ var sheet4 = ss.getSheetByName("NthAttempt");
 var sheet5 = ss.getSheetByName("Countries");
 var sheet6 = ss.getSheetByName("Statistics");
 var sheet7 = ss.getSheetByName("AddInfo");
+var sheet8 = ss.getSheetByName("Directory")
 var lock = LockService.getScriptLock();
 //edited from vscode
 //detects which action to take based on the URL PASSED
@@ -588,20 +590,22 @@ function retrieve_miscdata(){ //unused
 function retrieve_prog(request){ //returns episodeVal, episodeTime, episodeLink
  
   var username = request.parameter.username;
-  var progpos = request.parameter.progpos;
-  var progchap = request.parameter.progchap;
-  var progep = request.parameter.progep;
+  //var progpos = request.parameter.progpos;
+  //var progchap = request.parameter.progchap;
+  //var progep = request.parameter.progep;
   var sessionid = request.parameter.sessionID;
   var rank = request.parameter.rank;
   var status = sheet.getRange(rank,12).getValue()
   var limit = sheet6.getRange(3,2).getValue();
 
   var trgt = sheet.getRange(rank,11).getValue();
-  var trgt2 = sheet.getRange(rank, 3).getValue();
+  var trgt2 = sheet.getRange(rank,3).getValue();
   var trgt3 = sheet.getRange(rank,6).getValue();
+  var progpos = String(trgt3).split(".")
+  var progchap = progpos[0];
+  var progep = progpos[1];
 
-  //
-  if( sessionid == trgt && trgt2 == username && trgt3 == progpos && status != "offline"){
+  if(sessionid == trgt && trgt2 == username && status != "offline"){
     
      //Update last Active
      var d = new Date();
@@ -619,7 +623,6 @@ function retrieve_prog(request){ //returns episodeVal, episodeTime, episodeLink
       return ContentService.createTextOutput("userState(" + user_state + ");clearTimeout(sv_stat)").setMimeType(ContentService.MimeType.JAVASCRIPT);
     } else {
       
-      
       sheet.getRange(rank,12).setValue("online")
 
       if(progchap == "1"){
@@ -634,49 +637,41 @@ function retrieve_prog(request){ //returns episodeVal, episodeTime, episodeLink
           sheet1.getRange(rank,3).setValue(c_epAtmptN) //adds 1 to Attempt
           var c_epT = sheet1.getRange(rank,2).getValue(); //gets currentTime
   
-          var msg = c_epVal + " but on its " + c_epAtmptN + " attmept! Plus time at " + c_epT;
+          //var msg = c_epVal + " but on its " + c_epAtmptN + " attmept! Plus time at " + c_epT;
   
           data = JSON.stringify({
-            "c_epT": epT, "c_epVal": c_epVal, "c_progpos": progpos
+            "c_epT": c_epT, "c_epVal": c_epVal, "c_progpos": trgt3
           });
-  
+          
           return ContentService.createTextOutput("receiveProg(" + data + ");clearTimeout(sv_stat)").setMimeType(ContentService.MimeType.JAVASCRIPT);
   
-        } else { // no recorded data yet
+        } else { // no recorded data yet //Resets attempt && currentTime to 0
           
           sheet1.getRange(rank,3).setValue(1)// resets Attempt to 1
           sheet1.getRange(rank,2).setValue(0); //resets currentTime to 0
-  
+          var linkAtch = sheet8.getRange(rank, parseFloat(progep) + 1).getValue();
+          //var linkAtch = progep + 1;
+
+          var msg = "user's first attempt in this chapter" + trgt3
+          
+          msg = JSON.stringify({
+            "msg": msg
+          });
+
           data = JSON.stringify({
-            "c_epT": 0, "c_epVal": 0, "c_progpos": progpos
+            "c_epT": 0, "c_epVal": 0, "c_progpos": trgt3, "c_linkAtch": linkAtch
           });
   
-          return ContentService.createTextOutput("receiveProg(" + data + ");clearTimeout(sv_stat)").setMimeType(ContentService.MimeType.JAVASCRIPT);
+          return ContentService.createTextOutput("receiveProg(" + data + ");consoleme(" + msg + ");clearTimeout(sv_stat)").setMimeType(ContentService.MimeType.JAVASCRIPT);
         }
-      } else if (progchap == "2"){
-        var msg = "Success retrieve2"
+      } else {//progchap == "2" || progchap == "3" || progchpa >= 4
+        var msg = "Attempt still in progress!!!"
   
         msg = JSON.stringify({
           "msg": msg
         });
   
-        return ContentService.createTextOutput("consoleme(" + msg + ");clearTimeout(sv_stat)").setMimeType(ContentService.MimeType.JAVASCRIPT);
-      } else if (progchap == "3"){
-        var msg = "Success retrieve3"
-  
-        msg = JSON.stringify({
-          "msg": msg
-        });
-  
-        return ContentService.createTextOutput("consoleme(" + msg + ");clearTimeout(sv_stat)").setMimeType(ContentService.MimeType.JAVASCRIPT);
-      } else {
-        var msg = "Success retrieveX"
-  
-        msg = JSON.stringify({
-          "msg": msg
-        });
-  
-        return ContentService.createTextOutput("consoleme(" + msg + ");clearTimeout(sv_stat)").setMimeType(ContentService.MimeType.JAVASCRIPT);
+        return ContentService.createTextOutput("alertme(" + msg + ");clearTimeout(sv_stat)").setMimeType(ContentService.MimeType.JAVASCRIPT);
       }
     }
 
@@ -689,14 +684,6 @@ function retrieve_prog(request){ //returns episodeVal, episodeTime, episodeLink
     });
 
     return ContentService.createTextOutput("userState(" + user_state + ");clearTimeout(sv_stat)").setMimeType(ContentService.MimeType.JAVASCRIPT);
-  } else if (trgt3 != progpos){ //invalid progpos //redirect to correct progpos
-    var msg = "Progpos didn't match!"
-
-    msg = JSON.stringify({
-      "msg": msg
-    });
-
-    return ContentService.createTextOutput("consoleme(" + msg + ");").setMimeType(ContentService.MimeType.JAVASCRIPT);
   } else { //missing username
 
     var user_state = "missing"
@@ -708,6 +695,16 @@ function retrieve_prog(request){ //returns episodeVal, episodeTime, episodeLink
     return ContentService.createTextOutput("userState(" + user_state + ");clearTimeout(sv_stat)").setMimeType(ContentService.MimeType.JAVASCRIPT);
 
   }   
+}
+
+function testme(){
+  var trgt3 = sheet.getRange(2,6).getValue();
+  var progpos = String(trgt3).split(".")
+  var progchap = progpos[0];
+  console.log(progchap)
+  var progep = progpos[1];
+  console.log(progep)
+  
 }
 
 function retrieve_prog123123(request){
@@ -1813,7 +1810,6 @@ function afkManager(){
 function countOnline(){
   var total = 0;
   lr = sheet.getLastRow();
-  console.log(lr);
   for(var i=1;i<=lr;i++){
     trgt = sheet.getRange(i,12).getValue();
     if (trgt == "online"){

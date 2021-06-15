@@ -677,11 +677,9 @@
 		} else if (sv_resp["state"] == "sv_full"){
 			newModal("Error","Server is full...","Please try again later")
 		} else if (sv_resp["state"] == "verified"){ //returns all necessary data
-			newModal("Done","LogIn was successful","Verified")
+			newModal("Done","LogIn was successful","Verified",4500)
 
 			console.log("TO DO: Cookies chkpoint?")
-			console.log("TO DO: Add LOADING from HALF LIFE style")
-			// console.log("TO DO: ADD Custom Intro either the Wifi Intro or reload next page")
 
 			//Removes the form
 			document.getElementsByClassName("resp_form")[0].classList.add("vivify");
@@ -717,6 +715,27 @@
 
 			//Collect Prog
 			requestProg();
+		} else if (sv_resp["state"] == "alreadyIn"){
+			newModal("Done","please wait...","User detected",4500);
+
+			//Removes the form
+			document.getElementsByClassName("resp_form")[0].classList.add("vivify");
+			document.getElementsByClassName("resp_form")[0].classList.add("fadeOut");
+			document.getElementsByClassName("resp_form")[0].onanimationend = function(event){
+				moveSignInBtns("AltSignInStorage")
+				setTimeout(()=>event.srcElement.remove(),1000,event);
+			};
+
+			//Show settings
+			document.getElementsByClassName("topright_gear")[0].classList.add("vivify");
+			document.getElementsByClassName("topright_gear")[0].classList.add("fadeIn");
+			document.getElementsByClassName("topright_gear")[0].style.display = "block";
+
+			//Fire Intro
+			setTimeout(()=>intro_Anim(),2000)
+
+			//Collect Prog
+			// requestProg();
 		} else {
 			alert("Error on userStat(" + sv_resp["state"] + ") returned undefined");
 		}
@@ -727,7 +746,6 @@
 	function requestProg(){ // needs c_user c_progpos c_sessionID
 		progpos = getCookie("c_progpos").split(".")
 		var url = script_url+"?username=" + getCookie("c_user") + "&progpos=" + getCookie("c_progpos") + "&progchap=" + progpos[0] + "&progep=" + progpos[1] + "&sessionID=" + getCookie("c_sessionid") + "&rank=" + getCookie("c_rank") +"&action=retrieve_prog";
-		console.log(url)
 		var request = jQuery.ajax({
 			crossDomain: true,
 			url: url ,
@@ -735,9 +753,6 @@
 			dataType: "jsonp"
 		});
 		isServerDown();
-
-		console.log("TO DO: Do something if progpos was manipulated by user")
-
 	}
 	/*
 	Chapter1 Episode1 = 1.1
@@ -768,9 +783,8 @@
 		
 		setTimeout(()=>{
 			updateCookie("c_linkAtch", sv_data["c_linkAtch"]);
-			newModal("Done","please click the moon","Signal Received")
+			newModal("Done","","Signal Received",3000)
 		},4500);
-		newModal("Queue","","",3000)
 
 		console.log("TO DO: Do something if you retrieve the c_linkAtch; Change signal color")
 	}
@@ -785,6 +799,29 @@
 		});
 	}
 
+	//Anti Skip
+	async function AntiSkip(){
+		requestMoonPhase();
+		if(!getCookie("c_user") != true && !getCookie("c_sessionid") != true && 
+		!getCookie("c_rank") != true){
+
+			disableFormBtns(true);
+			ques1 = newModal("Warning","Continue as " + getCookie("c_user") + "?","Account detected")
+			ans1 = await booleanResp(ques1);
+
+			if(ans1 != false){
+				sv_resp = {state : "alreadyIn"}
+				userState(sv_resp);
+				//requestProg();
+				console.log("TO DO: Anti-skip detected user already logged in")
+				console.log("TO DO: if progpos is correct then do something")
+			} else {
+				LogOut();
+			}
+			
+		}
+	}
+	setTimeout(()=>AntiSkip(),1000)
 
 	//User progress commands
 	function requestProgress324(){ //request row of Progress Attempt#
@@ -1151,9 +1188,7 @@
 		return status;
 	}	
 
-	//moon phase from https://gist.github.com/endel/dfe6bb2fbe679781948c
-	console.log("TO DO: ADD requestMoonPhase to AntiSkip");
-	requestMoonPhase();
+	//moon phase from https://gist.github.com/endel/dfe6bb2fbe679781948c	
 	function requestMoonPhase(){ 
 
 		var c = e = jd = b = 0;
@@ -1754,7 +1789,7 @@
 		testLatency(function(avg){
 		isConnectedFast = (avg <= tThreshold);
 		/** output */
-			newModal("Queue", "average: " + avg.toFixed(2) + " Mbps","Internet Speed:");
+			newModal("Queue", "average: " + avg.toFixed(2) + " Mbps","Internet Speed:", 4000);
 		});
 
 		/** test and average time took to download image from server, called recursively timesToTest times */
@@ -1850,7 +1885,7 @@
 			modalTextCont.appendChild(modalTextContent);
 			
 			modalExitCont.onpointerup = function(event){
-				selfDel_modal(event);
+				selfDel_modal(event, "fadeOutRight");
 			};
 			modalExit.setAttribute("class","close" + modalcount);
 			modalExit.innerHTML = "&times;";
@@ -1863,8 +1898,6 @@
 					newclassname = trgt.parentElement.parentElement.classList[0] + " " + trgt.parentElement.parentElement.classList[1] + " " + "fadeOut";
 					trgt.parentElement.parentElement.onanimationend = function(){trgt.parentElement.parentElement.remove();}
 					trgt.parentElement.parentElement.setAttribute("class", newclassname);
-				} else {
-					console.log("Modal was previously closed by user!")
 				}	
 			},modaldur,modalcount);
 			modalExitCont.appendChild(modalExit);
@@ -1894,7 +1927,7 @@
 			modalTextCont.appendChild(modalTextContent);
 
 			modalExitCont.onpointerup = function(event){
-				selfDel_modal(event);
+				selfDel_modal(event, "fadeOutRight");
 			};
 			modalExit.setAttribute("class","close" + modalcount);
 			modalExit.innerHTML = "&times;";
@@ -1907,10 +1940,7 @@
 					newclassname = trgt.parentElement.parentElement.classList[0] + " " + trgt.parentElement.parentElement.classList[1] + " " + "fadeOut";
 					trgt.parentElement.parentElement.onanimationend = function(){trgt.parentElement.parentElement.remove();}
 					trgt.parentElement.parentElement.setAttribute("class", newclassname);
-				} else {
-					console.log("Modal was previously closed by user!")
 				}
-				
 			},modaldur,modalcount);
 			modalExitCont.appendChild(modalExit);
 
@@ -1943,7 +1973,7 @@
 			modalTextCont.appendChild(modalTextContent);
 			
 			modalExitCont.onpointerup = function(event){
-				selfDel_modal(event);
+				selfDel_modal(event, "fadeOutRight");
 			};
 			modalExit.setAttribute("class","close" + modalcount);
 			modalExit.innerHTML = "&times;";
@@ -1956,8 +1986,6 @@
 					newclassname = trgt.parentElement.parentElement.classList[0] + " " + trgt.parentElement.parentElement.classList[1] + " " + "fadeOut";
 					trgt.parentElement.parentElement.onanimationend = function(){trgt.parentElement.parentElement.remove();}
 					trgt.parentElement.parentElement.setAttribute("class", newclassname);
-				} else {
-					console.log("Modal was previously closed by user!")
 				}	
 			},modaldur,modalcount);
 			modalExit.innerHTML = "&times;";
@@ -2124,9 +2152,9 @@
 	}
 	function selfDel_modal(event,animClass){
 		if (!animClass){ //no value
-			animClass = "fadeOut"
+			animClass = "fadeOut dur-100"
 		} else {
-			animClass = animClass;
+			animClass = animClass + " dur-100";
 		}
 		
 		// console.log(event);
@@ -2253,6 +2281,37 @@
 	
 	</script>
 
+	<script> //Audio manager
+
+	console.log("TO DO: create more bg music to choose from")
+	console.log("TO DO: Add silent audio for Bg music... maybe in the settings")
+	console.log("TO DO: Remove this if player is already Logged In and trying to continue")
+	
+	document.addEventListener('pointerup', musicPlay);
+	document.addEventListener('keypress', musicPlay);
+	function musicPlay() {
+		setTimeout(function(){
+			audio.play();
+			//newModal("Queue","Night in Crystal Kingdom - Hirosashii","Now Playing");
+		},1000,audio)
+
+		document.removeEventListener('pointerup', musicPlay);
+		document.removeEventListener('keypress'	, musicPlay);
+		
+	}
+	
+	var audiofade = false;
+	var audio = new Audio("audio/CrystalEmpire_Night.ogg");
+	audio.volume = 0.5;
+	audio.loop = true;
+
+	var audio2 = new Audio("audio/no_signal.mp3")
+	audio2.volume = 1;
+
+	var audio3 = new Audio("audio/new_signal.mp3")
+	audio3.volume = 1;
+	</script>
+	
 	<script defer>	//constellation generator
 	var pointer = {
 		x: undefined,
@@ -2287,27 +2346,6 @@
 		constellation.width = window.innerWidth;
 
 		ctx =  constellation .getContext("2d");
-
-		//Audio
-		console.log("TO DO: create more bg music to choose from")
-		console.log("TO DO: Add silent audio for Bg music... maybe in the settings")
-		console.log("TO DO: Remove this if player is already Logged In and trying to continue")
-		var audio = new Audio("audio/CrystalEmpire_Night.ogg");
-		audio.volume = 0.5;
-		audio.loop = true;
-
-		document.addEventListener('pointerup', musicPlay);
-		document.addEventListener('keypress', musicPlay);
-		function musicPlay() {
-			setTimeout(function(){
-				audio.play();
-				newModal("Queue","Night in Crystal Kingdom - Hirosashii","Now Playing");
-			},1000,audio)
-
-			document.removeEventListener('pointerup', musicPlay);
-			document.removeEventListener('keypress'	, musicPlay);
-			
-		}
 	}
 
 	var starArray = [];
@@ -2423,7 +2461,7 @@
 		this.intro = function(){			
 			// this.y = this.y + this.dy;
 			// this.y += this.dy * 20 * relativeTrans  * 2;
-			this.y += 1 * relativeTrans * .25;
+			this.y += 1 * relativeTrans * .5;
 			// this.y += this.dy * 20 ;
 			this.draw();
 			
@@ -2768,6 +2806,13 @@
 			}
 			this.draw();
 		}
+		
+		this.scale = function(){
+			this.scaleX = 1.5;
+			this.scaleY = 1.5;
+			this.draw();
+		}
+	
 	}
 	function gen_moon(){
 		moonArray.length = 0;
@@ -2823,6 +2868,9 @@
 		this.signal1Stroke = "216,252,253";
 		this.signal2Stroke = "158,182,208";
 		this.signal3Stroke = "120,132,165";
+
+		this.volume = 0.975;
+
 		/*
 			//////////////////				-50, -50		0, -50			50, -50		
 			/A		B		C/
@@ -2928,23 +2976,36 @@
 		this.update = function(){
 			if (this.alpha <= 0){
 				if (!getCookie("c_linkAtch") != true){
+
 					console.log("found")
-					setTimeout(()=>audio3.play(),1000)
-					// this.signal0Stroke = "252,214,103"; //
-					this.signal0Stroke = "242,232,201";
-					// this.signal1Stroke = "136,217,105"; //
-					this.signal1Stroke = "26,174,232";
-					// this.signal2Stroke = "70,203,24"; //
-					this.signal2Stroke = "17,140,214";
-					// this.signal3Stroke = "6,161,11"; //
-					this.signal3Stroke = "9,82,189";
 
+					trgtCanvas = document.getElementsByClassName("const_cont")[0]
 
-					// "9, 82 , 189",
-					// "165, 191, 240", //
-					// "17, 140, 214",
-					// "26, 174, 232", //
-					// "242, 232, 201"
+					if (!trgtCanvas != true && trgtCanvas.classList.contains("fadeIn") && audiofade == false){
+						
+
+						setTimeout(()=>audio3.play(),1000)
+						// this.signal0Stroke = "252,214,103"; //
+						this.signal0Stroke = "242,232,201";
+						// this.signal1Stroke = "136,217,105"; //
+						this.signal1Stroke = "26,174,232";
+						// this.signal2Stroke = "70,203,24"; //
+						this.signal2Stroke = "17,140,214";
+						// this.signal3Stroke = "6,161,11"; //
+						this.signal3Stroke = "9,82,189";
+						
+						
+						setTimeout(()=>{
+							audiofade = true
+							trgtCanvas.classList.remove("fadeIn");
+							trgtCanvas.classList.add("fadeOut");
+
+							trgtCanvas.onanimationend = ()=>{
+								alert("Redirect to next page!")
+							}
+						},2000, trgtCanvas)
+					}
+
 				} else {
 					console.log("notfound")
 					setTimeout(()=>audio2.play(),1000)
@@ -2978,6 +3039,11 @@
 			this.thirdXR += .3
 			
 			this.alpha += this.increment
+
+			if(audiofade == true){
+				audio.volume = audio.volume * this.volume
+			}
+
 			this.draw();
 		}
 	}
@@ -2989,13 +3055,6 @@
 		signalArray.push(new crt_signal(signalCoordX,signalCoordY,radius))
 	}
 	gen_signal();
-
-	var audio2 = new Audio("audio/no_signal.mp3")
-	audio2.volume = 1;
-
-	var audio3 = new Audio("audio/new_signal.mp3")
-	audio3.volume = 1;
-
 
 	function init(){
 		// alert("Init fired")
@@ -3042,16 +3101,15 @@
 			AnimFrame = requestAnimationFrame(intro_Anim);	
 		}	
 	}
-
 	function intro_Anim2(){
 		ctx.clearRect(0,0,innerWidth,innerHeight);
 		for (i=0;i<moonArray.length;i++){
 			// console.log("B")
-			moonArray[i].draw();
+			moonArray[i].update();
 		}
 		for (i=0;i<starArray.length;i++){
 				// console.log("A")
-				starArray[i].draw();
+				starArray[i].update();
 		}
 		for (i=0;i<signalArray.length;i++){
 				// console.log("A")
@@ -3119,7 +3177,7 @@
 	
 	</script>
 
-	<script>	//Settings
+	<script> //Settings
 		// var SettingAnim = false;
 		function showSettings(event){
 			datame = event;

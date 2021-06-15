@@ -21,7 +21,7 @@ body {
 }
 
 .topright_gear {
-  display: block;
+  display: none;
   position: fixed;
   width: 65%;
   height: 100%;

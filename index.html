@@ -710,7 +710,7 @@
 				moveSignInBtns("AltSignInStorage")
 				setTimeout(()=>event.srcElement.remove(),1000,event);
 			};
-
+			
 			//Receive cookies
 			updateCookie("c_user", sv_data["c_user"]);
 			//updateCookie("c_progpos", sv_data["c_progpos"]);
@@ -726,6 +726,10 @@
 			updateCookie("c_sessionid",sv_data["c_sessionid"]);
 			updateCookie("c_rank",sv_data["c_rank"]);
 			updateCookie("c_loc","",-1); 
+
+			//Removes vigenette
+			document.getElementsByClassName("vignettebg")[0].classList.add("vivify");
+			document.getElementsByClassName("vignettebg")[0].classList.add("fadeOut");	
 
 			//Show settings
 			document.getElementsByClassName("topright_gear")[0].classList.add("vivify");
@@ -747,6 +751,10 @@
 				moveSignInBtns("AltSignInStorage")
 				setTimeout(()=>event.srcElement.remove(),1000,event);
 			};
+			
+			//Removes vigenette
+			document.getElementsByClassName("vignettebg")[0].classList.add("vivify");
+			document.getElementsByClassName("vignettebg")[0].classList.add("fadeOut");			
 
 			//Show settings
 			document.getElementsByClassName("topright_gear")[0].classList.add("vivify");
@@ -834,7 +842,6 @@
 			if(ans1 != false){
 				sv_resp = {state : "alreadyIn"}
 				userState(sv_resp);
-				requestProg();
 			} else {
 				LogOut();
 			}
@@ -1885,6 +1892,10 @@
 		var modalExitCont = document.createElement("div");
 		var modalExit = document.createElement("span");
 
+		//BlurBg
+		var modalBlurBg = document.createElement("div")
+		modalBlurBg.className = "blurbg"
+
 		if (type == "Queue"){ //round time
 			newModalgrid.setAttribute("class","Queue vivify fadeInRight");
 
@@ -2062,9 +2073,9 @@
 			newModalgrid.appendChild(modalFalseBtn);
 
 			top_modals.appendChild(newModalgrid);
-			
-			return modalcount;
-			console.log("TO DO: ADD background to disable any other movement and prevent new Warning modal from spawning");
+			enableBlurBg();
+
+			return modalcount;		
 		} else if (type == "Input"){// triangle exclamation
 			newModalgrid.setAttribute("class","Warning vivify fadeIn");
 
@@ -2116,9 +2127,9 @@
 			// newModalgrid.appendChild(modalInput)
 
 			top_modals.appendChild(newModalgrid);
-			
+			enableBlurBg();
+
 			return modalcount;
-			console.log("TO DO: ADD background to disable any other movement and prevent new Warning modal from spawning");
 		} else if(type == "Link"){
 			newModalgrid.setAttribute("class","Warning vivify fadeIn");
 
@@ -2161,13 +2172,27 @@
 			// newModalgrid.appendChild(modalInput)
 
 			top_modals.appendChild(newModalgrid);
-			
+			enableBlurBg();
 			moveSignInBtns("AltBtn" + modalcount)
 
 			return modalcount;
 		} else {
 			alert("Invalid type on parameter1 of newModal()")
 		}
+	}
+	function enableBlurBg(){
+		console.log("enable fired")
+		document.getElementsByClassName("blurbg")[0].classList.remove("hidden")
+	}
+	function disableBlurBg(){
+		console.log("disable fired")
+		setTimeout(()=>{
+			children = document.getElementsByClassName("top_modals")[0].children.length
+			if( children <= 1){
+				document.getElementsByClassName("blurbg")[0].classList.add("hidden");
+			}
+		},500)
+		
 	}
 	function selfDel_modal(event,animClass){
 		if (!animClass){ //no value
@@ -2209,6 +2234,7 @@
 					console.log(false)
 					selfDel_modal(event,"fadeOut dur-100");
 					moveSignInBtns("AltSignInStorage")
+					disableBlurBg()
 					resolve(false);
 				};
 			} else {
@@ -2219,6 +2245,7 @@
 					console.log(true)
 					// c_resp = event; //for debugging
 					selfDel_modal(event,"fadeOut dur-100");
+					disableBlurBg()
 					resolve(true);
 					};
 				var falseBtnFunc = event => { //False Boolean func
@@ -2230,9 +2257,7 @@
 					resolve(false);
 				};
 			}
-			
-			
-			
+				
 			//Adds event listener
 			trueBtn.addEventListener("pointerup", trueBtnFunc);
 			falseBtn.addEventListener("pointerup", falseBtnFunc);
@@ -2265,6 +2290,7 @@
 				// console.log(event)
 				// c_resp = event; //for debugging
 				selfDel_modal(event,"fadeOut dur-100");
+				disableBlurBg()
 				resolve(event.srcElement.parentElement.children[1].lastChild.value);
 			};
 			var falseBtnFunc = event => { //False Boolean func
@@ -2273,6 +2299,7 @@
 				// c_resp = false;
 				console.log(false)
 				selfDel_modal(event,"fadeOut dur-100");
+				disableBlurBg()
 				resolve(false);
 			};
 			
@@ -2282,6 +2309,7 @@
 			falseBtn.addEventListener("pointerup", falseBtnFunc);
 		});
 	}
+
 
 	async function awaitClicks(){
 
@@ -3311,6 +3339,10 @@
 	<canvas class="constellation" onload="reloadFade(event)"></canvas>
 </div>
 
+<div class="blurbg vivify fadeIn hidden"></div>
+<div class="vignettebg"></div>
+
+
 <div class="topright_gear">	
 	<div class="gradient_bg"></div>
 	<img onpointerup="showSettings(event)" src="../imgs/Settings.svg" title="Settings">
@@ -3323,7 +3355,6 @@
 		<li><span class="vivify delay-300 dur-100" onpointerup="LogOut();hideSettings()">Sign Out</span></li>
 	</ul>
 </div>
-
 <div class="top_modals"><!-- insert cookie and yt modal chkpnt here --></div>
 <div class="botright_modals"></div>
 <div class="AltSignInStorage">
